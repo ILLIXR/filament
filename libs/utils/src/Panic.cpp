@@ -19,8 +19,9 @@
 #include "ostream_.h"
 
 #include <utils/compiler.h>
-#include <utils/Log.h>
 #include <utils/ostream.h>
+
+#include <absl/log/log.h>
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -183,8 +184,8 @@ const CallStack& TPanic<T>::getCallStack() const noexcept {
 
 template<typename T>
 void TPanic<T>::log() const noexcept {
-    slog.e << what() << io::endl;
-    slog.e << mCallstack << io::endl;
+    LOG(ERROR) << what();
+    LOG(ERROR) << mCallstack;
 }
 
 UTILS_ALWAYS_INLINE
@@ -242,8 +243,8 @@ void panicLog(char const* function, char const* file, int line, const char* form
     std::string const msg = buildPanicString("PanicLog",
             function, line, file, reason.c_str());
 
-    slog.e << msg << io::endl;
-    slog.e << CallStack::unwind(1) << io::endl;
+    LOG(ERROR) << msg;
+    LOG(ERROR) << CallStack::unwind(1);
 }
 
 PanicStream::PanicStream(

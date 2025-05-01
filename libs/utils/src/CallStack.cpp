@@ -22,6 +22,7 @@
 #include <algorithm>
 #include <memory>
 #include <cstdlib>
+#include <iostream>
 
 #include <stddef.h>
 #include <stdint.h>
@@ -140,7 +141,7 @@ CString CallStack::demangleTypeName(const char* mangled) {
 
 // ------------------------------------------------------------------------------------------------
 
-io::ostream& operator<<(io::ostream& stream, CallStack const& UTILS_UNUSED callstack) {
+std::ostream& operator<<(std::ostream& stream, CallStack const& UTILS_UNUSED callstack) {
 #if HAS_EXECINFO
     size_t const size = callstack.getFrameCount();
     char buf[1024];
@@ -166,7 +167,7 @@ io::ostream& operator<<(io::ostream& stream, CallStack const& UTILS_UNUSED calls
             free((void*)symbols);
         }
     }
-    stream << io::endl;
+    stream << std::endl;
 #endif
     return stream;
 }

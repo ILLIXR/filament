@@ -22,9 +22,11 @@
 
 #include <math/mat4.h>
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include "ArchiveCache.h"
+
+#include <iostream>
 
 using namespace filament;
 using namespace filament::math;
@@ -32,22 +34,28 @@ using namespace filament::uberz;
 using namespace filament::gltfio;
 using namespace utils;
 
+namespace filament::gltfio {
+
 #if !defined(NDEBUG)
-io::ostream& operator<<(io::ostream& out, const ArchiveRequirements& reqs);
+std::ostream& operator<<(std::ostream& out, const ArchiveRequirements& reqs);
 #endif
+
+};
 
 namespace {
 
 static void prepareConfig(MaterialKey* config, const char* label) {
     if (config->hasVolume && config->hasSheen) {
-        slog.w << "Volume and sheen are not supported together in ubershader mode,"
-                  " removing sheen (" << label << ")." << io::endl;
+        LOG(WARNING) << "Volume and sheen are not supported together in ubershader mode,"
+                        " removing sheen ("
+                     << label << ").";
         config->hasSheen = false;
     }
 
     if (config->hasTransmission && config->hasSheen) {
-        slog.w << "Transmission and sheen are not supported together in ubershader mode,"
-                  " removing sheen (" << label << ")." << io::endl;
+        LOG(WARNING) << "Transmission and sheen are not supported together in ubershader mode,"
+                        " removing sheen ("
+                     << label << ").";
         config->hasSheen = false;
     }
 
@@ -56,8 +64,8 @@ static void prepareConfig(MaterialKey* config, const char* label) {
 
     // Due to sampler overload, disable transmission if necessary and print a friendly warning.
     if (config->hasClearCoat && clearCoatConflict) {
-        slog.w << "Volume, transmission, sheen and IOR are not supported in ubershader mode for clearcoat"
-                  " materials (" << label << ")." << io::endl;
+        LOG(WARNING) << "Volume, transmission, sheen and IOR are not supported in ubershader mode "
+                        "for clearcoat materials (" << label << ").";
         config->hasVolume = false;
         config->hasTransmission = false;
         config->hasSheen = false;
@@ -65,38 +73,39 @@ static void prepareConfig(MaterialKey* config, const char* label) {
     }
 
     if (config->useSpecularGlossiness && config->hasSpecular) {
-        slog.w << "SpecularGlossiness and specular are not supported together in ubershader mode,"
-                  " removing specularGlossiness (" << label << ")." << io::endl;
+        LOG(WARNING) << "SpecularGlossiness and specular are not supported together in ubershader "
+                        "mode, removing specularGlossiness (" << label << ").";
 
         config->useSpecularGlossiness = false;
     }
 
     if (config->unlit && config->hasSpecular) {
-        slog.w << "Unlit and specular are not supported together in ubershader mode,"
-                  " removing unlit (" << label << ")." << io::endl;
+        LOG(WARNING) << "Unlit and specular are not supported together in ubershader mode, "
+                        "removing unlit (" << label << ").";
 
         config->unlit = false;
     }
 
     // Also due to sampler overload, clearcoat with specular, we can only support with specular map.
     if ((config->hasClearCoatNormalTexture || config->hasClearCoatRoughnessTexture) && config->hasSpecular) {
-        slog.w << "Specular can only work with clearcoat that does not use clear coat normal or clear coat roughness map,"
-                  " removing clear coat normal and roughness (" << label << ")." << io::endl;
+        LOG(WARNING) << "Specular can only work with clearcoat that does not use clear coat normal "
+                        "or clear coat roughness map, removing clear coat normal and roughness ("
+                     << label << ").";
         config->hasClearCoatNormalTexture = false;
         config->hasClearCoatRoughnessTexture = false;
     }
 
     // Also due to sampler overload, sheen with specular, we can only support without specular color texture.
     if (config->hasSpecularColorTexture && config->hasSheen) {
-        slog.w << "Sheen can only work with specular that does not use specular color map,"
-                  " removing specular color (" << label << ")." << io::endl;
+        LOG(WARNING) << "Sheen can only work with specular that does not use specular color map, "
+                        "removing specular color (" << label << ").";
         config->hasSpecularColorTexture = false;
     }
 
     // Also due to sampler overload, volume with specular, we can only support without specular color texture.
     if (config->hasSpecularColorTexture && config->hasVolume) {
-        slog.w << "Volume can only work with specular that does not use specular color map,"
-                  "removing specular color (" << label << ")." << io::endl;
+        LOG(WARNING) << "Volume can only work with specular that does not use specular color map, "
+                        "removing specular color (" << label << ").";
         config->hasSpecularColorTexture = false;
     }
 }
@@ -200,7 +209,7 @@ Material* UbershaderProvider::getMaterial(const MaterialKey& config) const {
     }
 
 #ifndef NDEBUG
-    slog.w << "Failed to find material with features:\n" << requirements << io::endl;
+    LOG(WARNING) << "Failed to find material with features:\n" << requirements;
 #endif
 
     return nullptr;
@@ -212,7 +221,7 @@ Material* UbershaderProvider::getMaterial(MaterialKey* config, UvMap* uvmap, con
     Material* material = getMaterial(*config);
     if (material == nullptr) {
 #ifndef NDEBUG
-        slog.w << "Using fallback material for " << label << "." << io::endl;
+        LOG(WARNING) << "Using fallback material for " << label << ".";
 #endif
         material = mMaterials.getDefaultMaterial();
     }
@@ -393,9 +402,6 @@ MaterialProvider* createUbershaderProvider(Engine* engine, const void* archive,
     return new UbershaderProvider(engine, archive, archiveByteCount);
 }
 
-} // namespace filament::gltfio
-
-
 #if !defined(NDEBUG)
 
 inline
@@ -423,8 +429,7 @@ const char* toString(BlendingMode blendingMode) noexcept {
     }
 }
 
-#if !defined(NDEBUG)
-io::ostream& operator<<(io::ostream& out, const ArchiveRequirements& reqs) {
+std::ostream& operator<<(std::ostream& out, const ArchiveRequirements& reqs) {
     out << "    ShadingModel = " << toString(reqs.shadingModel) << '\n'
         << "    BlendingMode = " << toString(reqs.blendingMode) << '\n';
     for (const auto& pair : reqs.features) {
@@ -434,4 +439,4 @@ io::ostream& operator<<(io::ostream& out, const ArchiveRequirements& reqs) {
 }
 #endif
 
-#endif
+} // namespace filament::gltfio

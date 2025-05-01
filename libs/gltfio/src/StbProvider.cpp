@@ -20,7 +20,8 @@
 #include <vector>
 
 #include <utils/JobSystem.h>
-#include <utils/Log.h>
+
+#include <absl/log/log.h>
 
 #include <filament/Engine.h>
 #include <filament/Texture.h>
@@ -264,9 +265,8 @@ void StbProvider::decodeSingleTexture() {
 StbProvider::StbProvider(Engine* engine) : mEngine(engine) {
     mDecoderRootJob = mEngine->getJobSystem().createJob();
 #ifndef NDEBUG
-    slog.i << "Texture Decoder has "
-            << mEngine->getJobSystem().getThreadCount()
-            << " background threads." << io::endl;
+    LOG(INFO) << "Texture Decoder has " << mEngine->getJobSystem().getThreadCount()
+              << " background threads.";
 #endif
 }
 

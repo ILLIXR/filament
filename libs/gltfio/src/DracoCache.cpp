@@ -18,10 +18,13 @@
 
 #if GLTFIO_DRACO_SUPPORTED
 #include <draco/compression/decode.h>
+#undef LOG
+#undef VLOG
 #endif
 
 #include <utils/compiler.h>
-#include <utils/Log.h>
+
+#include <absl/log/log.h>
 
 #if GLTFIO_DRACO_SUPPORTED
 
@@ -32,8 +35,6 @@ using std::unique_ptr;
 using std::vector;
 
 #endif
-
-using namespace utils;
 
 namespace filament::gltfio {
 
@@ -134,8 +135,8 @@ bool DracoMesh::getFaceIndices(cgltf_accessor* target) const {
     // It would be tricky to be robust against a mismatch; see the class comment for DracoMesh.
     uint32_t count = mesh->num_faces() * 3;
     if (target->count != count) {
-        slog.e << "The glTF accessor wants " << target->count << " indices, "
-               << "but the decoded Draco mesh has " <<  count << " indices." << io::endl;
+        LOG(ERROR) << "The glTF accessor wants " << target->count << " indices, "
+                   << "but the decoded Draco mesh has " << count << " indices.";
         return false;
     }
 
@@ -153,7 +154,7 @@ bool DracoMesh::getFaceIndices(cgltf_accessor* target) const {
         case cgltf_component_type_r_32u: convertFaces<uint32_t>(target, mesh); break;
         case cgltf_component_type_r_8u: convertFaces<uint8_t>(target, mesh); break;
         default:
-            slog.e << "Unexpected component type for Draco indices." << io::endl;
+            LOG(ERROR) << "Unexpected component type for Draco indices.";
             return false;
     }
     return true;
@@ -169,7 +170,7 @@ bool DracoMesh::getVertexAttributes(uint32_t attributeId, cgltf_accessor* target
     draco::Mesh* mesh = mDetails->mesh.get();
     const draco::PointAttribute* attr = mesh->GetAttributeByUniqueId(attributeId);
     if (!attr) {
-        slog.e << "Unknown Draco point attribute." << io::endl;
+        LOG(ERROR) << "Unknown Draco point attribute.";
         return false;
     }
 
@@ -179,8 +180,8 @@ bool DracoMesh::getVertexAttributes(uint32_t attributeId, cgltf_accessor* target
     // DracoMesh.
     uint32_t count = mesh->num_points();
     if (target->count != count) {
-        slog.e << "The glTF accessor wants " << target->count << " vertices, "
-               << "but the decoded Draco mesh has " <<  count << " vertices." << io::endl;
+        LOG(ERROR) << "The glTF accessor wants " << target->count << " vertices, "
+                   << "but the decoded Draco mesh has " << count << " vertices.";
 
         // It is tempting to degrade gracefully by processing only the lesser of the two
         // counts, but doing so would lead to invalid indices in the index buffer.
@@ -204,7 +205,7 @@ bool DracoMesh::getVertexAttributes(uint32_t attributeId, cgltf_accessor* target
 	    case cgltf_component_type_r_32u: convertAttribs<uint32_t>(target, attr, count); break;
 	    case cgltf_component_type_r_32f: convertAttribs<float>(target, attr, count); break;
         default:
-            slog.e << "Unexpected component type for Draco vertices." << io::endl;
+            LOG(ERROR) << "Unexpected component type for Draco vertices.";
             break;
     }
 

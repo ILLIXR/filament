@@ -36,7 +36,8 @@
 
 #include <utils/compiler.h>
 #include <utils/JobSystem.h>
-#include <utils/Log.h>
+
+#include <absl/log/log.h>
 
 #define SYSTRACE_TAG SYSTRACE_TAG_GLTFIO
 #include <utils/Systrace.h>
@@ -162,7 +163,7 @@ uint8_t const* parseDataUri(const char* uri, std::string* mimeType, size_t* psiz
 inline void normalizeSkinningWeights(cgltf_data const* gltf) {
     auto normalize = [](cgltf_accessor* data) {
         if (data->type != cgltf_type_vec4 || data->component_type != cgltf_component_type_r_32f) {
-            slog.w << "Cannot normalize weights, unsupported attribute type." << io::endl;
+            LOG(WARNING) << "Cannot normalize weights, unsupported attribute type.";
             return;
         }
         uint8_t* bytes = (uint8_t*) data->buffer_view->buffer->data;
@@ -544,7 +545,7 @@ std::pair<Texture*, CacheResult> ResourceLoader::Impl::getOrCreateTexture(FFilam
 
     auto foundProvider = mTextureProviders.find(mime);
     if (foundProvider == mTextureProviders.end()) {
-        slog.e << "Missing texture provider for " << mime << io::endl;
+        LOG(ERROR) << "Missing texture provider for " << mime;
         return {};
     }
     TextureProvider* provider = foundProvider->second;
@@ -600,7 +601,7 @@ std::pair<Texture*, CacheResult> ResourceLoader::Impl::getOrCreateTexture(FFilam
         }
         Path fullpath = Path(mGltfPath).getParent() + uri;
         if (!fullpath.exists()) {
-            slog.e << "Unable to open " << fullpath << io::endl;
+            LOG(ERROR) << "Unable to open " << fullpath;
             return {};
         }
         using namespace std;
@@ -622,7 +623,7 @@ std::pair<Texture*, CacheResult> ResourceLoader::Impl::getOrCreateTexture(FFilam
     }
 
     const char* name = srcTexture.name ? srcTexture.name : uri;
-    slog.e << "Unable to create texture " << name << ": " << provider->getPushMessage() << io::endl;
+    LOG(ERROR) << "Unable to create texture " << name << ": " << provider->getPushMessage();
     return {};
 }
 

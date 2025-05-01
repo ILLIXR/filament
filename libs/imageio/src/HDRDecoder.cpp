@@ -20,7 +20,7 @@
 
 #include <math/vec3.h>
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include <cstring>
 #include <limits>
@@ -34,8 +34,6 @@
 #else
 #    include <arpa/inet.h>
 #endif
-
-using namespace utils;
 
 namespace image {
 
@@ -111,14 +109,14 @@ LinearImage HDRDecoder::decode() {
             uint16_t magic;
             mStream.read((char*) &magic, 2);
             if (magic != 0x0202) {
-                slog.e << "invalid scanline (magic)" << io::endl;
+                LOG(ERROR) << "invalid scanline (magic)";
                 return {};
             }
 
             uint16_t w;
             mStream.read((char*) &w, 2);
             if (ntohs(w) != width) {
-                slog.e << "invalid scanline (width)" << io::endl;
+                LOG(ERROR) << "invalid scanline (width)";
                 return {};
             }
 
@@ -136,7 +134,7 @@ LinearImage HDRDecoder::decode() {
                         num_bytes += rle_count - 128;
                     } else {
                         if (rle_count == 0) {
-                            slog.e << "run length is zero" << io::endl;
+                            LOG(ERROR) << "run length is zero";
                             return {};
                         }
                         mStream.read(d, rle_count);

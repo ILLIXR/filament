@@ -19,7 +19,7 @@
 #include <filament/Engine.h>
 #include <filament/Texture.h>
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include <atomic>
 #include <vector>
@@ -239,7 +239,7 @@ Texture* Ktx2Reader::load(const void* data, size_t size, TransferFunction transf
     if (!mTranscoder->start_transcoding()) {
         mEngine.destroy(texture);
         if (!mQuiet) {
-            utils::slog.e << "BasisU start_transcoding failed." << utils::io::endl;
+            LOG(ERROR) << "BasisU start_transcoding failed.";
         }
         return nullptr;
     }
@@ -254,7 +254,7 @@ Texture* Ktx2Reader::load(const void* data, size_t size, TransferFunction transf
         if (UTILS_UNLIKELY(result != Result::SUCCESS)) {
             mEngine.destroy(texture);
             if (!mQuiet) {
-                utils::slog.e << "Failed to transcode level " << levelIndex << utils::io::endl;
+                LOG(ERROR) << "Failed to transcode level " << levelIndex;
             }
             return nullptr;
         }
@@ -329,7 +329,7 @@ Texture* Ktx2Reader::createTexture(ktx2_transcoder* transcoder, const void* data
         TransferFunction transfer) {
     if (!transcoder->init(data, size)) {
         if (!mQuiet) {
-            utils::slog.e << "BasisU transcoder init failed." << utils::io::endl;
+            LOG(ERROR) << "BasisU transcoder init failed.";
         }
         return nullptr;
     }
@@ -337,8 +337,7 @@ Texture* Ktx2Reader::createTexture(ktx2_transcoder* transcoder, const void* data
     if (transcoder->get_dfd_transfer_func() == KTX2_KHR_DF_TRANSFER_LINEAR &&
             transfer == TransferFunction::sRGB) {
         if (!mQuiet) {
-            utils::slog.e << "Source texture is marked linear, but client is requesting sRGB."
-                    << utils::io::endl;
+            LOG(ERROR) << "Source texture is marked linear, but client is requesting sRGB.";
         }
         return nullptr;
     }
@@ -346,8 +345,7 @@ Texture* Ktx2Reader::createTexture(ktx2_transcoder* transcoder, const void* data
     if (transcoder->get_dfd_transfer_func() == KTX2_KHR_DF_TRANSFER_SRGB &&
             transfer == TransferFunction::LINEAR) {
         if (!mQuiet) {
-            utils::slog.e << "Source texture is marked sRGB, but client is requesting linear."
-                    << utils::io::endl;
+            LOG(ERROR) << "Source texture is marked sRGB, but client is requesting linear.";
         }
         return nullptr;
     }
@@ -355,7 +353,7 @@ Texture* Ktx2Reader::createTexture(ktx2_transcoder* transcoder, const void* data
     // TODO: support cubemaps. For now we use KTX1 for cubemaps because basisu does not support HDR.
     if (transcoder->get_faces() == 6) {
         if (!mQuiet) {
-            utils::slog.e << "Cubemaps are not yet supported." << utils::io::endl;
+            LOG(ERROR) << "Cubemaps are not yet supported.";
         }
         return nullptr;
     }
@@ -363,7 +361,7 @@ Texture* Ktx2Reader::createTexture(ktx2_transcoder* transcoder, const void* data
     // TODO: support texture arrays.
     if (transcoder->get_layers() > 1) {
         if (!mQuiet) {
-            utils::slog.e << "Texture arrays are not yet supported." << utils::io::endl;
+            LOG(ERROR) << "Texture arrays are not yet supported.";
         }
         return nullptr;
     }
@@ -398,7 +396,7 @@ Texture* Ktx2Reader::createTexture(ktx2_transcoder* transcoder, const void* data
 
     if (!found) {
         if (!mQuiet) {
-            utils::slog.e << "Unable to decode any of the requested formats." << utils::io::endl;
+            LOG(ERROR) << "Unable to decode any of the requested formats.";
         }
         return nullptr;
     }
@@ -412,13 +410,12 @@ Texture* Ktx2Reader::createTexture(ktx2_transcoder* transcoder, const void* data
         .build(mEngine);
 
     if (texture == nullptr && !mQuiet) {
-        utils::slog.e << "Unable to construct texture using BasisU info." << utils::io::endl;
+        LOG(ERROR) << "Unable to construct texture using BasisU info.";
     }
 
     #if BASISU_FORCE_DEVEL_MESSAGES
-    utils::slog.e << "Ktx2Reader created "
-            << transcoder->get_width() << "x" << transcoder->get_height() << " texture with format "
-            << info.name << utils::io::endl;
+    LOG(ERROR) << "Ktx2Reader created " << transcoder->get_width() << "x"
+               << transcoder->get_height() << " texture with format " << info.name;
     #endif
 
     return texture;

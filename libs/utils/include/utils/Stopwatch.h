@@ -17,8 +17,9 @@
 #ifndef TNT_UTILS_STOPWATCH_H
 #define TNT_UTILS_STOPWATCH_H
 
-#include <utils/Log.h>
 #include <utils/ostream.h>
+
+#include <absl/log/log.h>
 
 #include <chrono>
 #include <limits>
@@ -79,10 +80,10 @@ public:
 
 template<typename Clock>
 Stopwatch<Clock>::~Stopwatch() noexcept {
-    slog.d << "Stopwatch \"" << mName << "\" : ["
-           << mMinLap.count() << ", "
-           << std::chrono::duration_cast<duration>(mAvgLap).count() << ", "
-           << mMaxLap.count() << "] ns" << io::endl;
+    DLOG(INFO) << "Stopwatch \"" << mName << "\" : ["
+               << mMinLap.count() << ", "
+               << std::chrono::duration_cast<duration>(mAvgLap).count() << ", "
+               << mMaxLap.count() << "] ns" << io::endl;
 }
 
 /*

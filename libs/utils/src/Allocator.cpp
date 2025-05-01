@@ -18,7 +18,8 @@
 
 #include <utils/compiler.h>
 #include <utils/debug.h>
-#include <utils/Log.h>
+
+#include <absl/log/log.h>
 
 #include <algorithm>
 
@@ -164,11 +165,11 @@ TrackingPolicy::HighWatermark::~HighWatermark() noexcept {
     if (mSize > 0) {
         size_t wmpct = wm / (mSize / 100);
         if (wmpct > 80) {
-            slog.d << mName << " arena: High watermark "
-                   << wm / 1024 << " KiB (" << wmpct << "%)" << io::endl;
+            DLOG(INFO) << mName << " arena: High watermark "
+                       << wm / 1024 << " KiB (" << wmpct << "%)";
         }
     } else {
-        slog.d << mName << " arena: High watermark " << wm / 1024 << " KiB" << io::endl;
+        DLOG(INFO) << mName << " arena: High watermark " << wm / 1024 << " KiB";
     }
 }
 

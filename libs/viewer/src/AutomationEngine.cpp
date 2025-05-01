@@ -25,8 +25,9 @@
 
 #include <backend/PixelBufferDescriptor.h>
 
-#include <utils/Log.h>
 #include <utils/Path.h>
+
+#include <absl/log/log.h>
 
 #include <iomanip>
 #include <fstream>
@@ -107,8 +108,7 @@ void AutomationEngine::exportScreenshot(View* view, Renderer* renderer, std::str
             } else if (extension == "tif" || extension == "tiff") {
                 exportTIFF(buffer, vp.width, vp.height, outstream);
             } else {
-                utils::slog.e << out.c_str() << " does not specify a supported file extension."
-                              << utils::io::endl;
+                LOG(ERROR) << out.c_str() << " does not specify a supported file extension.";
             }
 
             outstream.close();
@@ -189,7 +189,7 @@ void AutomationEngine::applySettings(Engine* engine, const char* json, size_t js
     JsonSerializer serializer;
     if (!serializer.readJson(json, jsonLength, mSettings)) {
         std::string jsonWithTerminator(json, json + jsonLength);
-        slog.e << "Badly formed JSON:\n" << jsonWithTerminator.c_str() << io::endl;
+        LOG(ERROR) << "Badly formed JSON:\n" << jsonWithTerminator.c_str();
         return;
     }
     viewer::applySettings(engine, mSettings->view, content.view);
@@ -237,7 +237,7 @@ void AutomationEngine::tick(Engine* engine, const ViewerContent& content, float 
             viewer::applySettings(engine, mSettings->material, content.materials[i]);
         }
         if (mOptions.verbose) {
-            utils::slog.i << "Running test " << mCurrentTest << utils::io::endl;
+            LOG(INFO) << "Running test " << mCurrentTest;
         }
     };
 

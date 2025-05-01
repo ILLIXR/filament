@@ -39,6 +39,8 @@
 #include <utils/CString.h>
 #include <utils/Entity.h>
 
+#include <absl/log/log.h>
+
 #include <cgltf.h>
 
 #include "downcast.h"
@@ -57,7 +59,7 @@
 #define GLTFIO_WARN(msg)
 #else
 #define GLTFIO_VERBOSE 1
-#define GLTFIO_WARN(msg) slog.w << msg << io::endl
+#define GLTFIO_WARN(msg) LOG(WARNING) << msg;
 #endif
 
 #if defined(__EMSCRIPTEN__) || defined(__ANDROID__) || defined(FILAMENT_IOS)

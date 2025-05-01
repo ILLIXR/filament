@@ -15,7 +15,8 @@
  */
 
 #include <ktxreader/Ktx1Reader.h>
-#include <utils/Log.h>
+
+#include <absl/log/log.h>
 
 #include <filament/Engine.h>
 #include <filament/Texture.h>
@@ -36,11 +37,9 @@ Texture* createTexture(Engine* engine, const Ktx1Bundle& ktx, bool srgb,
 
 #ifndef NDEBUG
     if (srgb && !isSrgbTextureFormat(texformat)) {
-        utils::slog.w << "Requested sRGB format but KTX contains a linear format. "
-            << utils::io::endl;
+        LOG(WARNING) << "Requested sRGB format but KTX contains a linear format. ";
     } else if (!srgb && isSrgbTextureFormat(texformat)) {
-        utils::slog.w << "Requested linear format but KTX contains a sRGB format. "
-            << utils::io::endl;
+        LOG(WARNING) << "Requested linear format but KTX contains a sRGB format. ";
     }
 #endif
 

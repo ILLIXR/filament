@@ -25,10 +25,11 @@
 
 #include <utils/compiler.h>
 #include <utils/debug.h>
-#include <utils/Log.h>
 #include <utils/ostream.h>
 #include <utils/Panic.h>
 #include <utils/Systrace.h>
+
+#include <absl/log/log.h>
 
 #include <algorithm>
 #include <atomic>
@@ -129,7 +130,7 @@ void JobSystem::setThreadPriority(Priority priority) noexcept {
     error = setpriority(PRIO_PROCESS, 0, androidPriority);
 #ifndef NDEBUG
     if (UTILS_UNLIKELY(error)) {
-        slog.w << "setpriority failed: " << strerror(errno) << io::endl;
+        LOG(WARNING) << "setpriority failed: " << strerror(errno);
     }
 #endif
 #elif defined(__APPLE__)
@@ -153,7 +154,7 @@ void JobSystem::setThreadPriority(Priority priority) noexcept {
     error = pthread_set_qos_class_self_np(qosClass, 0);
 #ifndef NDEBUG
     if (UTILS_UNLIKELY(error)) {
-        slog.w << "pthread_set_qos_class_self_np failed: " << strerror(errno) << io::endl;
+        LOG(WARNING) << "pthread_set_qos_class_self_np failed: " << strerror(errno);
     }
 #endif
 #endif

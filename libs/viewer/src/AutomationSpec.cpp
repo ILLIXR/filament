@@ -20,7 +20,7 @@
 
 #include "jsonParseUtils.h"
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include <sstream>
 #include <string>
@@ -106,7 +106,7 @@ static int parseBaseSettings(jsmntok_t const* tokens, int i, const char* jsonChu
         std::string json = prefix + STR(tokens[i + 1], jsonChunk);
         for (int d = 0; d < depth; d++) {  json += " } "; }
         if (VERBOSE) {
-            slog.i << "  Base: " << json.c_str() << io::endl;
+            LOG(INFO) << "  Base: " << json.c_str();
         }
 
         // Now that we have a complete JSON string, apply this property change.
@@ -160,18 +160,18 @@ static int parseAutomationSpec(jsmntok_t const* tokens, int i, const char* jsonC
         if (0 == compare(tok, jsonChunk, "name")) {
             i = parse(tokens, i + 1, jsonChunk, &out->name);
             if (VERBOSE) {
-                slog.i << "Building spec [" << out->name << "]" << io::endl;
+                LOG(INFO) << "Building spec [" << out->name << "]";
             }
         } else if (0 == compare(tok, jsonChunk, "base")) {
             i = parseBaseSettings(tokens, i + 1, jsonChunk, &base);
         } else if (0 == compare(tok, jsonChunk, "permute")) {
             i = parsePermutationsSpec(tokens, i + 1, jsonChunk, &permute);
         } else {
-            slog.w << "Invalid automation key: '" << STR(tok, jsonChunk) << "'" << io::endl;
+            LOG(WARNING) << "Invalid automation key: '" << STR(tok, jsonChunk) << "'";
             i = parse(tokens, i + 1);
         }
         if (i < 0) {
-            slog.e << "Invalid automation value: '" << STR(tok, jsonChunk) << "'" << io::endl;
+            LOG(ERROR) << "Invalid automation value: '" << STR(tok, jsonChunk) << "'";
             return i;
         }
     }
@@ -191,21 +191,21 @@ static int parseAutomationSpec(jsmntok_t const* tokens, int i, const char* jsonC
         caseCount *= prop.size();
         if (VERBOSE) {
             for (const auto& s : prop) {
-                slog.i << "  Perm: " << s.c_str() << io::endl;
+                LOG(INFO) << "  Perm: " << s.c_str();
             }
         }
         iters[propIndex++] = prop.begin();
     }
     out->cases.resize(caseCount);
     if (VERBOSE) {
-        slog.i << "  Case count: " << caseCount << io::endl;
+        LOG(INFO) << "  Case count: " << caseCount;
     }
 
     size_t caseIndex = 0;
     JsonSerializer serializer;
     while (true) {
         if (VERBOSE) {
-            slog.i << "  Generating test case " << caseIndex << io::endl;
+            LOG(INFO) << "  Generating test case " << caseIndex;
         }
 
         // Use a basic counting algorithm to select the next combination of property values.
@@ -234,7 +234,7 @@ static int parseAutomationSpec(jsmntok_t const* tokens, int i, const char* jsonC
         for (const auto& iter : iters) {
             const std::string& jsonString = *iter;
             if (VERBOSE) {
-                slog.i << "    Applying " << jsonString.c_str() << io::endl;
+                LOG(INFO) << "    Applying " << jsonString.c_str();
             }
             if (!serializer.readJson(jsonString.c_str(), jsonString.size(), &testCase)) {
                 return -1;

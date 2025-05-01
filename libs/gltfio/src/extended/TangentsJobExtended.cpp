@@ -23,8 +23,9 @@
 #include "../Utility.h"
 
 #include <geometry/TangentSpaceMesh.h>
-#include <utils/Log.h>
 #include <utils/StructureOfArrays.h>
+
+#include <absl/log/log.h>
 
 #include <cstring>
 #include <memory>
@@ -99,7 +100,7 @@ inline uint8_t toCode(Attribute attr, UvMap const& uvmap, bool hasUv0) {
                         return UV0_ID;
                     }
             }
-            utils::slog.w << "Only two sets of UVs are available" << utils::io::endl;
+            LOG(WARNING) << "Only two sets of UVs are available";
             return INVALID_ID;
         }
         case cgltf_attribute_type_weights:

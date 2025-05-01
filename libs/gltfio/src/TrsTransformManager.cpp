@@ -16,7 +16,7 @@
 
 #include "FTrsTransformManager.h"
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include "downcast.h"
 #include "gltfio/TrsTransformManager.h"
@@ -31,8 +31,8 @@ void FTrsTransformManager::terminate() noexcept {
     auto& manager = mManager;
     if (!manager.empty()) {
 #ifndef NDEBUG
-        utils::slog.d << "cleaning up " << manager.getComponentCount()
-            << " leaked trs transform components" << utils::io::endl;
+        DLOG(INFO) << "cleaning up " << manager.getComponentCount()
+                   << " leaked trs transform components";
 #endif
         while (!manager.empty()) {
             Instance ci = manager.end() - 1;

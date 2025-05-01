@@ -16,7 +16,7 @@
 
 #include "FNodeManager.h"
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include "downcast.h"
 
@@ -30,8 +30,7 @@ void FNodeManager::terminate() noexcept {
     auto& manager = mManager;
     if (!manager.empty()) {
 #ifndef NDEBUG
-        utils::slog.d << "cleaning up " << manager.getComponentCount()
-            << " leaked node components" << utils::io::endl;
+        LOG(INFO) << "cleaning up " << manager.getComponentCount() << " leaked node components";
 #endif
         while (!manager.empty()) {
             Instance ci = manager.end() - 1;

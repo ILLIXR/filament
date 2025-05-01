@@ -24,8 +24,9 @@
 
 #include <filamat/Enums.h>
 
-#include <utils/Log.h>
 #include <utils/JobSystem.h>
+
+#include <absl/log/log.h>
 
 #include "DirIncluder.h"
 #include "MaterialLexeme.h"
@@ -618,7 +619,7 @@ bool MaterialCompiler::compileRawShader(const char* glsl, size_t size, bool isDe
 
     smolv::ByteArray compressed;
     if (!smolv::Encode(spirv.data(), spirv.size() * 4, compressed, flags)) {
-        utils::slog.e << "Error with SPIRV compression" << utils::io::endl;
+        LOG(ERROR) << "Error with SPIRV compression";
     }
 
     output->write(compressed.data(), compressed.size());

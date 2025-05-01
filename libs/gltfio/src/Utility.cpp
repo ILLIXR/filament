@@ -20,7 +20,7 @@
 #include "FFilamentAsset.h"
 #include "GltfEnums.h"
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #define SYSTRACE_TAG SYSTRACE_TAG_GLTFIO
 #include <utils/Systrace.h>
@@ -54,7 +54,7 @@ void decodeDracoMeshes(cgltf_data const* gltf, cgltf_primitive const* prim,
     // Check if we have already decoded this mesh.
     DracoMesh* mesh = dracoCache->findOrCreateMesh(draco.buffer_view);
     if (!mesh) {
-        slog.e << "Cannot decompress mesh, Draco decoding error." << io::endl;
+        LOG(ERROR) << "Cannot decompress mesh, Draco decoding error.";
         return;
     }
 
@@ -74,7 +74,7 @@ void decodeDracoMeshes(cgltf_data const* gltf, cgltf_primitive const* prim,
         const cgltf_int index = draco.attributes[i].index;
         cgltf_accessor* accessor = findAccessor(prim, type, index);
         if (!accessor) {
-            slog.w << "Cannot find matching accessor for Draco id " << id << io::endl;
+            LOG(WARNING) << "Cannot find matching accessor for Draco id " << id;
             continue;
         }
 
@@ -249,7 +249,7 @@ bool loadCgltfBuffers(cgltf_data const* gltf, char const* gltfPath,
     // Read data from the file system and base64 URIs.
     cgltf_result result = cgltf_load_buffers(&options, (cgltf_data*) gltf, gltfPath);
     if (result != cgltf_result_success) {
-        slog.e << "Unable to load resources." << io::endl;
+        LOG(ERROR) << "Unable to load resources.";
         return false;
     }
 
@@ -257,7 +257,7 @@ bool loadCgltfBuffers(cgltf_data const* gltf, char const* gltfPath,
 
 #ifndef NDEBUG
     if (cgltf_validate((cgltf_data*) gltf) != cgltf_result_success) {
-        slog.e << "Failed cgltf validation." << io::endl;
+        LOG(ERROR) << "Failed cgltf validation.";
         return false;
     }
 #endif

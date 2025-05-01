@@ -3,7 +3,8 @@
 #include "Settings_generated.h"
 
 #include <filament/Options.h>
-#include <utils/Log.h>
+
+#include <absl/log/log.h>
 
 #include <ostream>
 #include <cstring>
@@ -80,7 +81,7 @@ int parse(jsmntok_t const* tokens, int i, const char* jsonChunk, float* val) {
 int parse(jsmntok_t const* tokens, int i, const char* jsonChunk, float* vals, int size) {
     CHECK_TOKTYPE(tokens[i], JSMN_ARRAY);
     if (tokens[i].size != size) {
-        slog.w << "Expected " << size << " floats, got " << tokens[i].size << io::endl;
+        LOG(WARNING) << "Expected " << size << " floats, got " << tokens[i].size;
         return i + 1 + tokens[i].size;
     }
     ++i;
@@ -135,7 +136,7 @@ int parse(jsmntok_t const* tokens, int i, const char* jsonChunk, {{$enum_name}}*
     {{- $value.Name }}")) { *out = {{$enum_name}}::{{.Name}}; }
     {{- end}}
     else {
-        slog.w << "Invalid {{$enum_name}}: '" << STR(tokens[i], jsonChunk) << "'" << io::endl;
+        LOG(WARNING) << "Invalid {{$enum_name}}: '" << STR(tokens[i], jsonChunk) << "'";
     }
     return i + 1;
 }
@@ -176,11 +177,11 @@ int parse(jsmntok_t const* tokens, int i, const char* jsonChunk, {{.QualifiedNam
         {{- end}}
         {{- end}}
         } else {
-            slog.w << "Invalid {{.BaseName}} key: '" << STR(tok, jsonChunk) << "'" << io::endl;
+            LOG(WARNING) << "Invalid {{.BaseName}} key: '" << STR(tok, jsonChunk) << "'";
             i = parse(tokens, i + 1);
         }
         if (i < 0) {
-            slog.e << "Invalid {{.BaseName}} value: '" << STR(tok, jsonChunk) << "'" << io::endl;
+            LOG(ERROR) << "Invalid {{.BaseName}} value: '" << STR(tok, jsonChunk) << "'";
             return i;
         }
     }

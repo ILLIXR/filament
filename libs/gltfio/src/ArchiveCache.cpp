@@ -24,11 +24,12 @@
 #include <utils/compiler.h>
 #include <utils/CString.h>
 #include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
 #include <utils/Panic.h>
 #include <utils/debug.h>
 #include <utils/memalign.h>
 #include <utils/ostream.h>
+
+#include <absl/log/log.h>
 
 #include <zstd.h>
 
@@ -48,8 +49,7 @@ constexpr static int DEBUG_SPEC_INDEX = -1;
 constexpr static void debugSuitability(int index, const char* msg) {
     if constexpr(DEBUG_SPEC_INDEX > 0) {
         if (index == DEBUG_SPEC_INDEX) {
-            slog.d << "Spec " << DEBUG_SPEC_INDEX
-                << " is unsuitable due to " << msg << io::endl;
+            DLOG(INFO) << "Spec " << DEBUG_SPEC_INDEX << " is unsuitable due to " << msg;
         }
     }
 }

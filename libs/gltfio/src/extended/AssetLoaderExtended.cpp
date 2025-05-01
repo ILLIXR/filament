@@ -25,8 +25,9 @@
 #include <filament/BufferObject.h>
 
 #include <utils/JobSystem.h>
-#include <utils/Log.h>
 #include <utils/Panic.h>
+
+#include <absl/log/log.h>
 
 #include <cgltf.h>
 
@@ -324,7 +325,7 @@ bool AssetLoaderExtended::createPrimitive(Input* input, Output* out,
     if (indexAccessor || prim->attributes_count > 0) {
         IndexBuffer::IndexType indexType;
         if (indexAccessor && !getIndexType(indexAccessor->component_type, &indexType)) {
-            utils::slog.e << "Unrecognized index type in " << name << utils::io::endl;
+            LOG(ERROR) << "Unrecognized index type in " << name;
             return false;
         }
         jobType |= INDEX_JOB;
@@ -369,20 +370,20 @@ bool AssetLoaderExtended::createPrimitive(Input* input, Output* out,
         // Translate the cgltf attribute enum into a Filament enum.
         VertexAttribute semantic;
         if (!getVertexAttrType(atype, &semantic)) {
-            utils::slog.e << "Unrecognized vertex semantic in " << name << utils::io::endl;
+            LOG(ERROR) << "Unrecognized vertex semantic in " << name;
             return false;
         }
         if (atype == cgltf_attribute_type_weights && index > 0) {
-            utils::slog.e << "Too many bone weights in " << name << utils::io::endl;
+            LOG(ERROR) << "Too many bone weights in " << name;
             continue;
         }
         if (atype == cgltf_attribute_type_joints && index > 0) {
-            utils::slog.e << "Too many joints in " << name << utils::io::endl;
+            LOG(ERROR) << "Too many joints in " << name;
             continue;
         }
         if (atype == cgltf_attribute_type_texcoord) {
             if (index >= UvMapSize) {
-                utils::slog.e << "Too many texture coordinate sets in " << name << utils::io::endl;
+                LOG(ERROR) << "Too many texture coordinate sets in " << name;
                 continue;
             }
             UvSet uvset = out->uvmap[index];
@@ -427,22 +428,21 @@ bool AssetLoaderExtended::createPrimitive(Input* input, Output* out,
 
         if (VertexBuffer::AttributeType fatype, actualType;
                 !getElementType(accessor->type, accessor->component_type, &fatype, &actualType)) {
-            utils::slog.e << "Unsupported accessor type in " << name << utils::io::endl;
+            LOG(ERROR) << "Unsupported accessor type in " << name;
             return false;
         }
 
         attributesMap[cattr] = { semantic, slotCount++ };
 
         if (accessor->count == 0) {
-            utils::slog.e << "Empty vertex buffer in " << name << utils::io::endl;
+            LOG(ERROR) << "Empty vertex buffer in " << name;
             return false;
         }
     }
 
     cgltf_size targetsCount = prim->targets_count;
     if (targetsCount > MAX_MORPH_TARGETS) {
-        utils::slog.w << "WARNING: Exceeded max morph target count of " << MAX_MORPH_TARGETS
-                      << utils::io::endl;
+        LOG(WARNING) << "WARNING: Exceeded max morph target count of " << MAX_MORPH_TARGETS;
         targetsCount = MAX_MORPH_TARGETS;
     }
 
@@ -460,14 +460,14 @@ bool AssetLoaderExtended::createPrimitive(Input* input, Output* out,
 
             if (atype != cgltf_attribute_type_position && atype != cgltf_attribute_type_normal &&
                     atype != cgltf_attribute_type_tangent) {
-                utils::slog.e << "Only positions, normals, and tangents can be morphed."
-                              << " type=" << static_cast<int>(atype) << utils::io::endl;
+                LOG(ERROR) << "Only positions, normals, and tangents can be morphed."
+                           << " type=" << static_cast<int>(atype);
                 return false;
             }
 
             if (VertexBuffer::AttributeType fatype, actualType; !getElementType(accessor->type,
                         accessor->component_type, &fatype, &actualType)) {
-                utils::slog.e << "Unsupported accessor type in " << name << utils::io::endl;
+                LOG(ERROR) << "Unsupported accessor type in " << name;
                 return false;
             }
 
@@ -520,7 +520,7 @@ bool AssetLoaderExtended::createPrimitive(Input* input, Output* out,
     }
 
     if (!hasUv1 && numUvSets > 1) {
-        utils::slog.w << "Missing UV1 data in " << name << utils::io::endl;
+        LOG(WARNING) << "Missing UV1 data in " << name;
         attributesMap[{cgltf_attribute_type_texcoord, GENERATED_1}] = {VertexAttribute::UV1,
                 slotCount++};
     }

@@ -22,8 +22,9 @@
 #include <filament/Scene.h>
 
 #include <utils/EntityManager.h>
-#include <utils/Log.h>
 #include <utils/NameComponentManager.h>
+
+#include <absl/log/log.h>
 
 #include "GltfEnums.h"
 #include "Wireframe.h"
@@ -109,7 +110,7 @@ void FFilamentAsset::addTextureBinding(MaterialInstance* materialInstance,
         TextureProvider::TextureFlags flags) {
     if (!srcTexture->image && !srcTexture->basisu_image) {
 #ifndef NDEBUG
-        slog.w << "Texture is missing image (" << srcTexture->name << ")." << io::endl;
+        LOG(WARNING) << "Texture is missing image (" << srcTexture->name << ").";
 #endif
         return;
     }

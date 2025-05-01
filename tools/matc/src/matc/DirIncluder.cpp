@@ -16,7 +16,7 @@
 
 #include "DirIncluder.h"
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include <fstream>
 
@@ -41,13 +41,13 @@ bool DirIncluder::operator()(const utils::CString& includedBy, filamat::IncludeR
     const utils::Path headerPath = getHeaderPath();
 
     if (!headerPath.isFile()) {
-        utils::slog.e << "File " << headerPath << " does not exist." << utils::io::endl;
+        LOG(ERROR) << "File " << headerPath << " does not exist.";
         return false;
     }
 
     std::ifstream stream(headerPath.getPath(), std::ios::binary);
     if (!stream) {
-        utils::slog.e << "Unable to open " << headerPath << "." << utils::io::endl;
+        LOG(ERROR) << "Unable to open " << headerPath << ".";
         return false;
     }
 

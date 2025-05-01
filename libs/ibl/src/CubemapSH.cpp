@@ -25,6 +25,8 @@
 #include <utils/Log.h>
 #include <utils/JobSystem.h>
 
+#include <absl/log/log.h>
+
 #include <math/mat4.h>
 
 #include <array>
@@ -497,7 +499,7 @@ void CubemapSH::windowSH(std::unique_ptr<float3[]>& sh, size_t numBands, float c
         }
     }
 
-    //slog.d << cutoff << io::endl;
+    //DLOG(INFO) << cutoff;
     for (ssize_t l = 0; l < numBands; l++) {
         float w = sincWindow(l, cutoff);
         sh[SHindex(0, l)] *= w;
@@ -606,7 +608,7 @@ void CubemapSH::renderSH(JobSystem& js, Cubemap& cm,
             [&](State& state) {
                 prototype.min = min(prototype.min, state.min);
             }, prototype);
-    //slog.d << prototype.min << io::endl;
+    //DLOG(INFO) << prototype.min;
 }
 
 /*

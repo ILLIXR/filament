@@ -80,7 +80,8 @@
 
 #include <utils/EntityManager.h>
 #include <utils/NameComponentManager.h>
-#include <utils/Log.h>
+
+#include <absl/log/log.h>
 
 #include <stb_image.h>
 
@@ -1894,7 +1895,7 @@ class_<SurfaceOrientation>("SurfaceOrientation")
                 break;
             }
             default:
-                utils::slog.e << "Unsupported quaternion type." << utils::io::endl;
+                LOG(ERROR) << "Unsupported quaternion type.";
         }
     }), allow_raw_pointers());
 

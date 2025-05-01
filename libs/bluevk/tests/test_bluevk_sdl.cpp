@@ -28,7 +28,7 @@
 
 #include <bluevk/BlueVK.h>
 
-#include <utils/Log.h>
+#include <absl/log/log.h>
 
 #include <math/scalar.h>
 
@@ -104,8 +104,7 @@ static void createInstance() {
     instanceCreateInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     instanceCreateInfo.pApplicationInfo = &appInfo;
     if (!SDL_Vulkan_GetInstanceExtensions(gWindow, &extensionCount, NULL)) {
-        utils::slog.e << "SDL_Vulkan_GetInstanceExtensions(): "
-                << SDL_GetError() << utils::io::endl;
+        LOG(ERROR) << "SDL_Vulkan_GetInstanceExtensions(): " << SDL_GetError();
         quit(2);
     }
     extensions = (const char**) SDL_malloc(sizeof(const char *) * extensionCount);
@@ -115,8 +114,7 @@ static void createInstance() {
     }
     if (!SDL_Vulkan_GetInstanceExtensions(gWindow, &extensionCount, extensions)) {
         SDL_free((void*)extensions);
-        utils::slog.e << "SDL_Vulkan_GetInstanceExtensions(): "
-                << SDL_GetError() << utils::io::endl;
+        LOG(ERROR) << "SDL_Vulkan_GetInstanceExtensions(): " << SDL_GetError();
         quit(2);
     }
     instanceCreateInfo.enabledExtensionCount = extensionCount;
@@ -126,7 +124,7 @@ static void createInstance() {
 
     if (result != VK_SUCCESS) {
         gVulkanDriver.instance = VK_NULL_HANDLE;
-        utils::slog.e << "vkCreateInstance(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkCreateInstance(): " << result;
         quit(2);
     }
 }
@@ -134,8 +132,7 @@ static void createInstance() {
 static void createSurface() {
     if (!SDL_Vulkan_CreateSurface(gWindow, gVulkanDriver.instance, &gVulkanDriver.surface)) {
         gVulkanDriver.surface = VK_NULL_HANDLE;
-        utils::slog.e << "SDL_Vulkan_CreateSurface(): "
-                << SDL_GetError() << utils::io::endl;
+        LOG(ERROR) << "SDL_Vulkan_CreateSurface(): " << SDL_GetError();
         quit(2);
     }
 }
@@ -152,11 +149,11 @@ static void findPhysicalDevice() {
     VkResult result =
             vkEnumeratePhysicalDevices(gVulkanDriver.instance, &physicalDeviceCount, NULL);
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkEnumeratePhysicalDevices(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkEnumeratePhysicalDevices(): " << result;
         quit(2);
     }
     if (physicalDeviceCount == 0) {
-        utils::slog.e << "vkEnumeratePhysicalDevices(): no physical devices\n";
+        LOG(ERROR) << "vkEnumeratePhysicalDevices(): no physical devices";
         quit(2);
     }
     physicalDevices = (VkPhysicalDevice*) SDL_malloc(sizeof(VkPhysicalDevice) *
@@ -169,7 +166,7 @@ static void findPhysicalDevice() {
         vkEnumeratePhysicalDevices(gVulkanDriver.instance, &physicalDeviceCount, physicalDevices);
     if (result != VK_SUCCESS) {
         SDL_free(physicalDevices);
-        utils::slog.e << "vkEnumeratePhysicalDevices(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkEnumeratePhysicalDevices(): " << result;
         quit(2);
     }
     gVulkanDriver.physicalDevice = NULL;
@@ -220,8 +217,7 @@ static void findPhysicalDevice() {
                 SDL_free(physicalDevices);
                 SDL_free(queueFamiliesProperties);
                 SDL_free(deviceExtensions);
-                utils::slog.e << "vkGetPhysicalDeviceSurfaceSupportKHR(): "
-                        << result << utils::io::endl;
+                LOG(ERROR) << "vkGetPhysicalDeviceSurfaceSupportKHR(): " << result;
                 quit(2);
             }
             if (supported) {
@@ -239,8 +235,7 @@ static void findPhysicalDevice() {
             SDL_free(physicalDevices);
             SDL_free(queueFamiliesProperties);
             SDL_free(deviceExtensions);
-            utils::slog.e << "vkEnumerateDeviceExtensionProperties(): " << result
-                    << utils::io::endl;
+            LOG(ERROR) << "vkEnumerateDeviceExtensionProperties(): " << result;
             quit(2);
         }
         if (deviceExtensionCount == 0) continue;
@@ -262,8 +257,7 @@ static void findPhysicalDevice() {
             SDL_free(physicalDevices);
             SDL_free(queueFamiliesProperties);
             SDL_free(deviceExtensions);
-            utils::slog.e << "vkEnumerateDeviceExtensionProperties(): " << result
-                    << utils::io::endl;
+            LOG(ERROR) << "vkEnumerateDeviceExtensionProperties(): " << result;
             quit(2);
         }
         for (i = 0; i < deviceExtensionCount; i++) {
@@ -280,7 +274,7 @@ static void findPhysicalDevice() {
     SDL_free(queueFamiliesProperties);
     SDL_free(deviceExtensions);
     if (!gVulkanDriver.physicalDevice) {
-        utils::slog.e << "Vulkan: no viable physical devices found\n";
+        LOG(ERROR) << "Vulkan: no viable physical devices found";
         quit(2);
     }
 }
@@ -307,7 +301,7 @@ static void createDevice() {
         gVulkanDriver.physicalDevice, &deviceCreateInfo, NULL, &gVulkanDriver.device);
     if (result != VK_SUCCESS) {
         gVulkanDriver.device = VK_NULL_HANDLE;
-        utils::slog.e << "vkCreateDevice(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkCreateDevice(): " << result;
         quit(2);
     }
 }
@@ -330,7 +324,7 @@ static void createSemaphore(VkSemaphore *semaphore) {
     result = vkCreateSemaphore(gVulkanDriver.device, &createInfo, NULL, semaphore);
     if (result != VK_SUCCESS) {
         *semaphore = VK_NULL_HANDLE;
-        utils::slog.e << "vkCreateSemaphore(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkCreateSemaphore(): " << result;
         quit(2);
     }
 }
@@ -344,13 +338,12 @@ static void getSurfaceCaps() {
     VkResult result = vkGetPhysicalDeviceSurfaceCapabilitiesKHR(
         gVulkanDriver.physicalDevice, gVulkanDriver.surface, &gVulkanDriver.surfaceCapabilities);
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkGetPhysicalDeviceSurfaceCapabilitiesKHR(): " << result
-                << utils::io::endl;
+        LOG(ERROR) << "vkGetPhysicalDeviceSurfaceCapabilitiesKHR(): " << result;
         quit(2);
     }
     if (!(gVulkanDriver.surfaceCapabilities.supportedUsageFlags &
             VK_IMAGE_USAGE_TRANSFER_DST_BIT)) {
-        utils::slog.e << "Vulkan surface doesn't support VK_IMAGE_USAGE_TRANSFER_DST_BIT\n";
+        LOG(ERROR) << "Vulkan surface doesn't support VK_IMAGE_USAGE_TRANSFER_DST_BIT";
         quit(2);
     }
 }
@@ -360,7 +353,7 @@ static void getSurfaceFormats() {
             gVulkanDriver.surface, &gVulkanDriver.surfaceFormatsCount, NULL);
     if (result != VK_SUCCESS) {
         gVulkanDriver.surfaceFormatsCount = 0;
-        utils::slog.e << "vkGetPhysicalDeviceSurfaceFormatsKHR(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkGetPhysicalDeviceSurfaceFormatsKHR(): " << result;
         quit(2);
     }
     if (gVulkanDriver.surfaceFormatsCount > gVulkanDriver.surfaceFormatsAllocatedCount) {
@@ -379,7 +372,7 @@ static void getSurfaceFormats() {
             gVulkanDriver.surfaceFormats);
     if (result != VK_SUCCESS) {
         gVulkanDriver.surfaceFormatsCount = 0;
-        utils::slog.e << "vkGetPhysicalDeviceSurfaceFormatsKHR(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkGetPhysicalDeviceSurfaceFormatsKHR(): " << result;
         quit(2);
     }
 }
@@ -392,7 +385,7 @@ static void getSwapchainImages() {
         gVulkanDriver.device, gVulkanDriver.swapchain, &gVulkanDriver.swapchainImageCount, NULL);
     if (result != VK_SUCCESS) {
         gVulkanDriver.swapchainImageCount = 0;
-        utils::slog.e << "vkGetSwapchainImagesKHR(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkGetSwapchainImagesKHR(): " << result;
         quit(2);
     }
     gVulkanDriver.swapchainImages = (VkImage*) SDL_malloc(sizeof(VkImage) *
@@ -407,7 +400,7 @@ static void getSwapchainImages() {
         SDL_free(gVulkanDriver.swapchainImages);
         gVulkanDriver.swapchainImages = NULL;
         gVulkanDriver.swapchainImageCount = 0;
-        utils::slog.e << "vkGetSwapchainImagesKHR(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkGetSwapchainImagesKHR(): " << result;
         quit(2);
     }
 }
@@ -467,7 +460,7 @@ static SDL_bool createSwapchain() {
         vkDestroySwapchainKHR(gVulkanDriver.device, createInfo.oldSwapchain, NULL);
     if (result != VK_SUCCESS) {
         gVulkanDriver.swapchain = VK_NULL_HANDLE;
-        utils::slog.e << "vkCreateSwapchainKHR(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkCreateSwapchainKHR(): " << result;
         quit(2);
     }
     getSwapchainImages();
@@ -513,7 +506,7 @@ static void createCommandPool() {
         vkCreateCommandPool(gVulkanDriver.device, &createInfo, NULL, &gVulkanDriver.commandPool);
     if (result != VK_SUCCESS) {
         gVulkanDriver.commandPool = VK_NULL_HANDLE;
-        utils::slog.e << "vkCreateCommandPool(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkCreateCommandPool(): " << result;
         quit(2);
     }
 }
@@ -532,7 +525,7 @@ static void createCommandBuffers() {
     if (result != VK_SUCCESS) {
         SDL_free(gVulkanDriver.commandBuffers);
         gVulkanDriver.commandBuffers = NULL;
-        utils::slog.e << "vkAllocateCommandBuffers(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkAllocateCommandBuffers(): " << result;
         quit(2);
     }
 }
@@ -557,7 +550,7 @@ static void createFences() {
             }
             SDL_free(gVulkanDriver.fences);
             gVulkanDriver.fences = NULL;
-            utils::slog.e << "vkCreateFence(): " << result << utils::io::endl;
+            LOG(ERROR) << "vkCreateFence(): " << result;
             quit(2);
         }
     }
@@ -613,14 +606,14 @@ static void rerecordCommandBuffer(uint32_t frameIndex, const VkClearColorValue *
 
     VkResult result = vkResetCommandBuffer(commandBuffer, 0);
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkResetCommandBuffer(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkResetCommandBuffer(): " << result;
         quit(2);
     }
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
     beginInfo.flags = VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT;
     result = vkBeginCommandBuffer(commandBuffer, &beginInfo);
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkBeginCommandBuffer(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkBeginCommandBuffer(): " << result;
         quit(2);
     }
     recordPipelineImageBarrier(commandBuffer,
@@ -644,7 +637,7 @@ static void rerecordCommandBuffer(uint32_t frameIndex, const VkClearColorValue *
                                image);
     result = vkEndCommandBuffer(commandBuffer);
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkEndCommandBuffer(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkEndCommandBuffer(): " << result;
         quit(2);
     }
 }
@@ -671,7 +664,7 @@ static SDL_bool createNewSwapchainThings() {
 
 static void initVulkan() {
     if (!bluevk::initialize()) {
-        utils::slog.e << "BlueVK is unable to load entry points.\n";
+        LOG(ERROR) << "BlueVK is unable to load entry points.";
         quit(2);
     }
     createInstance();
@@ -708,7 +701,7 @@ static SDL_bool render() {
     }
 
     if (result != VK_SUBOPTIMAL_KHR && result != VK_SUCCESS) {
-        utils::slog.e << "vkAcquireNextImageKHR(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkAcquireNextImageKHR(): " << result;
         quit(2);
     }
 
@@ -716,12 +709,12 @@ static SDL_bool render() {
             gVulkanDriver.device, 1, &gVulkanDriver.fences[frameIndex], VK_FALSE, UINT64_MAX);
 
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkWaitForFences(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkWaitForFences(): " << result;
         quit(2);
     }
     result = vkResetFences(gVulkanDriver.device, 1, &gVulkanDriver.fences[frameIndex]);
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkResetFences(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkResetFences(): " << result;
         quit(2);
     }
     currentTime = (double) SDL_GetPerformanceCounter() / SDL_GetPerformanceFrequency();
@@ -741,7 +734,7 @@ static SDL_bool render() {
     result = vkQueueSubmit(
             gVulkanDriver.graphicsQueue, 1, &submitInfo, gVulkanDriver.fences[frameIndex]);
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkQueueSubmit(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkQueueSubmit(): " << result;
         quit(2);
     }
     presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
@@ -755,7 +748,7 @@ static SDL_bool render() {
         return createNewSwapchainThings();
     }
     if (result != VK_SUCCESS) {
-        utils::slog.e << "vkQueuePresentKHR(): " << result << utils::io::endl;
+        LOG(ERROR) << "vkQueuePresentKHR(): " << result;
         quit(2);
     }
     SDL_Vulkan_GetDrawableSize(gWindow, &w, &h);

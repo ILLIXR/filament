@@ -84,7 +84,7 @@ public:
      * This will print, when possible, the demangled names of functions corresponding to the
      * program-counter recorded.
      */
-    friend io::ostream& operator <<(io::ostream& stream, const CallStack& callstack);
+    friend std::ostream& operator <<(std::ostream& stream, const CallStack& callstack);
 
     bool operator <(const CallStack& rhs) const;
 

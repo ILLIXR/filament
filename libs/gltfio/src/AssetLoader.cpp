@@ -47,9 +47,10 @@
 #include <utils/compiler.h>
 #include <utils/EntityManager.h>
 #include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
 #include <utils/Panic.h>
 #include <utils/NameComponentManager.h>
+
+#include <absl/log/log.h>
 
 #define SYSTRACE_TAG SYSTRACE_TAG_GLTFIO
 #include <utils/Systrace.h>
@@ -123,16 +124,16 @@ static std::string getNodeName(cgltf_node const* node, char const* defaultNodeNa
 
     while ((idx = strOrig.find("\\u", cur)) != std::string::npos) {
         if (idx + 6 > strOrig.length()) {
-            utils::slog.w << "gltfio: Unable to interpret node name=" << strOrig
-                          << " as proper unicode encoding." << utils::io::endl;
+            LOG(WARNING) << "gltfio: Unable to interpret node name=" << strOrig
+                         << " as proper unicode encoding.";
             return strOrig;
         }
 
         // Turns string of the form \u0062 to 0x0062
         std::string const hexStr = strOrig.substr(idx + 2, 4);
         if (hexStr.find_first_not_of("0123456789abcdefABCDEF") != std::string::npos) {
-            utils::slog.w << "gltfio: Unable to interpret node name=" << strOrig
-                          << " as proper unicode encoding." << utils::io::endl;
+            LOG(WARNING) << "gltfio: Unable to interpret node name=" << strOrig
+                         << " as proper unicode encoding.";
             return strOrig;
         }
 
@@ -394,7 +395,7 @@ FFilamentAsset* FAssetLoader::createInstancedAsset(const uint8_t* bytes, uint32_
     cgltf_data* sourceAsset;
     cgltf_result result = cgltf_parse(&options, glbdata.data(), byteCount, &sourceAsset);
     if (result != cgltf_result_success) {
-        slog.e << "Unable to parse glTF file." << io::endl;
+        LOG(ERROR) << "Unable to parse glTF file.";
         return nullptr;
     }
 
@@ -421,12 +422,12 @@ FFilamentAsset* FAssetLoader::createInstancedAsset(const uint8_t* bytes, uint32_
 
 FilamentInstance* FAssetLoader::createInstance(FFilamentAsset* fAsset) {
     if (!fAsset->mSourceAsset) {
-        slog.e << "Source data has been released; asset is frozen." << io::endl;
+        LOG(ERROR) << "Source data has been released; asset is frozen.";
         return nullptr;
     }
     const cgltf_data* srcAsset = fAsset->mSourceAsset->hierarchy;
     if (srcAsset->scenes == nullptr) {
-        slog.e << "There is no scene in the asset." << io::endl;
+        LOG(ERROR) << "There is no scene in the asset.";
         return nullptr;
     }
 
@@ -477,7 +478,7 @@ FFilamentAsset* FAssetLoader::createRootAsset(const cgltf_data* srcAsset) {
     #if !GLTFIO_DRACO_SUPPORTED
     for (cgltf_size i = 0; i < srcAsset->extensions_required_count; i++) {
         if (!strcmp(srcAsset->extensions_required[i], "KHR_draco_mesh_compression")) {
-            slog.e << "KHR_draco_mesh_compression is not supported." << io::endl;
+            LOG(ERROR) << "KHR_draco_mesh_compression is not supported.";
             return nullptr;
         }
     }
@@ -752,12 +753,11 @@ void FAssetLoader::createRenderable(const cgltf_node* node, Entity entity, const
     for (cgltf_size index = 0; index < primitiveCount; ++index, ++outputPrim, ++inputPrim) {
         RenderableManager::PrimitiveType primType;
         if (!getPrimitiveType(inputPrim->type, &primType)) {
-            slog.e << "Unsupported primitive type in " << name << io::endl;
+            LOG(ERROR) << "Unsupported primitive type in " << name;
         }
 
         if (numMorphTargets != inputPrim->targets_count) {
-            slog.e << "Sister primitives must all have the same number of morph targets."
-                   << io::endl;
+            LOG(ERROR) << "Sister primitives must all have the same number of morph targets.";
             mError = true;
             continue;
         }
@@ -879,7 +879,7 @@ void FAssetLoader::createRenderable(const cgltf_node* node, Entity entity, const
     // If desired, clients can call "recomputeBoundingBoxes()" in FilamentInstance.
     Box box = Box().set(aabb.min, aabb.max);
     if (box.isEmpty()) {
-        slog.w << "Missing bounding box in " << name << io::endl;
+        LOG(WARNING) << "Missing bounding box in " << name;
         box = Box().set(std::numeric_limits<float>::lowest(), std::numeric_limits<float>::max());
     }
 
@@ -955,7 +955,7 @@ bool FAssetLoader::createPrimitive(const cgltf_primitive& inPrim, const char* na
     if (accessor) {
         IndexBuffer::IndexType indexType;
         if (!getIndexType(accessor->component_type, &indexType)) {
-            utils::slog.e << "Unrecognized index type in " << name << utils::io::endl;
+            LOG(ERROR) << "Unrecognized index type in " << name;
             return false;
         }
 
@@ -1032,21 +1032,21 @@ bool FAssetLoader::createPrimitive(const cgltf_primitive& inPrim, const char* na
         VertexAttribute semantic;
         if (!getCustomVertexAttrType(customIndex, &semantic) &&
                 !getVertexAttrType(atype, &semantic)) {
-            utils::slog.e << "Unrecognized vertex semantic in " << name << utils::io::endl;
+            LOG(ERROR) << "Unrecognized vertex semantic in " << name;
             return false;
         }
         if (atype == cgltf_attribute_type_weights && index > 0) {
-            utils::slog.e << "Too many bone weights in " << name << utils::io::endl;
+            LOG(ERROR) << "Too many bone weights in " << name;
             continue;
         }
         if (atype == cgltf_attribute_type_joints && index > 0) {
-            utils::slog.e << "Too many joints in " << name << utils::io::endl;
+            LOG(ERROR) << "Too many joints in " << name;
             continue;
         }
 
         if (atype == cgltf_attribute_type_texcoord) {
             if (index >= UvMapSize) {
-                utils::slog.e << "Too many texture coordinate sets in " << name << utils::io::endl;
+                LOG(ERROR) << "Too many texture coordinate sets in " << name;
                 continue;
             }
             UvSet uvset = outPrim->uvmap[index];
@@ -1090,7 +1090,7 @@ bool FAssetLoader::createPrimitive(const cgltf_primitive& inPrim, const char* na
         VertexBuffer::AttributeType fatype;
         VertexBuffer::AttributeType actualType;
         if (!getElementType(accessor->type, accessor->component_type, &fatype, &actualType)) {
-            slog.e << "Unsupported accessor type in " << name << io::endl;
+            LOG(ERROR) << "Unsupported accessor type in " << name;
             return false;
         }
         const int stride = (fatype == actualType) ? accessor->stride : 0;
@@ -1114,8 +1114,7 @@ bool FAssetLoader::createPrimitive(const cgltf_primitive& inPrim, const char* na
     cgltf_size targetsCount = inPrim.targets_count;
 
     if (targetsCount > MAX_MORPH_TARGETS) {
-        utils::slog.w << "WARNING: Exceeded max morph target count of "
-                << MAX_MORPH_TARGETS << utils::io::endl;
+        LOG(WARNING) << "WARNING: Exceeded max morph target count of " << MAX_MORPH_TARGETS;
         targetsCount = MAX_MORPH_TARGETS;
     }
 
@@ -1133,8 +1132,7 @@ bool FAssetLoader::createPrimitive(const cgltf_primitive& inPrim, const char* na
             }
 
             if (atype != cgltf_attribute_type_position) {
-                utils::slog.e << "Only positions, normals, and tangents can be morphed."
-                        << utils::io::endl;
+                LOG(ERROR) << "Only positions, normals, and tangents can be morphed.";
                 return false;
             }
 
@@ -1156,14 +1154,14 @@ bool FAssetLoader::createPrimitive(const cgltf_primitive& inPrim, const char* na
             VertexBuffer::AttributeType fatype;
             VertexBuffer::AttributeType actualType;
             if (!getElementType(accessor->type, accessor->component_type, &fatype, &actualType)) {
-                slog.e << "Unsupported accessor type in " << name << io::endl;
+                LOG(ERROR) << "Unsupported accessor type in " << name;
                 return false;
             }
         }
     }
 
     if (vertexCount == 0) {
-        slog.e << "Empty vertex buffer in " << name << io::endl;
+        LOG(ERROR) << "Empty vertex buffer in " << name;
         return false;
     }
 
@@ -1199,14 +1197,14 @@ bool FAssetLoader::createPrimitive(const cgltf_primitive& inPrim, const char* na
         needsDummyData = true;
         vbb.attribute(VertexAttribute::UV0, slot, VertexBuffer::AttributeType::USHORT2);
         vbb.normalized(VertexAttribute::UV0);
-        slog.w << "Missing UV0 data in " << name << io::endl;
+        LOG(WARNING) << "Missing UV0 data in " << name;
     }
 
     if (!hasUv1 && numUvSets > 1) {
         needsDummyData = true;
         vbb.attribute(VertexAttribute::UV1, slot, VertexBuffer::AttributeType::USHORT2);
         vbb.normalized(VertexAttribute::UV1);
-        slog.w << "Missing UV1 data in " << name << io::endl;
+        LOG(WARNING) << "Missing UV1 data in " << name;
     }
 
     vbb.bufferCount(needsDummyData ? slot + 1 : slot);
@@ -1328,7 +1326,7 @@ void FAssetLoader::createCamera(const cgltf_camera* camera, Entity entity, FFila
         filamentCamera->setProjection(Camera::Projection::ORTHO,
                 left, right, bottom, top, projection.znear, projection.zfar);
     } else {
-        slog.e << "Invalid GLTF camera type." << io::endl;
+        LOG(ERROR) << "Invalid GLTF camera type.";
         return;
     }
 
@@ -1481,7 +1479,7 @@ MaterialInstance* FAssetLoader::createMaterialInstance(const cgltf_material* inp
     MaterialInstance* mi = mMaterials.createMaterialInstance(&matkey, uvmap, inputMat->name,
             extras.c_str());
     if (!mi) {
-        slog.e << "No material with the specified requirements exists." << io::endl;
+        LOG(ERROR) << "No material with the specified requirements exists.";
         return nullptr;
     }
 
