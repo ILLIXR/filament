@@ -468,10 +468,12 @@ RenderableManager::Builder::Result RenderableManager::Builder::build(Engine& eng
         auto& entry = mImpl->mEntries[i];
 
         // entry.materialInstance must be set to something even if indices/vertices are null
-        FMaterial const* material;
+        FMaterial const* material = nullptr;
         if (!entry.materialInstance) {
+#if !defined(FILAMENT_TRIM_DEFAULT_MATERIAL)
             material = downcast(engine.getDefaultMaterial());
             entry.materialInstance = material->getDefaultInstance();
+#endif
         } else {
             material = downcast(entry.materialInstance->getMaterial());
         }
@@ -480,6 +482,12 @@ RenderableManager::Builder::Result RenderableManager::Builder::build(Engine& eng
         if (!entry.indices || !entry.vertices) {
             continue;
         }
+
+#if defined(FILAMENT_TRIM_DEFAULT_MATERIAL)
+        if (!entry.materialInstance) {
+            continue;
+        }
+#endif
 
         // we want a feature level violation to be a hard error (exception if enabled, or crash)
         FILAMENT_CHECK_PRECONDITION(downcast(engine).hasFeatureLevel(material->getFeatureLevel()))
@@ -700,7 +708,7 @@ void FRenderableManager::create(
                     primitives[i].setMorphingBufferOffset(morphing.offset);
                 }
             }
-            
+
             // When targetCount equal 0, boneCount>0 in this case, do an initialization for the
             // morphWeights uniform array to avoid crash on adreno gpu.
             if (UTILS_UNLIKELY(targetCount == 0 &&
