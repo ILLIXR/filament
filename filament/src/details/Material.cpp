@@ -1148,6 +1148,12 @@ void FMaterial::processDescriptorSets(FEngine& engine, MaterialParser const* con
 
     backend::DescriptorSetLayout descriptorSetLayout;
     success = parser->getDescriptorSetLayout(&descriptorSetLayout);
+    // HACK: turn all of the material samplers to fragment-only
+    if (mName == utils::CString("YourMaterialName")) {
+        for (auto& descriptor : descriptorSetLayout.bindings) {
+            descriptor.stageFlags &= (ShaderStageFlags::FRAGMENT | ShaderStageFlags::COMPUTE);
+        }
+    }
     assert_invariant(success);
     auto perMatLabel = mName;
     perMatLabel.append("_perMat");
