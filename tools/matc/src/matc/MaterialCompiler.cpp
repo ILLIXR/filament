@@ -34,8 +34,8 @@
 #include "JsonishParser.h"
 #include "ParametersProcessor.h"
 
-#include <GlslangToSpv.h>
-#include "glslang/Include/intermediate.h"
+#include <glslang/SPIRV/GlslangToSpv.h>
+#include <glslang/Include/intermediate.h>
 
 #include "sca/builtinResource.h"
 

@@ -75,17 +75,17 @@ include_directories(${PUBLIC_HDR_DIR} ${RESOURCE_DIR})
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
 
 target_link_libraries(${TARGET} PUBLIC
-        backend_headers
-        civetweb
-        filabridge
-        filaflat
-        filamat
-        glslang
-        matdbg_resources
-        SPIRV
-        spirv-cross-glsl
-        SPIRV-Tools
-        utils
+                      backend_headers
+                      civetweb::civetweb-cpp
+                      filabridge
+                      filaflat
+                      filamat
+                      glslang::glslang
+                      matdbg_resources
+                      glslang::SPIRV
+                      spirv-cross-glsl
+                      SPIRV-Tools
+                      utils
 )
 
 target_include_directories(${TARGET} PRIVATE ${filamat_SOURCE_DIR}/src)

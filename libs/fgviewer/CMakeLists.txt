@@ -4,7 +4,7 @@ project(fgviewer C ASM)
 set(TARGET fgviewer)
 set(PUBLIC_HDR_DIR include)
 
-if (CMAKE_CROSSCOMPILING)
+if(CMAKE_CROSSCOMPILING)
     include(${IMPORT_EXECUTABLES})
 endif()
 
@@ -33,9 +33,9 @@ set(SRCS
 set(RESOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
 set(RESOURCE_BINS
-        ${CMAKE_CURRENT_SOURCE_DIR}/web/api.js
-        ${CMAKE_CURRENT_SOURCE_DIR}/web/app.js
-        ${CMAKE_CURRENT_SOURCE_DIR}/web/index.html
+    ${CMAKE_CURRENT_SOURCE_DIR}/web/api.js
+    ${CMAKE_CURRENT_SOURCE_DIR}/web/app.js
+    ${CMAKE_CURRENT_SOURCE_DIR}/web/index.html
 )
 
 get_resgen_vars(${RESOURCE_DIR} fgviewer_resources)
@@ -46,7 +46,7 @@ add_custom_command(
         DEPENDS resgen ${RESOURCE_BINS}
 )
 
-if (DEFINED RESGEN_SOURCE_FLAGS)
+if(DEFINED RESGEN_SOURCE_FLAGS)
     set_source_files_properties(${RESGEN_SOURCE} PROPERTIES COMPILE_FLAGS ${RESGEN_SOURCE_FLAGS})
 endif()
 
@@ -65,9 +65,9 @@ include_directories(${PUBLIC_HDR_DIR} ${RESOURCE_DIR})
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
 
 target_link_libraries(${TARGET} PUBLIC
-        civetweb
-        fgviewer_resources
-        utils
+                      civetweb::civetweb-cpp
+                      fgviewer_resources
+                      utils
 )
 
 target_include_directories(${TARGET} PRIVATE ${filamat_SOURCE_DIR}/src)
@@ -79,7 +79,7 @@ set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 # Compiler flags
 # ==================================================================================================
 
-if (MSVC)
+if(MSVC)
 else()
     target_compile_options(${TARGET} PRIVATE -Wno-deprecated-register)
 endif()
@@ -95,7 +95,7 @@ set(FGVIEWER_DEPS
     fgviewer
     fgviewer_resources
     civetweb
-    )
+)
 
 set(FGVIEWER_COMBINED_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/libfgviewer_combined.a")
 combine_static_libs(fgviewer "${FGVIEWER_COMBINED_OUTPUT}" "${FGVIEWER_DEPS}")

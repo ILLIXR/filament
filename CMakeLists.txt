@@ -83,7 +83,8 @@ set(FILAMENT_OSMESA_PATH "" CACHE STRING
 
 # Enable exceptions by default in spirv-cross.
 set(SPIRV_CROSS_EXCEPTIONS_TO_ASSERTIONS OFF)
-
+set(CMAKE_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/cmake)
+set(ENV{PKG_CONFIG_PATH} "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig")
 # ==================================================================================================
 # CMake policies
 # ==================================================================================================
@@ -123,6 +124,7 @@ if (CCACHE_PROGRAM)
     endif()
 endif()
 
+find_package(PkgConfig REQUIRED)
 # ==================================================================================================
 # Support Vim and Visual Studio Code by generating compile_commands.json
 # ==================================================================================================
@@ -769,8 +771,95 @@ endfunction()
 # Sub-projects
 # ==================================================================================================
 
+macro(add_pkg)
+    set(_options CONFIG)
+    set(_single_args NAME PTH)
+    cmake_parse_arguments(ADD_PKG "${_options}" "${_single_args}" "" "${ARGN}")
+    if(NOT ADD_PKG_NAME)
+        message(FATAL_ERROR "PKG_NAME must be specified")
+    endif()
+    if(NOT ADD_PKG_PTH)
+        set(ADD_PKG_PTH "${ADD_PKG_NAME}")
+    endif()
+    if(ADD_PKG_CONFIG)
+        find_package(${ADD_PKG_NAME} QUIET CONFIG)
+    else()
+        find_package(${ADD_PKG_NAME} QUIET)
+    endif()
+    if(NOT ${ADD_PKG_NAME}_FOUND)
+        pkg_check_modules(${ADD_PKG_PTH} ${ADD_PKG_NAME})
+        if(NOT ${ADD_PKG_PTH}_FOUND)
+            include(${EXTERNAL}/${ADD_PKG_PTH}/tnt/CMakeLists.txt)
+        endif()
+    endif()
+endmacro()
 # Common to all platforms
-add_subdirectory(${EXTERNAL}/libgtest/tnt)
+find_package(GTest QUIET CONFIG)
+if(NOT GTest_FOUND)
+    pkg_check_modules(GTest REQUIRED gtest)
+else()
+    message(STATUS "GTest found: ${GTest_VERSION}")
+endif()
+include(${EXTERNAL}/abseil/tnt/CMakeLists.txt)
+
+add_subdirectory(${EXTERNAL}/basisu/tnt)
+
+find_package(civetweb REQUIRED CONFIG)
+
+find_package(imgui QUIET)
+if(NOT imgui_FOUND)
+    pkg_check_modules(imgui REQUIRED imgui)
+else()
+    message(STATUS "imgui found: ${imgui_VERSION}")
+endif()
+
+include(${EXTERNAL}/robin-map/tnt/CMakeLists.txt)
+
+add_subdirectory(${EXTERNAL}/smol-v/tnt)
+
+find_package(benchmark QUIET CONFIG)
+if(NOT benchmark_FOUND)
+    pkg_check_modules(benchmark REQUIRED benchmark)
+else()
+    message(STATUS "benchmark found: ${benchmark_VERSION}")
+endif()
+
+find_package(meshoptimizer REQUIRED CONFIG)
+
+add_subdirectory(${EXTERNAL}/mikktspace)
+
+add_subdirectory(${EXTERNAL}/cgltf/tnt)
+
+find_package(draco REQUIRED CONFIG)
+
+include(${EXTERNAL}/jsmn/tnt/CMakeLists.txt)
+
+pkg_check_modules(stb REQUIRED stb)
+
+add_subdirectory(${EXTERNAL}/getopt)
+
+add_subdirectory(${EXTERNAL}/perfetto/tnt)
+
+if(IS_HOST_PLATFORM)
+    find_package(assimp REQUIRED CONFIG)
+    pkg_check_modules(libpng REQUIRED libpng)
+    if(NOT FILAMENT_SKIP_SDL2)
+        find_package(sdl2 QUIET CONFIG)
+        if(NOT sdl2_FOUND)
+            pkg_check_modules(sdl2 REQUIRED sdl2)
+        else()
+            message(STATUS "libsdl2 found: ${sdl2_VERSION}")
+        endif()
+    endif()
+    find_package(ZLIB QUIET)
+    if(NOT ZLIB_FOUND)
+        pkg_check_modules(libz REQUIRED libz)
+    else()
+        message(STATUS "libz found: ${ZLIB_VERSION}")
+    endif()
+    find_package(tinyexr QUIET CONFIG)
+endif()
+
 add_subdirectory(${LIBRARIES}/camutils)
 add_subdirectory(${LIBRARIES}/filabridge)
 add_subdirectory(${LIBRARIES}/filaflat)
@@ -787,21 +876,7 @@ add_subdirectory(${LIBRARIES}/uberz)
 add_subdirectory(${LIBRARIES}/utils)
 add_subdirectory(${LIBRARIES}/viewer)
 add_subdirectory(${FILAMENT}/shaders)
-add_subdirectory(${EXTERNAL}/abseil/tnt)
-add_subdirectory(${EXTERNAL}/basisu/tnt)
-add_subdirectory(${EXTERNAL}/civetweb/tnt)
-add_subdirectory(${EXTERNAL}/imgui/tnt)
-add_subdirectory(${EXTERNAL}/robin-map/tnt)
-add_subdirectory(${EXTERNAL}/smol-v/tnt)
-add_subdirectory(${EXTERNAL}/benchmark/tnt)
-add_subdirectory(${EXTERNAL}/meshoptimizer/tnt)
-add_subdirectory(${EXTERNAL}/mikktspace)
-add_subdirectory(${EXTERNAL}/cgltf/tnt)
-add_subdirectory(${EXTERNAL}/draco/tnt)
-add_subdirectory(${EXTERNAL}/jsmn/tnt)
-add_subdirectory(${EXTERNAL}/stb/tnt)
-add_subdirectory(${EXTERNAL}/getopt)
-add_subdirectory(${EXTERNAL}/perfetto/tnt)
+
 
 # Note that this has to be placed after mikktspace in order for combine_static_libs to work.
 add_subdirectory(${LIBRARIES}/geometry)
@@ -809,10 +884,28 @@ add_subdirectory(${LIBRARIES}/geometry)
 if (FILAMENT_BUILD_FILAMAT OR IS_HOST_PLATFORM)
     # spirv-tools must come before filamat, as filamat relies on the presence of the
     # spirv-tools_SOURCE_DIR variable.
-    set(SPIRV-Headers_SOURCE_DIR ${EXTERNAL}/spirv-headers)
-    add_subdirectory(${EXTERNAL}/spirv-tools)
-    add_subdirectory(${EXTERNAL}/glslang/tnt)
-    add_subdirectory(${EXTERNAL}/spirv-cross/tnt)
+    find_package(SPIRV-Tools QUIET CONFIG)
+    find_package(SPIRV-Tools-opt QUIET CONFIG)
+    if(NOT SPIRV-Tools_FOUND)
+        pkg_check_modules(spirv-tools REQUIRED SPIRV-Tools)
+    else()
+        message(STATUS "SPIRV-Tools found")
+    endif()
+    find_package(glslang QUIET CONFIG)
+    if(NOT glslang_FOUND)
+        pkg_check_modules(glslang REQUIRED glslang)
+    else()
+        message(STATUS "GLSLang found")
+    endif()
+    find_package(spirv_cross_core CONFIG)
+    find_package(spirv_cross_glsl CONFIG)
+    find_package(spirv_cross_msl CONFIG)
+    find_package(spirv_cross_cpp QUIET CONFIG)
+    if(NOT spirv_cross_cpp_FOUND)
+        pkg_check_modules(spirv_cross_cpp REQUIRED spirv-cross-c-shared)
+    else()
+        message(STATUS "SPIRV-Cross found")
+    endif()
     add_subdirectory(${LIBRARIES}/filamat)
 
     # the material debugger requires filamat
@@ -828,8 +921,18 @@ endif()
 if (FILAMENT_SUPPORTS_VULKAN)
     add_subdirectory(${LIBRARIES}/bluevk)
     add_subdirectory(${EXTERNAL}/vkmemalloc/tnt)
-    set(SPIRV_HEADERS_SKIP_EXAMPLES ON)
-    add_subdirectory(${EXTERNAL}/spirv-headers)
+    find_package(glslang QUIET CONFIG)
+    if(NOT glslang_FOUND)
+        pkg_check_modules(glslang REQUIRED glslang)
+    else()
+        message(STATUS "GLSLang found")
+    endif()
+    find_package(SPIRV-Headers QUIET CONFIG)
+    if(NOT SPIRV-Headers_FOUND)
+        pkg_check_modules(SPIRV-Headers REQUIRED SPIRV-Headers)
+    else()
+        message(STATUS "SPIRV-Headers found")
+    endif()
 endif()
 
 if (FILAMENT_SUPPORTS_WEBGPU)
@@ -857,12 +960,6 @@ if (IS_HOST_PLATFORM)
 
     add_subdirectory(${FILAMENT}/samples)
 
-    add_subdirectory(${EXTERNAL}/libassimp/tnt)
-    add_subdirectory(${EXTERNAL}/libpng/tnt)
-    add_subdirectory(${EXTERNAL}/libsdl2/tnt)
-    add_subdirectory(${EXTERNAL}/libz/tnt)
-    add_subdirectory(${EXTERNAL}/tinyexr/tnt)
-
     add_subdirectory(${TOOLS}/cmgen)
     add_subdirectory(${TOOLS}/cso-lut)
     add_subdirectory(${TOOLS}/filamesh)
@@ -885,3 +982,8 @@ endif()
 if (NOT CMAKE_CROSSCOMPILING)
     export(TARGETS matc cmgen filamesh mipgen resgen uberz glslminifier FILE ${IMPORT_EXECUTABLES})
 endif()
+
+#get_cmake_property(_variableNames VARIABLES)
+#foreach (_variableName ${_variableNames})
+#    message(STATUS "${_variableName}=${${_variableName}}")
+#endforeach()

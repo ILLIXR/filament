@@ -86,5 +86,5 @@ endif()
 
 # and we're linking against the libraries below, importing their public headers
 target_link_libraries(test_${TARGET} LINK_PUBLIC ${TARGET})
-target_link_libraries(test_${TARGET} LINK_PUBLIC gtest)
+target_link_libraries(test_${TARGET} LINK_PUBLIC GTest::gtest)
 set_target_properties(test_${TARGET} PROPERTIES FOLDER Tests)

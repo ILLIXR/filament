@@ -3,8 +3,13 @@ project(jsmn)
 
 set(TARGET jsmn)
 
-set(PUBLIC_HDR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
-
+find_path(PUBLIC_HDR_DIR jsmn.h)
+if(NOT PUBLIC_HDR_DIR)
+    message(STATUS "Using bundled jsmn.h")
+    set(PUBLIC_HDR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
+else()
+    message(STATUS "Found jsmn.h")
+endif()
 set(PUBLIC_HDRS ${PUBLIC_HDR_DIR}/jsmn.h)
 
 include_directories(${PUBLIC_HDR_DIR})

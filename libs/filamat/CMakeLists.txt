@@ -97,10 +97,10 @@ target_include_directories(${TARGET} PRIVATE ${spirv-tools_SOURCE_DIR}/include)
 # we need to force archive re-scan on new symbol dependencies via start/end-group.
 # Read more about this here https://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking
 if (APPLE OR MSVC)
-    target_link_libraries(${TARGET} glslang SPIRV SPIRV-Tools-opt spirv-cross-glsl)
+    target_link_libraries(${TARGET} glslang::glslang glslang::SPIRV SPIRV-Tools-opt spirv-cross-glsl)
 else()
     target_link_libraries(${TARGET}
-            -Wl,--start-group glslang SPIRV SPIRV-Tools-opt spirv-cross-glsl -Wl,--end-group)
+            -Wl,--start-group glslang::glslang glslang::SPIRV spirv-cross-glsl spirv-cross-msl glslang::SPVRemapper -Wl,--end-group)
 endif()
 
 # ==================================================================================================
@@ -164,6 +164,6 @@ if (IS_HOST_PLATFORM)
 
     add_executable(${TARGET} ${SRCS})
     target_include_directories(${TARGET} PRIVATE src)
-    target_link_libraries(${TARGET} filamat gtest)
+    target_link_libraries(${TARGET} filamat GTest::gtest SPIRV-Tools-opt)
     set_target_properties(${TARGET} PROPERTIES FOLDER Tests)
 endif()

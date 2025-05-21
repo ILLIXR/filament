@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(filamentapp C ASM)
 
-if (FILAMENT_SKIP_SAMPLES)
+if(FILAMENT_SKIP_SAMPLES)
     return()
 endif()
 
@@ -10,69 +10,69 @@ set(PUBLIC_HDR_DIR include)
 
 set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
 set(GENERATION_ROOT ${CMAKE_CURRENT_BINARY_DIR})
-set(RESOURCE_DIR  "${GENERATION_ROOT}/generated/resources")
-set(MATERIAL_DIR  "${GENERATION_ROOT}/generated/material")
+set(RESOURCE_DIR "${GENERATION_ROOT}/generated/resources")
+set(MATERIAL_DIR "${GENERATION_ROOT}/generated/material")
 
 # ==================================================================================================
 # Headers, sources, libraries, and resources.
 # ==================================================================================================
 
 set(PUBLIC_HDRS
-        include/filamentapp/Config.h
-        include/filamentapp/Cube.h
-        include/filamentapp/FilamentApp.h
-        include/filamentapp/IBL.h
-        include/filamentapp/IcoSphere.h
-        include/filamentapp/MeshAssimp.h
-        include/filamentapp/NativeWindowHelper.h
-        include/filamentapp/Sphere.h
+    include/filamentapp/Config.h
+    include/filamentapp/Cube.h
+    include/filamentapp/FilamentApp.h
+    include/filamentapp/IBL.h
+    include/filamentapp/IcoSphere.h
+    include/filamentapp/MeshAssimp.h
+    include/filamentapp/NativeWindowHelper.h
+    include/filamentapp/Sphere.h
 )
 
 set(SRCS
-        src/Cube.cpp
-        src/FilamentApp.cpp
-        src/IBL.cpp
-        src/IcoSphere.cpp
-        src/MeshAssimp.cpp
-        src/Sphere.cpp
+    src/Cube.cpp
+    src/FilamentApp.cpp
+    src/IBL.cpp
+    src/IcoSphere.cpp
+    src/MeshAssimp.cpp
+    src/Sphere.cpp
 )
 
 set(LIBS
-        assimp
-        camutils
-        filagui
-        filamat
-        filament
-        filament-iblprefilter
-        geometry
-        getopt
-        image
-        imageio
-        imgui
-        ktxreader
-        math
-        sdl2
-        stb
-        utils
+    assimp::assimp
+    camutils
+    filagui
+    filamat
+    filament
+    filament-iblprefilter
+    geometry
+    getopt
+    image
+    imageio
+    ${imgui_LIBRARIES}
+    ktxreader
+    math
+    SDL2::SDL2
+    stb
+    utils
 )
 
 set(MATERIAL_SRCS
-        materials/aiDefaultMat.mat
-        materials/aiDefaultTrans.mat
-        materials/depthVisualizer.mat
-        materials/transparentColor.mat
+    materials/aiDefaultMat.mat
+    materials/aiDefaultTrans.mat
+    materials/depthVisualizer.mat
+    materials/transparentColor.mat
 )
 
-if (APPLE)
+if(APPLE)
     list(APPEND SRCS src/NativeWindowHelperCocoa.mm)
     list(APPEND LIBS "-framework Cocoa -framework QuartzCore")
 endif()
 
-if (LINUX)
+if(LINUX)
     list(APPEND SRCS src/NativeWindowHelperLinux.cpp)
 endif()
 
-if (WIN32)
+if(WIN32)
     list(APPEND SRCS src/NativeWindowHelperWindows.cpp)
     list(APPEND LIBS sdl2main)
 endif()
@@ -81,7 +81,7 @@ endif()
 # Compile resources
 # ==================================================================================================
 
-if (CMAKE_CROSSCOMPILING)
+if(CMAKE_CROSSCOMPILING)
     include(${IMPORT_EXECUTABLES})
 endif()
 
@@ -90,16 +90,16 @@ file(MAKE_DIRECTORY ${RESOURCE_DIR})
 
 set(RESOURCE_BINS)
 
-set (MATC_FLAGS ${MATC_BASE_FLAGS})
-if (FILAMENT_SAMPLES_STEREO_TYPE STREQUAL "instanced")
-    set (MATC_FLAGS ${MATC_FLAGS} -PstereoscopicType=instanced)
+set(MATC_FLAGS ${MATC_BASE_FLAGS})
+if(FILAMENT_SAMPLES_STEREO_TYPE STREQUAL "instanced")
+    set(MATC_FLAGS ${MATC_FLAGS} -PstereoscopicType=instanced)
     add_definitions(-DFILAMENT_SAMPLES_STEREO_TYPE_INSTANCED)
-elseif (FILAMENT_SAMPLES_STEREO_TYPE STREQUAL "multiview")
-    set (MATC_FLAGS ${MATC_FLAGS} -PstereoscopicType=multiview)
+elseif(FILAMENT_SAMPLES_STEREO_TYPE STREQUAL "multiview")
+    set(MATC_FLAGS ${MATC_FLAGS} -PstereoscopicType=multiview)
     add_definitions(-DFILAMENT_SAMPLES_STEREO_TYPE_MULTIVIEW)
-endif ()
+endif()
 
-foreach (mat_src ${MATERIAL_SRCS})
+foreach(mat_src ${MATERIAL_SRCS})
     get_filename_component(localname "${mat_src}" NAME_WE)
     get_filename_component(fullname "${mat_src}" ABSOLUTE)
     set(output_path "${MATERIAL_DIR}/${localname}.filamat")
@@ -122,7 +122,7 @@ add_custom_command(
         COMMENT "Aggregating resources"
 )
 
-if (DEFINED RESGEN_SOURCE_FLAGS)
+if(DEFINED RESGEN_SOURCE_FLAGS)
     set_source_files_properties(${RESGEN_SOURCE} PROPERTIES COMPILE_FLAGS ${RESGEN_SOURCE_FLAGS})
 endif()
 
@@ -143,7 +143,7 @@ add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
 
 target_link_libraries(${TARGET} PUBLIC ${LIBS} filamentapp-resources)
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR} ${imgui_INCLUDE_DIRS})
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 target_include_directories(${TARGET} PRIVATE ${GENERATION_ROOT})
 
@@ -151,7 +151,7 @@ target_include_directories(${TARGET} PRIVATE ${GENERATION_ROOT})
 # Compiler flags
 # ==================================================================================================
 
-if (MSVC)
+if(MSVC)
 else()
     target_compile_options(${TARGET} PRIVATE -Wno-deprecated-register)
 endif()
@@ -160,7 +160,7 @@ endif()
 # sub-directory named after the configuration, like "Debug" or "Release".
 # For these generators, in order to find assets, we must "walk" up an additional directory.
 get_property(_isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
-if (_isMultiConfig)
+if(_isMultiConfig)
     target_compile_definitions(${TARGET} PRIVATE RELATIVE_ASSET_PATH="..")
 else()
     target_compile_definitions(${TARGET} PRIVATE RELATIVE_ASSET_PATH=".")

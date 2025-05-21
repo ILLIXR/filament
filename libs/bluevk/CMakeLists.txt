@@ -31,7 +31,7 @@ set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 # test_bluevk is not supported on mobile or Windows
 if (NOT ANDROID AND NOT IOS AND NOT WIN32 AND NOT FILAMENT_SKIP_SDL2)
     add_executable(test_bluevk tests/test_bluevk_sdl.cpp)
-    target_link_libraries(test_bluevk PRIVATE dl bluevk sdl2)
+    target_link_libraries(test_bluevk PRIVATE dl bluevk SDL2::SDL2)
 endif()
 
 install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})

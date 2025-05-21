@@ -185,7 +185,7 @@ endif()
 
 add_executable(test_${TARGET} ${TEST_SRCS})
 
-target_link_libraries(test_${TARGET} PRIVATE gtest utils tsl math)
+target_link_libraries(test_${TARGET} PRIVATE GTest::gtest utils tsl math)
 set_target_properties(test_${TARGET} PROPERTIES FOLDER Tests)
 
 # ==================================================================================================
@@ -208,7 +208,7 @@ if (NOT WEBGL)
 
     add_executable(benchmark_${TARGET} ${BENCHMARK_SRCS})
 
-    target_link_libraries(benchmark_${TARGET} PRIVATE benchmark_main utils benchmark_${TARGET}_callee)
+    target_link_libraries(benchmark_${TARGET} PRIVATE benchmark::benchmark_main utils benchmark_${TARGET}_callee)
 
     set_target_properties(benchmark_${TARGET} PROPERTIES FOLDER Benchmarks)
 

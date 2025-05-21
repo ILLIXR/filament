@@ -16,12 +16,12 @@
 
 #include "GLSLPostProcessor.h"
 
-#include <GlslangToSpv.h>
-#include <SPVRemapper.h>
+#include <glslang/SPIRV/GlslangToSpv.h>
+#include <glslang/SPIRV/SPVRemapper.h>
 #include <spirv-tools/libspirv.hpp>
 
-#include <spirv_glsl.hpp>
-#include <spirv_msl.hpp>
+#include <spirv_cross/spirv_glsl.hpp>
+#include <spirv_cross/spirv_msl.hpp>
 
 #include "backend/DriverEnums.h"
 #include "private/filament/DescriptorSets.h"

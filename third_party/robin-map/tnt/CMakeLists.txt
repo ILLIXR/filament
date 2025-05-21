@@ -2,7 +2,14 @@ cmake_minimum_required(VERSION 3.19)
 project(tsl)
 
 set(TARGET tsl)
-set(OUR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
+find_package(tsl-robin-map QUIET CONFIG)
+if(tsl-robin-map_FOUND)
+    message(STATUS "Using robin-map: ${tsl-robin-map_VERSION}")
+    set(OUR_DIR "${tsl-robin-map_INCLUDE_DIRS}")
+else()
+    message(STATUS "Using bundled robin-map")
+    set(OUR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
+endif()
 
 # ==================================================================================================
 # Sources and headers
@@ -27,4 +34,6 @@ set_target_properties(${TARGET} PROPERTIES FOLDER ThirdParty)
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(FILES ${PUBLIC_HDRS} DESTINATION include/${TARGET})
+if(NOT tsl-robin-map_FOUND)
+    install(FILES ${PUBLIC_HDRS} DESTINATION include/${TARGET})
+endif()

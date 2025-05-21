@@ -59,7 +59,7 @@ add_executable(test_${TARGET}
         tests/test_vec.cpp
         tests/test_quat.cpp
 )
-target_link_libraries(test_${TARGET} PRIVATE math gtest)
+target_link_libraries(test_${TARGET} PRIVATE math GTest::gtest)
 set_target_properties(test_${TARGET} PROPERTIES FOLDER Tests)
 
 # ==================================================================================================
@@ -73,6 +73,6 @@ add_executable(benchmark_${TARGET} ${BENCHMARK_SRCS})
 
 target_compile_options(benchmark_${TARGET} PRIVATE ${OPTIMIZATION_FLAGS})
 
-target_link_libraries(benchmark_${TARGET} PRIVATE benchmark_main utils math)
+target_link_libraries(benchmark_${TARGET} PRIVATE benchmark::benchmark_main utils math)
 
 set_target_properties(benchmark_${TARGET} PROPERTIES FOLDER Benchmarks)

@@ -186,11 +186,11 @@ link_libraries(math utils filament cgltf stb ktxreader geometry tsl uberzlib)
 
 add_library(gltfio_core STATIC ${PUBLIC_HDRS} ${SRCS})
 
-target_include_directories(gltfio_core PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(gltfio_core PUBLIC ${PUBLIC_HDR_DIR} ${stb_INCLUDE_DIRS})
 set_target_properties(gltfio_core PROPERTIES FOLDER Libs)
 
 target_compile_definitions(gltfio_core PUBLIC -DGLTFIO_DRACO_SUPPORTED=1)
-target_link_libraries(gltfio_core PUBLIC dracodec meshoptimizer)
+target_link_libraries(gltfio_core PUBLIC draco::draco meshoptimizer::meshoptimizer)
 
 if (WEBGL_PTHREADS)
     target_compile_definitions(gltfio_core PUBLIC -DFILAMENT_WASM_THREADS)
@@ -253,7 +253,7 @@ if (TNT_DEV AND NOT WEBGL AND NOT ANDROID AND NOT IOS)
     add_dependencies(${TEST_TARGET} test_gltfio_files)
     set_property(TARGET test_gltfio PROPERTY LINK_LIBRARIES)
 
-    target_link_libraries(${TEST_TARGET} PRIVATE ${TARGET} gtest uberarchive)
+    target_link_libraries(${TEST_TARGET} PRIVATE ${TARGET} GTest::gtest uberarchive)
     if (NOT MSVC)
         target_compile_options(${TEST_TARGET} PRIVATE ${GLTFIO_WARNINGS})
     endif()

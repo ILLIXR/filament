@@ -28,7 +28,7 @@
 #include <algorithm>
 #include <sstream>
 
-#include <GlslangToSpv.h>
+#include <glslang/SPIRV/GlslangToSpv.h>
 
 #include "sca/builtinResource.h"
 #include "sca/GLSLTools.h"

@@ -18,7 +18,8 @@
 #define VIEWER_TIFF_EXPORT_H
 
 #include <fstream>
+#include<cstdint>
 
 void exportTIFF(void* buffer, uint32_t width, uint32_t height, std::ostream& outstream);
 
-#endif // VIEWER_TIFF_EXPORT_H
+#endif// VIEWER_TIFF_EXPORT_H

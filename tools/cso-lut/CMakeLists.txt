@@ -28,7 +28,7 @@ endif()
 # =================================================================================================
 # Licenses
 # ==================================================================================================
-set(MODULE_LICENSES getopt libpng tinyexr libz)
+set(MODULE_LICENSES getopt)
 set(GENERATION_ROOT ${CMAKE_CURRENT_BINARY_DIR}/generated)
 list_licenses(${GENERATION_ROOT}/licenses/licenses.inc ${MODULE_LICENSES})
 target_include_directories(${TARGET} PRIVATE ${GENERATION_ROOT})

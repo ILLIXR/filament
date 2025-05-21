@@ -16,7 +16,7 @@ set(SRCS
 # ==================================================================================================
 add_executable(${TARGET} ${SRCS})
 
-target_link_libraries(${TARGET} PRIVATE assimp getopt filameshio meshoptimizer)
+target_link_libraries(${TARGET} PRIVATE assimp::assimp getopt filameshio meshoptimizer::meshoptimizer)
 set_target_properties(${TARGET} PROPERTIES FOLDER Tools)
 
 # ==================================================================================================
@@ -35,7 +35,7 @@ endif()
 # =================================================================================================
 # Licenses
 # ==================================================================================================
-set(MODULE_LICENSES getopt libassimp meshoptimizer)
+set(MODULE_LICENSES getopt)
 set(GENERATION_ROOT ${CMAKE_CURRENT_BINARY_DIR}/generated)
 list_licenses(${GENERATION_ROOT}/licenses/licenses.inc ${MODULE_LICENSES})
 target_include_directories(${TARGET} PRIVATE ${GENERATION_ROOT})

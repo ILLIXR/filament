@@ -39,7 +39,7 @@ endif()
 # =================================================================================================
 # Licenses
 # ==================================================================================================
-set(MODULE_LICENSES getopt libpng tinyexr libz)
+set(MODULE_LICENSES getopt)
 set(GENERATION_ROOT ${CMAKE_CURRENT_BINARY_DIR}/generated)
 list_licenses(${GENERATION_ROOT}/licenses/licenses.inc ${MODULE_LICENSES})
 target_include_directories(${TARGET} PRIVATE ${GENERATION_ROOT})
@@ -54,6 +54,6 @@ install(TARGETS ${TARGET} RUNTIME DESTINATION bin)
 # ==================================================================================================
 if (NOT ANDROID)
     add_executable(test_${TARGET} tests/test_cmgen.cpp)
-    target_link_libraries(test_${TARGET} PRIVATE imageio gtest)
+    target_link_libraries(test_${TARGET} PRIVATE imageio GTest::gtest)
     set_target_properties(test_${TARGET} PROPERTIES FOLDER Tests)
 endif()
