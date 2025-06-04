@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include <gltfio/ResourceLoader.h>
-#include <gltfio/TextureProvider.h>
+#include "filament/gltfio/ResourceLoader.h"
+#include "filament/gltfio/TextureProvider.h"
 
 #include "GltfEnums.h"
 #include "FFilamentAsset.h"
@@ -24,28 +24,28 @@
 #include "Utility.h"
 #include "extended/ResourceLoaderExtended.h"
 
-#include <filament/BufferObject.h>
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/MaterialInstance.h>
-#include <filament/Texture.h>
-#include <filament/VertexBuffer.h>
-#include <filament/MorphTargetBuffer.h>
+#include "filament/BufferObject.h"
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/MaterialInstance.h"
+#include "filament/Texture.h"
+#include "filament/VertexBuffer.h"
+#include "filament/MorphTargetBuffer.h"
 
-#include <geometry/Transcoder.h>
+#include "filament/geometry/Transcoder.h"
 
-#include <utils/compiler.h>
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
-#include <utils/Systrace.h>
-#include <utils/Path.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/Path.h"
 
 #include <cgltf.h>
 #include <meshoptimizer.h>
 
-#include <math/quat.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/quat.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <tsl/robin_map.h>
 

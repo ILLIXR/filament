@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "fg/FrameGraphPass.h"
+#include "FrameGraphPass.h"
 
 namespace filament {
 

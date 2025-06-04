@@ -19,7 +19,7 @@
  * DO NOT EDIT
  **********************************************************************************************/
 
-#include <bluegl/BlueGL.h>
+#include "filament/bluegl/BlueGL.h"
 
 #ifdef __cplusplus
 extern "C" {

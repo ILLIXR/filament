@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#include <gltfio/MaterialProvider.h>
+#include "filament/gltfio/MaterialProvider.h"
 
-#include <filament/MaterialInstance.h>
-#include <filament/Texture.h>
-#include <filament/TextureSampler.h>
+#include "filament/MaterialInstance.h"
+#include "filament/Texture.h"
+#include "filament/TextureSampler.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include "ArchiveCache.h"
 

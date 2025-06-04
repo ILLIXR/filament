@@ -19,14 +19,14 @@
 
 #include "downcast.h"
 
-#include "backend/DriverApiForward.h"
+#include "filament/backend/DriverApiForward.h"
 
-#include <filament/LightManager.h>
+#include "filament/LightManager.h"
 
-#include <utils/Entity.h>
-#include <utils/SingleInstanceComponentManager.h>
+#include "filament/utils/Entity.h"
+#include "filament/utils/SingleInstanceComponentManager.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 namespace filament {
 
@@ -135,7 +135,7 @@ public:
     }
 
     bool isPointLight(Instance const i) const noexcept {
-        return getType(i) == Type::POINT; 
+        return getType(i) == Type::POINT;
     }
 
     bool isSpotLight(Instance const i) const noexcept {
@@ -153,7 +153,7 @@ public:
     }
 
     bool isSunLight(Instance const i) const noexcept {
-        return getType(i) == Type::SUN; 
+        return getType(i) == Type::SUN;
     }
 
     uint32_t getShadowMapSize(Instance const i) const noexcept {

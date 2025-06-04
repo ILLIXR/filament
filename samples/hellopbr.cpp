@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <filament/Engine.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/TransformManager.h>
-#include <filament/View.h>
+#include "filament/Engine.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/TransformManager.h"
+#include "filament/View.h"
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
-#include <filameshio/MeshReader.h>
+#include "filament/filameshio/MeshReader.h"
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/FilamentApp.h"
 
 #include <getopt/getopt.h>
 

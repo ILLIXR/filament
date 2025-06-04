@@ -27,8 +27,8 @@
 #include "vulkan/memory/ResourcePointer.h"
 #include "vulkan/utils/Image.h"
 
-#include <utils/Hash.h>
-#include <utils/RangeMap.h>
+#include "filament/utils/Hash.h"
+#include "filament/utils/RangeMap.h"
 
 #include <unordered_map>
 

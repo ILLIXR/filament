@@ -16,7 +16,7 @@
 
 #include "TangentSpaceMeshWrapper.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <memory>
 #include <unordered_map>

@@ -14,35 +14,35 @@
  * limitations under the License.
  */
 
-#include <filament/MaterialInstance.h>
+#include "filament/MaterialInstance.h"
 
-#include "RenderPass.h"
+#include "../RenderPass.h"
 
-#include "ds/DescriptorSetLayout.h"
+#include "../ds/DescriptorSetLayout.h"
 
-#include "details/Engine.h"
-#include "details/Material.h"
-#include "details/MaterialInstance.h"
-#include "details/Texture.h"
-#include "details/Stream.h"
+#include "Engine.h"
+#include "Material.h"
+#include "MaterialInstance.h"
+#include "Texture.h"
+#include "Stream.h"
 
-#include "private/filament/EngineEnums.h"
+#include "filament/filabridge/EngineEnums.h"
 
-#include <filament/MaterialEnums.h>
-#include <filament/TextureSampler.h>
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/TextureSampler.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/BitmaskEnum.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/CString.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/Log.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Log.h"
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
 #include <algorithm>
 #include <cmath>

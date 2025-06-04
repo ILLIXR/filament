@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <uberz/WritableArchive.h>
-#include <uberz/ReadableArchive.h>
+#include "filament/uberz/WritableArchive.h"
+#include "filament/uberz/ReadableArchive.h"
 
 #include <zstd.h>
 
 #include <string_view>
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 using namespace utils;
 using namespace std::literals;

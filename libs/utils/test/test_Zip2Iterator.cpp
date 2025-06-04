@@ -16,8 +16,8 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/Zip2Iterator.h>
-#include <utils/StructureOfArrays.h>
+#include "filament/utils/Zip2Iterator.h"
+#include "filament/utils/StructureOfArrays.h"
 
 #include <algorithm>
 #include <array>

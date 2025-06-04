@@ -16,7 +16,7 @@
 
 #include "AtlasAllocator.h"
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 namespace filament {
 

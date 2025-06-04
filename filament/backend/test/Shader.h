@@ -18,7 +18,7 @@
 #define TNT_SHADER_H
 
 #include "Lifetimes.h"
-#include "private/filament/SamplerInterfaceBlock.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
 
 namespace test {
 

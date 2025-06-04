@@ -19,7 +19,7 @@
 #include "VulkanConstants.h"
 #include "vulkan/utils/Image.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 // If any VkRenderPass or VkFramebuffer is unused for more than TIME_BEFORE_EVICTION frames, it
 // is evicted from the cache.

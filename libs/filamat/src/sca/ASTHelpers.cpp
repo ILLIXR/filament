@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include "ASTHelpers.h"
+#include "filament/filamat/sca/ASTHelpers.h"
 
-#include "GLSLTools.h"
+#include "filament/filamat/sca/GLSLTools.h"
 
 #include <glslang/Include/intermediate.h>
 #include <glslang/MachineIndependent/localintermediate.h>
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 using namespace glslang;
 

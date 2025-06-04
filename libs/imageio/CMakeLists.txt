@@ -8,11 +8,11 @@ set(PUBLIC_HDR_DIR include)
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-        include/imageio/BasisEncoder.h
-        include/imageio/HDRDecoder.h
-        include/imageio/ImageDecoder.h
-        include/imageio/ImageDiffer.h
-        include/imageio/ImageEncoder.h
+        include/filament/imageio/BasisEncoder.h
+        include/filament/imageio/HDRDecoder.h
+        include/filament/imageio/ImageDecoder.h
+        include/filament/imageio/ImageDiffer.h
+        include/filament/imageio/ImageEncoder.h
 )
 
 set(SRCS
@@ -29,8 +29,14 @@ set(SRCS
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR} ${libpng_INCLUDE_DIRS})
+target_include_directories(${TARGET} PUBLIC ${libpng_INCLUDE_DIRS})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
+
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 target_link_libraries(${TARGET} PUBLIC image math ${libpng_LIBRARIES} tinyexr::tinyexr utils z basis_encoder)
@@ -44,3 +50,8 @@ endif()
 if (NOT MSVC)
     target_compile_options(${TARGET} PRIVATE -Wno-deprecated-register)
 endif()
+
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)

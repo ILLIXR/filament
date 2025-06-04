@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <getopt/getopt.h>
 
@@ -24,11 +24,11 @@
 
 #include <tsl/robin_map.h>
 
-#include <utils/FixedCapacityVector.h>
-#include <utils/memalign.h>
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/memalign.h"
 
-#include <uberz/ReadableArchive.h>
-#include <uberz/WritableArchive.h>
+#include "filament/uberz/ReadableArchive.h"
+#include "filament/uberz/WritableArchive.h"
 
 #include <zstd.h>
 

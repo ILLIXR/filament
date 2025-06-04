@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/PlatformWGL.h>
+#include "filament/backend/platforms/PlatformWGL.h"
 
 #include <Wingdi.h>
 
@@ -32,8 +32,8 @@
 #include "GL/glext.h"
 #include "GL/wglext.h"
 
-#include <utils/Log.h>
-#include <utils/Panic.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
 
 namespace {
 

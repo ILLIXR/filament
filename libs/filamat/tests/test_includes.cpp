@@ -16,14 +16,14 @@
 
 #include <gtest/gtest.h>
 
-#include "filamat/MaterialBuilder.h"
+#include "filament/filamat/MaterialBuilder.h"
 
 #include "Includes.h"
 
 #include "MockIncluder.h"
 
-#include <utils/CString.h>
-#include <utils/JobSystem.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/JobSystem.h"
 
 #include <memory>
 
@@ -469,7 +469,7 @@ TEST(IncludeResolver, MultipleIncludesSameLineLineDirective) {
 
 // -------------------------------------------------------------------------------------------------
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 class MaterialBuilder : public ::testing::Test {
 protected:

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <ktxreader/Ktx1Reader.h>
-#include <ktxreader/Ktx2Reader.h>
+#include "filament/ktxreader/Ktx1Reader.h"
+#include "filament/ktxreader/Ktx2Reader.h"
 
-#include <filament/Engine.h>
-#include <filament/Texture.h>
+#include "filament/Engine.h"
+#include "filament/Texture.h"
 
 #include <gtest/gtest.h>
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <fstream>
 #include <vector>

@@ -50,21 +50,27 @@ else()
     set (BASIS_CONFIG ${BASIS_CONFIG} BASISD_SUPPORT_DXT5A=0 BASISD_SUPPORT_DXT1=0)
 endif()
 
-add_library(zstd ../zstd/zstd.c)
+pkg_check_modules(zstd REQUIRED libzstd)
+file(GLOB ENCODER_HDRS ../encoder/*.h)
+file(GLOB TRANCODER_HDRS ../transcoder/*.h)
 add_library(basis_encoder ${ENCODER_SRC})
+set_target_properties(basis_encoder PROPERTIES PUBLIC_HEADER "${ENCODER_HDRS}")
 add_library(basis_transcoder ${TRANSCODER_SRC})
+set_target_properties(basis_transcoder PROPERTIES PUBLIC_HEADER "${TRANSCODER_HDRS}")
 
 target_link_libraries(basis_transcoder zstd)
 target_link_libraries(basis_encoder basis_transcoder)
 
-target_include_directories(zstd PUBLIC ../zstd)
-target_include_directories(basis_encoder PUBLIC ../encoder)
-target_include_directories(basis_transcoder PUBLIC ../transcoder)
+target_include_directories(basis_encoder PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../encoder>
+                           $<INSTALL_INTERFACE:install/basisu>)
+target_include_directories(basis_transcoder PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../transcoder>
+                           $<INSTALL_INTERFACE:install/basisu>)
 
 target_compile_definitions(basis_encoder PRIVATE ${BASIS_CONFIG})
 target_compile_definitions(basis_transcoder PRIVATE ${BASIS_CONFIG})
 
-set_target_properties(zstd PROPERTIES FOLDER ThirdParty)
 set_target_properties(basis_encoder PROPERTIES FOLDER ThirdParty)
 set_target_properties(basis_transcoder PROPERTIES FOLDER ThirdParty)
 
@@ -73,12 +79,21 @@ if (IS_HOST_PLATFORM)
     target_link_libraries(basisu basis_encoder)
     set_target_properties(basisu PROPERTIES FOLDER ThirdParty)
     target_compile_definitions(basisu PRIVATE ${BASIS_CONFIG})
-    install(TARGETS basisu DESTINATION bin)
 
     if (NOT MSVC AND NOT ANDROID)
        target_link_libraries(basisu m pthread)
     endif()
+    install(TARGETS basisu EXPORT filament-targets
+            RUNTIME DESTINATION bin
+            PUBLIC_HEADER DESTINATION include/basisu
+    )
 endif()
 
-install(TARGETS basis_transcoder ARCHIVE DESTINATION lib/${DIST_DIR})
-install(TARGETS zstd ARCHIVE DESTINATION lib/${DIST_DIR})
+install(TARGETS basis_transcoder
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/basisu)
+install(TARGETS basis_encoder
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/basisu)

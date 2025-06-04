@@ -22,7 +22,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/Allocator.h>
+#include "filament/utils/Allocator.h"
 
 using namespace utils;
 

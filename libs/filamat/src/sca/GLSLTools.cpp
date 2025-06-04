@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#include "GLSLTools.h"
+#include "filament/filamat/sca/GLSLTools.h"
 
-#include <filamat/Enums.h>
-#include <filament/MaterialEnums.h>
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/Enums.h"
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
-#include "ASTHelpers.h"
+#include "filament/filamat/sca/ASTHelpers.h"
 
 // GLSLANG headers
 #include <glslang/Include/InfoSink.h>

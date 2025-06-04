@@ -16,18 +16,18 @@
 
 #include "ShadowMapDescriptorSet.h"
 
-#include "details/Camera.h"
-#include "details/Engine.h"
+#include "../details/Camera.h"
+#include "../details/Engine.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 #include <stdint.h>
 
@@ -140,4 +140,3 @@ void ShadowMapDescriptorSet::bind(DriverApi& driver) noexcept {
 }
 
 } // namespace filament
-

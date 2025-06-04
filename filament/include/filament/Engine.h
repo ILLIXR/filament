@@ -18,14 +18,14 @@
 #define TNT_FILAMENT_ENGINE_H
 
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Platform.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Platform.h"
 
-#include <utils/compiler.h>
-#include <utils/Invocable.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Invocable.h"
+#include "filament/utils/Slice.h"
 
 #include <initializer_list>
 #include <optional>
@@ -97,7 +97,7 @@ class TransformManager;
  * To use filament, an Engine instance must be created first:
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * #include <filament/Engine.h>
+ * #include "Engine.h"
  * using namespace filament;
  *
  * Engine* engine = Engine::create();
@@ -113,10 +113,10 @@ class TransformManager;
  *
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * #include <filament/Engine.h>
- * #include <filament/Renderer.h>
- * #include <filament/Scene.h>
- * #include <filament/View.h>
+ * #include "Engine.h"
+ * #include "Renderer.h"
+ * #include "Scene.h"
+ * #include "View.h"
  * using namespace filament;
  *
  * Engine* engine       = Engine::create();
@@ -611,7 +611,7 @@ public:
      *               \p engine is cleared upon return.
      *
      * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     * #include <filament/Engine.h>
+     * #include "Engine.h"
      * using namespace filament;
      *
      * Engine* engine = Engine::create();
@@ -638,7 +638,7 @@ public:
      * @param engine A pointer to the filament.Engine to be destroyed.
      *
      * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     * #include <filament/Engine.h>
+     * #include "Engine.h"
      * using namespace filament;
      *
      * Engine* engine = Engine::create();

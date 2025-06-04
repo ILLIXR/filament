@@ -17,8 +17,8 @@
 #ifndef TNT_FILAMENT_FG_DETAILS_RESOURCENODE_H
 #define TNT_FILAMENT_FG_DETAILS_RESOURCENODE_H
 
-#include "fg/details/DependencyGraph.h"
-#include "fg/details/Utilities.h"
+#include "DependencyGraph.h"
+#include "Utilities.h"
 
 namespace utils {
 class CString;

@@ -36,13 +36,13 @@
 #include "vulkan/memory/ResourcePointer.h"
 #include "vulkan/utils/Definitions.h"
 
-#include "backend/DriverEnums.h"
+#include "filament/backend/DriverEnums.h"
 
 #include "DriverBase.h"
 #include "private/backend/Driver.h"
 
-#include <utils/Allocator.h>
-#include <utils/compiler.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/compiler.h"
 
 namespace filament::backend {
 

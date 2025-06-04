@@ -17,13 +17,13 @@
 #ifndef TNT_GEOMETRY_TANGENTSPACEMESHIMPL_H
 #define TNT_GEOMETRY_TANGENTSPACEMESHIMPL_H
 
-#include <geometry/TangentSpaceMesh.h>
+#include "filament/geometry/TangentSpaceMesh.h"
 
-#include <math/mat3.h>
-#include <math/norm.h>
-#include <math/quat.h>
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
+#include "filament/math/quat.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <unordered_map>
 #include <utility>

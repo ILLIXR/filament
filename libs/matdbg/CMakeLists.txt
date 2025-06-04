@@ -13,12 +13,12 @@ endif()
 # ==================================================================================================
 
 set(PUBLIC_HDRS
-    include/matdbg/DebugServer.h
-    include/matdbg/JsonWriter.h
-    include/matdbg/ShaderReplacer.h
-    include/matdbg/ShaderExtractor.h
-    include/matdbg/ShaderInfo.h
-    include/matdbg/TextWriter.h
+    include/filament/matdbg/DebugServer.h
+    include/filament/matdbg/JsonWriter.h
+    include/filament/matdbg/ShaderReplacer.h
+    include/filament/matdbg/ShaderExtractor.h
+    include/filament/matdbg/ShaderInfo.h
+    include/filament/matdbg/TextWriter.h
 )
 
 set(SRCS
@@ -90,7 +90,10 @@ target_link_libraries(${TARGET} PUBLIC
 
 target_include_directories(${TARGET} PRIVATE ${filamat_SOURCE_DIR}/src)
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 # ==================================================================================================
@@ -122,6 +125,11 @@ set(MATDBG_COMBINED_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/libmatdbg_combined.a")
 combine_static_libs(matdbg "${MATDBG_COMBINED_OUTPUT}" "${MATDBG_DEPS}")
 
 set(MATDBG_LIB_NAME ${CMAKE_STATIC_LIBRARY_PREFIX}matdbg${CMAKE_STATIC_LIBRARY_SUFFIX})
-install(FILES "${MATDBG_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${MATDBG_LIB_NAME})
-# We do not need matdbg headers in the install directory
-# install(DIRECTORY ${PUBLIC_HDR_DIR}/matdbg DESTINATION include)
+set_target_properties(matdbg PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+
+install(TARGETS matdbg_resources matdbg
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
+#install(FILES "${MATDBG_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${MATDBG_LIB_NAME})

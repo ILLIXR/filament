@@ -17,24 +17,24 @@
 #ifndef TNT_FILAMENT_DETAILS_MATERIALINSTANCE_H
 #define TNT_FILAMENT_DETAILS_MATERIALINSTANCE_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include "UniformBuffer.h"
+#include "../UniformBuffer.h"
 
-#include "ds/DescriptorSet.h"
+#include "../ds/DescriptorSet.h"
 
-#include "details/Engine.h"
+#include "../details/Engine.h"
 
 #include "private/backend/DriverApi.h"
 
-#include <filament/MaterialInstance.h>
+#include "filament/MaterialInstance.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/BitmaskEnum.h>
-#include <utils/bitset.h>
-#include <utils/CString.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/bitset.h"
+#include "filament/utils/CString.h"
 
 #include <tsl/robin_map.h>
 
@@ -66,7 +66,7 @@ public:
     void terminate(FEngine& engine);
 
     void commitStreamUniformAssociations(FEngine::DriverApi& driver);
-    
+
     void commit(FEngine::DriverApi& driver) const;
 
     void use(FEngine::DriverApi& driver) const;

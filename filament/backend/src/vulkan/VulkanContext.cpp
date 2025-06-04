@@ -21,9 +21,9 @@
 #include "VulkanMemory.h"
 #include "VulkanTexture.h"
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <algorithm> // for std::max
 

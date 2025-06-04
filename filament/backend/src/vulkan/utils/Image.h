@@ -17,11 +17,11 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKAN_UTILS_IMAGE_H
 #define TNT_FILAMENT_BACKEND_VULKAN_UTILS_IMAGE_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 namespace filament::backend {
 

@@ -16,9 +16,9 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/sstream.h>
+#include "filament/utils/sstream.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 using namespace utils;
 using namespace utils::io;

@@ -17,20 +17,20 @@
 #ifndef TNT_FILAMENT_DETAILS_CAMERA_H
 #define TNT_FILAMENT_DETAILS_CAMERA_H
 
-#include <filament/Camera.h>
+#include "filament/Camera.h"
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <filament/Frustum.h>
+#include "filament/Frustum.h"
 
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/EngineEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/Entity.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/Panic.h"
 
-#include <math/mat4.h>
-#include <math/scalar.h>
+#include "filament/math/mat4.h"
+#include "filament/math/scalar.h"
 
 namespace filament {
 

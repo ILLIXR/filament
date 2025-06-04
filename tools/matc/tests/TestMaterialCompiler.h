@@ -19,7 +19,7 @@
 
 #include <stddef.h>
 
-#include <matc/MaterialCompiler.h>
+#include "../src/matc/MaterialCompiler.h"
 
 class TestMaterialCompiler {
 public:

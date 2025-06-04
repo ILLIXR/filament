@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <matc/DirIncluder.h>
+#include "../src/matc/DirIncluder.h"
 
 using namespace utils;
 using namespace filamat;

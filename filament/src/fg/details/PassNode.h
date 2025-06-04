@@ -17,14 +17,14 @@
 #ifndef TNT_FILAMENT_FG_DETAILS_PASSNODE_H
 #define TNT_FILAMENT_FG_DETAILS_PASSNODE_H
 
-#include "fg/details/DependencyGraph.h"
-#include "fg/details/Utilities.h"
-#include "fg/FrameGraph.h"
-#include "fg/FrameGraphRenderPass.h"
+#include "DependencyGraph.h"
+#include "Utilities.h"
+#include "../FrameGraph.h"
+#include "../FrameGraphRenderPass.h"
 
-#include "backend/DriverApiForward.h"
+#include "filament/backend/DriverApiForward.h"
 
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/TargetBufferInfo.h"
 
 #include <unordered_set>
 

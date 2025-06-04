@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include <gltfio/TextureProvider.h>
+#include "filament/gltfio/TextureProvider.h"
 
 #include <string>
 #include <vector>
 
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
 
-#include <filament/Engine.h>
-#include <filament/Texture.h>
+#include "filament/Engine.h"
+#include "filament/Texture.h"
 
 #include <stb_image.h>
 

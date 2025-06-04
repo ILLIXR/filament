@@ -16,8 +16,8 @@
 
 #include <gtest/gtest.h>
 
-#include <bluegl/BlueGLDefines.h>
-#include <bluegl/BlueGL.h>
+#include "filament/bluegl/BlueGLDefines.h"
+#include "filament/bluegl/BlueGL.h"
 
 #include "OpenGLSupport.hpp"
 

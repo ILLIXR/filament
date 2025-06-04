@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <filaflat/Unflattener.h>
+#include "filament/filaflat/Unflattener.h"
 
 namespace filaflat {
 

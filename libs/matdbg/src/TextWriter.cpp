@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <filaflat/ChunkContainer.h>
+#include "filament/filaflat/ChunkContainer.h"
 
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <matdbg/TextWriter.h>
-#include <matdbg/ShaderInfo.h>
+#include "filament/matdbg/TextWriter.h"
+#include "filament/matdbg/ShaderInfo.h"
 
 #include <sstream>
 #include <iomanip>

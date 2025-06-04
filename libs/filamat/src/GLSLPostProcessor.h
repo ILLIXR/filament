@@ -17,10 +17,10 @@
 #ifndef TNT_GLSLPOSTPROCESSOR_H
 #define TNT_GLSLPOSTPROCESSOR_H
 
-#include <filamat/MaterialBuilder.h>    // for MaterialBuilder:: enums
+#include "filament/filamat/MaterialBuilder.h"    // for MaterialBuilder:: enums
 
-#include <private/filament/Variant.h>
-#include <private/filament/SamplerInterfaceBlock.h>
+#include "filament/filabridge/Variant.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
 
 #include "ShaderMinifier.h"
 
@@ -28,9 +28,9 @@
 
 #include <glslang/Public/ShaderLang.h>
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <memory>
 #include <optional>

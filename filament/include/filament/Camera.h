@@ -19,14 +19,14 @@
 #ifndef TNT_FILAMENT_CAMERA_H
 #define TNT_FILAMENT_CAMERA_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mathfwd.h>
-#include <math/vec2.h>
-#include <math/vec4.h>
-#include <math/mat4.h>
+#include "filament/math/mathfwd.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec4.h"
+#include "filament/math/mat4.h"
 
 #include <math.h>
 

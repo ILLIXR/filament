@@ -43,5 +43,8 @@ target_include_directories(${TARGET} PRIVATE ${GENERATION_ROOT})
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(TARGETS ${TARGET} RUNTIME DESTINATION bin)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        RUNTIME DESTINATION bin
+)
 install(FILES "README.md" DESTINATION docs/ RENAME "${TARGET}.md")

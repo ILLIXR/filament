@@ -16,9 +16,9 @@
 
 #include "details/DebugRegistry.h"
 
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 namespace filament {
 
@@ -91,4 +91,3 @@ DebugRegistry::DataSource DebugRegistry::getDataSource(const char* name) const n
 
 
 } // namespace filament
-

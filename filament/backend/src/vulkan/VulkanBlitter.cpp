@@ -20,8 +20,8 @@
 #include "VulkanTexture.h"
 #include "vulkan/utils/Image.h"
 
-#include <utils/FixedCapacityVector.h>
-#include <utils/Panic.h>
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Panic.h"
 
 #include <smolv.h>
 

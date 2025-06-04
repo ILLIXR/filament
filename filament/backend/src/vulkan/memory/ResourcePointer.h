@@ -20,8 +20,8 @@
 #include "vulkan/memory/Resource.h"
 #include "vulkan/memory/ResourceManager.h"
 
-#include <backend/Handle.h>
-#include <utils/compiler.h>
+#include "filament/backend/Handle.h"
+#include "filament/utils/compiler.h"
 
 #include <utility>
 

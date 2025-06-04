@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
 #include "EntityManagerImpl.h"
 

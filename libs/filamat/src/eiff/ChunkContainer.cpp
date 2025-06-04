@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include "ChunkContainer.h"
-#include "Flattener.h"
+#include "filament/filamat/eiff/ChunkContainer.h"
+#include "filament/filamat/eiff/Flattener.h"
 
 namespace filamat {
 

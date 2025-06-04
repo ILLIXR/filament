@@ -17,7 +17,7 @@
 #ifndef TNT_MATEDIT_EXTERNALCOMPILE_H
 #define TNT_MATEDIT_EXTERNALCOMPILE_H
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <string>
 #include <vector>

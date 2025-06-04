@@ -17,14 +17,14 @@
 #include "private/backend/CommandStream.h"
 
 #if DEBUG_COMMAND_STREAM
-#include <utils/CallStack.h>
+#include "filament/utils/CallStack.h"
 #endif
 
-#include <utils/compiler.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Profiler.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Profiler.h"
+#include "filament/utils/Systrace.h"
 
 #include <cstddef>
 #include <functional>

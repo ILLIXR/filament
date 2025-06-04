@@ -14,30 +14,30 @@
  * limitations under the License.
  */
 
-#include <filament/Engine.h>
-#include <filament/IndirectLight.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/TextureSampler.h>
-#include <filament/TransformManager.h>
-#include <filament/View.h>
+#include "filament/Engine.h"
+#include "filament/IndirectLight.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/TextureSampler.h"
+#include "filament/TransformManager.h"
+#include "filament/View.h"
 
-#include <utils/EntityManager.h>
-#include <utils/Log.h>
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Log.h"
 
-#include <filameshio/MeshReader.h>
+#include "filament/filameshio/MeshReader.h"
 
-#include <ktxreader/Ktx2Reader.h>
+#include "filament/ktxreader/Ktx2Reader.h"
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/IBL.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/FilamentApp.h"
+#include "filament/filamentapp/IBL.h"
 
 #include <getopt/getopt.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <stb_image.h>
 

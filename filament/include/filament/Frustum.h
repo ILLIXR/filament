@@ -19,13 +19,13 @@
 #ifndef TNT_FILAMENT_FRUSTUM_H
 #define TNT_FILAMENT_FRUSTUM_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mat4.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/mat4.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
-#include <utils/unwindows.h> // Because we define NEAR and FAR in the Plane enum.
+#include "filament/utils/unwindows.h" // Because we define NEAR and FAR in the Plane enum.
 
 #include <stdint.h>
 

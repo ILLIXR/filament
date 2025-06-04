@@ -21,15 +21,15 @@
 #include <iomanip>
 #include <iostream>
 
-#include <math/scalar.h>
-#include <math/vec3.h>
+#include "filament/math/scalar.h"
+#include "filament/math/vec3.h"
 
-#include <image/LinearImage.h>
+#include "filament/image/LinearImage.h"
 
-#include <imageio/ImageEncoder.h>
+#include "filament/imageio/ImageEncoder.h"
 
-#include <utils/compiler.h>
-#include <utils/Path.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Path.h"
 
 #include <getopt/getopt.h>
 

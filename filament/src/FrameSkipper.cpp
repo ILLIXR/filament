@@ -16,10 +16,10 @@
 
 #include "FrameSkipper.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
 
 #include <algorithm>
 

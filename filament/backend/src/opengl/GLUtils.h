@@ -17,10 +17,10 @@
 #ifndef TNT_FILAMENT_BACKEND_OPENGL_GLUTILS_H
 #define TNT_FILAMENT_BACKEND_OPENGL_GLUTILS_H
 
-#include <utils/debug.h>
-#include <utils/ostream.h>
+#include "filament/utils/debug.h"
+#include "filament/utils/ostream.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include <string_view>
 #include <unordered_set>

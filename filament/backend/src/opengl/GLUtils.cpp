@@ -18,9 +18,9 @@
 
 #include "private/backend/Driver.h"
 
-#include <utils/compiler.h>
-#include <utils/ostream.h>
-#include <utils/trap.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/trap.h"
 
 #include <string_view>
 

@@ -17,12 +17,12 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#include <backend/platforms/PlatformCocoaGL.h>
+#include "filament/backend/platforms/PlatformCocoaGL.h"
 
 #include "opengl/gl_headers.h"
 
-#include <utils/compiler.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Panic.h"
 
 #include <OpenGL/OpenGL.h>
 #include <Cocoa/Cocoa.h>
@@ -72,7 +72,7 @@ CocoaGLSwapChain::CocoaGLSwapChain( NSView* inView )
         , currentWindowFrame(NSZeroRect) {
     NSView* __weak weakView = view;
     NSMutableArray* __weak weakObservers = observers;
-    
+
     void (^notificationHandler)(NSNotification *notification) = ^(NSNotification *notification) {
         NSView* strongView = weakView;
         if ((weakView != nil) && (weakObservers != nil)) {
@@ -80,7 +80,7 @@ CocoaGLSwapChain::CocoaGLSwapChain( NSView* inView )
             this->currentWindowFrame = strongView.window.frame;
         }
     };
-    
+
     // Various methods below should only be called from the main thread:
     // -[NSView bounds], -[NSView convertRectToBacking:], -[NSView window],
     // -[NSWindow frame], -[NSView superview],
@@ -125,7 +125,7 @@ CocoaGLSwapChain::CocoaGLSwapChain( NSView* inView )
                     queue: nil
                     usingBlock: notificationHandler];
                 [strongObservers addObject: observer];
-                
+
                 aView = aView.superview;
             }
         }

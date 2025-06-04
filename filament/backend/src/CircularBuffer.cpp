@@ -16,13 +16,13 @@
 
 #include "private/backend/CircularBuffer.h"
 
-#include <utils/Log.h>
-#include <utils/Panic.h>
-#include <utils/architecture.h>
-#include <utils/ashmem.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/ostream.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/architecture.h"
+#include "filament/utils/ashmem.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/ostream.h"
 
 #if !defined(WIN32) && !defined(__EMSCRIPTEN__)
 #    include <sys/mman.h>

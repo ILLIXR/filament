@@ -20,7 +20,7 @@
 
 #include <cstddef>
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
 using namespace filament;
 using namespace filament::backend;

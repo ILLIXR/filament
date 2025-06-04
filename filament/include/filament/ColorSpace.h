@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_COLOR_SPACE_H
 #define TNT_FILAMENT_COLOR_SPACE_H
 
-#include <math/vec2.h>
+#include "filament/math/vec2.h"
 
 namespace filament::color {
 

@@ -16,7 +16,7 @@
 
 #include "fsr.h"
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
 #include <math.h>
 #include <stdint.h>
@@ -69,5 +69,3 @@ void FSR_SharpeningSetup(FSRUniforms* outUniforms, FSRSharpeningConfig config) n
 }
 
 } // namespace filament
-
-

@@ -19,9 +19,9 @@
 #include "details/Engine.h"
 #include "details/Camera.h"
 
-#include <utils/Entity.h>
-#include <utils/Log.h>
-#include <utils/debug.h>
+#include "filament/utils/Entity.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/debug.h"
 
 using namespace utils;
 using namespace filament::math;

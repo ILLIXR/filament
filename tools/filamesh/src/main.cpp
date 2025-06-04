@@ -19,16 +19,16 @@
 #include <fstream>
 #include <iostream>
 
-#include <math/half.h>
-#include <math/mat3.h>
-#include <math/norm.h>
-#include <math/quat.h>
-#include <math/vec3.h>
+#include "filament/math/half.h"
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
+#include "filament/math/quat.h"
+#include "filament/math/vec3.h"
 
-#include <utils/algorithm.h>
-#include <utils/Path.h>
+#include "filament/utils/algorithm.h"
+#include "filament/utils/Path.h"
 
-#include <filameshio/filamesh.h>
+#include "filament/filameshio/filamesh.h"
 
 #include <getopt/getopt.h>
 

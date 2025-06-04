@@ -16,10 +16,10 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/Allocator.h>
-#include <utils/compiler.h>
-#include <private/backend/HandleAllocator.h>
-#include "utils/Panic.h"
+#include "filament/utils/Allocator.h"
+#include "filament/utils/compiler.h"
+#include "private/backend/HandleAllocator.h"
+#include "filament/utils/Panic.h"
 
 using namespace filament::backend;
 

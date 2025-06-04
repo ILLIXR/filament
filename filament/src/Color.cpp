@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#include <filament/Color.h>
+#include "filament/Color.h"
 
 #include "ColorSpaceUtils.h"
 
-#include <math/mat3.h>
-#include <math/scalar.h>
+#include "filament/math/mat3.h"
+#include "filament/math/scalar.h"
 
 namespace filament {
 

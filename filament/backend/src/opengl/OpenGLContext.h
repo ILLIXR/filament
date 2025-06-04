@@ -20,21 +20,21 @@
 
 #include "OpenGLTimerQuery.h"
 
-#include <backend/platforms/OpenGLPlatform.h>
+#include "filament/backend/platforms/OpenGLPlatform.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
 #include "gl_headers.h"
 
-#include <utils/compiler.h>
-#include <utils/bitset.h>
-#include <utils/debug.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/bitset.h"
+#include "filament/utils/debug.h"
 
-#include <math/vec2.h>
-#include <math/vec4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec4.h"
 
-#include <tsl/robin_map.h>
+#include "filament/tsl/robin_map.h"
 
 #include <array>
 #include <functional>

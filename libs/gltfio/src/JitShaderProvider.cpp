@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <gltfio/MaterialProvider.h>
+#include "filament/gltfio/MaterialProvider.h"
 
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 #include <tsl/robin_map.h>
 

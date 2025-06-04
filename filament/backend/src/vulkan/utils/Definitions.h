@@ -17,10 +17,10 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKAN_UTILS_DEFINITIONS_H
 #define TNT_FILAMENT_BACKEND_VULKAN_UTILS_DEFINITIONS_H
 
-#include <utils/bitset.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 // Definitions for common types used across classes.
 

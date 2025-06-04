@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include "fg/FrameGraph.h"
-#include "fg/details/PassNode.h"
-#include "fg/details/ResourceNode.h"
+#include "FrameGraph.h"
+#include "details/PassNode.h"
+#include "details/ResourceNode.h"
 
 namespace filament {
 

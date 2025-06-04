@@ -16,16 +16,16 @@
 
 #include <gtest/gtest.h>
 
-#include <filament/Engine.h>
-#include <filament/Renderer.h>
-#include <filament/Skybox.h>
-#include <filament/Scene.h>
-#include <filament/View.h>
-#include <filament/Viewport.h>
+#include "filament/Engine.h"
+#include "filament/Renderer.h"
+#include "filament/Skybox.h"
+#include "filament/Scene.h"
+#include "filament/View.h"
+#include "filament/Viewport.h"
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
 using namespace filament;
 using namespace backend;

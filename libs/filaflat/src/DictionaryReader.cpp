@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <filaflat/DictionaryReader.h>
+#include "filament/filaflat/DictionaryReader.h"
 
-#include <filaflat/ChunkContainer.h>
-#include <filaflat/Unflattener.h>
+#include "filament/filaflat/ChunkContainer.h"
+#include "filament/filaflat/Unflattener.h"
 
 #if defined (FILAMENT_DRIVER_SUPPORTS_VULKAN)
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 #include <smolv.h>
 #endif
 

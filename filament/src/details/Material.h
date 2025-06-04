@@ -17,33 +17,33 @@
 #ifndef TNT_FILAMENT_DETAILS_MATERIAL_H
 #define TNT_FILAMENT_DETAILS_MATERIAL_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include "details/MaterialInstance.h"
+#include "MaterialInstance.h"
 
-#include "ds/DescriptorSetLayout.h"
+#include "../ds/DescriptorSetLayout.h"
 
-#include <filament/Material.h>
-#include <filament/MaterialEnums.h>
+#include "filament/Material.h"
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/BufferInterfaceBlock.h>
-#include <private/filament/SamplerInterfaceBlock.h>
-#include <private/filament/SubpassInfo.h>
-#include <private/filament/Variant.h>
-#include <private/filament/ConstantInfo.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/BufferInterfaceBlock.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
+#include "filament/filabridge/SubpassInfo.h"
+#include "filament/filabridge/Variant.h"
+#include "filament/filabridge/ConstantInfo.h"
 
-#include <backend/CallbackHandler.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/Program.h>
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/Program.h"
 
-#include <utils/compiler.h>
-#include <utils/CString.h>
-#include <utils/debug.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Invocable.h>
-#include <utils/Mutex.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Invocable.h"
+#include "filament/utils/Mutex.h"
 
 #include <array>
 #include <memory>
@@ -60,7 +60,7 @@
 #include <stdint.h>
 
 #if FILAMENT_ENABLE_MATDBG
-#include <matdbg/DebugServer.h>
+#include "filament/matdbg/DebugServer.h"
 #endif
 
 namespace filament {

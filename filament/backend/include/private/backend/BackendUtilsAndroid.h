@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_PRIVATE_BACKENDUTILSANDROID_H
 #define TNT_FILAMENT_BACKEND_PRIVATE_BACKENDUTILSANDROID_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 namespace filament::backend {
 

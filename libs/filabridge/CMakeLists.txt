@@ -7,7 +7,7 @@ set(PUBLIC_HDR_DIR include)
 # ==================================================================================================
 # Sources and headers
 # ==================================================================================================
-file(GLOB_RECURSE PUBLIC_HDRS ${PUBLIC_HDR_DIR}/**/*.h)
+file(GLOB_RECURSE PUBLIC_HDRS ${PUBLIC_HDR_DIR}/filament/${TARGET}/*.h)
 
 set(SRCS
         src/BufferInterfaceBlock.cpp
@@ -22,7 +22,12 @@ set(SRCS
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 target_link_libraries(${TARGET} utils)
@@ -32,5 +37,8 @@ target_link_libraries(${TARGET} backend_headers)
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(DIRECTORY ${PUBLIC_HDR_DIR}/filament DESTINATION include)
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)

@@ -21,12 +21,12 @@
 #include "ShadowMap.h"
 #include "ds/TypedBuffer.h"
 
-#include <filament/LightManager.h>
-#include <filament/Options.h>
-#include <filament/Viewport.h>
+#include "filament/LightManager.h"
+#include "filament/Options.h"
+#include "filament/Viewport.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/UibStructs.h"
 
 #include "components/RenderableManager.h"
 
@@ -36,18 +36,18 @@
 #include "fg/FrameGraphId.h"
 #include "fg/FrameGraphTexture.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/BitmaskEnum.h>
-#include <utils/compiler.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/debug.h>
-#include <utils/Range.h>
-#include <utils/Slice.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Range.h"
+#include "filament/utils/Slice.h"
 
-#include <math/mat4.h>
-#include <math/vec4.h>
+#include "filament/math/mat4.h"
+#include "filament/math/vec4.h"
 
 #include <array>
 #include <memory>

@@ -18,12 +18,12 @@
 #include <fstream>
 #include <iostream>
 
-#include <math/vec3.h>
+#include "filament/math/vec3.h"
 
-#include <imageio/ImageDecoder.h>
-#include <imageio/ImageEncoder.h>
+#include "filament/imageio/ImageDecoder.h"
+#include "filament/imageio/ImageEncoder.h"
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <getopt/getopt.h>
 

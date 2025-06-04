@@ -16,16 +16,16 @@
 
 #include "FrameInfo.h"
 
-#include <filament/Renderer.h>
+#include "filament/Renderer.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Systrace.h"
 
 #include <algorithm>
 #include <atomic>

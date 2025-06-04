@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-#include <filamentapp/IBL.h>
+#include "filament/filamentapp/IBL.h"
 
-#include <filament/Engine.h>
-#include <filament/IndirectLight.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/Skybox.h>
-#include <filament/Texture.h>
+#include "filament/Engine.h"
+#include "filament/IndirectLight.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/Skybox.h"
+#include "filament/Texture.h"
 
-#include <ktxreader/Ktx1Reader.h>
+#include "filament/ktxreader/Ktx1Reader.h"
 
-#include <imageio/ImageDecoder.h>
+#include "filament/imageio/ImageDecoder.h"
 
-#include <filament-iblprefilter/IBLPrefilterContext.h>
+#include "filament/iblprefilter/IBLPrefilterContext.h"
 
 #include <stb_image.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <fstream>
 #include <iostream>
@@ -39,7 +39,7 @@
 
 #include <string.h>
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 using namespace filament;
 using namespace filament::math;

@@ -17,10 +17,10 @@
 #include "FFilamentInstance.h"
 #include "FFilamentAsset.h"
 
-#include <gltfio/Animator.h>
+#include "filament/gltfio/Animator.h"
 
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
 
 using namespace filament;
 using namespace filament::math;

@@ -19,19 +19,19 @@
 #include "components/LightManager.h"
 
 #include "details/Engine.h"
-#include "utils/ostream.h"
+#include "filament/utils/ostream.h"
 
-#include <filament/LightManager.h>
+#include "filament/LightManager.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
 
-#include <math/fast.h>
-#include <math/scalar.h>
-#include <math/vec2.h>
-#include <math/vec3.h>
+#include "filament/math/fast.h"
+#include "filament/math/scalar.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
 
 #include <stddef.h>
 #include <stdint.h>

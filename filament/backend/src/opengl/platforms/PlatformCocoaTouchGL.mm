@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/PlatformCocoaTouchGL.h>
+#include "filament/backend/platforms/PlatformCocoaTouchGL.h"
 
 #define GLES_SILENCE_DEPRECATION
 #include <OpenGLES/EAGL.h>
@@ -26,9 +26,9 @@
 
 #include "DriverBase.h"
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include "CocoaTouchExternalImage.h"
 
@@ -131,7 +131,7 @@ Platform::SwapChain* PlatformCocoaTouchGL::createSwapChain(uint32_t width, uint3
 
     // adding the pointer to the array retains the CAEAGLLayer
     pImpl->mHeadlessGlLayers.push_back(glLayer);
-  
+
     return (__bridge SwapChain*) glLayer;
 }
 
@@ -141,7 +141,7 @@ void PlatformCocoaTouchGL::destroySwapChain(Platform::SwapChain* swapChain) noex
     if (pImpl->mCurrentGlLayer == glLayer) {
         pImpl->mCurrentGlLayer = nullptr;
     }
-  
+
     auto& v = pImpl->mHeadlessGlLayers;
     auto it = std::find(v.begin(), v.end(), glLayer);
     if(it != v.end()) {

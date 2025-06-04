@@ -19,6 +19,7 @@ set(TINT_BUILD_CMD_TOOLS OFF)
 if (FILAMENT_BUILD_FILAMAT)
     set(TINT_BUILD_SPV_READER ON)
 endif ()
+find_package(absl REQUIRED CONFIG)
 
 add_subdirectory(../  ${PROJECT_BINARY_DIR}/third_party/dawn)
 

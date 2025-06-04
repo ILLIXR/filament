@@ -17,13 +17,13 @@
 #ifndef GLTFIO_FFILAMENTINSTANCE_H
 #define GLTFIO_FFILAMENTINSTANCE_H
 
-#include <gltfio/FilamentInstance.h>
+#include "filament/gltfio/FilamentInstance.h"
 
-#include <utils/CString.h>
-#include <utils/Entity.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 #include <tsl/robin_set.h>
 

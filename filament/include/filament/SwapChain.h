@@ -17,14 +17,14 @@
 #ifndef TNT_FILAMENT_SWAPCHAIN_H
 #define TNT_FILAMENT_SWAPCHAIN_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <backend/CallbackHandler.h>
-#include <backend/DriverEnums.h>
-#include <backend/PresentCallable.h>
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/PresentCallable.h"
 
-#include <utils/compiler.h>
-#include <utils/Invocable.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Invocable.h"
 
 #include <stdint.h>
 
@@ -67,7 +67,7 @@ class Engine;
  * On Android, an `ANativeWindow*` can be obtained from a Java `Surface` object using:
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  #include <android/native_window_jni.h>
+ *  #include "filament/android/native_window_jni.h"
  *  // parameters
  *  // env:         JNIEnv*
  *  // surface:     jobject
@@ -132,9 +132,9 @@ class Engine;
  * Example using SDL/Objective-C:
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.mm}
- *  #include <filament/Engine.h>
+ *  #include "Engine.h"
  *
- *  #include <Cocoa/Cocoa.h>
+ *  #include "filament/Cocoa/Cocoa.h"
  *  #include <SDL_syswm.h>
  *
  *  SDL_SysWMinfo wmi;

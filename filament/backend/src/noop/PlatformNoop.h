@@ -17,8 +17,8 @@
 #ifndef TNT_FILAMENT_BACKEND_NOOP_PLATFORM_NOOP_H
 #define TNT_FILAMENT_BACKEND_NOOP_PLATFORM_NOOP_H
 
-#include <backend/DriverEnums.h>
-#include <backend/Platform.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Platform.h"
 
 namespace filament::backend {
 

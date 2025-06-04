@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/string.h>
+#include "filament/utils/string.h"
 
 using namespace utils;
 

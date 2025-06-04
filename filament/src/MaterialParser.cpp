@@ -17,27 +17,27 @@
 
 #include "MaterialParser.h"
 
-#include <filaflat/ChunkContainer.h>
-#include <filaflat/MaterialChunk.h>
-#include <filaflat/DictionaryReader.h>
-#include <filaflat/Unflattener.h>
+#include "filament/filaflat/ChunkContainer.h"
+#include "filament/filaflat/MaterialChunk.h"
+#include "filament/filaflat/DictionaryReader.h"
+#include "filament/filaflat/Unflattener.h"
 
-#include <filament/MaterialChunkType.h>
+#include "filament/filabridge/MaterialChunkType.h"
 
-#include <private/filament/SamplerInterfaceBlock.h>
-#include <private/filament/BufferInterfaceBlock.h>
-#include <private/filament/SubpassInfo.h>
-#include <private/filament/Variant.h>
-#include <private/filament/ConstantInfo.h>
-#include <private/filament/PushConstantInfo.h>
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/SamplerInterfaceBlock.h"
+#include "filament/filabridge/BufferInterfaceBlock.h"
+#include "filament/filabridge/SubpassInfo.h"
+#include "filament/filabridge/Variant.h"
+#include "filament/filabridge/ConstantInfo.h"
+#include "filament/filabridge/PushConstantInfo.h"
+#include "filament/filabridge/EngineEnums.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Program.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Program.h"
 
-#include <utils/compiler.h>
-#include <utils/CString.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <array>
 #include <optional>

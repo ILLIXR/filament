@@ -16,7 +16,7 @@
 
 #include "SourceFormatter.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <cstdio>
 #include <sstream>

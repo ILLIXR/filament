@@ -23,9 +23,9 @@
 
 #include "TypedUniformBuffer.h"
 
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/UibStructs.h"
 
-#include <backend/DriverApiForward.h>
+#include "filament/backend/DriverApiForward.h"
 
 namespace filament {
 

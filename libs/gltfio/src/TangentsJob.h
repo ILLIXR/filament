@@ -16,7 +16,7 @@
 
 #include <cgltf.h>
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
 namespace filament {
 

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <geometry/Transcoder.h>
+#include "filament/geometry/Transcoder.h"
 
-#include <math/half.h>
+#include "filament/math/half.h"
 
 using filament::math::half;
 

@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_DRIVER_DATARESHAPER_H
 #define TNT_FILAMENT_DRIVER_DATARESHAPER_H
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
 #include <cstring>
 #include <stddef.h>
 #include <stdint.h>
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 namespace filament {
 namespace backend {

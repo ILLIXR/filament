@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <filamentapp/NativeWindowHelper.h>
+#include "filament/filamentapp/NativeWindowHelper.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <Cocoa/Cocoa.h>
 #include <QuartzCore/QuartzCore.h>

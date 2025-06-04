@@ -17,12 +17,12 @@
 #ifndef TNT_FILAMENT_BACKEND_OPENGL_TIMERQUERY_H
 #define TNT_FILAMENT_BACKEND_OPENGL_TIMERQUERY_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include "DriverBase.h"
 
-#include <utils/Condition.h>
-#include <utils/Mutex.h>
+#include "filament/utils/Condition.h"
+#include "filament/utils/Mutex.h"
 
 #include "gl_headers.h"
 

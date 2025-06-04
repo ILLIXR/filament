@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include "details/Stream.h"
+#include "Stream.h"
 
-#include "details/Engine.h"
-#include "details/Fence.h"
+#include "Engine.h"
+#include "Fence.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include <utils/CString.h>
-#include <utils/StaticString.h>
-#include <utils/Panic.h>
-#include <filament/Stream.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/StaticString.h"
+#include "filament/utils/Panic.h"
+#include "filament/Stream.h"
 
 namespace filament {
 

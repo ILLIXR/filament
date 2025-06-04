@@ -17,11 +17,11 @@
 #ifndef TNT_FILAMENT_FG_FRAMEGRAPHRESOURCES_H
 #define TNT_FILAMENT_FG_FRAMEGRAPHRESOURCES_H
 
-#include "fg/details/Resource.h"
-#include "fg/FrameGraphId.h"
+#include "details/Resource.h"
+#include "FrameGraphId.h"
 
-#include "backend/DriverEnums.h"
-#include "backend/Handle.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
 namespace filament {
 

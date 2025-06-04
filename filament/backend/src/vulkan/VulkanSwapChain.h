@@ -24,10 +24,10 @@
 #include "VulkanTexture.h"
 #include "vulkan/memory/Resource.h"
 
-#include <backend/platforms/VulkanPlatform.h>
+#include "filament/backend/platforms/VulkanPlatform.h"
 
-#include <bluevk/BlueVK.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/bluevk/BlueVK.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 
 using namespace bluevk;

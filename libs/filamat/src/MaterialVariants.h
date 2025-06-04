@@ -17,9 +17,9 @@
 #ifndef TNT_FILAMAT_MATERIAL_VARIANTS_H
 #define TNT_FILAMAT_MATERIAL_VARIANTS_H
 
-#include <private/filament/Variant.h>
+#include "filament/filabridge/Variant.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include <vector>
 

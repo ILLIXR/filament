@@ -21,16 +21,16 @@
 #include "OpenGLDriver.h"
 #include "ShaderCompilerService.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Program.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Program.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/BitmaskEnum.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
-#include <utils/Systrace.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Systrace.h"
 
 #include <algorithm>
 #include <array>

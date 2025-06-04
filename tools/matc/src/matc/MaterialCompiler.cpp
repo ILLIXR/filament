@@ -20,12 +20,12 @@
 #include <iostream>
 #include <utility>
 
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <filamat/Enums.h>
+#include "filament/filamat/Enums.h"
 
-#include <utils/Log.h>
-#include <utils/JobSystem.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/JobSystem.h"
 
 #include "DirIncluder.h"
 #include "MaterialLexeme.h"

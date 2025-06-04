@@ -18,18 +18,18 @@
 
 #include "gmock/gmock.h"
 #include "absl/strings/str_format.h"
-#include "utils/Hash.h"
+#include "filament/utils/Hash.h"
 #include <fstream>
 
 #include "BackendTest.h"
-#include "backend/PixelBufferDescriptor.h"
+#include "filament/backend/PixelBufferDescriptor.h"
 #include "private/backend/DriverApi.h"
 
 #ifndef FILAMENT_IOS
 
-#include <imageio/ImageEncoder.h>
-#include <imageio/ImageDecoder.h>
-#include <image/ColorTransform.h>
+#include "filament/imageio/ImageEncoder.h"
+#include "filament/imageio/ImageDecoder.h"
+#include "filament/image/ColorTransform.h"
 
 #endif
 

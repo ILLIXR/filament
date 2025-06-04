@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/architecture.h>
+#include "filament/utils/architecture.h"
 
 #if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
 #   include <unistd.h>

@@ -16,22 +16,22 @@
 
 #include <gtest/gtest.h>
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
 #include <filament/Engine.h>
 #include <filament/MaterialEnums.h>
 #include <filament/RenderableManager.h>
 #include <filament/TransformManager.h>
 
-#include <gltfio/AssetLoader.h>
-#include <gltfio/FilamentAsset.h>
-#include <gltfio/ResourceLoader.h>
-#include <gltfio/TextureProvider.h>
-#include <gltfio/math.h>
-#include <math/mathfwd.h>
-#include <utils/EntityManager.h>
-#include <utils/NameComponentManager.h>
-#include <utils/Path.h>
+#include "filament/gltfio/AssetLoader.h"
+#include "filament/gltfio/FilamentAsset.h"
+#include "filament/gltfio/ResourceLoader.h"
+#include "filament/gltfio/TextureProvider.h"
+#include "filament/gltfio/math.h"
+#include "filament/math/mathfwd.h"
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/NameComponentManager.h"
+#include "filament/utils/Path.h"
 
 #include "materials/uberarchive.h"
 

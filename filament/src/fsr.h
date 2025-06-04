@@ -17,9 +17,9 @@
 #ifndef TNT_FILAMENT_FSR_H
 #define TNT_FILAMENT_FSR_H
 
-#include <filament/Viewport.h>
+#include "filament/Viewport.h"
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
 #include <stdint.h>
 

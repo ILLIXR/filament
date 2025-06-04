@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <backend/platforms/WebGPUPlatform.h>
+#include "filament/backend/platforms/WebGPUPlatform.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <webgpu/webgpu_cpp.h>
 

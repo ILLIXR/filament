@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <bluevk/BlueVK.h> // must be included before vk_mem_alloc
+#include "filament/bluevk/BlueVK.h" // must be included before vk_mem_alloc
 
 #if defined(__clang__)
 #pragma clang diagnostic push

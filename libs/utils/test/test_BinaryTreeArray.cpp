@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/BinaryTreeArray.h>
+#include "filament/utils/BinaryTreeArray.h"
 
 using namespace utils;
 
@@ -146,4 +146,3 @@ TEST(BinaryTreeArray, basic) {
                 EXPECT_EQ(15, array[14].next);
 
 }
-

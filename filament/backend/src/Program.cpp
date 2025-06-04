@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <backend/Program.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/Program.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/debug.h>
-#include <utils/CString.h>
-#include <utils/ostream.h>
-#include <utils/Invocable.h>
+#include "filament/utils/debug.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Invocable.h"
 
 #include <utility>
 

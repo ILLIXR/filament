@@ -17,13 +17,13 @@
 #ifndef TNT_UTILS_ENTITYMANAGERIMPL_H
 #define TNT_UTILS_ENTITYMANAGERIMPL_H
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
-#include <utils/compiler.h>
-#include <utils/Entity.h>
-#include <utils/Mutex.h>
-#include <utils/CallStack.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/CallStack.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <tsl/robin_set.h>
 

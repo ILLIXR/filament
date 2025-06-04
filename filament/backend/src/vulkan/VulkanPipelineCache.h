@@ -19,14 +19,14 @@
 
 #include "VulkanCommands.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
-#include <utils/bitset.h>
-#include <utils/compiler.h>
-#include <utils/Hash.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/Hash.h"
 
 #include <tsl/robin_map.h>
 #include <type_traits>

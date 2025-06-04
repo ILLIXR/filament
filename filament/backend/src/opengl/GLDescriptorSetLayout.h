@@ -19,7 +19,7 @@
 
 #include "DriverBase.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include <algorithm>
 #include <utility>

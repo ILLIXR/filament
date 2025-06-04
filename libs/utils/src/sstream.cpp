@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include <utils/sstream.h>
-#include <utils/ostream.h>
+#include "filament/utils/sstream.h"
+#include "filament/utils/ostream.h"
 
 #include "ostream_.h"
 

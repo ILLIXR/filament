@@ -19,57 +19,57 @@
 
 #include "downcast.h"
 
-#include "Allocators.h"
-#include "Culler.h"
-#include "FrameHistory.h"
-#include "FrameInfo.h"
-#include "Froxelizer.h"
-#include "PIDController.h"
-#include "ShadowMapManager.h"
+#include "../Allocators.h"
+#include "../Culler.h"
+#include "../FrameHistory.h"
+#include "../FrameInfo.h"
+#include "../Froxelizer.h"
+#include "../PIDController.h"
+#include "../ShadowMapManager.h"
 
-#include "ds/ColorPassDescriptorSet.h"
-#include "ds/DescriptorSet.h"
-#include "ds/PostProcessDescriptorSet.h"
-#include "ds/SsrPassDescriptorSet.h"
-#include "ds/TypedUniformBuffer.h"
+#include "../ds/ColorPassDescriptorSet.h"
+#include "../ds/DescriptorSet.h"
+#include "../ds/PostProcessDescriptorSet.h"
+#include "../ds/SsrPassDescriptorSet.h"
+#include "../ds/TypedUniformBuffer.h"
 
-#include "components/LightManager.h"
-#include "components/RenderableManager.h"
+#include "../components/LightManager.h"
+#include "../components/RenderableManager.h"
 
-#include "details/Camera.h"
-#include "details/ColorGrading.h"
-#include "details/RenderTarget.h"
-#include "details/Scene.h"
+#include "Camera.h"
+#include "ColorGrading.h"
+#include "RenderTarget.h"
+#include "Scene.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <private/backend/DriverApi.h>
+#include "private/backend/DriverApi.h"
 
-#include <filament/Frustum.h>
-#include <filament/Renderer.h>
-#include <filament/View.h>
+#include "filament/Frustum.h"
+#include "filament/Renderer.h"
+#include "filament/View.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/Allocator.h>
-#include <utils/Entity.h>
-#include <utils/StructureOfArrays.h>
-#include <utils/Range.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Allocator.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/StructureOfArrays.h"
+#include "filament/utils/Range.h"
+#include "filament/utils/Slice.h"
 
 #if FILAMENT_ENABLE_FGVIEWER
-#include <fgviewer/DebugServer.h>
+#include "filament/fgviewer/DebugServer.h"
 #else
 namespace filament::fgviewer {
     using ViewHandle = uint32_t;
 }
 #endif
 
-#include <math/scalar.h>
-#include <math/mat4.h>
+#include "filament/math/scalar.h"
+#include "filament/math/mat4.h"
 
 #include <array>
 #include <memory>

@@ -24,21 +24,21 @@
 #include "details/Camera.h"
 #include "details/Scene.h"
 
-#include "private/filament/Variant.h"
+#include "filament/filabridge/Variant.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/Allocator.h>
-#include <utils/BitmaskEnum.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Range.h>
-#include <utils/Slice.h>
-#include <utils/architecture.h>
-#include <utils/debug.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Range.h"
+#include "filament/utils/Slice.h"
+#include "filament/utils/architecture.h"
+#include "filament/utils/debug.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <functional>
 #include <limits>

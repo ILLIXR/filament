@@ -12,6 +12,7 @@ set(PUBLIC_HDRS
 )
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRC_DIR}/perfetto.cc)
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
 if (WIN32)
     # The perfetto library contains many symbols, so it needs the big object
@@ -24,7 +25,14 @@ if (WIN32)
 endif (WIN32)
 
 # specify where the public headers of this library are
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER ThirdParty)
 
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include
+)

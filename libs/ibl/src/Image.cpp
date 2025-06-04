@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <ibl/Image.h>
+#include "filament/ibl/Image.h"
 
 #include <utility>
 
@@ -57,4 +57,3 @@ void Image::subset(Image const& image, size_t x, size_t y, size_t w, size_t h) {
 
 } // namespace ibl
 } // namespace filament
-

@@ -19,12 +19,12 @@
 #ifndef TNT_FILAMENT_RENDERER_H
 #define TNT_FILAMENT_RENDERER_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <utils/compiler.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -56,8 +56,8 @@ class PixelBufferDescriptor;
  * Engine.destroy(const Renderer*).
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * #include <filament/Renderer.h>
- * #include <filament/Engine.h>
+ * #include "Renderer.h"
+ * #include "Engine.h"
  * using namespace filament;
  *
  * Engine* engine = Engine::create();
@@ -349,8 +349,8 @@ public:
      *
      * A typical render loop looks like this:
      * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     * #include <filament/Renderer.h>
-     * #include <filament/View.h>
+     * #include "Renderer.h"
+     * #include "View.h"
      * using namespace filament;
      *
      * void renderLoop(Renderer* renderer, SwapChain* swapChain) {

@@ -16,13 +16,13 @@
 
 #include "details/Material.h"
 
-#include <filament/Material.h>
-#include <filament/MaterialEnums.h>
+#include "filament/Material.h"
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/CallbackHandler.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Invocable.h>
+#include "filament/utils/Invocable.h"
 
 #include <utility>
 

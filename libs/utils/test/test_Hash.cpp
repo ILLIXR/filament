@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 using namespace utils;
 

@@ -17,12 +17,12 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKAN_UTILS_HELPER_H
 #define TNT_FILAMENT_BACKEND_VULKAN_UTILS_HELPER_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/bitset.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 #include <utility>
 

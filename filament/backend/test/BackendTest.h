@@ -19,7 +19,7 @@
 
 #include <gtest/gtest.h>
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
 #include "private/backend/CommandBufferQueue.h"
 #include "private/backend/DriverApi.h"

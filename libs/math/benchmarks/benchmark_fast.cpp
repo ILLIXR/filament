@@ -19,8 +19,8 @@
 
 #include <benchmark/benchmark.h>
 
-#include <math/fast.h>
-#include <math/half.h>
+#include "filament/math/fast.h"
+#include "filament/math/half.h"
 
 #include <cmath>
 

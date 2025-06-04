@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_DETAILS_SHADOWMAP_H
 #define TNT_FILAMENT_DETAILS_SHADOWMAP_H
 
-#include <filament/Box.h>
+#include "filament/Box.h"
 
 #include "Culler.h"
 #include "ds/ShadowMapDescriptorSet.h"
@@ -27,15 +27,15 @@
 
 #include "components/LightManager.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mathfwd.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
-#include <math/mat4.h>
+#include "filament/math/mathfwd.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
+#include "filament/math/mat4.h"
 
 #include <array>
 

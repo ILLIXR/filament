@@ -14,29 +14,29 @@
  * limitations under the License.
  */
 
-#include "details/Skybox.h"
+#include "Skybox.h"
 
-#include "details/Engine.h"
-#include "details/IndirectLight.h"
-#include "details/Material.h"
-#include "details/Texture.h"
-#include "details/VertexBuffer.h"
+#include "Engine.h"
+#include "IndirectLight.h"
+#include "Material.h"
+#include "Texture.h"
+#include "VertexBuffer.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/RenderableManager.h>
-#include <filament/TextureSampler.h>
-#include <filament/Skybox.h>
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/RenderableManager.h"
+#include "filament/TextureSampler.h"
+#include "filament/Skybox.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Panic.h"
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
 #include <stdint.h>
 

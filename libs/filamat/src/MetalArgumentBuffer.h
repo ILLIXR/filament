@@ -22,7 +22,7 @@
 #include <variant>
 #include <vector>
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 namespace filamat {
 

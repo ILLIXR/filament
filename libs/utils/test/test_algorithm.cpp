@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/algorithm.h>
+#include "filament/utils/algorithm.h"
 
 #include <array>
 

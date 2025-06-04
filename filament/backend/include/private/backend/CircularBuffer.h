@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_PRIVATE_CIRCULARBUFFER_H
 #define TNT_FILAMENT_BACKEND_PRIVATE_CIRCULARBUFFER_H
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 #include <stddef.h>
 #include <stdint.h>

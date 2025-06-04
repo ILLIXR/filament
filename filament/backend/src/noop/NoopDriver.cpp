@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include "noop/NoopDriver.h"
+#include "NoopDriver.h"
 #include "CommandStreamDispatcher.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
 #include <stdint.h>
 

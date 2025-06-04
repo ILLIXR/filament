@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/FixedCapacityVector.h"
 
 using namespace utils;
 
@@ -254,4 +254,3 @@ TEST(FixedCapacityVectorTest, Insertions) {
     EXPECT_EQ(v.capacity(), 8);
     EXPECT_EQ(v.size(), 0);
 }
-

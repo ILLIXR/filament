@@ -17,16 +17,16 @@
 
 #include "ApiHandler.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <matdbg/DebugServer.h>
-#include <matdbg/JsonWriter.h>
-#include <matdbg/ShaderExtractor.h>
-#include <matdbg/ShaderInfo.h>
+#include "filament/matdbg/DebugServer.h"
+#include "filament/matdbg/JsonWriter.h"
+#include "filament/matdbg/ShaderExtractor.h"
+#include "filament/matdbg/ShaderInfo.h"
 
-#include <filaflat/ChunkContainer.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
+#include "filament/filaflat/ChunkContainer.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Log.h"
 
 #include <CivetServer.h>
 

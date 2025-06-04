@@ -17,9 +17,9 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKAN_UTILS_SPIRV_H
 #define TNT_FILAMENT_BACKEND_VULKAN_UTILS_SPIRV_H
 
-#include <backend/Program.h>
+#include "filament/backend/Program.h"
 
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <tuple>
 #include <vector>
@@ -44,7 +44,7 @@ void workaroundSpecConstant(Program::ShaderBlob const& blob,
         std::vector<uint32_t>& output);
 
 // bindings for UBO, samplers, input attachment
-// This is no longer needed after the descriptor set refactor, but the code is good for reference. 
+// This is no longer needed after the descriptor set refactor, but the code is good for reference.
 // std::tuple<uint32_t, uint32_t, uint32_t> getProgramBindings(Program::ShaderBlob const& blob);
 
 } // namespace filament::backend::fvkutils

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-#include <imageio/ImageDecoder.h>
+#include "filament/imageio/ImageDecoder.h"
 
 #include <cstdint>
 #include <cstring> // for memcmp
@@ -30,22 +30,22 @@
 // for ntohs
 #if defined(WIN32)
 #    include <Winsock2.h>
-#    include <utils/unwindows.h>
+#    include "filament/utils/unwindows.h"
 #else
 #    include <arpa/inet.h>
 #endif
 
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <tinyexr.h>
 
 #include <vector>
 
-#include <image/ColorTransform.h>
-#include <image/ImageOps.h>
+#include "filament/image/ColorTransform.h"
+#include "filament/image/ImageOps.h"
 
-#include <imageio/HDRDecoder.h>
+#include "filament/imageio/HDRDecoder.h"
 
 namespace image {
 

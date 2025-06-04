@@ -25,7 +25,7 @@
 #define GL_TEXTURE_WRAP_S                 0x2802
 #define GL_TEXTURE_WRAP_T                 0x2803
 
-#include <filamentapp/MeshAssimp.h>
+#include "filament/filamentapp/MeshAssimp.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -33,19 +33,19 @@
 #include <array>
 #include <iostream>
 
-#include <filament/Color.h>
-#include <filament/VertexBuffer.h>
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/Material.h>
-#include <filament/Renderer.h>
-#include <filament/Scene.h>
-#include <filament/RenderableManager.h>
-#include <filament/TransformManager.h>
+#include "filament/Color.h"
+#include "filament/VertexBuffer.h"
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/Material.h"
+#include "filament/Renderer.h"
+#include "filament/Scene.h"
+#include "filament/RenderableManager.h"
+#include "filament/TransformManager.h"
 
-#include <math/norm.h>
-#include <math/vec3.h>
-#include <math/TVecHelpers.h>
+#include "filament/math/norm.h"
+#include "filament/math/vec3.h"
+#include "filament/math/TVecHelpers.h"
 
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
@@ -55,7 +55,7 @@
 
 #include <stb_image.h>
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include "generated/resources/filamentapp.h"
 

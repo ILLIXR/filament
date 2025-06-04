@@ -15,43 +15,43 @@
  * limitations under the License.
  */
 
-#include <filamentapp/FilamentApp.h>
+#include "filament/filamentapp/FilamentApp.h"
 
 #if defined(WIN32)
 #    include <SDL_syswm.h>
-#    include <utils/unwindows.h>
+#    include "filament/utils/unwindows.h"
 #endif
 
 #include <iostream>
 
 #include <imgui.h>
 
-#include <utils/EntityManager.h>
-#include <utils/Panic.h>
-#include <utils/Path.h>
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Path.h"
 
-#include <filament/Camera.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/Renderer.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/SwapChain.h>
-#include <filament/View.h>
+#include "filament/Camera.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/Renderer.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/SwapChain.h"
+#include "filament/View.h"
 
 #ifndef NDEBUG
 #include <filament/DebugRegistry.h>
 #endif
 
 #if defined(FILAMENT_DRIVER_SUPPORTS_VULKAN)
-#include <backend/platforms/VulkanPlatform.h>
+#include "filament/backend/platforms/VulkanPlatform.h"
 #endif
 
-#include <filagui/ImGuiHelper.h>
+#include "filament/filagui/ImGuiHelper.h"
 
-#include <filamentapp/Cube.h>
-#include <filamentapp/NativeWindowHelper.h>
+#include "filament/filamentapp/Cube.h"
+#include "filament/filamentapp/NativeWindowHelper.h"
 
 #include <stb_image.h>
 

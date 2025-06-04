@@ -29,12 +29,12 @@
 #include "vulkan/utils/StaticVector.h"
 #include "vulkan/utils/Definitions.h"
 
-#include <backend/Program.h>
+#include "filament/backend/Program.h"
 
-#include <utils/bitset.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Mutex.h>
-#include <utils/StructureOfArrays.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/StructureOfArrays.h"
 
 #include <array>
 

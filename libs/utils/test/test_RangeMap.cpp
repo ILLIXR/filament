@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/RangeMap.h>
+#include "filament/utils/RangeMap.h"
 
 using namespace utils;
 

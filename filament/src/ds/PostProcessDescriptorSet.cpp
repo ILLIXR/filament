@@ -16,16 +16,16 @@
 
 #include "PostProcessDescriptorSet.h"
 
-#include "HwDescriptorSetLayoutFactory.h"
+#include "../HwDescriptorSetLayoutFactory.h"
 #include "TypedUniformBuffer.h"
 
-#include "details/Engine.h"
+#include "../details/Engine.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 namespace filament {
 
@@ -64,4 +64,3 @@ void PostProcessDescriptorSet::bind(DriverApi& driver) noexcept {
 }
 
 } // namespace filament
-

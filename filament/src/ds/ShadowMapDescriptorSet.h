@@ -21,13 +21,13 @@
 
 #include "DescriptorSetLayout.h"
 
-#include "private/filament/UibStructs.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
 namespace filament {
 

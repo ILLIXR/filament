@@ -17,10 +17,10 @@
 #ifndef TNT_FILAMENT_FILAMENTAPI_H
 #define TNT_FILAMENT_FILAMENTAPI_H
 
-#include <utils/compiler.h>
-#include <utils/PrivateImplementation.h>
-#include <utils/CString.h>
-#include <utils/StaticString.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/PrivateImplementation.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/StaticString.h"
 
 #include <stddef.h>
 

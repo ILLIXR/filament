@@ -19,10 +19,10 @@
 #include "MockConfig.h"
 #include "TestMaterialCompiler.h"
 
-#include <matc/MaterialCompiler.h>
-#include <matc/MaterialLexer.h>
-#include <matc/JsonishLexer.h>
-#include <matc/JsonishParser.h>
+#include "../src/matc/MaterialCompiler.h"
+#include "../src/matc/MaterialLexer.h"
+#include "../src/matc/JsonishLexer.h"
+#include "../src/matc/JsonishParser.h"
 
 class MaterialLexer: public ::testing::Test {
 protected:

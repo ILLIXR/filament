@@ -21,29 +21,29 @@
 
 #include <getopt/getopt.h>
 
-#include <utils/EntityManager.h>
-#include <utils/Path.h>
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Path.h"
 
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/Material.h>
-#include <filament/Scene.h>
-#include <filament/LightManager.h>
-#include <filament/Renderer.h>
-#include <filament/RenderableManager.h>
-#include <filament/TransformManager.h>
-#include <filament/VertexBuffer.h>
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/Material.h"
+#include "filament/Scene.h"
+#include "filament/LightManager.h"
+#include "filament/Renderer.h"
+#include "filament/RenderableManager.h"
+#include "filament/TransformManager.h"
+#include "filament/VertexBuffer.h"
 
-#include <math/norm.h>
-#include <utils/Log.h>
-#include <filament/View.h>
+#include "filament/math/norm.h"
+#include "filament/utils/Log.h"
+#include "filament/View.h"
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/MeshAssimp.h>
-#include <filamentapp/Cube.h>
-#include <filamentapp/IcoSphere.h>
-#include <filamentapp/Sphere.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/FilamentApp.h"
+#include "filament/filamentapp/MeshAssimp.h"
+#include "filament/filamentapp/Cube.h"
+#include "filament/filamentapp/IcoSphere.h"
+#include "filament/filamentapp/Sphere.h"
 
 #include "generated/resources/resources.h"
 

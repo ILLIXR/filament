@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-#include "ShaderGenerator.h"
+#include "filament/filamat/shaders/ShaderGenerator.h"
 
-#include "CodeGenerator.h"
-#include "SibGenerator.h"
-#include "UibGenerator.h"
+#include "filament/filamat/shaders/CodeGenerator.h"
+#include "filament/filamat/shaders/SibGenerator.h"
+#include "filament/filamat/shaders/UibGenerator.h"
 
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/EngineEnums.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/Variant.h"
 
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/CString.h>
-#include <utils/debug.h>
-#include <utils/sstream.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/sstream.h"
 
 #include <algorithm>
 #include <iterator>

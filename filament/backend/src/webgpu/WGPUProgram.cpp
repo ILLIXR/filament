@@ -19,11 +19,11 @@
 #include "WebGPUConstants.h"
 
 #include "DriverBase.h"
-#include <backend/DriverEnums.h>
-#include <backend/Program.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Program.h"
 
-#include <utils/Panic.h>
-#include <utils/ostream.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/ostream.h"
 
 #include <webgpu/webgpu_cpp.h>
 

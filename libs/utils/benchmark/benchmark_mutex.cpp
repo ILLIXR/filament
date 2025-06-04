@@ -16,8 +16,8 @@
 
 #include "PerformanceCounters.h"
 
-#include <utils/Allocator.h>
-#include <utils/Mutex.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/Mutex.h"
 
 #include <benchmark/benchmark.h>
 

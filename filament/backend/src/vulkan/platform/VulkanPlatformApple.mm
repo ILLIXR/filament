@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/VulkanPlatform.h>
+#include "filament/backend/platforms/VulkanPlatform.h"
 
 #include "vulkan/VulkanConstants.h"
 #include "vulkan/VulkanDriverFactory.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 // Platform specific includes and defines
 #include <Cocoa/Cocoa.h>

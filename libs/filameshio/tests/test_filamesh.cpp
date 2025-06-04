@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-#include <filament/Engine.h>
-#include <filament/Material.h>
-#include <filament/RenderableManager.h>
+#include "filament/Engine.h"
+#include "filament/Material.h"
+#include "filament/RenderableManager.h"
 
-#include <filameshio/filamesh.h>
-#include <filameshio/MeshReader.h>
+#include "filament/filameshio/filamesh.h"
+#include "filament/filameshio/MeshReader.h"
 
-#include <math/half.h>
-#include <math/mat3.h>
-#include <math/norm.h>
-#include <math/quat.h>
-#include <math/vec3.h>
+#include "filament/math/half.h"
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
+#include "filament/math/quat.h"
+#include "filament/math/vec3.h"
 
 #include <gtest/gtest.h>
 

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <private/filament/Variant.h>
+#include "filament/filabridge/Variant.h"
 
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <utils/Slice.h>
+#include "filament/utils/Slice.h"
 
 #include <array>
 

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include "private/filament/BufferInterfaceBlock.h"
+#include "filament/filabridge/BufferInterfaceBlock.h"
 
-#include <utils/Panic.h>
-#include <utils/compiler.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/compiler.h"
 
 #include <utility>
 

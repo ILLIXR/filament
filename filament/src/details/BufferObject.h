@@ -17,13 +17,13 @@
 #ifndef TNT_FILAMENT_DETAILS_BUFFEROBJECT_H
 #define TNT_FILAMENT_DETAILS_BUFFEROBJECT_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <filament/BufferObject.h>
+#include "filament/BufferObject.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 namespace filament {
 

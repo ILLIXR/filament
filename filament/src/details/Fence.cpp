@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include "details/Fence.h"
+#include "Fence.h"
 
-#include "details/Engine.h"
+#include "Engine.h"
 
-#include <filament/Fence.h>
+#include "filament/Fence.h"
 
-#include <utils/Panic.h>
-#include <utils/debug.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/debug.h"
 
 namespace filament {
 

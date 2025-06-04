@@ -16,11 +16,11 @@
 
 #include <gtest/gtest.h>
 
-#include <matc/MaterialCompiler.h>
+#include "../src/matc/MaterialCompiler.h"
 
 #include "TestMaterialCompiler.h"
 
-#include <utils/JobSystem.h>
+#include "filament/utils/JobSystem.h"
 
 static std::string_view jsonMaterialSourceSimple(R"(
 material {
@@ -57,4 +57,3 @@ TEST(TestComputeMaterial, JsonMaterialCompilerSimple) {
     js.emancipate();
     filamat::MaterialBuilder::shutdown();
 }
-

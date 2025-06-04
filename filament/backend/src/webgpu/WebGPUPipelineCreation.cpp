@@ -18,11 +18,11 @@
 
 #include "WebGPUHandles.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <utils/Panic.h>
-#include <utils/debug.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/debug.h"
 
 #include <webgpu/webgpu_cpp.h>
 

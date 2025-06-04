@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <image/ColorTransform.h>
-#include <image/Ktx1Bundle.h>
-#include <image/ImageOps.h>
-#include <image/ImageSampler.h>
-#include <image/LinearImage.h>
+#include "filament/image/ColorTransform.h"
+#include "filament/image/Ktx1Bundle.h"
+#include "filament/image/ImageOps.h"
+#include "filament/image/ImageSampler.h"
+#include "filament/image/LinearImage.h"
 
-#include <imageio/ImageDecoder.h>
-#include <imageio/ImageDiffer.h>
-#include <imageio/ImageEncoder.h>
+#include "filament/imageio/ImageDecoder.h"
+#include "filament/imageio/ImageDiffer.h"
+#include "filament/imageio/ImageEncoder.h"
 
 #include <gtest/gtest.h>
 
-#include <utils/Panic.h>
-#include <utils/Path.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/Path.h"
 
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <fstream>
 #include <string>
@@ -299,7 +299,7 @@ TEST_F(ImageTest, ColorTransformRGB) { // NOLINT
     constexpr size_t bpr = w * sizeof(uint16_t) * 3;
     std::unique_ptr<uint8_t[]> data(new uint8_t[h * bpr]);
     memcpy(data.get(), texels, sizeof(texels));
-    LinearImage img = image::toLinear<uint16_t>(w, h, bpr, data, 
+    LinearImage img = image::toLinear<uint16_t>(w, h, bpr, data,
         [ ](uint16_t v) -> uint16_t { return v; },
         sRGBToLinear< filament::math::float3>);
     auto pixels = img.get<float3>();
@@ -323,7 +323,7 @@ TEST_F(ImageTest, ColorTransformRGBA) { // NOLINT
     constexpr size_t bpr = w * sizeof(uint16_t) * 4;
     std::unique_ptr<uint8_t[]> data(new uint8_t[h * bpr]);
     memcpy(data.get(), texels, sizeof(texels));
-    LinearImage img = image::toLinearWithAlpha<uint16_t>(w, h, bpr, data, 
+    LinearImage img = image::toLinearWithAlpha<uint16_t>(w, h, bpr, data,
         [ ](uint16_t v) -> uint16_t { return v; },
         sRGBToLinear< filament::math::float4>);
     auto pixels = reinterpret_cast<float4*>(img.getPixelRef());

@@ -17,7 +17,7 @@
 #include "VulkanBuffer.h"
 #include "VulkanMemory.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 using namespace bluevk;
 

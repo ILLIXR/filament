@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <filaflat/ChunkContainer.h>
+#include "filament/filaflat/ChunkContainer.h"
 
-#include <filaflat/Unflattener.h>
+#include "filament/filaflat/Unflattener.h"
 
 namespace filaflat {
 

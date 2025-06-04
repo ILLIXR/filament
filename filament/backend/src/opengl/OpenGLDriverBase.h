@@ -19,7 +19,7 @@
 
 #include "DriverBase.h"
 
-#include <utils/CString.h>
+#include "filament/utils/CString.h"
 
 namespace filament::backend {
 

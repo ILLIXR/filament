@@ -20,14 +20,14 @@
 
 #include "details/Engine.h"
 
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/EngineEnums.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
 
 #include <utility>
 #include <limits>

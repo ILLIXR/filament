@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/PlatformOSMesa.h>
+#include "filament/backend/platforms/PlatformOSMesa.h"
 
-#include <utils/Log.h>
-#include <utils/Panic.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
 
 #include <dlfcn.h>
 #include <memory>

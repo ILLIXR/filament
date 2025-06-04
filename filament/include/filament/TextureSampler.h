@@ -19,9 +19,9 @@
 #ifndef TNT_FILAMENT_TEXTURESAMPLER_H
 #define TNT_FILAMENT_TEXTURESAMPLER_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <math.h>
 

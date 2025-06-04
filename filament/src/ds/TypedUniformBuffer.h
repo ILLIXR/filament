@@ -19,9 +19,9 @@
 
 #include "TypedBuffer.h"
 
-#include <backend/BufferDescriptor.h>
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
+#include "filament/backend/BufferDescriptor.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
 
 #include <stddef.h>
 

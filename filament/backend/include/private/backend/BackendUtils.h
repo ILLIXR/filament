@@ -17,9 +17,9 @@
 #ifndef TNT_FILAMENT_BACKEND_PRIVATE_BACKENDUTILS_H
 #define TNT_FILAMENT_BACKEND_PRIVATE_BACKENDUTILS_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
 #include <string_view>
 

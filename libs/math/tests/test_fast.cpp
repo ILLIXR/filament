@@ -16,8 +16,8 @@
 
 #include <gtest/gtest.h>
 
-#include <math/fast.h>
-#include <math/scalar.h>
+#include "filament/math/fast.h"
+#include "filament/math/scalar.h"
 
 using namespace filament::math;
 

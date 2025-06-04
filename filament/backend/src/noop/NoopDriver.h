@@ -20,7 +20,7 @@
 #include "private/backend/Driver.h"
 #include "DriverBase.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 namespace filament::backend {
 

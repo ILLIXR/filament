@@ -19,7 +19,7 @@
 
 #include "VulkanHandles.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include <array>
 #include <vector>

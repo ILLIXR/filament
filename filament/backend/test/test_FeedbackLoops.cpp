@@ -21,11 +21,11 @@
 #include "Skip.h"
 #include "TrianglePrimitive.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/Hash.h>
-#include <utils/Log.h>
+#include "filament/utils/Hash.h"
+#include "filament/utils/Log.h"
 
 #include <fstream>
 #include <string>
@@ -34,8 +34,8 @@
 #include <stdint.h>
 
 #ifndef FILAMENT_IOS
-#include <imageio/ImageEncoder.h>
-#include <image/ColorTransform.h>
+#include "filament/imageio/ImageEncoder.h"
+#include "filament/image/ColorTransform.h"
 
 using namespace image;
 #endif

@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 namespace bluevk {
 

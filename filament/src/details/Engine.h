@@ -17,58 +17,58 @@
 #ifndef TNT_FILAMENT_DETAILS_ENGINE_H
 #define TNT_FILAMENT_DETAILS_ENGINE_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include "Allocators.h"
-#include "DFG.h"
-#include "PostProcessManager.h"
-#include "ResourceList.h"
-#include "HwDescriptorSetLayoutFactory.h"
-#include "HwVertexBufferInfoFactory.h"
+#include "../Allocators.h"
+#include "../DFG.h"
+#include "../PostProcessManager.h"
+#include "../ResourceList.h"
+#include "../HwDescriptorSetLayoutFactory.h"
+#include "../HwVertexBufferInfoFactory.h"
 
-#include "components/CameraManager.h"
-#include "components/LightManager.h"
-#include "components/TransformManager.h"
-#include "components/RenderableManager.h"
+#include "../components/CameraManager.h"
+#include "../components/LightManager.h"
+#include "../components/TransformManager.h"
+#include "../components/RenderableManager.h"
 
-#include "ds/DescriptorSetLayout.h"
+#include "../ds/DescriptorSetLayout.h"
 
-#include "details/BufferObject.h"
-#include "details/Camera.h"
-#include "details/ColorGrading.h"
-#include "details/DebugRegistry.h"
-#include "details/Fence.h"
-#include "details/IndexBuffer.h"
-#include "details/InstanceBuffer.h"
-#include "details/RenderTarget.h"
-#include "details/SkinningBuffer.h"
-#include "details/MorphTargetBuffer.h"
-#include "details/Skybox.h"
+#include "BufferObject.h"
+#include "Camera.h"
+#include "ColorGrading.h"
+#include "DebugRegistry.h"
+#include "Fence.h"
+#include "IndexBuffer.h"
+#include "InstanceBuffer.h"
+#include "RenderTarget.h"
+#include "SkinningBuffer.h"
+#include "MorphTargetBuffer.h"
+#include "Skybox.h"
 
 #include "private/backend/CommandBufferQueue.h"
 #include "private/backend/CommandStream.h"
 #include "private/backend/DriverApi.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/BufferInterfaceBlock.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/BufferInterfaceBlock.h"
 
-#include <filament/ColorGrading.h>
-#include <filament/Engine.h>
-#include <filament/IndirectLight.h>
-#include <filament/Material.h>
-#include <filament/Skybox.h>
-#include <filament/Stream.h>
-#include <filament/Texture.h>
-#include <filament/VertexBuffer.h>
+#include "filament/ColorGrading.h"
+#include "filament/Engine.h"
+#include "filament/IndirectLight.h"
+#include "filament/Material.h"
+#include "filament/Skybox.h"
+#include "filament/Stream.h"
+#include "filament/Texture.h"
+#include "filament/VertexBuffer.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Allocator.h>
-#include <utils/compiler.h>
-#include <utils/CountDownLatch.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/JobSystem.h>
-#include <utils/Slice.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/CountDownLatch.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Slice.h"
 
 #include <array>
 #include <chrono>
@@ -82,7 +82,7 @@
 #include <unordered_map>
 
 #if FILAMENT_ENABLE_MATDBG
-#include <matdbg/DebugServer.h>
+#include "filament/matdbg/DebugServer.h"
 #else
 namespace filament::matdbg {
 class DebugServer;
@@ -91,7 +91,7 @@ using MaterialKey = uint32_t;
 #endif
 
 #if FILAMENT_ENABLE_FGVIEWER
-#include <fgviewer/DebugServer.h>
+#include "filament/fgviewer/DebugServer.h"
 #else
 namespace filament::fgviewer {
     class DebugServer;

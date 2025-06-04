@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/CountDownLatch.h>
+#include "filament/utils/CountDownLatch.h"
 
 namespace utils {
 

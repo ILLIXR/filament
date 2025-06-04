@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <filament/Renderer.h>
+#include "filament/Renderer.h"
 
 #include "ResourceAllocator.h"
 
@@ -22,7 +22,7 @@
 #include "details/Renderer.h"
 #include "details/View.h"
 
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <utility>
 

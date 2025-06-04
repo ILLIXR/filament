@@ -17,14 +17,14 @@
 #ifndef TNT_FILAMENT_DRIVER_DRIVERBASE_H
 #define TNT_FILAMENT_DRIVER_DRIVERBASE_H
 
-#include <utils/compiler.h>
-#include <utils/CString.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
-#include <backend/BufferDescriptor.h>
-#include <backend/DriverEnums.h>
-#include <backend/CallbackHandler.h>
+#include "filament/backend/BufferDescriptor.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/CallbackHandler.h"
 
 #include "private/backend/Dispatcher.h"
 #include "private/backend/Driver.h"

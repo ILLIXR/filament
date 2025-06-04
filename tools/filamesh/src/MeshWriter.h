@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <filameshio/filamesh.h>
+#include "filament/filameshio/filamesh.h"
 
-#include <math/half.h>
-#include <math/mat3.h>
-#include <math/norm.h>
-#include <math/quat.h>
-#include <math/vec3.h>
+#include "filament/math/half.h"
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
+#include "filament/math/quat.h"
+#include "filament/math/vec3.h"
 
 #include <iostream>
 #include <string>

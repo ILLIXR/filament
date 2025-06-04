@@ -17,9 +17,9 @@
 #ifndef CAMUTILS_MAP_MANIPULATOR_H
 #define CAMUTILS_MAP_MANIPULATOR_H
 
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Manipulator.h"
 
-#include <math/vec3.h>
+#include "filament/math/vec3.h"
 
 namespace filament {
 namespace camutils {

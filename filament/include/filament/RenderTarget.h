@@ -19,12 +19,12 @@
 #ifndef TNT_FILAMENT_RENDERTARGET_H
 #define TNT_FILAMENT_RENDERTARGET_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <stddef.h>
 #include <stdint.h>

@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_STREAM_H
 #define TNT_FILAMENT_STREAM_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/CallbackHandler.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/CallbackHandler.h"
 
-#include <utils/compiler.h>
-#include <utils/StaticString.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/StaticString.h"
 
-#include <math/mat3.h>
+#include "filament/math/mat3.h"
 
 #include <stdint.h>
 
@@ -93,9 +93,9 @@ public:
      * Constructs a Stream object instance.
      *
      * By default, Stream objects are ACQUIRED and must have external images pushed to them via
-     * <pre>Stream::setAcquiredImage</pre>.
+     * "filament/pre>Stream::setAcquiredImage</pre".
      *
-     * To create a NATIVE stream, call the <pre>stream</pre> method on the builder.
+     * To create a NATIVE stream, call the "filament/pre>stream</pre" method on the builder.
      */
     class Builder : public BuilderBase<BuilderDetails>, public BuilderNameMixin<Builder> {
         friend struct BuilderDetails;

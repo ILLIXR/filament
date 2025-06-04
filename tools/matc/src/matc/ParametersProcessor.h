@@ -24,7 +24,7 @@
 #include "JsonishLexeme.h"
 #include "JsonishParser.h"
 
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/MaterialBuilder.h"
 
 namespace matc {
 

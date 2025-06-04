@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/OpenGLPlatform.h>
+#include "filament/backend/platforms/OpenGLPlatform.h"
 
 #include "OpenGLDriverBase.h"
 #include "OpenGLDriverFactory.h"
 
-#include <backend/AcquiredImage.h>
-#include <backend/DriverEnums.h>
-#include <backend/Platform.h>
+#include "filament/backend/AcquiredImage.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Platform.h"
 
-#include <utils/compiler.h>
-#include <utils/Panic.h>
-#include <utils/CString.h>
-#include <utils/Invocable.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/Invocable.h"
 
 #include <stddef.h>
 #include <stdint.h>

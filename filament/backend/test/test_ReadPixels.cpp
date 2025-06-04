@@ -22,7 +22,7 @@
 #include "SharedShaders.h"
 #include "TrianglePrimitive.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 #include <fstream>
 #include <algorithm>
@@ -32,8 +32,8 @@ using namespace filament::backend;
 
 #ifndef FILAMENT_IOS
 
-#include <imageio/ImageEncoder.h>
-#include <image/ColorTransform.h>
+#include "filament/imageio/ImageEncoder.h"
+#include "filament/image/ColorTransform.h"
 
 using namespace image;
 #endif

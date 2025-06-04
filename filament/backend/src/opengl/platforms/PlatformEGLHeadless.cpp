@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/PlatformEGLHeadless.h>
+#include "filament/backend/platforms/PlatformEGLHeadless.h"
 
 #include "opengl/GLUtils.h"
 
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
 
-#include <utils/compiler.h>
-#include <utils/Log.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
 
 using namespace utils;
 

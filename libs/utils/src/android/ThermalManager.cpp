@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/android/ThermalManager.h>
+#include "filament/utils/android/ThermalManager.h"
 
 #include <android/thermal.h>
 

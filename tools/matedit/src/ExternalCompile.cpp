@@ -16,25 +16,25 @@
 
 #include "ExternalCompile.h"
 
-#include "backend/DriverEnums.h"
-#include "eiff/BlobDictionary.h"
-#include "eiff/ChunkContainer.h"
-#include "eiff/DictionaryMetalLibraryChunk.h"
-#include "eiff/DictionarySpirvChunk.h"
-#include "eiff/DictionaryTextChunk.h"
-#include "eiff/LineDictionary.h"
-#include "eiff/MaterialBinaryChunk.h"
-#include "eiff/MaterialTextChunk.h"
-#include "eiff/ShaderEntry.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/filamat/eiff/BlobDictionary.h"
+#include "filament/filamat/eiff/ChunkContainer.h"
+#include "filament/filamat/eiff/DictionaryMetalLibraryChunk.h"
+#include "filament/filamat/eiff/DictionarySpirvChunk.h"
+#include "filament/filamat/eiff/DictionaryTextChunk.h"
+#include "filament/filamat/eiff/LineDictionary.h"
+#include "filament/filamat/eiff/MaterialBinaryChunk.h"
+#include "filament/filamat/eiff/MaterialTextChunk.h"
+#include "filament/filamat/eiff/ShaderEntry.h"
 
-#include <filaflat/ChunkContainer.h>
-#include <filaflat/DictionaryReader.h>
-#include <filaflat/MaterialChunk.h>
+#include "filament/filaflat/ChunkContainer.h"
+#include "filament/filaflat/DictionaryReader.h"
+#include "filament/filaflat/MaterialChunk.h"
 
-#include <matdbg/ShaderExtractor.h>
-#include <matdbg/ShaderInfo.h>
+#include "filament/matdbg/ShaderExtractor.h"
+#include "filament/matdbg/ShaderInfo.h"
 
-#include <filamat/Package.h>
+#include "filament/filamat/Package.h"
 
 #include <sys/wait.h>
 #include <unistd.h>

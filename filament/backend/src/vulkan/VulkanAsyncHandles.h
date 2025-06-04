@@ -17,14 +17,14 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKANASYNCHANDLES_H
 #define TNT_FILAMENT_BACKEND_VULKANASYNCHANDLES_H
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 #include "DriverBase.h"
 
 #include "vulkan/memory/Resource.h"
 
-#include <utils/Mutex.h>
-#include <utils/Condition.h>
+#include "filament/utils/Mutex.h"
+#include "filament/utils/Condition.h"
 
 namespace filament::backend {
 

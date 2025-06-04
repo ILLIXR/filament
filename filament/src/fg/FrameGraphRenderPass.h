@@ -17,12 +17,12 @@
 #ifndef TNT_FILAMENT_FG_FRAMEGRAPHRENDERPASS_H
 #define TNT_FILAMENT_FG_FRAMEGRAPHRENDERPASS_H
 
-#include "fg/FrameGraphTexture.h"
+#include "FrameGraphTexture.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <filament/Viewport.h>
+#include "filament/Viewport.h"
 
 namespace filament {
 

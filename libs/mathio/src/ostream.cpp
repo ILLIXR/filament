@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-#include <mathio/ostream.h>
+#include "filament/mathio/ostream.h"
 
-#include <math/mat2.h>
-#include <math/mat3.h>
-#include <math/mat4.h>
+#include "filament/math/mat2.h"
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
 
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
-#include <math/quat.h>
-#include <math/half.h>
+#include "filament/math/quat.h"
+#include "filament/math/half.h"
 
 #include <iomanip>
 #include <ostream>

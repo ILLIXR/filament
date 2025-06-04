@@ -28,10 +28,10 @@
 #include "vulkan/utils/Image.h"
 #include "vulkan/utils/Spirv.h"
 
-#include <backend/platforms/VulkanPlatform.h>
+#include "filament/backend/platforms/VulkanPlatform.h"
 
-#include <utils/compiler.h> // UTILS_FALLTHROUGH
-#include <utils/Panic.h>    // ASSERT_POSTCONDITION
+#include "filament/utils/compiler.h" // UTILS_FALLTHROUGH
+#include "filament/utils/Panic.h"    // ASSERT_POSTCONDITION
 
 using namespace bluevk;
 

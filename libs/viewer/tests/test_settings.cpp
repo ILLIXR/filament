@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include <viewer/AutomationSpec.h>
-#include <viewer/Settings.h>
+#include "filament/viewer/AutomationSpec.h"
+#include "filament/viewer/Settings.h"
 
 #include <gtest/gtest.h>
 

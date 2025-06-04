@@ -21,7 +21,7 @@
 
 #include "gl_headers.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include <stdint.h>
 

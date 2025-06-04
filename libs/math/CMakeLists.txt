@@ -14,22 +14,22 @@ endif()
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-        include/math/TMatHelpers.h
-        include/math/TQuatHelpers.h
-        include/math/TVecHelpers.h
-        include/math/compiler.h
-        include/math/fast.h
-        include/math/half.h
-        include/math/mathfwd.h
-        include/math/mat2.h
-        include/math/mat3.h
-        include/math/mat4.h
-        include/math/norm.h
-        include/math/quat.h
-        include/math/scalar.h
-        include/math/vec2.h
-        include/math/vec3.h
-        include/math/vec4.h
+        include/filament/math/TMatHelpers.h
+        include/filament/math/TQuatHelpers.h
+        include/filament/math/TVecHelpers.h
+        include/filament/math/compiler.h
+        include/filament/math/fast.h
+        include/filament/math/half.h
+        include/filament/math/mathfwd.h
+        include/filament/math/mat2.h
+        include/filament/math/mat3.h
+        include/filament/math/mat4.h
+        include/filament/math/norm.h
+        include/filament/math/quat.h
+        include/filament/math/scalar.h
+        include/filament/math/vec2.h
+        include/filament/math/vec3.h
+        include/filament/math/vec4.h
 )
 
 set(SRCS src/dummy.cpp)
@@ -40,14 +40,21 @@ set(SRCS src/dummy.cpp)
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 target_compile_options(${TARGET} PRIVATE ${OPTIMIZATION_FLAGS})
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/math>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(DIRECTORY ${PUBLIC_HDR_DIR}/math DESTINATION include)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        PUBLIC_HEADER DESTINATION include/filament/math
+)
 
 # ==================================================================================================
 # Tests
@@ -67,7 +74,7 @@ set_target_properties(test_${TARGET} PROPERTIES FOLDER Tests)
 # ==================================================================================================
 
 set(BENCHMARK_SRCS
-        benchmarks/benchmark_fast.cpp include/math/mathfwd.h)
+        benchmarks/benchmark_fast.cpp include/filament/math/mathfwd.h)
 
 add_executable(benchmark_${TARGET} ${BENCHMARK_SRCS})
 

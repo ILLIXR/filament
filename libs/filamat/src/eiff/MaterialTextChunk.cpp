@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "MaterialTextChunk.h"
+#include "filament/filamat/eiff/MaterialTextChunk.h"
 
 namespace filamat {
 

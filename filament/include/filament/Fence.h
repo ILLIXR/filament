@@ -19,11 +19,11 @@
 #ifndef TNT_FILAMENT_FENCE_H
 #define TNT_FILAMENT_FENCE_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <stdint.h>
 

@@ -19,10 +19,10 @@
 #ifndef TNT_FILAMENT_COLOR_H
 #define TNT_FILAMENT_COLOR_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <stdint.h>
 #include <stddef.h>

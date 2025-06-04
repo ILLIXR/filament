@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <GLES3/gl3.h>
 #include <EGL/egl.h>

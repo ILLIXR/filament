@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_PRIVATE_BLOBCACHEKEY_H
 #define TNT_FILAMENT_BACKEND_PRIVATE_BLOBCACHEKEY_H
 
-#include <backend/Program.h>
+#include "filament/backend/Program.h"
 
 namespace filament::backend {
 

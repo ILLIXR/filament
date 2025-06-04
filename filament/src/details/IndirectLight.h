@@ -17,16 +17,16 @@
 #ifndef TNT_FILAMENT_DETAILS_INDIRECTLIGHT_H
 #define TNT_FILAMENT_DETAILS_INDIRECTLIGHT_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <filament/IndirectLight.h>
-#include <filament/Texture.h>
+#include "filament/IndirectLight.h"
+#include "filament/Texture.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mat3.h>
+#include "filament/math/mat3.h"
 
 #include <array>
 

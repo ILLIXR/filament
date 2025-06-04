@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <direct.h>
 #include <Strsafe.h>

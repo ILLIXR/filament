@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include "private/filament/SamplerInterfaceBlock.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
 
-#include <private/filament/DescriptorSets.h>
+#include "filament/filabridge/DescriptorSets.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <initializer_list>
 #include <iterator>

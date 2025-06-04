@@ -16,8 +16,8 @@
 
 #include <private/backend/PlatformFactory.h>
 
-#include <utils/Systrace.h>
-#include <utils/debug.h>
+#include "filament/utils/Systrace.h"
+#include "filament/utils/debug.h"
 
 // We need to keep this up top for the linux (X11) name collisions.
 #if defined(FILAMENT_SUPPORTS_WEBGPU)
@@ -36,9 +36,9 @@
 #elif defined(__APPLE__)
     #if defined(FILAMENT_SUPPORTS_OPENGL) && !defined(FILAMENT_USE_EXTERNAL_GLES3)
         #if defined(FILAMENT_SUPPORTS_OSMESA)
-            #include <backend/platforms/PlatformOSMesa.h>
+            #include "filament/backend/platforms/PlatformOSMesa.h"
         #else
-            #include <backend/platforms/PlatformCocoaGL.h>
+            #include "filament/backend/platforms/PlatformCocoaGL.h"
         #endif
     #endif
 #elif defined(__linux__)
@@ -67,7 +67,7 @@
     #if defined(__ANDROID__)
         #include "backend/platforms/VulkanPlatformAndroid.h"
     #else
-        #include "backend/platforms/VulkanPlatform.h"
+        #include "filament/backend/platforms/VulkanPlatform.h"
     #endif
 #endif
 

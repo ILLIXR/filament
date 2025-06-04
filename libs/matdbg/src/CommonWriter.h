@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-#include <filaflat/ChunkContainer.h>
-#include <filaflat/DictionaryReader.h>
-#include <filaflat/MaterialChunk.h>
-#include <filaflat/Unflattener.h>
+#include "filament/filaflat/ChunkContainer.h"
+#include "filament/filaflat/DictionaryReader.h"
+#include "filament/filaflat/MaterialChunk.h"
+#include "filament/filaflat/Unflattener.h"
 
-#include <filament/MaterialChunkType.h>
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialChunkType.h"
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <matdbg/JsonWriter.h>
-#include <matdbg/ShaderInfo.h>
+#include "filament/matdbg/JsonWriter.h"
+#include "filament/matdbg/ShaderInfo.h"
 
 #include <string>
 

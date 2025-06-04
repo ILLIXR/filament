@@ -16,7 +16,7 @@
 
 #include "DirIncluder.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <fstream>
 
@@ -67,4 +67,3 @@ bool DirIncluder::operator()(const utils::CString& includedBy, filamat::IncludeR
 }
 
 } // namespace matc
-

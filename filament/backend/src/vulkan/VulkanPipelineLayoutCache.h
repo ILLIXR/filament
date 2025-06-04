@@ -19,9 +19,9 @@
 
 #include "VulkanHandles.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 #include <unordered_map>
 
@@ -30,7 +30,7 @@ namespace filament::backend {
 class VulkanPipelineLayoutCache {
 public:
     using DescriptorSetLayoutArray = VulkanDescriptorSetLayout::DescriptorSetLayoutArray;
-    
+
     VulkanPipelineLayoutCache(VkDevice device)
         : mDevice(device),
           mTimestamp(0) {}

@@ -16,10 +16,10 @@
 
 #include "private/backend/VirtualMachineEnv.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Mutex.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/Panic.h"
 
 #include <jni.h>
 
@@ -129,4 +129,3 @@ void VirtualMachineEnv::handleException(JNIEnv* const env) noexcept {
 }
 
 } // namespace filament
-

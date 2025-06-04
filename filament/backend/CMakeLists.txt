@@ -9,19 +9,20 @@ set(GENERATION_ROOT ${CMAKE_CURRENT_BINARY_DIR})
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-    include/backend/AcquiredImage.h
-    include/backend/BufferDescriptor.h
-    include/backend/CallbackHandler.h
-    include/backend/DescriptorSetOffsetArray.h
-    include/backend/DriverApiForward.h
-    include/backend/DriverEnums.h
-    include/backend/Handle.h
-    include/backend/PipelineState.h
-    include/backend/PixelBufferDescriptor.h
-    include/backend/Platform.h
-    include/backend/Program.h
-    include/backend/SamplerDescriptor.h
-    include/backend/TargetBufferInfo.h
+    include/filament/backend/AcquiredImage.h
+    include/filament/backend/BufferDescriptor.h
+    include/filament/backend/CallbackHandler.h
+    include/filament/backend/DescriptorSetOffsetArray.h
+    include/filament/backend/DriverApiForward.h
+    include/filament/backend/DriverEnums.h
+    include/filament/backend/Handle.h
+    include/filament/backend/PipelineState.h
+    include/filament/backend/PixelBufferDescriptor.h
+    include/filament/backend/Platform.h
+    include/filament/backend/PresentCallable.h
+    include/filament/backend/Program.h
+    include/filament/backend/SamplerDescriptor.h
+    include/filament/backend/TargetBufferInfo.h
 )
 
 set(SRCS
@@ -67,7 +68,7 @@ set(PRIVATE_HDRS
 
 if(FILAMENT_SUPPORTS_OPENGL AND NOT FILAMENT_USE_EXTERNAL_GLES3)
     list(APPEND SRCS
-         include/backend/platforms/OpenGLPlatform.h
+         include/filament/backend/platforms/OpenGLPlatform.h
          src/opengl/BindingMap.h
          src/opengl/gl_headers.cpp
          src/opengl/gl_headers.h
@@ -176,7 +177,7 @@ endif()
 # See root CMakeLists.txt for platforms that support Vulkan
 if(FILAMENT_SUPPORTS_VULKAN)
     list(APPEND SRCS
-         include/backend/platforms/VulkanPlatform.h
+         include/filament/backend/platforms/VulkanPlatform.h
          src/vulkan/VulkanAsyncHandles.h
          src/vulkan/VulkanBlitter.cpp
          src/vulkan/VulkanBlitter.h
@@ -244,7 +245,7 @@ if(FILAMENT_SUPPORTS_VULKAN)
         list(APPEND SRCS src/vulkan/platform/VulkanPlatformApple.mm)
     elseif(ANDROID)
         list(APPEND SRCS
-             include/backend/platforms/VulkanPlatformAndroid.h
+             include/filament/backend/platforms/VulkanPlatformAndroid.h
              src/vulkan/platform/VulkanPlatformAndroid.cpp
         )
     endif()
@@ -252,7 +253,7 @@ endif()
 
 if(FILAMENT_SUPPORTS_WEBGPU)
     list(APPEND SRCS
-         include/backend/platforms/WebGPUPlatform.h
+         include/filament/backend/platforms/WebGPUPlatform.h
          src/webgpu/platform/WebGPUPlatform.cpp
          src/webgpu/WebGPUConstants.h
          src/webgpu/WebGPUDriver.cpp
@@ -304,11 +305,26 @@ include_directories(${PUBLIC_HDR_DIR})
 include_directories(src)
 include_directories(${GENERATION_ROOT})
 
+# ==================================================================================================
+# Expose a header-only target to minimize dependencies.
+# ==================================================================================================
+
+add_library(${TARGET}_headers INTERFACE)
+set_target_properties(${TARGET}_headers PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+target_include_directories(${TARGET}_headers INTERFACE
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
+
+
 # we're building a library
 add_library(${TARGET} STATIC ${PRIVATE_HDRS} ${PUBLIC_HDRS} ${SRCS})
-
+target_link_libraries(${TARGET} PUBLIC ${TARGET}_headers)
 # specify where the public headers of this library are
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 
 # add this subproject to the Filament folder
 set_target_properties(${TARGET} PROPERTIES FOLDER Filament)
@@ -317,13 +333,6 @@ set_target_properties(${TARGET} PROPERTIES FOLDER Filament)
 if(WIN32 AND FILAMENT_SUPPORTS_WEBGPU)
     target_compile_definitions(${TARGET} PRIVATE "WGPU_IMPLEMENTATION")
 endif()
-
-# ==================================================================================================
-# Expose a header-only target to minimize dependencies.
-# ==================================================================================================
-
-add_library(${TARGET}_headers INTERFACE)
-target_include_directories(${TARGET}_headers INTERFACE ${PUBLIC_HDR_DIR})
 
 # ==================================================================================================
 # Build SPIRV snippets used by the Vulkan backend.
@@ -395,6 +404,7 @@ endif()
 if(FILAMENT_SUPPORTS_VULKAN)
     target_link_libraries(${TARGET} PUBLIC bluevk vkmemalloc vkshaders smol-v)
     target_link_libraries(${TARGET} PRIVATE SPIRV-Headers::SPIRV-Headers)
+    target_include_directories(${TARGET} PRIVATE ${SMOLV_BUILD_INCLUDE_PATH})
 endif()
 
 if(FILAMENT_SUPPORTS_WEBGPU)
@@ -491,9 +501,19 @@ target_link_libraries(${TARGET} PRIVATE
 # Installation
 # ==================================================================================================
 set(INSTALL_TYPE ARCHIVE)
-install(TARGETS ${TARGET} ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR})
-install(TARGETS vkshaders ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/backend DESTINATION include)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/backend
+)
+install(TARGETS ${TARGET}_headers
+        EXPORT filament-targets
+        PUBLIC_HEADER DESTINATION include/filament/backend
+)
+install(TARGETS vkshaders
+        EXPORT filament-targets
+        ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR}
+)
 
 if(FILAMENT_SUPPORTS_WEBGPU)
     install(TARGETS webgpu_dawn ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR})
@@ -505,6 +525,7 @@ endif()
 option(INSTALL_BACKEND_TEST "Install the backend test library so it can be consumed on iOS" OFF)
 
 if(APPLE OR LINUX)
+    find_package(absl REQUIRED CONFIG)
     set(BACKEND_TEST_SRC
         test/BackendTest.cpp
         test/ShaderGenerator.cpp

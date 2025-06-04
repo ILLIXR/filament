@@ -17,7 +17,7 @@
 #ifndef GLTFIO_UTILITY_H
 #define GLTFIO_UTILITY_H
 
-#include <backend/BufferDescriptor.h>
+#include "filament/backend/BufferDescriptor.h"
 
 #include <tsl/robin_map.h>
 

@@ -18,8 +18,8 @@
 
 #include "../FFilamentAsset.h"
 
-#include <backend/BufferDescriptor.h>
-#include <filament/BufferObject.h>
+#include "filament/backend/BufferDescriptor.h"
+#include "filament/BufferObject.h"
 
 #include <cgltf.h>
 

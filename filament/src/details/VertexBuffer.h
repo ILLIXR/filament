@@ -17,17 +17,17 @@
 #ifndef TNT_FILAMENT_DETAILS_VERTEXBUFFER_H
 #define TNT_FILAMENT_DETAILS_VERTEXBUFFER_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <filament/VertexBuffer.h>
+#include "filament/VertexBuffer.h"
 
-#include <utils/bitset.h>
-#include <utils/compiler.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/compiler.h"
 
-#include <math/vec2.h>
+#include "filament/math/vec2.h"
 
 #include <array>
 #include <memory>

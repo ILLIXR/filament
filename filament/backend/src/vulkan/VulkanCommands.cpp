@@ -24,9 +24,9 @@
 #include "VulkanConstants.h"
 #include "VulkanContext.h"
 
-#include <utils/Log.h>
-#include <utils/Panic.h>
-#include <utils/debug.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/debug.h"
 
 using namespace bluevk;
 using namespace utils;

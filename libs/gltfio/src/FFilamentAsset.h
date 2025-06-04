@@ -17,27 +17,27 @@
 #ifndef GLTFIO_FFILAMENTASSET_H
 #define GLTFIO_FFILAMENTASSET_H
 
-#include <gltfio/FilamentAsset.h>
-#include <gltfio/NodeManager.h>
-#include <gltfio/TrsTransformManager.h>
+#include "filament/gltfio/FilamentAsset.h"
+#include "filament/gltfio/NodeManager.h"
+#include "filament/gltfio/TrsTransformManager.h"
 
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/MaterialInstance.h>
-#include <filament/RenderableManager.h>
-#include <filament/Texture.h>
-#include <filament/TextureSampler.h>
-#include <filament/TransformManager.h>
-#include <filament/VertexBuffer.h>
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/MaterialInstance.h"
+#include "filament/RenderableManager.h"
+#include "filament/Texture.h"
+#include "filament/TextureSampler.h"
+#include "filament/TransformManager.h"
+#include "filament/VertexBuffer.h"
 
-#include <gltfio/MaterialProvider.h>
-#include <gltfio/TextureProvider.h>
+#include "filament/gltfio/MaterialProvider.h"
+#include "filament/gltfio/TextureProvider.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
-#include <utils/FixedCapacityVector.h>
-#include <utils/CString.h>
-#include <utils/Entity.h>
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/Entity.h"
 
 #include <cgltf.h>
 

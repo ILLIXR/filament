@@ -19,7 +19,7 @@
 
 #include <benchmark/benchmark.h>
 
-#include <utils/Profiler.h>
+#include "filament/utils/Profiler.h"
 
 #include <cmath>
 

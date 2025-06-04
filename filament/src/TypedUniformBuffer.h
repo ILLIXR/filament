@@ -17,9 +17,9 @@
 #ifndef TNT_FILAMENT_TYPEDBUFFER_H
 #define TNT_FILAMENT_TYPEDBUFFER_H
 
-#include <private/backend/DriverApi.h>
+#include "private/backend/DriverApi.h"
 
-#include <backend/BufferDescriptor.h>
+#include "filament/backend/BufferDescriptor.h"
 
 #include <stddef.h>
 #include <string.h>

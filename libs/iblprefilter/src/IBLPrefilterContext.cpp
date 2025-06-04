@@ -14,31 +14,31 @@
  * limitations under the License.
  */
 
-#include "filament-iblprefilter/IBLPrefilterContext.h"
+#include "filament/iblprefilter/IBLPrefilterContext.h"
 
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/Material.h>
-#include <filament/MaterialEnums.h>
-#include <filament/RenderTarget.h>
-#include <filament/RenderableManager.h>
-#include <filament/Renderer.h>
-#include <filament/Scene.h>
-#include <filament/Texture.h>
-#include <filament/TextureSampler.h>
-#include <filament/VertexBuffer.h>
-#include <filament/View.h>
-#include <filament/Viewport.h>
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/Material.h"
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/RenderTarget.h"
+#include "filament/RenderableManager.h"
+#include "filament/Renderer.h"
+#include "filament/Scene.h"
+#include "filament/Texture.h"
+#include "filament/TextureSampler.h"
+#include "filament/VertexBuffer.h"
+#include "filament/View.h"
+#include "filament/Viewport.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/EntityManager.h>
-#include <utils/Panic.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Systrace.h"
 
-#include <math/scalar.h>
-#include <math/vec4.h>
+#include "filament/math/scalar.h"
+#include "filament/math/vec4.h"
 
 #include <algorithm>
 #include <cmath>

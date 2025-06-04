@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 namespace utils {
 

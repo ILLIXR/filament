@@ -16,9 +16,9 @@
 
 #include "Includes.h"
 
-#include <utils/Log.h>
-#include <utils/compiler.h>
-#include <utils/sstream.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/sstream.h"
 
 #include <string>
 

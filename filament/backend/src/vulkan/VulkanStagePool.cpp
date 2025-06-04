@@ -22,7 +22,7 @@
 #include "vulkan/utils/Conversion.h"
 #include "vulkan/utils/Image.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 static constexpr uint32_t TIME_BEFORE_EVICTION = 3;
 

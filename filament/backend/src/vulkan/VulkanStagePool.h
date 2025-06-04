@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKANSTAGEPOOL_H
 #define TNT_FILAMENT_BACKEND_VULKANSTAGEPOOL_H
 
-#include "backend/DriverEnums.h"
+#include "filament/backend/DriverEnums.h"
 #include "VulkanMemory.h"
 
 #include <map>

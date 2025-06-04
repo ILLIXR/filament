@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <atomic>
 #include <utility>

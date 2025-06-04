@@ -14,56 +14,56 @@
  * limitations under the License.
  */
 
-#include "details/Engine.h"
+#include "Engine.h"
 
-#include "MaterialParser.h"
-#include "ResourceAllocator.h"
-#include "RenderPrimitive.h"
+#include "../MaterialParser.h"
+#include "../ResourceAllocator.h"
+#include "../RenderPrimitive.h"
 
-#include "details/BufferObject.h"
-#include "details/Camera.h"
-#include "details/Fence.h"
-#include "details/IndexBuffer.h"
-#include "details/IndirectLight.h"
-#include "details/InstanceBuffer.h"
-#include "details/Material.h"
-#include "details/MorphTargetBuffer.h"
-#include "details/Renderer.h"
-#include "details/Scene.h"
-#include "details/SkinningBuffer.h"
-#include "details/Skybox.h"
-#include "details/Stream.h"
-#include "details/SwapChain.h"
-#include "details/Texture.h"
-#include "details/VertexBuffer.h"
-#include "details/View.h"
+#include "BufferObject.h"
+#include "Camera.h"
+#include "Fence.h"
+#include "IndexBuffer.h"
+#include "IndirectLight.h"
+#include "InstanceBuffer.h"
+#include "Material.h"
+#include "MorphTargetBuffer.h"
+#include "Renderer.h"
+#include "Scene.h"
+#include "SkinningBuffer.h"
+#include "Skybox.h"
+#include "Stream.h"
+#include "SwapChain.h"
+#include "Texture.h"
+#include "VertexBuffer.h"
+#include "View.h"
 
-#include <filament/ColorGrading.h>
-#include <filament/Engine.h>
-#include <filament/MaterialEnums.h>
+#include "filament/ColorGrading.h"
+#include "filament/Engine.h"
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/EngineEnums.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/Variant.h"
 
-#include <private/backend/PlatformFactory.h>
+#include "private/backend/PlatformFactory.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Allocator.h>
-#include <utils/CallStack.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Invocable.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/PrivateImplementation-impl.h>
-#include <utils/Systrace.h>
-#include <utils/ThreadUtils.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/CallStack.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Invocable.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/PrivateImplementation-impl.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/ThreadUtils.h"
 
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <algorithm>
 #include <chrono>
@@ -794,9 +794,9 @@ int FEngine::loop() {
 #if FILAMENT_ENABLE_MATDBG
     if(debug.server) {
         delete debug.server;
-    } 
+    }
 #endif
-#if FILAMENT_ENABLE_FGVIEWER 
+#if FILAMENT_ENABLE_FGVIEWER
     if(debug.fgviewerServer) {
         delete debug.fgviewerServer;
     }

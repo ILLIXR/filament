@@ -22,10 +22,10 @@
 #include "vulkan/utils/Conversion.h"
 
 #include <DataReshaper.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 #include <private/backend/BackendUtils.h>
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 using namespace bluevk;
 

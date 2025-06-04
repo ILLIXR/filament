@@ -26,7 +26,7 @@
 
 #include "builtinResource.h"
 
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <iostream>
 #include <utility>

@@ -17,7 +17,7 @@
 #include "ComputeTest.h"
 #include "PlatformRunner.h"
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 #include <private/backend/PlatformFactory.h>
 
 

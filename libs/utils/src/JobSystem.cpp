@@ -23,14 +23,14 @@
 // when SYSTRACE_TAG_JOBSYSTEM is used, enables even heavier systraces
 #define HEAVY_SYSTRACE  0
 
-#include <utils/JobSystem.h>
+#include "filament/utils/JobSystem.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Systrace.h"
 
 #include <algorithm>
 #include <atomic>
@@ -104,7 +104,7 @@ void JobSystem::setThreadName(const char* name) noexcept {
     std::wstring u16name;
     u16name.resize(size);
     MultiByteToWideChar(CP_UTF8, MB_ERR_INVALID_CHARS, u8name.data(), u8name.size(), u16name.data(), u16name.size());
-    
+
     SetThreadDescription(GetCurrentThread(), u16name.data());
 #endif
 }

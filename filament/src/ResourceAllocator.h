@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_RESOURCEALLOCATOR_H
 #define TNT_FILAMENT_RESOURCEALLOCATOR_H
 
-#include <filament/Engine.h>
+#include "filament/Engine.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include "backend/DriverApiForward.h"
+#include "filament/backend/DriverApiForward.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 #include <array>
 #include <memory>

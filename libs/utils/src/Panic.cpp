@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include "ostream_.h"
 
-#include <utils/compiler.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
 
 #include <stdarg.h>
 #include <stdio.h>

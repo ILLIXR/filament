@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <geometry/TangentSpaceMesh.h>
+#include "filament/geometry/TangentSpaceMesh.h"
 
-#include <math/quat.h>
-#include <math/vec3.h>
+#include "filament/math/quat.h"
+#include "filament/math/vec3.h"
 
 #include <gtest/gtest.h>
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <vector>
 
@@ -259,7 +259,7 @@ TEST_F(TangentSpaceMeshTest, TangentsProvided) {
     mesh->getQuats(quats.data());
     for (size_t i = 0; i < vertexCount; ++i) {
         float3 const n = quats[i] * NORMAL_AXIS;
-        EXPECT_PRED2(isAlmostEqual3, n, CUBE_NORMALS[i]);        
+        EXPECT_PRED2(isAlmostEqual3, n, CUBE_NORMALS[i]);
     }
     TangentSpaceMesh::destroy(mesh);
 }

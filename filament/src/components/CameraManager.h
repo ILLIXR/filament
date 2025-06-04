@@ -19,11 +19,11 @@
 
 #include "downcast.h"
 
-#include <filament/FilamentAPI.h>
+#include "filament/FilamentAPI.h"
 
-#include <utils/compiler.h>
-#include <utils/SingleInstanceComponentManager.h>
-#include <utils/Entity.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/SingleInstanceComponentManager.h"
+#include "filament/utils/Entity.h"
 
 namespace filament {
 

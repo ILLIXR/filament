@@ -16,9 +16,9 @@
 
 #include "ShadowMap.h"
 
-#include <filament/Box.h>
-#include <filament/Frustum.h>
-#include <filament/LightManager.h>
+#include "filament/Box.h"
+#include "filament/Frustum.h"
+#include "filament/LightManager.h"
 
 #include "components/LightManager.h"
 
@@ -26,20 +26,20 @@
 #include "details/Engine.h"
 #include "details/Scene.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Entity.h>
-#include <utils/Slice.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/Slice.h"
+#include "filament/utils/Systrace.h"
 
-#include <math/vec3.h>
-#include <math/vec4.h>
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/scalar.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/scalar.h"
 
 #include <algorithm>
 #include <array>

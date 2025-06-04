@@ -17,12 +17,12 @@
 #ifndef TNT_FILAMENT_TRANSFORMMANAGER_H
 #define TNT_FILAMENT_TRANSFORMMANAGER_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <utils/compiler.h>
-#include <utils/EntityInstance.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/EntityInstance.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <iterator>
 

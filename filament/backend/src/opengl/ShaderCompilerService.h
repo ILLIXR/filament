@@ -23,13 +23,13 @@
 #include "CompilerThreadPool.h"
 #include "OpenGLBlobCache.h"
 
-#include <backend/CallbackHandler.h>
-#include <backend/DriverEnums.h>
-#include <backend/Program.h>
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Program.h"
 
-#include <utils/CString.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/JobSystem.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/JobSystem.h"
 
 #include <array>
 #include <functional>

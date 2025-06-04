@@ -17,10 +17,10 @@
 #ifndef GLTFIO_WIREFRAME_H
 #define GLTFIO_WIREFRAME_H
 
-#include <filament/IndexBuffer.h>
-#include <filament/VertexBuffer.h>
+#include "filament/IndexBuffer.h"
+#include "filament/VertexBuffer.h"
 
-#include <utils/Entity.h>
+#include "filament/utils/Entity.h"
 
 namespace filament::gltfio {
 

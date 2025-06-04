@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "SimpleFieldChunk.h"
+#include "filament/filamat/eiff/SimpleFieldChunk.h"
 
 namespace filamat {
 

@@ -550,9 +550,13 @@ include_directories(src)
 
 # we're building a library
 add_library(${TARGET} STATIC ${PRIVATE_HDRS} ${PUBLIC_HDRS} ${SRCS} ${DATA_BINS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
 # specify where the public headers of this library are
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include>
+)
 
 # add this subproject to the Filament folder
 set_target_properties(${TARGET} PROPERTIES FOLDER Filament)
@@ -650,10 +654,15 @@ target_link_libraries(${TARGET} PRIVATE
 # Installation
 # ==================================================================================================
 set(INSTALL_TYPE ARCHIVE)
-install(TARGETS ${TARGET} ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/filament DESTINATION include)
-install(FILES "README.md" DESTINATION .)
-install(FILES "../LICENSE" DESTINATION .)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/${TARGET}
+)
+#install(TARGETS ${TARGET} ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR})
+#install(DIRECTORY ${PUBLIC_HDR_DIR}/filament DESTINATION include)
+#install(FILES "README.md" DESTINATION .)
+install(FILES "../LICENSE" DESTINATION include/filament)
 
 # ==================================================================================================
 # Sub-projects

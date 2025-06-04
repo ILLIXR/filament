@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/QuadTree.h>
+#include "filament/utils/QuadTree.h"
 
 using namespace utils;
 

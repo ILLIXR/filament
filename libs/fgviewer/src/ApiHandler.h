@@ -17,7 +17,7 @@
 #ifndef FGVIEWER_APIHANDLER_H
 #define FGVIEWER_APIHANDLER_H
 
-#include <fgviewer/DebugServer.h>
+#include "filament/fgviewer/DebugServer.h"
 
 #include <CivetServer.h>
 

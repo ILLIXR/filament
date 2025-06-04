@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include "noop/PlatformNoop.h"
+#include "PlatformNoop.h"
 
-#include "noop/NoopDriver.h"
+#include "NoopDriver.h"
 
 namespace filament::backend {
 

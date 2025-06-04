@@ -17,12 +17,12 @@
 #ifndef TNT_FILAMENT_BACKEND_OPENGL_BINDINGMAP_H
 #define TNT_FILAMENT_BACKEND_OPENGL_BINDINGMAP_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include "gl_headers.h"
 
-#include <utils/bitset.h>
-#include <utils/debug.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/debug.h"
 
 #include <new>
 

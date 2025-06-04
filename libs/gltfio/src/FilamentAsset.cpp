@@ -16,14 +16,14 @@
 
 #include "FFilamentAsset.h"
 
-#include <gltfio/Animator.h>
+#include "filament/gltfio/Animator.h"
 
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
 
-#include <utils/EntityManager.h>
-#include <utils/Log.h>
-#include <utils/NameComponentManager.h>
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/NameComponentManager.h"
 
 #include "GltfEnums.h"
 #include "Wireframe.h"

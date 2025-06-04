@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_FRAMEINFO_H
 #define TNT_FILAMENT_FRAMEINFO_H
 
-#include <filament/Renderer.h>
+#include "filament/Renderer.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <private/backend/DriverApi.h>
+#include "private/backend/DriverApi.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <array>
 #include <atomic>

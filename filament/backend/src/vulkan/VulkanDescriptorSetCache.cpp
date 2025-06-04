@@ -20,8 +20,8 @@
 #include "VulkanHandles.h"
 #include "VulkanConstants.h"
 
-#include <utils/FixedCapacityVector.h>
-#include <utils/Panic.h>
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Panic.h"
 
 #include <algorithm>
 #include <memory>

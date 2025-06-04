@@ -19,14 +19,14 @@
 #ifndef TNT_FILAMENT_VIEW_H
 #define TNT_FILAMENT_VIEW_H
 
-#include <filament/FilamentAPI.h>
-#include <filament/Options.h>
+#include "FilamentAPI.h"
+#include "Options.h"
 
-#include <utils/compiler.h>
-#include <utils/Entity.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <utility>
 
@@ -678,7 +678,7 @@ public:
      * @param enabled true enables transparent picking, false disables it.
      *
      * @note Transparent picking will create an extra pass for rendering depth
-     *       from both transparent and opaque renderables. 
+     *       from both transparent and opaque renderables.
      */
     void setTransparentPickingEnabled(bool enabled) noexcept;
 

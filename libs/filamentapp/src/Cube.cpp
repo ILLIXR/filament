@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <filamentapp/Cube.h>
+#include "filament/filamentapp/Cube.h"
 
-#include <utils/EntityManager.h>
-#include <filament/VertexBuffer.h>
-#include <filament/IndexBuffer.h>
-#include <filament/RenderableManager.h>
-#include <filament/TransformManager.h>
+#include "filament/utils/EntityManager.h"
+#include "filament/VertexBuffer.h"
+#include "filament/IndexBuffer.h"
+#include "filament/RenderableManager.h"
+#include "filament/TransformManager.h"
 
 using namespace filament::math;
 using namespace filament;

@@ -17,9 +17,9 @@
 #ifndef TNT_FILAMAT_INCLUDES_H
 #define TNT_FILAMAT_INCLUDES_H
 
-#include <utils/CString.h>
+#include "filament/utils/CString.h"
 
-#include <filamat/IncludeCallback.h>
+#include "filament/filamat/IncludeCallback.h"
 
 #include <vector>
 

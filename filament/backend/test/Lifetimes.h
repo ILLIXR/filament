@@ -24,8 +24,8 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
-#include "backend/Handle.h"
-#include "backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/DriverApiForward.h"
 #include "BackendTest.h"
 
 class RenderFrame {

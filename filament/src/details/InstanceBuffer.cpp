@@ -14,17 +14,17 @@
 * limitations under the License.
 */
 
-#include "details/InstanceBuffer.h"
+#include "InstanceBuffer.h"
 
-#include <details/Engine.h>
-#include <private/filament/UibStructs.h>
+#include "Engine.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <utils/StaticString.h>
+#include "filament/utils/StaticString.h"
 
-#include <math/mat3.h>
-#include <math/vec3.h>
+#include "filament/math/mat3.h"
+#include "filament/math/vec3.h"
 
 namespace filament {
 
@@ -88,7 +88,7 @@ void FInstanceBuffer::setLocalTransforms(
         math::mat4f const* localTransforms, size_t const count, size_t const offset) {
     FILAMENT_CHECK_PRECONDITION(offset + count <= mInstanceCount)
             << "setLocalTransforms overflow. InstanceBuffer has only " << mInstanceCount
-            << " instances, but trying to set " << count 
+            << " instances, but trying to set " << count
             << " transforms at offset " << offset << ".";
     memcpy(mLocalTransforms.data() + offset, localTransforms, sizeof(math::mat4f) * count);
 }
@@ -121,4 +121,3 @@ void FInstanceBuffer::terminate(FEngine& engine) {
 }
 
 } // namespace filament
-

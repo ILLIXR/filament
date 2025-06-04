@@ -16,7 +16,7 @@
 
 #include "vulkan/utils/Conversion.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include "private/backend/BackendUtils.h"
 

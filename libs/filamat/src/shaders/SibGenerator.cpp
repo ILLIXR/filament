@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include "SibGenerator.h"
+#include "filament/filamat/shaders/SibGenerator.h"
 
-#include "private/filament/Variant.h"
-#include "private/filament/EngineEnums.h"
-#include "private/filament/SamplerInterfaceBlock.h"
-#include "private/filament/SibStructs.h"
+#include "filament/filabridge/Variant.h"
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
+#include "filament/filabridge/SibStructs.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 namespace filament {
 

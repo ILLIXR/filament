@@ -8,23 +8,23 @@ set(PUBLIC_HDR_DIR include)
 # Sources and headers
 # ==================================================================================================
 set(HDRS
-        include/filamat/Enums.h
-        include/filamat/IncludeCallback.h
-        include/filamat/MaterialBuilder.h
-        include/filamat/Package.h)
+        include/filament/filamat/Enums.h
+        include/filament/filamat/IncludeCallback.h
+        include/filament/filamat/MaterialBuilder.h
+        include/filament/filamat/Package.h)
 
 set(COMMON_PRIVATE_HDRS
-        src/eiff/Chunk.h
-        src/eiff/ChunkContainer.h
-        src/eiff/DictionaryTextChunk.h
-        src/eiff/Flattener.h
-        src/eiff/LineDictionary.h
-        src/eiff/MaterialTextChunk.h
-        src/eiff/MaterialInterfaceBlockChunk.h
-        src/eiff/ShaderEntry.h
-        src/eiff/SimpleFieldChunk.h
-        src/Includes.h
-        src/PushConstantDefinitions.h)
+    include/filament/filamat/eiff/Chunk.h
+    include/filament/filamat/eiff/ChunkContainer.h
+    include/filament/filamat/eiff/DictionaryTextChunk.h
+    include/filament/filamat/eiff/Flattener.h
+    include/filament/filamat/eiff/LineDictionary.h
+    include/filament/filamat/eiff/MaterialTextChunk.h
+    include/filament/filamat/eiff/MaterialInterfaceBlockChunk.h
+    include/filament/filamat/eiff/ShaderEntry.h
+    include/filament/filamat/eiff/SimpleFieldChunk.h
+    src/Includes.h
+    src/PushConstantDefinitions.h)
 
 set(COMMON_SRCS
         src/eiff/Chunk.cpp
@@ -48,17 +48,17 @@ set(COMMON_SRCS
 
 set(PRIVATE_HDRS
         ${COMMON_PRIVATE_HDRS}
-        src/eiff/BlobDictionary.h
-        src/eiff/DictionarySpirvChunk.h
-        src/eiff/DictionaryMetalLibraryChunk.h
-        src/eiff/MaterialBinaryChunk.h
-        src/GLSLPostProcessor.h
-        src/MetalArgumentBuffer.h
-        src/ShaderMinifier.h
-        src/SpirvFixup.h
-        src/sca/ASTHelpers.h
-        src/sca/GLSLTools.h
-        src/sca/builtinResource.h)
+    include/filament/filamat/eiff/BlobDictionary.h
+    include/filament/filamat/eiff/DictionarySpirvChunk.h
+    include/filament/filamat/eiff/DictionaryMetalLibraryChunk.h
+    include/filament/filamat/eiff/MaterialBinaryChunk.h
+    src/GLSLPostProcessor.h
+    src/MetalArgumentBuffer.h
+    src/ShaderMinifier.h
+    src/SpirvFixup.h
+    include/filament/filamat/sca/ASTHelpers.h
+    include/filament/filamat/sca/GLSLTools.h
+    src/sca/builtinResource.h)
 
 set(SRCS
         ${COMMON_SRCS}
@@ -81,9 +81,16 @@ include_directories(${CMAKE_BINARY_DIR})
 
 # Filamat
 add_library(${TARGET} STATIC ${HDRS} ${PRIVATE_HDRS} ${SRCS})
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${HDRS}")
+
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 target_link_libraries(${TARGET} backend_headers shaders filabridge utils smol-v)
+target_include_directories(${TARGET} PRIVATE ${SMOLV_BUILD_INCLUDE_PATH})
+
 
 if (FILAMENT_SUPPORTS_WEBGPU)
     target_link_libraries(${TARGET} libtint)
@@ -141,8 +148,12 @@ set(FILAMAT_COMBINED_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/libfilamat_combined.a")
 combine_static_libs(filamat "${FILAMAT_COMBINED_OUTPUT}" "${FILAMAT_DEPS}")
 
 set(FILAMAT_LIB_NAME ${CMAKE_STATIC_LIBRARY_PREFIX}filamat${CMAKE_STATIC_LIBRARY_SUFFIX})
-install(FILES "${FILAMAT_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${FILAMAT_LIB_NAME})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/filamat DESTINATION include)
+install(TARGETS filamat
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
+#install(FILES "${FILAMAT_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${FILAMAT_LIB_NAME})
 
 # Need to install libtint for filamat on Android.
 # See libs/filamat/CMakeLists.txt and android/filamat-android/CMakeLists.txt.

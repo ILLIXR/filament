@@ -19,16 +19,16 @@
 #include "GLUtils.h"
 #include "OpenGLDriver.h"
 
-#include <backend/Platform.h>
-#include <backend/platforms/OpenGLPlatform.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/Platform.h"
+#include "filament/backend/platforms/OpenGLPlatform.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
-#include <utils/Mutex.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/Systrace.h"
 
 #include <atomic>
 #include <memory>

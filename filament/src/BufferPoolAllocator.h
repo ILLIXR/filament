@@ -17,8 +17,8 @@
 #ifndef TNT_FILAMENT_BUFFERPOOLALLOCATOR_H
 #define TNT_FILAMENT_BUFFERPOOLALLOCATOR_H
 
-#include <utils/Allocator.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <utility>
 

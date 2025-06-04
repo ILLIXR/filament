@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <imageio/ImageEncoder.h>
+#include "filament/imageio/ImageEncoder.h"
 
 #include <algorithm>
 #include <cstdint>
@@ -26,7 +26,7 @@
 
 #if defined(WIN32)
     #include <Winsock2.h>
-    #include <utils/unwindows.h>
+    #include "filament/utils/unwindows.h"
 #else
     #include <arpa/inet.h>
 #endif
@@ -35,13 +35,13 @@
 
 #include <tinyexr.h>
 
-#include <math/half.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/half.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <image/ColorTransform.h>
+#include "filament/image/ColorTransform.h"
 
 using namespace filament::math;
 

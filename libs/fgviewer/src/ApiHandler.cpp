@@ -18,12 +18,12 @@
 #include "ApiHandler.h"
 
 #include <__chrono/duration.h>
-#include <fgviewer/DebugServer.h>
-#include <fgviewer/JsonWriter.h>
+#include "filament/fgviewer/DebugServer.h"
+#include "filament/fgviewer/JsonWriter.h"
 
-#include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
 
 #include <CivetServer.h>
 

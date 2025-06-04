@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_OPENGL_OPENGLDRIVERFACTORY_H
 #define TNT_FILAMENT_BACKEND_OPENGL_OPENGLDRIVERFACTORY_H
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
 namespace filament::backend {
 

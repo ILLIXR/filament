@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include "details/Texture.h"
+#include "Texture.h"
 
-#include "details/Engine.h"
-#include "details/Stream.h"
+#include "Engine.h"
+#include "Stream.h"
 
 #include "private/backend/BackendUtils.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <filament/Texture.h>
+#include "filament/Texture.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <ibl/Cubemap.h>
-#include <ibl/CubemapIBL.h>
-#include <ibl/CubemapUtils.h>
-#include <ibl/Image.h>
+#include "filament/ibl/Cubemap.h"
+#include "filament/ibl/CubemapIBL.h"
+#include "filament/ibl/CubemapUtils.h"
+#include "filament/ibl/Image.h"
 
-#include <math/half.h>
-#include <math/scalar.h>
-#include <math/vec3.h>
+#include "filament/math/half.h"
+#include "filament/math/scalar.h"
+#include "filament/math/vec3.h"
 
-#include <utils/Allocator.h>
-#include <utils/algorithm.h>
-#include <utils/BitmaskEnum.h>
-#include <utils/compiler.h>
-#include <utils/CString.h>
-#include <utils/StaticString.h>
-#include <utils/debug.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Panic.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/algorithm.h"
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/StaticString.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Panic.h"
 
 #include <algorithm>
 #include <array>

@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 
-#include "details/VertexBuffer.h"
+#include "VertexBuffer.h"
 
-#include "details/BufferObject.h"
-#include "details/Engine.h"
+#include "BufferObject.h"
+#include "Engine.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <filament/MaterialEnums.h>
-#include <filament/VertexBuffer.h>
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/VertexBuffer.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/BufferDescriptor.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/BufferDescriptor.h"
 
-#include <utils/bitset.h>
-#include <utils/compiler.h>
-#include <utils/CString.h>
-#include <utils/StaticString.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/StaticString.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
 
 #include <algorithm>
 #include <array>

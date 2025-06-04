@@ -23,13 +23,13 @@
 
 #include <private/backend/HandleAllocator.h>
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/bitset.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <math/half.h>
+#include "filament/math/half.h"
 
 #include <array>
 #include <variant>

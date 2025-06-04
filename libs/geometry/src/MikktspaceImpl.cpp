@@ -16,9 +16,9 @@
 
 #include "MikktspaceImpl.h"
 
-#include <math/mat3.h>
-#include <math/norm.h>
-#include <utils/Panic.h>
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
+#include "filament/utils/Panic.h"
 
 #include <meshoptimizer.h>
 #include <mikktspace/mikktspace.h>

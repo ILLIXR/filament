@@ -15,8 +15,8 @@ if (WIN32 AND IS_64_BIT)
     set_property(SOURCE src/BlueGLCoreWindowsImpl.S PROPERTY LANGUAGE ASM_MASM)
 endif()
 
-# public headers are always in include/${TARGET}/
-file(GLOB_RECURSE PUBLIC_HDRS ${PUBLIC_HDR_DIR}/${TARGET}/*.h)
+# public headers are always in include/filament/${TARGET}/
+file(GLOB_RECURSE PUBLIC_HDRS ${PUBLIC_HDR_DIR}/filament/${TARGET}/*.h)
 
 # list each source file individually
 set(SRCS
@@ -55,7 +55,7 @@ include_directories(${PUBLIC_HDR_DIR})
 
 # we're building a library
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
-
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 if(FILAMENT_SUPPORTS_OSMESA)
     if (APPLE)
         target_compile_options(${TARGET} PRIVATE -I${FILAMENT_OSMESA_PATH}/include)
@@ -65,14 +65,21 @@ if(FILAMENT_SUPPORTS_OSMESA)
 endif()
 
 # specify where the public headers of this library are
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 if (WIN32)
     target_link_libraries(${TARGET} PRIVATE opengl32 gdi32)
 endif()
 
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
 
 # Build the tests...
 add_executable(test_${TARGET}

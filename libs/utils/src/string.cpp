@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/string.h>
+#include "filament/utils/string.h"
 
 #include <stdlib.h>
 #if defined(WIN32)

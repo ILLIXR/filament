@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#include "components/TransformManager.h"
+#include "TransformManager.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
-#include <utils/debug.h>
-#include <filament/TransformManager.h>
+#include "filament/utils/debug.h"
+#include "filament/TransformManager.h"
 
 
 using namespace utils;

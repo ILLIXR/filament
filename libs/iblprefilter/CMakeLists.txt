@@ -11,7 +11,7 @@ set(MATERIAL_DIR "${GENERATION_ROOT}/generated/material")
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-        include/filament-iblprefilter/IBLPrefilterContext.h
+        include/filament/iblprefilter/IBLPrefilterContext.h
 )
 
 set(SRCS
@@ -85,9 +85,13 @@ include_directories(src)
 
 # we're building a library
 add_library(${TARGET} STATIC ${PRIVATE_HDRS} ${PUBLIC_HDRS} ${SRCS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
 # specify where the public headers of this library are
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/iblprefilter>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 # ==================================================================================================
@@ -134,5 +138,8 @@ target_link_libraries(${TARGET} PRIVATE
 # Installation
 # ==================================================================================================
 set(INSTALL_TYPE ARCHIVE)
-install(TARGETS ${TARGET} ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/filament-iblprefilter DESTINATION include)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ${INSTALL_TYPE} DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/iblprefilter
+)

@@ -16,11 +16,11 @@
 
 #define JSMN_HEADER
 
-#include <viewer/AutomationSpec.h>
+#include "filament/viewer/AutomationSpec.h"
 
 #include "jsonParseUtils.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <sstream>
 #include <string>

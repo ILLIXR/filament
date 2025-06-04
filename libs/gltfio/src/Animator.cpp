@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-#include <gltfio/Animator.h>
-#include <gltfio/math.h>
+#include "filament/gltfio/Animator.h"
+#include "filament/gltfio/math.h"
 
 #include "FFilamentAsset.h"
 #include "FFilamentInstance.h"
 #include "FTrsTransformManager.h"
 #include "downcast.h"
 
-#include <filament/VertexBuffer.h>
-#include <filament/RenderableManager.h>
-#include <filament/TransformManager.h>
+#include "filament/VertexBuffer.h"
+#include "filament/RenderableManager.h"
+#include "filament/TransformManager.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
-#include <math/mat4.h>
-#include <math/quat.h>
-#include <math/scalar.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/mat4.h"
+#include "filament/math/quat.h"
+#include "filament/math/scalar.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <map>
 #include <string>

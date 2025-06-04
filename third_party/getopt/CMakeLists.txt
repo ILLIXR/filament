@@ -20,5 +20,16 @@ set(SRCS
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} STATIC ${PRIVATE_HDRS} ${PUBLIC_HDRS} ${SRCS})
-target_include_directories (${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+
+target_include_directories (${TARGET} PUBLIC
+                            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                            $<INSTALL_INTERFACE:include>
+)
+
 set_target_properties(${TARGET} PROPERTIES FOLDER ThirdParty)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib
+        PUBLIC_HEADER DESTINATION include
+)

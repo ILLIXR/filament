@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_BACKEND_PRIVATE_HANDLEALLOCATOR_H
 #define TNT_FILAMENT_BACKEND_PRIVATE_HANDLEALLOCATOR_H
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <utils/Allocator.h>
-#include <utils/CString.h>
-#include <utils/Log.h>
-#include <utils/Panic.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/ostream.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/ostream.h"
 
 #include <tsl/robin_map.h>
 

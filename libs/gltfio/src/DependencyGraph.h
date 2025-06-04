@@ -17,7 +17,7 @@
 #ifndef GLTFIO_DEPENDENCY_GRAPH_H
 #define GLTFIO_DEPENDENCY_GRAPH_H
 
-#include <utils/Entity.h>
+#include "filament/utils/Entity.h"
 
 #include <tsl/robin_map.h>
 #include <tsl/robin_set.h>

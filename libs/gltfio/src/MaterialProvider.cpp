@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <gltfio/MaterialProvider.h>
+#include "filament/gltfio/MaterialProvider.h"
 
 #include <string>
 

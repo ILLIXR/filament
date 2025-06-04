@@ -16,40 +16,40 @@
 
 #include "ColorPassDescriptorSet.h"
 
-#include "Froxelizer.h"
-#include "HwDescriptorSetLayoutFactory.h"
-#include "ShadowMapManager.h"
-#include "TypedUniformBuffer.h"
+#include "../Froxelizer.h"
+#include "../HwDescriptorSetLayoutFactory.h"
+#include "../ShadowMapManager.h"
+#include "../TypedUniformBuffer.h"
 
-#include "components/LightManager.h"
+#include "../components/LightManager.h"
 
-#include "details/Camera.h"
-#include "details/Engine.h"
-#include "details/IndirectLight.h"
-#include "details/Texture.h"
+#include "../details/Camera.h"
+#include "../details/Engine.h"
+#include "../details/IndirectLight.h"
+#include "../details/Texture.h"
 
-#include <filament/Engine.h>
-#include <filament/Exposure.h>
-#include <filament/Options.h>
-#include <filament/TextureSampler.h>
-#include <filament/MaterialEnums.h>
-#include <filament/Viewport.h>
+#include "filament/Engine.h"
+#include "filament/Exposure.h"
+#include "filament/Options.h"
+#include "filament/TextureSampler.h"
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/Viewport.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <math/mat4.h>
-#include <math/mat3.h>
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/mat4.h"
+#include "filament/math/mat3.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
 
 #include <algorithm>
 #include <array>

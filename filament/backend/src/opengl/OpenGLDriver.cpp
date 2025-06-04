@@ -26,40 +26,40 @@
 #include "SystraceProfile.h"
 #include "gl_headers.h"
 
-#include <backend/platforms/OpenGLPlatform.h>
+#include "filament/backend/platforms/OpenGLPlatform.h"
 
-#include <backend/BufferDescriptor.h>
-#include <backend/CallbackHandler.h>
-#include <backend/DescriptorSetOffsetArray.h>
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/PipelineState.h>
-#include <backend/Platform.h>
-#include <backend/Program.h>
-#include <backend/TargetBufferInfo.h>
-#include <backend/BufferObjectStreamDescriptor.h>
+#include "filament/backend/BufferDescriptor.h"
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DescriptorSetOffsetArray.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PipelineState.h"
+#include "filament/backend/Platform.h"
+#include "filament/backend/Program.h"
+#include "filament/backend/TargetBufferInfo.h"
+#include "filament/backend/BufferObjectStreamDescriptor.h"
 
-#include "private/backend/CommandStream.h"
-#include "private/backend/Dispatcher.h"
-#include "private/backend/DriverApi.h"
+#include "filament/private/backend/CommandStream.h"
+#include "filament/private/backend/Dispatcher.h"
+#include "filament/private/backend/DriverApi.h"
 
 #include <type_traits>
-#include <utils/BitmaskEnum.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/CString.h>
-#include <utils/Invocable.h>
-#include <utils/Log.h>
-#include <utils/Panic.h>
-#include <utils/Systrace.h>
-#include <utils/Slice.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/ostream.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/Invocable.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/Slice.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/ostream.h"
 
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/mat3.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/mat3.h"
 
 #include <algorithm>
 #include <chrono>

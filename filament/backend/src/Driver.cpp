@@ -19,20 +19,20 @@
 #include "private/backend/Driver.h"
 #include "private/backend/CommandStream.h"
 
-#include <backend/AcquiredImage.h>
-#include <backend/BufferDescriptor.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/AcquiredImage.h"
+#include "filament/backend/BufferDescriptor.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Systrace.h"
 
-#include <math/half.h>
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/half.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <functional>
 #include <mutex>

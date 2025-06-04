@@ -17,7 +17,7 @@
 #ifndef FILAMENT_DRIVER_OPENGL_COCOA_EXTERNAL_IMAGE
 #define FILAMENT_DRIVER_OPENGL_COCOA_EXTERNAL_IMAGE
 
-#include <backend/platforms/OpenGLPlatform.h>
+#include "filament/backend/platforms/OpenGLPlatform.h"
 #include <CoreVideo/CoreVideo.h>
 
 #include "../gl_headers.h"

@@ -18,9 +18,9 @@
 
 #include "vulkan/VulkanTexture.h"
 
-#include <utils/Panic.h>
-#include <utils/algorithm.h>
-#include <utils/debug.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/algorithm.h"
+#include "filament/utils/debug.h"
 
 #include <tuple>
 

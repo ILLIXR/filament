@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <imageio/BasisEncoder.h>
+#include "filament/imageio/BasisEncoder.h"
 
-#include <image/ColorTransform.h>
-#include <image/ImageOps.h>
-#include <utils/debug.h>
+#include "filament/image/ColorTransform.h"
+#include "filament/image/ImageOps.h"
+#include "filament/utils/debug.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warray-bounds"

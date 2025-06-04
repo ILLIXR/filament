@@ -17,14 +17,14 @@
 #ifndef TNT_FILAMENT_DETAILS_DEBUGREGISTRY_H
 #define TNT_FILAMENT_DETAILS_DEBUGREGISTRY_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <filament/DebugRegistry.h>
+#include "filament/DebugRegistry.h"
 
-#include <utils/compiler.h>
-#include <utils/Invocable.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Invocable.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <functional>
 #include <string_view>

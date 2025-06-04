@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#include "details/DebugRegistry.h"
+#include "DebugRegistry.h"
 
-#include <utils/compiler.h>
-#include <utils/Invocable.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Invocable.h"
+#include "filament/utils/Panic.h"
 
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <functional>
 #include <string_view>

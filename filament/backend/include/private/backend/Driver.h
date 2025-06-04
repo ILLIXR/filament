@@ -17,17 +17,17 @@
 #ifndef TNT_FILAMENT_BACKEND_PRIVATE_DRIVER_H
 #define TNT_FILAMENT_BACKEND_PRIVATE_DRIVER_H
 
-#include <backend/CallbackHandler.h>
-#include <backend/DescriptorSetOffsetArray.h>
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/PipelineState.h>
-#include <backend/TargetBufferInfo.h>
-#include <backend/AcquiredImage.h>
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DescriptorSetOffsetArray.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PipelineState.h"
+#include "filament/backend/TargetBufferInfo.h"
+#include "filament/backend/AcquiredImage.h"
 
-#include <utils/CString.h>
-#include <utils/compiler.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/compiler.h"
 
 #include <functional>
 
@@ -115,7 +115,7 @@ public:
     virtual RetType methodName##S() noexcept = 0; \
     void methodName##R(RetType, paramsDecl) {}
 
-#include "private/backend/DriverAPI.inc"
+#include "DriverAPI.inc"
 };
 
 } // namespace filament::backend

@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_DETAILS_TEXTURE_H
 #define TNT_FILAMENT_DETAILS_TEXTURE_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <filament/Texture.h>
+#include "filament/Texture.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <stddef.h>
 #include <stdint.h>

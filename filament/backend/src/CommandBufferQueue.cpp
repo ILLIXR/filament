@@ -18,13 +18,13 @@
 #include "private/backend/CircularBuffer.h"
 #include "private/backend/CommandStream.h"
 
-#include <utils/compiler.h>
-#include <utils/Log.h>
-#include <utils/Mutex.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/Systrace.h>
-#include <utils/debug.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/debug.h"
 
 #include <algorithm>
 #include <mutex>

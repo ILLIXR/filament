@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include <geometry/TangentSpaceMesh.h>
+#include "filament/geometry/TangentSpaceMesh.h"
 
 #include "MikktspaceImpl.h"
 #include "TangentSpaceMeshInternal.h"
 
-#include <math/mat3.h>
-#include <math/norm.h>
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
 
-#include <utils/Log.h>
-#include <utils/Panic.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
 
 #include <vector>
 

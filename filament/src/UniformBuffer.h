@@ -21,15 +21,15 @@
 
 #include "private/backend/DriverApi.h"
 
-#include <utils/Allocator.h>
-#include <utils/compiler.h>
-#include <utils/Log.h>
-#include <utils/debug.h>
+#include "filament/utils/Allocator.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/debug.h"
 
-#include <backend/BufferDescriptor.h>
+#include "filament/backend/BufferDescriptor.h"
 
-#include <math/mat3.h>
-#include <math/mat4.h>
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
 
 #include <stddef.h>
 #include <string.h>

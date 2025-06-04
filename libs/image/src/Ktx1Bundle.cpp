@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <image/Ktx1Bundle.h>
+#include "filament/image/Ktx1Bundle.h"
 
-#include <utils/Panic.h>
-#include <utils/string.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/string.h"
 
 #include <string>
 #include <unordered_map>

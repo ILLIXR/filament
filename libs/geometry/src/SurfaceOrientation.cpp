@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <geometry/SurfaceOrientation.h>
+#include "filament/geometry/SurfaceOrientation.h"
 
-#include <utils/Panic.h>
-#include <utils/debug.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/debug.h"
 
-#include <math/mat3.h>
-#include <math/norm.h>
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
 
 #include <vector>
 

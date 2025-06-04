@@ -27,34 +27,34 @@
 
 #include <getopt/getopt.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include <filament/Color.h>
-#include <filament/Engine.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/Renderer.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/TransformManager.h>
-#include <filament/View.h>
+#include "filament/Color.h"
+#include "filament/Engine.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/Renderer.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/TransformManager.h"
+#include "filament/View.h"
 
-#include <image/ColorTransform.h>
-#include <imageio/ImageEncoder.h>
+#include "filament/image/ColorTransform.h"
+#include "filament/imageio/ImageEncoder.h"
 
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/vec4.h>
-#include <math/norm.h>
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/vec4.h"
+#include "filament/math/norm.h"
 
-#include <filamentapp/Config.h>
-#include <filamentapp/IBL.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/MeshAssimp.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/IBL.h"
+#include "filament/filamentapp/FilamentApp.h"
+#include "filament/filamentapp/MeshAssimp.h"
 
 using namespace filament::math;
 using namespace filament;

@@ -21,7 +21,7 @@
 #include "vulkan/utils/Helper.h"
 #include "vulkan/utils/Image.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 using namespace bluevk;
 using namespace utils;

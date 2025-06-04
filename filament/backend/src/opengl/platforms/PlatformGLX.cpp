@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/PlatformGLX.h>
+#include "filament/backend/platforms/PlatformGLX.h"
 
-#include <utils/Log.h>
-#include <utils/Panic.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
 
 #include <X11/Xlib.h>
 #include <GL/glx.h>
@@ -43,7 +43,7 @@ struct GLXFunctions {
     PFNGLXDESTROYPBUFFERPROC destroyPbuffer;
     PFNGLXMAKECONTEXTCURRENTPROC setCurrentContext;
 
-    /* 
+    /*
        When creating a shared GL context, we query the used
        GLX_FBCONFIG_ID to make sure our display framebuffer
        attributes match; otherwise making our context current
@@ -52,7 +52,7 @@ struct GLXFunctions {
     */
     PFNGLXQUERYCONTEXTPROC queryContext;
 
-    /* 
+    /*
        When creating a shared GL context, we select the matching
        GLXFBConfig that is used by the shared GL context. `getFBConfigs`
        will return all the available GLXFBConfigs.

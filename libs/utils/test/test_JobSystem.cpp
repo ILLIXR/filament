@@ -16,15 +16,15 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/JobSystem.h>
-#include <utils/WorkStealingDequeue.h>
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/WorkStealingDequeue.h"
 
-#include <math/vec3.h>
-#include <math/mat3.h>
+#include "filament/math/vec3.h"
+#include "filament/math/mat3.h"
 
 #include <array>
 #include <thread>
-#include <utils/Allocator.h>
+#include "filament/utils/Allocator.h"
 
 using namespace utils;
 using namespace jobs;

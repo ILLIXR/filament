@@ -19,7 +19,7 @@
 #ifndef TNT_FILAMENT_EXPOSURE_H
 #define TNT_FILAMENT_EXPOSURE_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 namespace filament {
 

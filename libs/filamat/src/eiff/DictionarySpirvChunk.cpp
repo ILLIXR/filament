@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "DictionarySpirvChunk.h"
+#include "filament/filamat/eiff/DictionarySpirvChunk.h"
 
 #include <smolv.h>
 

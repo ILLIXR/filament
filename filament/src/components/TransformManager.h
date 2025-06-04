@@ -19,14 +19,14 @@
 
 #include "downcast.h"
 
-#include <filament/TransformManager.h>
+#include "filament/TransformManager.h"
 
-#include <utils/compiler.h>
-#include <utils/SingleInstanceComponentManager.h>
-#include <utils/Entity.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/SingleInstanceComponentManager.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/Slice.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 namespace filament {
 

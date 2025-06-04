@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_PIDCONTROLLER_H
 #define TNT_FILAMENT_PIDCONTROLLER_H
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
 #include <limits>
 

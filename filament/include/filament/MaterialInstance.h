@@ -17,16 +17,16 @@
 #ifndef TNT_FILAMENT_MATERIALINSTANCE_H
 #define TNT_FILAMENT_MATERIALINSTANCE_H
 
-#include <filament/FilamentAPI.h>
-#include <filament/Color.h>
+#include "FilamentAPI.h"
+#include "Color.h"
 
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <type_traits>
 
@@ -237,13 +237,13 @@ public:
 
     /**
      * Gets the value of a parameter by name.
-     * 
+     *
      * Note: Only supports non-texture parameters such as numeric and math types.
-     * 
+     *
      * @param name          Name of the parameter as defined by Material. Cannot be nullptr.
      * @param nameLength    Length in `char` of the name parameter.
      * @throws utils::PreConditionPanic if name doesn't exist or no-op if exceptions are disabled.
-     * 
+     *
      * @see Material::hasParameter
      */
     template<typename T>

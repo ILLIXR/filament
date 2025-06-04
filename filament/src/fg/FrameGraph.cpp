@@ -14,29 +14,29 @@
  * limitations under the License.
  */
 
-#include "fg/FrameGraph.h"
-#include "fg/details/PassNode.h"
-#include "fg/details/Resource.h"
-#include "fg/details/ResourceNode.h"
-#include "fg/details/DependencyGraph.h"
+#include "FrameGraph.h"
+#include "details/PassNode.h"
+#include "details/Resource.h"
+#include "details/ResourceNode.h"
+#include "details/DependencyGraph.h"
 
 #include "FrameGraphId.h"
 #include "FrameGraphPass.h"
 #include "FrameGraphRenderPass.h"
 #include "FrameGraphTexture.h"
-#include "ResourceAllocator.h"
+#include "../ResourceAllocator.h"
 
 #include "details/Engine.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/CString.h>
-#include <utils/debug.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Systrace.h"
 
 #include <algorithm>
 #include <functional>

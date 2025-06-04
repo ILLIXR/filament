@@ -26,27 +26,27 @@
 
 #include "components/RenderableManager.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/UibStructs.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/UibStructs.h"
+#include "filament/filabridge/Variant.h"
 
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/PipelineState.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PipelineState.h"
 
 #include "private/backend/CircularBuffer.h"
 #include "private/backend/CommandStream.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/JobSystem.h>
-#include <utils/Panic.h>
-#include <utils/Slice.h>
-#include <utils/Systrace.h>
-#include <utils/Range.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Slice.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/Range.h"
 
 #include <algorithm>
 #include <functional>

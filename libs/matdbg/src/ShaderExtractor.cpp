@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-#include <matdbg/ShaderExtractor.h>
+#include "filament/matdbg/ShaderExtractor.h"
 
-#include <filaflat/ChunkContainer.h>
-#include <filaflat/DictionaryReader.h>
-#include <filaflat/MaterialChunk.h>
-#include <filaflat/Unflattener.h>
+#include "filament/filaflat/ChunkContainer.h"
+#include "filament/filaflat/DictionaryReader.h"
+#include "filament/filaflat/MaterialChunk.h"
+#include "filament/filaflat/Unflattener.h"
 
-#include <filament/MaterialChunkType.h>
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialChunkType.h"
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include <spirv_glsl.hpp>
 #include <spirv-tools/libspirv.h>

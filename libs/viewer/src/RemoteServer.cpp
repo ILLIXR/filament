@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <viewer/RemoteServer.h>
+#include "filament/viewer/RemoteServer.h"
 
 #include <CivetServer.h>
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <cstring>
 #include <vector>

@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_RESOURCELIST_H
 #define TNT_FILAMENT_RESOURCELIST_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <tsl/robin_set.h>
 

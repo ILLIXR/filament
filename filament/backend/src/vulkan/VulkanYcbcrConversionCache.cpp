@@ -19,7 +19,7 @@
 #include "vulkan/VulkanConstants.h"
 #include "vulkan/utils/Conversion.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #if defined(__ANDROID__)
 #include <vulkan/vulkan_android.h>  // for VkExternalFormatANDROID

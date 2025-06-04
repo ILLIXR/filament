@@ -23,7 +23,7 @@
 #include "vulkan/utils/Conversion.h"  // getComponentType()
 #include "vulkan/utils/Image.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 using namespace bluevk;
 

@@ -20,11 +20,11 @@
 #include <random>
 #include <functional>
 
-#include <math/mat2.h>
-#include <math/mat4.h>
-#include <math/mat3.h>
-#include <math/quat.h>
-#include <math/scalar.h>
+#include "filament/math/mat2.h"
+#include "filament/math/mat4.h"
+#include "filament/math/mat3.h"
+#include "filament/math/quat.h"
+#include "filament/math/scalar.h"
 
 using namespace filament::math;
 

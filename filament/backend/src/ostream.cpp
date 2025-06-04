@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#include <backend/BufferDescriptor.h>
-#include <backend/BufferObjectStreamDescriptor.h>
-#include <backend/DescriptorSetOffsetArray.h>
-#include <backend/DriverEnums.h>
-#include <backend/PipelineState.h>
-#include <backend/PixelBufferDescriptor.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/BufferDescriptor.h"
+#include "filament/backend/BufferObjectStreamDescriptor.h"
+#include "filament/backend/DescriptorSetOffsetArray.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/PipelineState.h"
+#include "filament/backend/PixelBufferDescriptor.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <utils/ostream.h>
+#include "filament/utils/ostream.h"
 
 #include <variant>
 

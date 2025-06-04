@@ -25,13 +25,13 @@
 
 #include <private/backend/Driver.h>
 
-#include <backend/DriverEnums.h>
-#include <backend/Program.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Program.h"
 
-#include <utils/bitset.h>
-#include <utils/compiler.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Slice.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Slice.h"
 
 #include <limits>
 

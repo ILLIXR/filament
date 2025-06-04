@@ -34,13 +34,13 @@
 #include "details/VertexBuffer.h"
 #include "details/View.h"
 
-#include <filament/Engine.h>
+#include "filament/Engine.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/Panic.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Slice.h"
 
 #include <chrono>
 

@@ -7,7 +7,7 @@ set(PUBLIC_HDR_DIR include)
 # ==================================================================================================
 # Sources and headers
 # ==================================================================================================
-file(GLOB_RECURSE HDRS include/filaflat/*.h)
+file(GLOB_RECURSE HDRS include/filament/filaflat/*.h)
 
 set(SRCS
         src/ChunkContainer.cpp
@@ -21,13 +21,19 @@ set(SRCS
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} ${HDRS} ${SRCS})
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${HDRS}")
+
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 target_link_libraries(${TARGET} filabridge utils)
 
 if (FILAMENT_SUPPORTS_VULKAN)
     target_link_libraries(${TARGET} smol-v)
+    target_include_directories(${TARGET} PRIVATE ${SMOLV_BUILD_INCLUDE_PATH})
 endif()
 
 # ==================================================================================================
@@ -35,4 +41,8 @@ endif()
 # ==================================================================================================
 # We do not need filaflat headers in the install directory
 # install(DIRECTORY ${PUBLIC_HDR_DIR}/filaflat DESTINATION include)
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)

@@ -13,9 +13,9 @@ endif()
 # ==================================================================================================
 
 set(PUBLIC_HDRS
-    include/fgviewer/DebugServer.h
-    include/fgviewer/JsonWriter.h
-    include/fgviewer/FrameGraphInfo.h
+    include/filament/fgviewer/DebugServer.h
+    include/filament/fgviewer/JsonWriter.h
+    include/filament/fgviewer/FrameGraphInfo.h
 )
 
 set(SRCS
@@ -63,6 +63,7 @@ set_target_properties(fgviewer_resources PROPERTIES FOLDER Libs)
 include_directories(${PUBLIC_HDR_DIR} ${RESOURCE_DIR})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
 target_link_libraries(${TARGET} PUBLIC
                       civetweb::civetweb-cpp
@@ -72,7 +73,10 @@ target_link_libraries(${TARGET} PUBLIC
 
 target_include_directories(${TARGET} PRIVATE ${filamat_SOURCE_DIR}/src)
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 # ==================================================================================================
@@ -101,6 +105,9 @@ set(FGVIEWER_COMBINED_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/libfgviewer_combined.a
 combine_static_libs(fgviewer "${FGVIEWER_COMBINED_OUTPUT}" "${FGVIEWER_DEPS}")
 
 set(FGVIEWER_LIB_NAME ${CMAKE_STATIC_LIBRARY_PREFIX}fgviewer${CMAKE_STATIC_LIBRARY_SUFFIX})
-install(FILES "${FGVIEWER_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${FGVIEWER_LIB_NAME})
-# We do not need fgviewer headers in the install directory
-# install(DIRECTORY ${PUBLIC_HDR_DIR}/fgviewer DESTINATION include)
+install(TARGETS fgviewer
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
+#install(FILES "${FGVIEWER_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${FGVIEWER_LIB_NAME})

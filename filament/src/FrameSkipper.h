@@ -17,8 +17,8 @@
 #ifndef TNT_FILAMENT_DETAILS_FRAMESKIPPER_H
 #define TNT_FILAMENT_DETAILS_FRAMESKIPPER_H
 
-#include <backend/Handle.h>
-#include <private/backend/DriverApi.h>
+#include "filament/backend/Handle.h"
+#include "private/backend/DriverApi.h"
 
 #include <array>
 

@@ -15,18 +15,18 @@
  */
 
 
-#include <ibl/CubemapIBL.h>
+#include "filament/ibl/CubemapIBL.h"
 
-#include <ibl/Cubemap.h>
-#include <ibl/CubemapUtils.h>
-#include <ibl/utilities.h>
+#include "filament/ibl/Cubemap.h"
+#include "filament/ibl/CubemapUtils.h"
+#include "filament/ibl/utilities.h"
 
 #include "CubemapUtilsImpl.h"
 
-#include <utils/JobSystem.h>
+#include "filament/utils/JobSystem.h"
 
-#include <math/mat3.h>
-#include <math/scalar.h>
+#include "filament/math/mat3.h"
+#include "filament/math/scalar.h"
 
 #include <random>
 #include <vector>

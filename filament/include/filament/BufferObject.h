@@ -19,13 +19,13 @@
 #ifndef TNT_FILAMENT_BUFFEROBJECT_H
 #define TNT_FILAMENT_BUFFEROBJECT_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/BufferDescriptor.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/BufferDescriptor.h"
 
-#include <utils/compiler.h>
-#include <utils/StaticString.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/StaticString.h"
 
 #include <stdint.h>
 #include <stddef.h>

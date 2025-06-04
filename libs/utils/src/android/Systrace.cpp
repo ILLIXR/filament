@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include <utils/Systrace.h>
-#include <utils/Log.h>
+#include "filament/utils/Systrace.h"
+#include "filament/utils/Log.h"
 
 #include <cinttypes>
 

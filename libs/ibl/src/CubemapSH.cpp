@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-#include <ibl/CubemapSH.h>
+#include "filament/ibl/CubemapSH.h"
 
-#include <ibl/Cubemap.h>
-#include <ibl/CubemapUtils.h>
-#include <ibl/utilities.h>
+#include "filament/ibl/Cubemap.h"
+#include "filament/ibl/CubemapUtils.h"
+#include "filament/ibl/utilities.h"
 
 #include "CubemapUtilsImpl.h"
 
-#include <utils/Log.h>
-#include <utils/JobSystem.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/JobSystem.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 #include <array>
 #include <limits>

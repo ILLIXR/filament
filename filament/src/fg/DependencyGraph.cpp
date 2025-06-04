@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include "fg/details/DependencyGraph.h"
+#include "details/DependencyGraph.h"
 
-#include <utils/Systrace.h>
+#include "filament/utils/Systrace.h"
 
 #include <iterator>
 

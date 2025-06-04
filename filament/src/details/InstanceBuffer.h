@@ -17,16 +17,16 @@
 #ifndef TNT_FILAMENT_DETAILS_INSTANCEBUFFER_H
 #define TNT_FILAMENT_DETAILS_INSTANCEBUFFER_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <filament/InstanceBuffer.h>
+#include "filament/InstanceBuffer.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
-#include <utils/CString.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 namespace filament {
 

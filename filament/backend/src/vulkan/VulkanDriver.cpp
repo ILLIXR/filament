@@ -31,11 +31,11 @@
 #include "vulkan/utils/Conversion.h"
 #include "vulkan/utils/Definitions.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/platforms/VulkanPlatform.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/platforms/VulkanPlatform.h"
 
-#include <utils/CString.h>
-#include <utils/Panic.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/Panic.h"
 
 #ifndef NDEBUG
 #include <set>  // For VulkanDriver::debugCommandBegin

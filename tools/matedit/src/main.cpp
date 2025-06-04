@@ -18,7 +18,7 @@
 
 #include "ExternalCompile.h"
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <iostream>
 #include <string>

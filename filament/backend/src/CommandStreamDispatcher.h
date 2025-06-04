@@ -20,8 +20,8 @@
 #include "private/backend/Driver.h"
 #include "private/backend/CommandStream.h"
 
-#include <utils/compiler.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Systrace.h"
 
 #include <utility>
 

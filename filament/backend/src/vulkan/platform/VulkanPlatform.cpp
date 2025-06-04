@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include "backend/platforms/VulkanPlatform.h"
+#include "filament/backend/platforms/VulkanPlatform.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include "vulkan/VulkanContext.h"
 #include "vulkan/platform/VulkanPlatformSwapChainImpl.h"
@@ -24,9 +24,9 @@
 #include "vulkan/VulkanDriver.h"
 #include "vulkan/utils/Helper.h"
 
-#include <bluevk/BlueVK.h>
-#include <utils/PrivateImplementation-impl.h>
-#include <utils/Panic.h>
+#include "filament/bluevk/BlueVK.h"
+#include "filament/utils/PrivateImplementation-impl.h"
+#include "filament/utils/Panic.h"
 
 #define SWAPCHAIN_RET_FUNC(func, handle, ...)                                                      \
     if (mImpl->mSurfaceSwapChains.find(handle) != mImpl->mSurfaceSwapChains.end()) {               \

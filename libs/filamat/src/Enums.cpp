@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include "filamat/Enums.h"
+#include "filament/filamat/Enums.h"
 
-#include "filamat/MaterialBuilder.h"
+#include "filament/filamat/MaterialBuilder.h"
 
 namespace filamat {
 

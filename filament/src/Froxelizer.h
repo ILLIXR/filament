@@ -22,16 +22,16 @@
 #include "details/Scene.h"
 #include "details/Engine.h"
 
-#include <filament/Viewport.h>
+#include "filament/Viewport.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/bitset.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/bitset.h"
+#include "filament/utils/Slice.h"
 
-#include <math/mat4.h>
-#include <math/vec4.h>
+#include "filament/math/mat4.h"
+#include "filament/math/vec4.h"
 
 namespace filament {
 

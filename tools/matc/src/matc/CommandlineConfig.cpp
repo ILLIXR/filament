@@ -16,11 +16,11 @@
 
 #include "CommandlineConfig.h"
 
-#include <private/filament/Variant.h>
+#include "filament/filabridge/Variant.h"
 
 #include <getopt/getopt.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <istream>
 #include <sstream>

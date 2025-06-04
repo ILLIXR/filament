@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include "ostream_.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #ifdef __ANDROID__
-#   include <android/log.h>
+#   include "filament/android/log.h"
 #   ifndef UTILS_LOG_TAG
 #       define UTILS_LOG_TAG "Filament"
 #   endif
 #endif
 
 #if defined(__EMSCRIPTEN__)
-#include <emscripten/console.h>
+#include "filament/emscripten/console.h"
 #endif
 
 #include <mutex>

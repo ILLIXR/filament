@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/MeshAssimp.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/FilamentApp.h"
+#include "filament/filamentapp/MeshAssimp.h"
 
-#include <filament/Engine.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/Renderer.h>
-#include <filament/RenderableManager.h>
-#include <filament/TransformManager.h>
-#include <filament/Scene.h>
-#include <filament/Texture.h>
+#include "filament/Engine.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/Renderer.h"
+#include "filament/RenderableManager.h"
+#include "filament/TransformManager.h"
+#include "filament/Scene.h"
+#include "filament/Texture.h"
 
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <utils/Path.h>
-#include <utils/EntityManager.h>
+#include "filament/utils/Path.h"
+#include "filament/utils/EntityManager.h"
 
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/vec3.h>
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/vec3.h"
 
 #include <getopt/getopt.h>
 
@@ -46,7 +46,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include <filament/View.h>
+#include "filament/View.h"
 
 using namespace filament::math;
 using namespace filament;

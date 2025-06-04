@@ -19,7 +19,7 @@
 
 #include "../gl_headers.h"
 
-#include <backend/platforms/OpenGLPlatform.h>
+#include "filament/backend/platforms/OpenGLPlatform.h"
 
 #include <CoreVideo/CoreVideo.h>
 

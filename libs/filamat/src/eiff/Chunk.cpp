@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "Chunk.h"
+#include "filament/filamat/eiff/Chunk.h"
 
 namespace filamat {
 

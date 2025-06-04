@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <dlfcn.h>
 

@@ -22,8 +22,8 @@
  * explicitly instantiate the methods of BuilderBase<>
  */
 
-#include <filament/FilamentAPI.h>
+#include "filament/FilamentAPI.h"
 
-#include <utils/PrivateImplementation-impl.h>
+#include "filament/utils/PrivateImplementation-impl.h"
 
 #endif // TNT_FILAMENT_FILAMENTAPI_IMPL_H

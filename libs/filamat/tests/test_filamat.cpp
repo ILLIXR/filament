@@ -16,16 +16,16 @@
 
 #include <gtest/gtest.h>
 
-#include "sca/ASTHelpers.h"
-#include "sca/GLSLTools.h"
-#include "shaders/ShaderGenerator.h"
+#include "filament/filamat/sca/ASTHelpers.h"
+#include "filament/filamat/sca/GLSLTools.h"
+#include "filament/filamat/shaders/ShaderGenerator.h"
 
 #include "MockIncluder.h"
 
-#include <filamat/Enums.h>
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/Enums.h"
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <utils/JobSystem.h>
+#include "filament/utils/JobSystem.h"
 
 #include <memory>
 

@@ -20,8 +20,8 @@
 #include <draco/compression/decode.h>
 #endif
 
-#include <utils/compiler.h>
-#include <utils/Log.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Log.h"
 
 #if GLTFIO_DRACO_SUPPORTED
 

@@ -16,8 +16,8 @@
 
 #include "TIFFExport.h"
 
-#include <utils/Log.h>
-#include <utils/Panic.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
 
 #include <algorithm>
 #include <functional>

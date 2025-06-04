@@ -18,7 +18,7 @@
 
 #include "DataReshaper.h"
 
-#include <utils/CString.h>
+#include "filament/utils/CString.h"
 
 #include <string_view>
 

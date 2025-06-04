@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_LIGHTMANAGER_H
 #define TNT_FILAMENT_LIGHTMANAGER_H
 
-#include <filament/FilamentAPI.h>
-#include <filament/Color.h>
+#include "FilamentAPI.h"
+#include "Color.h"
 
-#include <utils/compiler.h>
-#include <utils/Entity.h>
-#include <utils/EntityInstance.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/EntityInstance.h"
 
-#include <math/mathfwd.h>
-#include <math/quat.h>
+#include "filament/math/mathfwd.h"
+#include "filament/math/quat.h"
 
 #include <stdint.h>
 #include <stddef.h>
@@ -877,10 +877,10 @@ public:
 
     /**
      * returns the inner cone angle in *radians* between 0 and pi/2.
-     * 
+     *
      * The value is recomputed from the initial values, thus is not precisely
      * the same as the one passed to setSpotLightCone() or Builder.spotLightCone().
-     * 
+     *
      * @param i     Instance of the component obtained from getInstance().
      * @return the inner cone angle of this light.
      */

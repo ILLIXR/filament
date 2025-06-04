@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <imageio/ImageDiffer.h>
+#include "filament/imageio/ImageDiffer.h"
 
-#include <image/ColorTransform.h>
-#include <image/ImageOps.h>
-#include <imageio/ImageDecoder.h>
-#include <imageio/ImageEncoder.h>
-#include <utils/Panic.h>
+#include "filament/image/ColorTransform.h"
+#include "filament/image/ImageOps.h"
+#include "filament/imageio/ImageDecoder.h"
+#include "filament/imageio/ImageEncoder.h"
+#include "filament/utils/Panic.h"
 
 #include <fstream>
 

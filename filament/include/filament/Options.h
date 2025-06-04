@@ -17,10 +17,10 @@
 #ifndef TNT_FILAMENT_OPTIONS_H
 #define TNT_FILAMENT_OPTIONS_H
 
-#include <filament/Color.h>
+#include "Color.h"
 
-#include <math/vec2.h>
-#include <math/vec3.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
 
 #include <math.h>
 

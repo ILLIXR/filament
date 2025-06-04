@@ -17,20 +17,20 @@
 #ifndef TNT_FILAMENT_DETAILS_SKINNINGBUFFER_H
 #define TNT_FILAMENT_DETAILS_SKINNINGBUFFER_H
 
-#include <filament/SkinningBuffer.h>
+#include "filament/SkinningBuffer.h"
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <math/mat4.h>
-#include <math/vec2.h>
+#include "filament/math/mat4.h"
+#include "filament/math/vec2.h"
 
 #include <stddef.h>
 #include <stdint.h>

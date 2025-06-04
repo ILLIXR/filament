@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <fgviewer/FrameGraphInfo.h>
-#include <fgviewer/JsonWriter.h>
+#include "filament/fgviewer/FrameGraphInfo.h"
+#include "filament/fgviewer/JsonWriter.h"
 
-#include <utils/CString.h>
+#include "filament/utils/CString.h"
 
 #include <cstddef>
 #include <ostream>

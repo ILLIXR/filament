@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_SHARED_HANDLE_H
 #define TNT_FILAMENT_SHARED_HANDLE_H
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
 #include <stdint.h>
 

@@ -16,24 +16,24 @@
 
 #include <SDL.h>
 
-#include <filament/Camera.h>
-#include <filament/Engine.h>
-#include <filament/IndirectLight.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/Renderer.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/View.h>
-#include <filament/Viewport.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/IBL.h>
-#include <filamentapp/NativeWindowHelper.h>
-#include <filameshio/MeshReader.h>
-#include <math/mat4.h>
-#include <utils/EntityManager.h>
-#include <utils/Panic.h>
+#include "filament/Camera.h"
+#include "filament/Engine.h"
+#include "filament/IndirectLight.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/Renderer.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/View.h"
+#include "filament/Viewport.h"
+#include "filament/filamentapp/FilamentApp.h"
+#include "filament/filamentapp/IBL.h"
+#include "filament/filamentapp/NativeWindowHelper.h"
+#include "filament/filameshio/MeshReader.h"
+#include "filament/math/mat4.h"
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Panic.h"
 
 #include <functional>
 #include <iostream>
@@ -351,7 +351,7 @@ void animation_new_frame(Window& w, double dt) {
                         0.0f,
                         kCameraDist * std::cos(theta)};
     w.camera->lookAt(eye, kCameraCenter, kCameraUp);
-    
+
     w.needsDraw = true;
 }
 

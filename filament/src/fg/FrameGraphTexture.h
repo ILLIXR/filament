@@ -17,10 +17,10 @@
 #ifndef TNT_FILAMENT_FG_FRAMEGRAPHTEXTURE_H
 #define TNT_FILAMENT_FG_FRAMEGRAPHTEXTURE_H
 
-#include "fg/FrameGraphId.h"
+#include "FrameGraphId.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
 namespace filament {
 class ResourceAllocatorInterface;

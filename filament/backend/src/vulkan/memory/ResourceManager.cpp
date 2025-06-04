@@ -17,7 +17,7 @@
 #include "vulkan/memory/ResourceManager.h"
 #include "vulkan/VulkanHandles.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 namespace filament::backend::fvkmemory {
 

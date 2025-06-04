@@ -13,24 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 #include "webgpu/WebGPUDriver.h"
 
 #include "WebGPUPipelineCreation.h"
 #include "WebGPUSwapChain.h"
-#include <backend/platforms/WebGPUPlatform.h>
+#include "filament/backend/platforms/WebGPUPlatform.h"
 
 #include "CommandStreamDispatcher.h"
 #include "DriverBase.h"
 #include "private/backend/Dispatcher.h"
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <math/mat3.h>
-#include <utils/CString.h>
-#include <utils/Panic.h>
-#include <utils/ostream.h>
+#include "filament/math/mat3.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/ostream.h"
 
 #include <dawn/webgpu_cpp_print.h>
 #include <webgpu/webgpu_cpp.h>

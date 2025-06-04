@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include <matdbg/ShaderReplacer.h>
+#include "filament/matdbg/ShaderReplacer.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <filaflat/DictionaryReader.h>
-#include <filaflat/MaterialChunk.h>
+#include "filament/filaflat/DictionaryReader.h"
+#include "filament/filaflat/MaterialChunk.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <algorithm>
 #include <sstream>
@@ -31,14 +31,14 @@
 #include <glslang/SPIRV/GlslangToSpv.h>
 
 #include "sca/builtinResource.h"
-#include "sca/GLSLTools.h"
+#include "filament/filamat/sca/GLSLTools.h"
 
-#include "eiff/ChunkContainer.h"
-#include "eiff/DictionarySpirvChunk.h"
-#include "eiff/DictionaryTextChunk.h"
-#include "eiff/MaterialBinaryChunk.h"
-#include "eiff/MaterialTextChunk.h"
-#include "eiff/LineDictionary.h"
+#include "filament/filamat/eiff/ChunkContainer.h"
+#include "filament/filamat/eiff/DictionarySpirvChunk.h"
+#include "filament/filamat/eiff/DictionaryTextChunk.h"
+#include "filament/filamat/eiff/MaterialBinaryChunk.h"
+#include "filament/filamat/eiff/MaterialTextChunk.h"
+#include "filament/filamat/eiff/LineDictionary.h"
 
 #include "spirv-tools/libspirv.h"
 

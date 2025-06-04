@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/TextureSampler.h>
-#include <filament/TransformManager.h>
-#include <filament/VertexBuffer.h>
-#include <filament/View.h>
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/TextureSampler.h"
+#include "filament/TransformManager.h"
+#include "filament/VertexBuffer.h"
+#include "filament/View.h"
 
-#include <math/norm.h>
+#include "filament/math/norm.h"
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/MeshAssimp.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/FilamentApp.h"
+#include "filament/filamentapp/MeshAssimp.h"
 
 #include "generated/resources/resources.h"
 

@@ -19,15 +19,15 @@
 #ifndef TNT_FILAMENT_COLORGRADING_H
 #define TNT_FILAMENT_COLORGRADING_H
 
-#include <filament/FilamentAPI.h>
-#include <filament/ToneMapper.h>
-#include <filament/ColorSpace.h>
+#include "FilamentAPI.h"
+#include "ToneMapper.h"
+#include "ColorSpace.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mathfwd.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/mathfwd.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <stdint.h>
 #include <stddef.h>

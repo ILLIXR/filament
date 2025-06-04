@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-#include <image/ColorTransform.h>
-#include <image/ImageOps.h>
-#include <image/ImageSampler.h>
-#include <image/Ktx1Bundle.h>
-#include <image/LinearImage.h>
+#include "filament/image/ColorTransform.h"
+#include "filament/image/ImageOps.h"
+#include "filament/image/ImageSampler.h"
+#include "filament/image/Ktx1Bundle.h"
+#include "filament/image/LinearImage.h"
 
-#include <imageio/BasisEncoder.h>
-#include <imageio/ImageDecoder.h>
-#include <imageio/ImageEncoder.h>
+#include "filament/imageio/BasisEncoder.h"
+#include "filament/imageio/ImageDecoder.h"
+#include "filament/imageio/ImageEncoder.h"
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <getopt/getopt.h>
 

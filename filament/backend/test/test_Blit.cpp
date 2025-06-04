@@ -23,15 +23,15 @@
 #include "Skip.h"
 #include "TrianglePrimitive.h"
 
-#include <utils/Hash.h>
-#include <utils/Log.h>
+#include "filament/utils/Hash.h"
+#include "filament/utils/Log.h"
 
 #include <fstream>
 
 #ifndef FILAMENT_IOS
 
-#include <imageio/ImageEncoder.h>
-#include <image/ColorTransform.h>
+#include "filament/imageio/ImageEncoder.h"
+#include "filament/image/ColorTransform.h"
 
 #endif
 

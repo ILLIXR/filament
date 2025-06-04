@@ -20,7 +20,7 @@
 #include "VulkanCommands.h"
 #include "VulkanConstants.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 namespace filament::backend {
 

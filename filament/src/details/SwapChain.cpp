@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#include "details/SwapChain.h"
+#include "SwapChain.h"
 
-#include "details/Engine.h"
+#include "Engine.h"
 
-#include <filament/SwapChain.h>
+#include "filament/SwapChain.h"
 
-#include <backend/CallbackHandler.h>
+#include "filament/backend/CallbackHandler.h"
 
-#include <utils/Invocable.h>
+#include "filament/utils/Invocable.h"
 
 #include <new>
 #include <utility>

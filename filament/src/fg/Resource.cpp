@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include "fg/details/Resource.h"
+#include "details/Resource.h"
 
-#include "fg/details/PassNode.h"
-#include "fg/details/ResourceNode.h"
+#include "details/PassNode.h"
+#include "details/ResourceNode.h"
 
-#include <utils/Panic.h>
-#include <utils/CString.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/CString.h"
 
 using namespace filament::backend;
 

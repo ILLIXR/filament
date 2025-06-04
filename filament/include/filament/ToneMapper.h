@@ -17,9 +17,9 @@
 #ifndef TNT_FILAMENT_TONEMAPPER_H
 #define TNT_FILAMENT_TONEMAPPER_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <cstdint>
 

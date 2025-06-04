@@ -16,7 +16,7 @@
 
 #include "Lifetimes.h"
 
-#include "backend/Platform.h"
+#include "filament/backend/Platform.h"
 #include "private/backend/DriverApi.h"
 
 RenderFrame::RenderFrame(filament::backend::DriverApi& api): mApi(api) {

@@ -23,8 +23,8 @@
 #include "Skip.h"
 #include "TrianglePrimitive.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
 #include <CoreVideo/CoreVideo.h>
 

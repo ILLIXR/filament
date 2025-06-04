@@ -22,11 +22,11 @@
 #include "../Utility.h"
 #include "TangentsJobExtended.h"
 
-#include <filament/BufferObject.h>
+#include "filament/BufferObject.h"
 
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
-#include <utils/Panic.h>
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
 
 #include <cgltf.h>
 

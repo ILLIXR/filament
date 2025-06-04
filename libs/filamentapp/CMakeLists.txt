@@ -18,14 +18,14 @@ set(MATERIAL_DIR "${GENERATION_ROOT}/generated/material")
 # ==================================================================================================
 
 set(PUBLIC_HDRS
-    include/filamentapp/Config.h
-    include/filamentapp/Cube.h
-    include/filamentapp/FilamentApp.h
-    include/filamentapp/IBL.h
-    include/filamentapp/IcoSphere.h
-    include/filamentapp/MeshAssimp.h
-    include/filamentapp/NativeWindowHelper.h
-    include/filamentapp/Sphere.h
+    include/filament/filamentapp/Config.h
+    include/filament/filamentapp/Cube.h
+    include/filament/filamentapp/FilamentApp.h
+    include/filament/filamentapp/IBL.h
+    include/filament/filamentapp/IcoSphere.h
+    include/filament/filamentapp/MeshAssimp.h
+    include/filament/filamentapp/NativeWindowHelper.h
+    include/filament/filamentapp/Sphere.h
 )
 
 set(SRCS
@@ -52,7 +52,7 @@ set(LIBS
     ktxreader
     math
     SDL2::SDL2
-    stb
+    ${stb_LIBRARIES}
     utils
 )
 
@@ -140,10 +140,16 @@ set_target_properties(filamentapp-resources PROPERTIES FOLDER Samples/Resources)
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
 target_link_libraries(${TARGET} PUBLIC ${LIBS} filamentapp-resources)
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR} ${imgui_INCLUDE_DIRS})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
+
+target_include_directories(${TARGET} PUBLIC ${imgui_INCLUDE_DIRS} ${stb_INCLUDE_DIRS})
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 target_include_directories(${TARGET} PRIVATE ${GENERATION_ROOT})
 
@@ -165,3 +171,9 @@ if(_isMultiConfig)
 else()
     target_compile_definitions(${TARGET} PRIVATE RELATIVE_ASSET_PATH=".")
 endif()
+
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)

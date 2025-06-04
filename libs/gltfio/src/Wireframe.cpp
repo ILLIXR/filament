@@ -17,16 +17,16 @@
 #include "Wireframe.h"
 #include "FFilamentAsset.h"
 
-#include <filament/Box.h>
-#include <filament/Engine.h>
-#include <filament/VertexBuffer.h>
-#include <filament/RenderableManager.h>
-#include <filament/TransformManager.h>
+#include "filament/Box.h"
+#include "filament/Engine.h"
+#include "filament/VertexBuffer.h"
+#include "filament/RenderableManager.h"
+#include "filament/TransformManager.h"
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
-#include <math/vec3.h>
-#include <math/mat4.h>
+#include "filament/math/vec3.h"
+#include "filament/math/mat4.h"
 
 #include <functional>
 

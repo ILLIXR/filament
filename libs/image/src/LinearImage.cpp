@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <image/LinearImage.h>
+#include "filament/image/LinearImage.h"
 
 #include <cstring> // for memset
 #include <memory>
@@ -50,7 +50,7 @@ LinearImage& LinearImage::operator=(const LinearImage& that) {
         : nullptr;
     delete mDataRef;
     mDataRef = newDataRef;
-    
+
     mData = that.mData;
     mWidth = that.mWidth;
     mHeight = that.mHeight;

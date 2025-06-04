@@ -19,12 +19,12 @@
 
 #include "downcast.h"
 
-#include <gltfio/NodeManager.h>
+#include "filament/gltfio/NodeManager.h"
 
-#include <utils/compiler.h>
-#include <utils/SingleInstanceComponentManager.h>
-#include <utils/Entity.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/SingleInstanceComponentManager.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/Slice.h"
 
 namespace filament::gltfio {
 

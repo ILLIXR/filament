@@ -16,7 +16,7 @@
 
 #include "details/Camera.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 namespace filament {
 

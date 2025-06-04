@@ -16,8 +16,8 @@
 
 #include "CommonWriter.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/Variant.h"
 
 namespace filament::matdbg {
 

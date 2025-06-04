@@ -17,30 +17,30 @@
 #ifndef TNT_FILAMENT_DETAILS_SCENE_H
 #define TNT_FILAMENT_DETAILS_SCENE_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include "Allocators.h"
-#include "Culler.h"
+#include "../Allocators.h"
+#include "../Culler.h"
 
-#include "ds/DescriptorSet.h"
+#include "../ds/DescriptorSet.h"
 
-#include "components/LightManager.h"
-#include "components/RenderableManager.h"
-#include "components/TransformManager.h"
+#include "../components/LightManager.h"
+#include "../components/RenderableManager.h"
+#include "../components/TransformManager.h"
 
-#include "BufferPoolAllocator.h"
+#include "../BufferPoolAllocator.h"
 
-#include <filament/Box.h>
-#include <filament/Scene.h>
+#include "filament/Box.h"
+#include "filament/Scene.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
-#include <utils/compiler.h>
-#include <utils/Entity.h>
-#include <utils/Slice.h>
-#include <utils/StructureOfArrays.h>
-#include <utils/Range.h>
-#include <utils/debug.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/Slice.h"
+#include "filament/utils/StructureOfArrays.h"
+#include "filament/utils/Range.h"
+#include "filament/utils/debug.h"
 
 #include <stddef.h>
 

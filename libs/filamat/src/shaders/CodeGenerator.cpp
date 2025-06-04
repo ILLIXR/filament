@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include "CodeGenerator.h"
+#include "filament/filamat/shaders/CodeGenerator.h"
 
-#include "MaterialInfo.h"
+#include "filament/filamat/shaders/MaterialInfo.h"
 #include "../PushConstantDefinitions.h"
 
 #include "generated/shaders.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/sstream.h>
+#include "filament/utils/sstream.h"
 
 #include <cctype>
 #include <iomanip>

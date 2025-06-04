@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Manipulator.h"
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
 #include "FreeFlightManipulator.h"
 #include "MapManipulator.h"

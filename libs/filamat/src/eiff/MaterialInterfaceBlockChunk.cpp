@@ -13,21 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "MaterialInterfaceBlockChunk.h"
+#include "filament/filamat/eiff/MaterialInterfaceBlockChunk.h"
 
-#include "filament/MaterialChunkType.h"
+#include "filament/filabridge/MaterialChunkType.h"
 
-#include <private/filament/BufferInterfaceBlock.h>
-#include <private/filament/ConstantInfo.h>
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/EngineEnums.h>
-#include <private/filament/PushConstantInfo.h>
-#include <private/filament/SamplerInterfaceBlock.h>
-#include <private/filament/SubpassInfo.h>
+#include "filament/filabridge/BufferInterfaceBlock.h"
+#include "filament/filabridge/ConstantInfo.h"
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/PushConstantInfo.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
+#include "filament/filabridge/SubpassInfo.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 #include <utility>
 

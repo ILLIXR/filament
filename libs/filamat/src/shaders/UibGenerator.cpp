@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#include "UibGenerator.h"
-#include "private/filament/UibStructs.h"
+#include "filament/filamat/shaders/UibGenerator.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include "private/filament/BufferInterfaceBlock.h"
+#include "filament/filabridge/BufferInterfaceBlock.h"
 
-#include <private/filament/EngineEnums.h>
-#include <backend/DriverEnums.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 #include <stdlib.h>
 

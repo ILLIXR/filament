@@ -25,12 +25,12 @@
 
 #include <getopt/getopt.h>
 
-#include <utils/Path.h>
-#include <utils/string.h>
+#include "filament/utils/Path.h"
+#include "filament/utils/string.h"
 
-#include <math/mat3.h>
-#include <math/scalar.h>
-#include <math/vec3.h>
+#include "filament/math/mat3.h"
+#include "filament/math/scalar.h"
+#include "filament/math/vec3.h"
 
 using namespace filament::math;
 using namespace std::complex_literals;

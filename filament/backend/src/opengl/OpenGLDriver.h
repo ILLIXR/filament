@@ -27,27 +27,27 @@
 #include "GLTexture.h"
 #include "ShaderCompilerService.h"
 
-#include <backend/AcquiredImage.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/PipelineState.h>
-#include <backend/Platform.h>
-#include <backend/Program.h>
-#include <backend/TargetBufferInfo.h>
-#include <backend/BufferObjectStreamDescriptor.h>
+#include "filament/backend/AcquiredImage.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PipelineState.h"
+#include "filament/backend/Platform.h"
+#include "filament/backend/Program.h"
+#include "filament/backend/TargetBufferInfo.h"
+#include "filament/backend/BufferObjectStreamDescriptor.h"
 
-#include "private/backend/Driver.h"
-#include "private/backend/HandleAllocator.h"
+#include "filament/private/backend/Driver.h"
+#include "filament/private/backend/HandleAllocator.h"
 
-#include <utils/bitset.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/compiler.h>
-#include <utils/CString.h>
-#include <utils/debug.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/debug.h"
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
-#include <tsl/robin_map.h>
+#include "filament/tsl/robin_map.h"
 
 #include <array>
 #include <condition_variable>
@@ -237,7 +237,7 @@ private:
     RetType methodName##S() noexcept override; \
     UTILS_ALWAYS_INLINE inline void methodName##R(RetType, paramsDecl);
 
-#include "private/backend/DriverAPI.inc"
+#include "filament/private/backend/DriverAPI.inc"
 
     // Memory management...
 

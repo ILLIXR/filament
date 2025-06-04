@@ -16,9 +16,9 @@
 
 #include "vulkan/utils/Spirv.h"
 
-#include <utils/compiler.h>   // UTILS_UNUSED_IN_RELEASE, UTILS_FALLTHROUGH
-#include <utils/debug.h>      // assert_invariant
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"   // UTILS_UNUSED_IN_RELEASE, UTILS_FALLTHROUGH
+#include "filament/utils/debug.h"      // assert_invariant
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <spirv/unified1/spirv.hpp>
 

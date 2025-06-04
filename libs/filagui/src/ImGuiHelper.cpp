@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <filagui/ImGuiHelper.h>
+#include "filament/filagui/ImGuiHelper.h"
 
 #include <vector>
 #include <unordered_map>
 
 #include <imgui.h>
 
-#include <filament/Camera.h>
-#include <filament/Fence.h>
-#include <filament/IndexBuffer.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Texture.h>
-#include <filament/TextureSampler.h>
-#include <filament/TransformManager.h>
-#include <filament/VertexBuffer.h>
+#include "filament/Camera.h"
+#include "filament/Fence.h"
+#include "filament/IndexBuffer.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Texture.h"
+#include "filament/TextureSampler.h"
+#include "filament/TransformManager.h"
+#include "filament/VertexBuffer.h"
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
 using namespace filament::math;
 using namespace filament;

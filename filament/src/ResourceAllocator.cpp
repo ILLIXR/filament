@@ -16,23 +16,23 @@
 
 #include "ResourceAllocator.h"
 
-#include <filament/Engine.h>
+#include "filament/Engine.h"
 
 #include "details/Texture.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
-#include <backend/TargetBufferInfo.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/TargetBufferInfo.h"
+#include "filament/backend/DriverEnums.h"
 
 #include "private/backend/DriverApi.h"
 
-#include <utils/algorithm.h>
-#include <utils/bitset.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
+#include "filament/utils/algorithm.h"
+#include "filament/utils/bitset.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
 
 #include <array>
 #include <algorithm>

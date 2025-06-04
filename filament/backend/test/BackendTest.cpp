@@ -20,7 +20,7 @@
 
 #include "BackendTest.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 #include <fstream>
 
@@ -34,8 +34,8 @@ using namespace filament;
 using namespace filament::backend;
 
 #ifndef FILAMENT_IOS
-#include <imageio/ImageEncoder.h>
-#include <image/ColorTransform.h>
+#include "filament/imageio/ImageEncoder.h"
+#include "filament/image/ColorTransform.h"
 
 using namespace image;
 #endif

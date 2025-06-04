@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <backend/PresentCallable.h>
+#include "filament/backend/PresentCallable.h"
 
-#include <utils/Panic.h>
-#include <utils/debug.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/debug.h"
 
 namespace filament::backend {
 

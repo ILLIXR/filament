@@ -19,7 +19,7 @@
 #include "VulkanConstants.h"
 #include "vulkan/utils/Conversion.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 using namespace bluevk;
 

@@ -17,8 +17,8 @@
 #ifndef GLTFIO_TANGENTS_JOB_EXTENDED_H
 #define GLTFIO_TANGENTS_JOB_EXTENDED_H
 
-#include <gltfio/MaterialProvider.h> // for UvMap
-#include <math/vec4.h>
+#include "filament/gltfio/MaterialProvider.h" // for UvMap
+#include "filament/math/vec4.h"
 
 #include <cgltf.h>
 
@@ -63,7 +63,7 @@ struct TangentsJobExtended {
     struct Params {
         InputParams in;
         OutputParams out;
-        uint8_t jobType = 0;        
+        uint8_t jobType = 0;
     };
 
     // Performs tangents generation synchronously. This can be invoked from inside a job if desired.

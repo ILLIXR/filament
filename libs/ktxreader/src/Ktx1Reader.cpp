@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <ktxreader/Ktx1Reader.h>
-#include <utils/Log.h>
+#include "filament/ktxreader/Ktx1Reader.h"
+#include "filament/utils/Log.h"
 
-#include <filament/Engine.h>
-#include <filament/Texture.h>
+#include "filament/Engine.h"
+#include "filament/Texture.h"
 
 namespace ktxreader {
 namespace Ktx1Reader {

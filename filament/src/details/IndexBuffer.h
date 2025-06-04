@@ -17,13 +17,13 @@
 #ifndef TNT_FILAMENT_DETAILS_INDEXBUFFER_H
 #define TNT_FILAMENT_DETAILS_INDEXBUFFER_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <filament/IndexBuffer.h>
+#include "filament/IndexBuffer.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 namespace filament {
 

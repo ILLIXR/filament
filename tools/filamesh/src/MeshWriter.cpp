@@ -16,7 +16,7 @@
 
 #include "MeshWriter.h"
 
-#include <filameshio/filamesh.h>
+#include "filament/filameshio/filamesh.h"
 
 #include <meshoptimizer.h>
 

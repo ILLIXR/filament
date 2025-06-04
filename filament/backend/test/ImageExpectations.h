@@ -21,8 +21,8 @@
 
 #include "gtest/gtest.h"
 
-#include "backend/Handle.h"
-#include "backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/DriverApiForward.h"
 
 // Arguments are (RenderTargetHandle renderTarget, ImageExpectations& expectations,
 // ScreenshotParams screenshotParams)

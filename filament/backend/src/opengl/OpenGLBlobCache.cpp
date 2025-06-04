@@ -18,10 +18,10 @@
 
 #include "OpenGLContext.h"
 
-#include <backend/Platform.h>
-#include <backend/Program.h>
+#include "filament/backend/Platform.h"
+#include "filament/backend/Program.h"
 
-#include <utils/Systrace.h>
+#include "filament/utils/Systrace.h"
 
 namespace filament::backend {
 

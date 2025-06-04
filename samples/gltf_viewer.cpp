@@ -14,47 +14,47 @@
  * limitations under the License.
  */
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/IBL.h>
+#include "filamentapp/Config.h"
+#include "filamentapp/FilamentApp.h"
+#include "filamentapp/IBL.h"
 
-#include <filament/Camera.h>
-#include <filament/ColorGrading.h>
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/RenderableManager.h>
-#include <filament/Renderer.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/TransformManager.h>
-#include <filament/VertexBuffer.h>
-#include <filament/View.h>
+#include "filament/Camera.h"
+#include "filament/ColorGrading.h"
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/RenderableManager.h"
+#include "filament/Renderer.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/TransformManager.h"
+#include "filament/VertexBuffer.h"
+#include "filament/View.h"
 
-#include <gltfio/AssetLoader.h>
-#include <gltfio/FilamentAsset.h>
-#include <gltfio/ResourceLoader.h>
-#include <gltfio/TextureProvider.h>
+#include "filament/gltfio/AssetLoader.h"
+#include "filament/gltfio/FilamentAsset.h"
+#include "filament/gltfio/ResourceLoader.h"
+#include "filament/gltfio/TextureProvider.h"
 
-#include <viewer/AutomationEngine.h>
-#include <viewer/AutomationSpec.h>
-#include <viewer/ViewerGui.h>
+#include "filament/viewer/AutomationEngine.h"
+#include "filament/viewer/AutomationSpec.h"
+#include "filament/viewer/ViewerGui.h"
 
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Manipulator.h"
 
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/EngineEnums.h"
 
 #include <getopt/getopt.h>
 
-#include <utils/NameComponentManager.h>
-#include <utils/Log.h>
+#include "filament/utils/NameComponentManager.h"
+#include "filament/utils/Log.h"
 
-#include <math/vec3.h>
-#include <math/vec4.h>
-#include <math/mat3.h>
-#include <math/norm.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
+#include "filament/math/mat3.h"
+#include "filament/math/norm.h"
 
 #include <imgui.h>
-#include <filagui/ImGuiExtensions.h>
+#include "filament/filagui/ImGuiExtensions.h"
 
 #include <cgltf.h>
 

@@ -16,25 +16,25 @@
 
 #include "ProgressUpdater.h"
 
-#include <ibl/Cubemap.h>
-#include <ibl/CubemapIBL.h>
-#include <ibl/CubemapSH.h>
-#include <ibl/CubemapUtils.h>
-#include <ibl/Image.h>
-#include <ibl/utilities.h>
+#include "filament/ibl/Cubemap.h"
+#include "filament/ibl/CubemapIBL.h"
+#include "filament/ibl/CubemapSH.h"
+#include "filament/ibl/CubemapUtils.h"
+#include "filament/ibl/Image.h"
+#include "filament/ibl/utilities.h"
 
-#include <imageio/ImageDecoder.h>
-#include <imageio/ImageEncoder.h>
+#include "filament/imageio/ImageDecoder.h"
+#include "filament/imageio/ImageEncoder.h"
 
-#include <image/Ktx1Bundle.h>
-#include <image/ColorTransform.h>
+#include "filament/image/Ktx1Bundle.h"
+#include "filament/image/ColorTransform.h"
 
-#include <utils/JobSystem.h>
-#include <utils/Path.h>
-#include <utils/algorithm.h>
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Path.h"
+#include "filament/utils/algorithm.h"
 
-#include <math/scalar.h>
-#include <math/vec4.h>
+#include "filament/math/scalar.h"
+#include "filament/math/vec4.h"
 
 #include <cmath>
 #include <fstream>

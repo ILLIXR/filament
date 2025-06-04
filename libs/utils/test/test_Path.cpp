@@ -17,7 +17,7 @@
 #include <limits.h>
 #include <gtest/gtest.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <iosfwd>
 #include <string>

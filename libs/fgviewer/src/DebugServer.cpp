@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include <fgviewer/DebugServer.h>
-#include <fgviewer/FrameGraphInfo.h>
+#include "filament/fgviewer/DebugServer.h"
+#include "filament/fgviewer/FrameGraphInfo.h"
 
 #include "ApiHandler.h"
 
 #include <CivetServer.h>
 
-#include <utils/Log.h>
-#include <utils/Mutex.h>
-#include <utils/ostream.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/ostream.h"
 
 #include <mutex>
 #include <string>

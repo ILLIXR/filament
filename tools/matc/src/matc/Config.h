@@ -17,16 +17,16 @@
 #ifndef TNT_CONFIG_H
 #define TNT_CONFIG_H
 
-#include <filament/MaterialEnums.h>
-#include <backend/DriverEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <filamat/MaterialBuilder.h>
+#include "filament/filamat/MaterialBuilder.h"
 
 #include <map>
 #include <memory>
 #include <ostream>
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 namespace matc {
 

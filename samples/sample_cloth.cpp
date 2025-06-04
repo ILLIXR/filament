@@ -21,31 +21,31 @@
 
 #include <getopt/getopt.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
-#include <filament/Engine.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Texture.h>
-#include <filament/TextureSampler.h>
-#include <filament/TransformManager.h>
+#include "filament/Engine.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Texture.h"
+#include "filament/TextureSampler.h"
+#include "filament/TransformManager.h"
 
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/vec4.h>
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/vec4.h"
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/FilamentApp.h"
 
 #include <stb_image.h>
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
-#include <filamat/MaterialBuilder.h>
-#include <filameshio/MeshReader.h>
+#include "filament/filamat/MaterialBuilder.h"
+#include "filament/filameshio/MeshReader.h"
 
 using namespace filament::math;
 using namespace filament;

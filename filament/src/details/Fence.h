@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_DETAILS_FENCE_H
 #define TNT_FILAMENT_DETAILS_FENCE_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <filament/Fence.h>
+#include "filament/Fence.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/Condition.h>
-#include <utils/Mutex.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Condition.h"
+#include "filament/utils/Mutex.h"
 
 namespace filament {
 

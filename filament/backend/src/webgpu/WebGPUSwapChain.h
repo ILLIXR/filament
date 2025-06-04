@@ -20,7 +20,7 @@
 #include <webgpu/webgpu_cpp.h>
 
 #include "DriverBase.h"
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
 #include <cstdint>
 

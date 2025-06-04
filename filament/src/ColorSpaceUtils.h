@@ -17,11 +17,11 @@
 #ifndef TNT_FILAMENT_COLORSPACE_H
 #define TNT_FILAMENT_COLORSPACE_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mat3.h>
-#include <math/vec3.h>
-#include <math/scalar.h>
+#include "filament/math/mat3.h"
+#include "filament/math/vec3.h"
+#include "filament/math/scalar.h"
 
 #include <cmath>
 

@@ -23,7 +23,7 @@
 
 #include <private/backend/HandleAllocator.h>
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 namespace filament::backend::fvkmemory {
 

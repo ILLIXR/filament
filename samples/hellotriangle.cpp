@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <filament/Camera.h>
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/TransformManager.h>
-#include <filament/VertexBuffer.h>
-#include <filament/View.h>
+#include "filament/Camera.h"
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/TransformManager.h"
+#include "filament/VertexBuffer.h"
+#include "filament/View.h"
 
-#include <utils/EntityManager.h>
+#include "utils/EntityManager.h"
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
+#include "filamentapp/Config.h"
+#include "filamentapp/FilamentApp.h"
 
 #include <getopt/getopt.h>
 

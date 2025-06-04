@@ -19,11 +19,11 @@
 #ifndef TNT_FILAMENT_INDIRECTLIGHT_H
 #define TNT_FILAMENT_INDIRECTLIGHT_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <stdint.h>
 

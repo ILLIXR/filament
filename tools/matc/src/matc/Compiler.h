@@ -19,7 +19,7 @@
 
 #include "CommandlineConfig.h"
 
-#include <filamat/Package.h>
+#include "filament/filamat/Package.h"
 
 namespace matc {
 

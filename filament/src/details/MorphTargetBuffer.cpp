@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include "details/MorphTargetBuffer.h"
+#include "MorphTargetBuffer.h"
 
-#include <private/filament/SibStructs.h>
+#include "filament/filabridge/SibStructs.h"
 
-#include <details/Engine.h>
+#include "Engine.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <math/mat4.h>
-#include <math/norm.h>
+#include "filament/math/mat4.h"
+#include "filament/math/norm.h"
 
-#include <utils/CString.h>
-#include <utils/StaticString.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/StaticString.h"
 
 namespace filament {
 
@@ -280,4 +280,3 @@ void FMorphTargetBuffer::updateDataAt(DriverApi& driver,
 }
 
 } // namespace filament
-

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "DictionaryTextChunk.h"
+#include "filament/filamat/eiff/DictionaryTextChunk.h"
 
 namespace filamat {
 

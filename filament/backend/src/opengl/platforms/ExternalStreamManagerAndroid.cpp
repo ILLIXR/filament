@@ -16,14 +16,14 @@
 
 #include "ExternalStreamManagerAndroid.h"
 
-#include <private/backend/VirtualMachineEnv.h>
+#include "filament/private/backend/VirtualMachineEnv.h"
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
 
 #if __has_include(<android/surface_texture.h>)
 #   include <android/surface_texture.h>

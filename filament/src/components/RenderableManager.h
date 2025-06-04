@@ -25,21 +25,21 @@
 
 #include <details/InstanceBuffer.h>
 
-#include <filament/Box.h>
-#include <filament/MaterialEnums.h>
-#include <filament/RenderableManager.h>
+#include "filament/Box.h"
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/RenderableManager.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/Entity.h>
-#include <utils/EntityInstance.h>
-#include <utils/Panic.h>
-#include <utils/SingleInstanceComponentManager.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Entity.h"
+#include "filament/utils/EntityInstance.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/SingleInstanceComponentManager.h"
+#include "filament/utils/Slice.h"
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 #include <algorithm>
 

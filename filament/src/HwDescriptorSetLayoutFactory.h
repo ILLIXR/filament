@@ -19,11 +19,11 @@
 
 #include "Bimap.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/Allocator.h>
+#include "filament/utils/Allocator.h"
 
 #include <functional>
 

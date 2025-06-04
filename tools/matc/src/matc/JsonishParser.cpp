@@ -22,7 +22,7 @@
 
 #include <string.h>
 
-#include <utils/string.h>
+#include "filament/utils/string.h"
 
 namespace matc {
 

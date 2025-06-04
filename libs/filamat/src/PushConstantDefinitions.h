@@ -17,10 +17,10 @@
 #ifndef TNT_FILAMAT_PUSH_CONSTANT_DEFINTITIONS_H
 #define TNT_FILAMAT_PUSH_CONSTANT_DEFINTITIONS_H
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/PushConstantInfo.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/PushConstantInfo.h"
 
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <tuple>
 

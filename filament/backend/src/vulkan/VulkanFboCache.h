@@ -19,9 +19,9 @@
 
 #include "VulkanContext.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/TargetBufferInfo.h"
 
 #include <tsl/robin_map.h>
 

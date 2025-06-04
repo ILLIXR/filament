@@ -20,8 +20,8 @@
 #include "FFilamentAsset.h"
 #include "GltfEnums.h"
 
-#include <utils/Log.h>
-#include <utils/Systrace.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Systrace.h"
 
 #define CGLTF_IMPLEMENTATION
 #include <cgltf.h>

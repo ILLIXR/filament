@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <backend/platforms/VulkanPlatformAndroid.h>
+#include "filament/backend/platforms/VulkanPlatformAndroid.h"
 
 #include "vulkan/VulkanConstants.h"
 #include "vulkan/VulkanContext.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 #include <private/backend/BackendUtilsAndroid.h>
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 #include "vulkan/utils/Image.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 #include <android/hardware_buffer.h>
 #include <android/native_window.h>

@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include <filament/IndexBuffer.h>
-#include <filament/Material.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/VertexBuffer.h>
-#include <filament/View.h>
+#include "filament/IndexBuffer.h"
+#include "filament/Material.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/VertexBuffer.h"
+#include "filament/View.h"
 
-#include <filamentapp/FilamentApp.h>
+#include "filament/filamentapp/FilamentApp.h"
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
 #include "generated/resources/resources.h"
 

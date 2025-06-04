@@ -17,10 +17,10 @@
 #ifndef GLTFIO_GLTFENUMS_H
 #define GLTFIO_GLTFENUMS_H
 
-#include <filament/IndexBuffer.h>
-#include <filament/RenderableManager.h>
-#include <filament/TextureSampler.h>
-#include <filament/VertexBuffer.h>
+#include "filament/IndexBuffer.h"
+#include "filament/RenderableManager.h"
+#include "filament/TextureSampler.h"
+#include "filament/VertexBuffer.h"
 
 #include <cgltf.h>
 

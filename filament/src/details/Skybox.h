@@ -17,14 +17,14 @@
 #ifndef TNT_FILAMENT_DETAILS_SKYBOX_H
 #define TNT_FILAMENT_DETAILS_SKYBOX_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <filament/Skybox.h>
+#include "filament/Skybox.h"
 
-#include <private/backend/DriverApi.h>
+#include "private/backend/DriverApi.h"
 
-#include <utils/compiler.h>
-#include <utils/Entity.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Entity.h"
 
 namespace filament {
 

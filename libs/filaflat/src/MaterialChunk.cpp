@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#include <filaflat/MaterialChunk.h>
-#include <filaflat/ChunkContainer.h>
+#include "filament/filaflat/MaterialChunk.h"
+#include "filament/filaflat/ChunkContainer.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 namespace filaflat {
 
@@ -230,4 +230,3 @@ void MaterialChunk::visitShaders(
 }
 
 } // namespace filaflat
-

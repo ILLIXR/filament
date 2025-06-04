@@ -22,32 +22,32 @@
 #include "details/Engine.h"
 #include "details/Scene.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/backend/DriverApi.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "private/backend/DriverApi.h"
 
-#include <filament/Box.h>
-#include <filament/Viewport.h>
+#include "filament/Box.h"
+#include "filament/Viewport.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/BinaryTreeArray.h>
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
-#include <utils/Slice.h>
-#include <utils/Systrace.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
+#include "filament/utils/BinaryTreeArray.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Slice.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
 
-#include <math/fast.h>
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/scalar.h>
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/fast.h"
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/scalar.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <algorithm>
-#include <utils/architecture.h>
+#include "filament/utils/architecture.h"
 #include <array>
 #include <cmath>
 #include <limits>

@@ -42,7 +42,8 @@ set(SRCS
 add_library(${TARGET} STATIC ${SRCS} ${HDRS})
 
 target_include_directories(${TARGET} PUBLIC src)
-target_include_directories(${TARGET} PRIVATE ${filamat_SOURCE_DIR}/src)
+target_include_directories(${TARGET} PRIVATE ${filamat_SOURCE_DIR}/src ${SMOLV_BUILD_INCLUDE_PATH})
+
 
 target_link_libraries(${TARGET} getopt filamat filabridge utils)
 set_target_properties(${TARGET} PROPERTIES FOLDER Tools)
@@ -77,7 +78,10 @@ set_target_properties(${TARGET} PROPERTIES FOLDER Tools)
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(TARGETS ${TARGET} RUNTIME DESTINATION bin)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        RUNTIME DESTINATION bin
+)
 
 # ==================================================================================================
 # Tests

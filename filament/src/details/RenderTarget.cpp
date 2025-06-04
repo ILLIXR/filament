@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-#include "details/RenderTarget.h"
+#include "RenderTarget.h"
 
-#include "details/Engine.h"
-#include "details/Texture.h"
+#include "Engine.h"
+#include "Texture.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <filament/RenderTarget.h>
+#include "filament/RenderTarget.h"
 
-#include <utils/compiler.h>
-#include <utils/BitmaskEnum.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/Panic.h"
 
 #include <algorithm>
 #include <iterator>
@@ -111,7 +111,7 @@ RenderTarget* RenderTarget::Builder::build(Engine& engine) {
                 << "Only " << maxDrawBuffers << " color attachments are supported, but COLOR" << i
                 << " attachment is set";
     }
-    
+
     uint32_t minWidth = std::numeric_limits<uint32_t>::max();
     uint32_t maxWidth = 0;
     uint32_t minHeight = std::numeric_limits<uint32_t>::max();

@@ -19,16 +19,16 @@
 
 #include "DescriptorSetLayout.h"
 
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/EngineEnums.h"
 
-#include <backend/DescriptorSetOffsetArray.h>
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DescriptorSetOffsetArray.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/bitset.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/bitset.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <stdint.h>
 

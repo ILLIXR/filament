@@ -17,10 +17,10 @@
 #ifndef TNT_FILAMENT_INTERSECTIONS_H
 #define TNT_FILAMENT_INTERSECTIONS_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mat4.h>
-#include <math/vec4.h>
+#include "filament/math/mat4.h"
+#include "filament/math/vec4.h"
 
 namespace filament {
 

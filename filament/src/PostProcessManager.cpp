@@ -47,36 +47,36 @@
 
 #include "generated/resources/materials.h"
 
-#include <filament/Material.h>
-#include <filament/MaterialEnums.h>
-#include <filament/Options.h>
-#include <filament/Viewport.h>
+#include "filament/Material.h"
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/Options.h"
+#include "filament/Viewport.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
-#include <backend/PipelineState.h>
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PipelineState.h"
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include <private/backend/BackendUtils.h>
+#include "private/backend/BackendUtils.h"
 
-#include <math/half.h>
-#include <math/mat2.h>
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/scalar.h>
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/half.h"
+#include "filament/math/mat2.h"
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/scalar.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
-#include <utils/algorithm.h>
-#include <utils/BitmaskEnum.h>
-#include <utils/debug.h>
-#include <utils/compiler.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/algorithm.h"
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/FixedCapacityVector.h"
 
 #include <algorithm>
 #include <array>

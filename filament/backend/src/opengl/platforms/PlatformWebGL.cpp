@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/PlatformWebGL.h>
+#include "filament/backend/platforms/PlatformWebGL.h"
 
 namespace filament::backend {
 

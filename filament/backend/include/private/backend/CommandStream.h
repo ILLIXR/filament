@@ -17,24 +17,24 @@
 #ifndef TNT_FILAMENT_BACKEND_PRIVATE_COMMANDSTREAM_H
 #define TNT_FILAMENT_BACKEND_PRIVATE_COMMANDSTREAM_H
 
-#include "private/backend/CircularBuffer.h"
-#include "private/backend/Dispatcher.h"
-#include "private/backend/Driver.h"
+#include "CircularBuffer.h"
+#include "Dispatcher.h"
+#include "Driver.h"
 
-#include <backend/BufferDescriptor.h>
-#include <backend/BufferObjectStreamDescriptor.h>
-#include <backend/CallbackHandler.h>
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/PipelineState.h>
-#include <backend/Program.h>
-#include <backend/PixelBufferDescriptor.h>
-#include <backend/PresentCallable.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/BufferDescriptor.h"
+#include "filament/backend/BufferObjectStreamDescriptor.h"
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PipelineState.h"
+#include "filament/backend/Program.h"
+#include "filament/backend/PixelBufferDescriptor.h"
+#include "filament/backend/PresentCallable.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/ThreadUtils.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/ThreadUtils.h"
 
 #include <cstddef>
 #include <functional>

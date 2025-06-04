@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include "details/Scene.h"
+#include "Scene.h"
 
-#include "components/LightManager.h"
-#include "components/RenderableManager.h"
+#include "../components/LightManager.h"
+#include "../components/RenderableManager.h"
 
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/UibStructs.h"
 
-#include "details/Engine.h"
-#include "details/IndirectLight.h"
-#include "details/InstanceBuffer.h"
-#include "details/Skybox.h"
+#include "Engine.h"
+#include "IndirectLight.h"
+#include "InstanceBuffer.h"
+#include "Skybox.h"
 
-#include "BufferPoolAllocator.h"
+#include "../BufferPoolAllocator.h"
 
-#include <utils/compiler.h>
-#include <utils/EntityManager.h>
-#include <utils/Range.h>
-#include <utils/Systrace.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Range.h"
+#include "filament/utils/Systrace.h"
 
-#include <math/quat.h>
+#include "filament/math/quat.h"
 
 #include <algorithm>
 

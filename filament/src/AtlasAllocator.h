@@ -17,11 +17,11 @@
 #ifndef TNT_FILAMENT_ATLASALLOCATOR_H
 #define TNT_FILAMENT_ATLASALLOCATOR_H
 
-#include <utils/QuadTree.h>
+#include "filament/utils/QuadTree.h"
 
-#include <filament/Viewport.h>
+#include "filament/Viewport.h"
 
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/EngineEnums.h"
 
 #include <stdint.h>
 #include <stddef.h>

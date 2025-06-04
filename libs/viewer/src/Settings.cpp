@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include <viewer/Settings.h>
+#include "filament/viewer/Settings.h"
 
 #include "jsonParseUtils.h"
 #include "Settings_generated.h"
 
-#include <filament/Engine.h>
-#include <filament/Camera.h>
-#include <filament/Renderer.h>
-#include <filament/Skybox.h>
+#include "filament/Engine.h"
+#include "filament/Camera.h"
+#include "filament/Renderer.h"
+#include "filament/Skybox.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
-#include <math/mat3.h>
+#include "filament/math/mat3.h"
 
 #include <sstream>
 #include <string>

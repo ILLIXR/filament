@@ -19,15 +19,15 @@
 
 #include "WebGPUHandles.h"
 #include "webgpu/WebGPUConstants.h"
-#include <backend/platforms/WebGPUPlatform.h>
+#include "filament/backend/platforms/WebGPUPlatform.h"
 
 #include "DriverBase.h"
 #include "private/backend/Dispatcher.h"
 #include "private/backend/Driver.h"
 #include "private/backend/HandleAllocator.h"
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <webgpu/webgpu_cpp.h>
 

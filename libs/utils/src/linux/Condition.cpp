@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/linux/Condition.h>
+#include "filament/utils/linux/Condition.h"
 
 #include "futex.h"
 

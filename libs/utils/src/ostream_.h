@@ -17,7 +17,7 @@
 #ifndef TNT_UTILS_OSTREAM__H
 #define TNT_UTILS_OSTREAM__H
 
-#include <utils/ostream.h>
+#include "filament/utils/ostream.h"
 #include <mutex>
 
 namespace utils::io {

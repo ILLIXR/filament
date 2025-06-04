@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/Profiler.h>
+#include "filament/utils/Profiler.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -178,7 +178,7 @@ uint32_t Profiler::resetEvents(uint32_t eventMask) noexcept {
 #else
         if (eventMask & EV_L1I_REFS) {
             pe.type = PERF_TYPE_HW_CACHE;
-            pe.config = PERF_COUNT_HW_CACHE_L1I | 
+            pe.config = PERF_COUNT_HW_CACHE_L1I |
                 (PERF_COUNT_HW_CACHE_OP_READ<<8) | (PERF_COUNT_HW_CACHE_RESULT_ACCESS<<16);
             mCountersFd[ICACHE_REFS] = perf_event_open(&pe, 0, -1, groupFd, 0);
             if (mCountersFd[ICACHE_REFS] > 0) {
@@ -189,7 +189,7 @@ uint32_t Profiler::resetEvents(uint32_t eventMask) noexcept {
 
         if (eventMask & EV_L1I_MISSES) {
             pe.type = PERF_TYPE_HW_CACHE;
-            pe.config = PERF_COUNT_HW_CACHE_L1I | 
+            pe.config = PERF_COUNT_HW_CACHE_L1I |
                 (PERF_COUNT_HW_CACHE_OP_READ<<8) | (PERF_COUNT_HW_CACHE_RESULT_MISS<<16);
             mCountersFd[ICACHE_MISSES] = perf_event_open(&pe, 0, -1, groupFd, 0);
             if (mCountersFd[ICACHE_MISSES] > 0) {

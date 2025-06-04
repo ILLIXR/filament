@@ -17,12 +17,12 @@
 #ifndef TNT_FILAMENT_FG_DETAILS_RESOURCE_H
 #define TNT_FILAMENT_FG_DETAILS_RESOURCE_H
 
-#include "fg/FrameGraphId.h"
-#include "fg/FrameGraphTexture.h"
-#include "fg/FrameGraphRenderPass.h"
-#include "fg/details/DependencyGraph.h"
+#include "../FrameGraphId.h"
+#include "../FrameGraphTexture.h"
+#include "../FrameGraphRenderPass.h"
+#include "DependencyGraph.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 namespace filament {
 class ResourceAllocatorInterface;

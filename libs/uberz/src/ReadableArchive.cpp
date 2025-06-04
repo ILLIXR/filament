@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <uberz/ReadableArchive.h>
+#include "filament/uberz/ReadableArchive.h"
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 using namespace filament;
 using namespace utils;

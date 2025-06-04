@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include "details/Camera.h"
+#include "Camera.h"
 
-#include "components/TransformManager.h"
+#include "../components/TransformManager.h"
 
-#include "details/Engine.h"
+#include "Engine.h"
 
-#include <filament/Exposure.h>
-#include <filament/Camera.h>
+#include "filament/Exposure.h"
+#include "filament/Camera.h"
 
-#include <utils/compiler.h>
-#include <utils/Panic.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Panic.h"
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
-#include <math/vec2.h>
+#include "filament/math/vec2.h"
 
 using namespace filament::math;
 using namespace utils;

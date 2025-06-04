@@ -19,22 +19,22 @@
 
 #include <gtest/gtest.h>
 
-#include <math/vec3.h>
-#include <math/vec4.h>
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/scalar.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/scalar.h"
 
-#include <filament/Box.h>
-#include <filament/Camera.h>
-#include <filament/Color.h>
-#include <filament/Frustum.h>
-#include <filament/Material.h>
-#include <filament/Engine.h>
+#include "filament/Box.h"
+#include "filament/Camera.h"
+#include "filament/Color.h"
+#include "filament/Frustum.h"
+#include "filament/Material.h"
+#include "filament/Engine.h"
 
-#include <private/filament/BufferInterfaceBlock.h>
-#include <private/filament/UibStructs.h>
-#include <private/backend/BackendUtils.h>
+#include "filament/filabridge/BufferInterfaceBlock.h"
+#include "filament/filabridge/UibStructs.h"
+#include "private/backend/BackendUtils.h"
 
 #include "Allocators.h"
 #include "details/Material.h"

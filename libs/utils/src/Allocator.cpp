@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <utils/Allocator.h>
+#include "filament/utils/Allocator.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
 
 #include <algorithm>
 

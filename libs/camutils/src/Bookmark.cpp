@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <camutils/Bookmark.h>
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Bookmark.h"
+#include "filament/camutils/Manipulator.h"
 
-#include <math/scalar.h>
-#include <math/vec3.h>
+#include "filament/math/scalar.h"
+#include "filament/math/vec3.h"
 
 using namespace filament::math;
 

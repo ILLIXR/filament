@@ -17,19 +17,19 @@
 #ifndef TNT_FILAMENT_SAMPLES_MATERIAL_SANDBOX_H
 #define TNT_FILAMENT_SAMPLES_MATERIAL_SANDBOX_H
 
-#include <filament/Color.h>
-#include <filament/ColorGrading.h>
-#include <filament/Engine.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/View.h>
+#include "filament/Color.h"
+#include "filament/ColorGrading.h"
+#include "filament/Engine.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/View.h"
 
-#include <utils/Entity.h>
-#include <utils/EntityManager.h>
+#include "filament/utils/Entity.h"
+#include "filament/utils/EntityManager.h"
 
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include "generated/resources/resources.h"
 

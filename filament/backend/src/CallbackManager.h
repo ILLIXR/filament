@@ -18,9 +18,9 @@
 #ifndef TNT_FILAMENT_BACKEND_CALLBACKMANAGER_H
 #define TNT_FILAMENT_BACKEND_CALLBACKMANAGER_H
 
-#include <backend/CallbackHandler.h>
+#include "filament/backend/CallbackHandler.h"
 
-#include <utils/Mutex.h>
+#include "filament/utils/Mutex.h"
 
 #include <atomic>
 #include <mutex>

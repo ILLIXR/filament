@@ -20,9 +20,9 @@
 #include "vulkan/VulkanContext.h"
 #include "vulkan/VulkanConstants.h"
 
-#include <backend/platforms/VulkanPlatform.h>
+#include "filament/backend/platforms/VulkanPlatform.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 #include <unordered_map>
 
@@ -111,7 +111,7 @@ protected:
 
 private:
     static constexpr int IMAGE_READY_SEMAPHORE_COUNT = FVK_MAX_COMMAND_BUFFERS;
-    
+
     VkResult create();
 
     VkInstance mInstance;

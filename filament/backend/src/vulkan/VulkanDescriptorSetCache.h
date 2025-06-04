@@ -21,13 +21,13 @@
 #include "vulkan/memory/ResourcePointer.h"
 #include "vulkan/utils/Definitions.h"  // For DescriptorSetMask
 
-#include <backend/DriverEnums.h>
-#include <backend/Program.h>
-#include <backend/TargetBufferInfo.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Program.h"
+#include "filament/backend/TargetBufferInfo.h"
 
-#include <utils/bitset.h>
+#include "filament/utils/bitset.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 #include <tsl/robin_map.h>
 
 #include <memory>

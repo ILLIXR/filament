@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_SYSTRACEPROFILE_H
 #define TNT_FILAMENT_BACKEND_SYSTRACEPROFILE_H
 
-#include <utils/Systrace.h>
+#include "filament/utils/Systrace.h"
 
 #define PROFILE_SCOPE(marker)       SYSTRACE_NAME(marker)
 
@@ -25,4 +25,3 @@
 #define PROFILE_NAME_ENDFRAME      "backend::endFrame"
 
 #endif // TNT_FILAMENT_BACKEND_SYSTRACEPROFILE_H
-

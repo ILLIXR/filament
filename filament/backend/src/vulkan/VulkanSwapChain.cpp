@@ -19,8 +19,8 @@
 #include "VulkanCommands.h"
 #include "VulkanTexture.h"
 
-#include <utils/FixedCapacityVector.h>
-#include <utils/Panic.h>
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Panic.h"
 
 using namespace bluevk;
 using namespace utils;

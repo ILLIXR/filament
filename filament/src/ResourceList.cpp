@@ -16,7 +16,7 @@
 
 #include "ResourceList.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <algorithm>
 

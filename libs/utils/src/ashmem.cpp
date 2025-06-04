@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <utils/ashmem.h>
-#include <utils/api_level.h>
+#include "filament/utils/ashmem.h"
+#include "filament/utils/api_level.h"
 
 #include <errno.h>
 #include <assert.h>
 #include <stdio.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
 #   include <fcntl.h>

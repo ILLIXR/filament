@@ -22,7 +22,7 @@
 #include "Skip.h"
 #include "TrianglePrimitive.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 namespace test {
 

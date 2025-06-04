@@ -14,33 +14,33 @@
  * limitations under the License.
  */
 
-#include <filament/Engine.h>
-#include <filament/IndexBuffer.h>
-#include <filament/LightManager.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/RenderableManager.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/Texture.h>
-#include <filament/TextureSampler.h>
-#include <filament/TransformManager.h>
-#include <filament/VertexBuffer.h>
-#include <filament/View.h>
+#include "filament/Engine.h"
+#include "filament/IndexBuffer.h"
+#include "filament/LightManager.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/RenderableManager.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/Texture.h"
+#include "filament/TextureSampler.h"
+#include "filament/TransformManager.h"
+#include "filament/VertexBuffer.h"
+#include "filament/View.h"
 
-#include <utils/EntityManager.h>
-#include <utils/JobSystem.h>
-#include <utils/Path.h>
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Path.h"
 
 #include <getopt/getopt.h>
 
-#include <filamentapp/FilamentApp.h>
+#include "filament/filamentapp/FilamentApp.h"
 
 #define STB_PERLIN_IMPLEMENTATION
 #include <stb_perlin.h>
 
-#include <math/mat4.h>
-#include <math/norm.h>
+#include "filament/math/mat4.h"
+#include "filament/math/norm.h"
 
 #include <cmath>
 #include <cstdint>

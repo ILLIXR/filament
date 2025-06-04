@@ -17,12 +17,12 @@
 #ifndef TNT_FILAMENT_DESCRIPTORSETLAYOUT_H
 #define TNT_FILAMENT_DESCRIPTORSETLAYOUT_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/bitset.h>
+#include "filament/utils/bitset.h"
 
 #include <stddef.h>
 #include <stdint.h>

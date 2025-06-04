@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_WEBGPUCONSTANTS_H
 #define TNT_FILAMENT_BACKEND_WEBGPUCONSTANTS_H
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <cstdint>
 

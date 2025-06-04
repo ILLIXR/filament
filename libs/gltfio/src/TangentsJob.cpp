@@ -18,7 +18,7 @@
 
 #include <memory>
 
-#include <geometry/SurfaceOrientation.h>
+#include "filament/geometry/SurfaceOrientation.h"
 
 using namespace filament::gltfio;
 using namespace filament;

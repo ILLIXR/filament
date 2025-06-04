@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <utils/CallStack.h>
-#include <utils/CString.h>
-#include <utils/compiler.h>
-#include <utils/ostream.h>
+#include "filament/utils/CallStack.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/ostream.h"
 
 #include <algorithm>
 #include <memory>

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/CallStack.h>
-#include <utils/ostream.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/CallStack.h"
+#include "filament/utils/ostream.h"
 
 #ifndef NDEBUG
 #   include <string>

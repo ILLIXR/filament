@@ -17,15 +17,15 @@
 #ifndef TNT_FILAMENT_DETAILS_STREAM_H
 #define TNT_FILAMENT_DETAILS_STREAM_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <filament/Stream.h>
+#include "filament/Stream.h"
 
-#include <backend/Handle.h>
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mat3.h>
+#include "filament/math/mat3.h"
 
 namespace filament {
 

@@ -8,11 +8,11 @@ set(PUBLIC_HDR_DIR include)
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-        include/viewer/AutomationEngine.h
-        include/viewer/AutomationSpec.h
-        include/viewer/RemoteServer.h
-        include/viewer/Settings.h
-        include/viewer/ViewerGui.h
+        include/filament/viewer/AutomationEngine.h
+        include/filament/viewer/AutomationSpec.h
+        include/filament/viewer/RemoteServer.h
+        include/filament/viewer/Settings.h
+        include/filament/viewer/ViewerGui.h
 )
 
 set(SRCS
@@ -32,8 +32,13 @@ set(SRCS
 # Include and target definitions
 # ==================================================================================================
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
-target_link_libraries(${TARGET} PUBLIC ${imgui_LIBRARIES} filament gltfio_core filagui jsmn civetweb::civetweb-cpp)
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR} ${imgui_INCLUDE_DIRS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+target_link_libraries(${TARGET} PUBLIC ${imgui_LIBRARIES} filament gltfio_core filagui civetweb::civetweb-cpp)
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
+target_include_directories(${TARGET} PUBLIC ${imgui_INCLUDE_DIRS} ${jsmn_INCLUDE_DIRS})
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 if (FILAMENT_SAMPLES_STEREO_TYPE STREQUAL "instanced")
@@ -53,8 +58,12 @@ endif()
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/viewer DESTINATION include)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
+#install(DIRECTORY ${PUBLIC_HDR_DIR}/viewer DESTINATION include)
 
 # ==================================================================================================
 # Tests

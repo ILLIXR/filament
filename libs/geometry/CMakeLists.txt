@@ -8,9 +8,9 @@ set(PUBLIC_HDR_DIR include)
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-    include/geometry/SurfaceOrientation.h
-    include/geometry/TangentSpaceMesh.h
-    include/geometry/Transcoder.h
+    include/filament/geometry/SurfaceOrientation.h
+    include/filament/geometry/TangentSpaceMesh.h
+    include/filament/geometry/Transcoder.h
 )
 
 set(SRCS
@@ -26,6 +26,7 @@ set(SRCS
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
 set(GEOMETRY_DEPS
     meshoptimizer::meshoptimizer
@@ -35,7 +36,10 @@ set(GEOMETRY_DEPS
 target_link_libraries(${TARGET} PUBLIC math utils)
 target_link_libraries(${TARGET} PRIVATE ${GEOMETRY_DEPS})
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 # ==================================================================================================
@@ -55,8 +59,6 @@ endif()
 # No need to install since we're combining this lib and the dependent libs into a combined lib
 # install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
 
-install(DIRECTORY ${PUBLIC_HDR_DIR}/geometry DESTINATION include)
-
 set(COMBINED_DEPS
     ${TARGET}
     ${GEOMETRY_DEPS}
@@ -68,7 +70,12 @@ set(GEOMETRY_COMBINED_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/libgeometry_combined.a
 combine_static_libs(${TARGET} "${GEOMETRY_COMBINED_OUTPUT}" "${COMBINED_DEPS}")
 
 set(GEOMETRY_LIB_NAME ${CMAKE_STATIC_LIBRARY_PREFIX}geometry${CMAKE_STATIC_LIBRARY_SUFFIX})
-install(FILES "${GEOMETRY_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${GEOMETRY_LIB_NAME})
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
+#install(FILES "${GEOMETRY_COMBINED_OUTPUT}" DESTINATION lib/${DIST_DIR} RENAME ${GEOMETRY_LIB_NAME})
 
 # ==================================================================================================
 # Tests

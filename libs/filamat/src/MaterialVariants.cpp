@@ -16,12 +16,12 @@
 
 #include "MaterialVariants.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/Variant.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
 
 #include <vector>
 

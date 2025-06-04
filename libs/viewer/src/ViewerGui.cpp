@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <viewer/ViewerGui.h>
+#include "filament/viewer/ViewerGui.h"
 
-#include <filament/RenderableManager.h>
-#include <filament/TransformManager.h>
-#include <filament/LightManager.h>
-#include <filament/View.h>
-#include <filament/Viewport.h>
+#include "filament/RenderableManager.h"
+#include "filament/TransformManager.h"
+#include "filament/LightManager.h"
+#include "filament/View.h"
+#include "filament/Viewport.h"
 
-#include <filagui/ImGuiHelper.h>
+#include "filament/filagui/ImGuiHelper.h"
 
-#include <utils/EntityManager.h>
+#include "filament/utils/EntityManager.h"
 
-#include <math/mat4.h>
-#include <math/vec3.h>
+#include "filament/math/mat4.h"
+#include "filament/math/vec3.h"
 
 #include <imgui.h>
-#include <filagui/ImGuiExtensions.h>
+#include "filament/filagui/ImGuiExtensions.h"
 
 #include <string>
 #include <vector>

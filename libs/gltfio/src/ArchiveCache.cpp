@@ -16,19 +16,19 @@
 
 #include "ArchiveCache.h"
 
-#include <filament/Material.h>
+#include "filament/Material.h"
 
-#include <uberz/ArchiveEnums.h>
-#include <uberz/ReadableArchive.h>
+#include "filament/uberz/ArchiveEnums.h"
+#include "filament/uberz/ReadableArchive.h"
 
-#include <utils/compiler.h>
-#include <utils/CString.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
-#include <utils/Panic.h>
-#include <utils/debug.h>
-#include <utils/memalign.h>
-#include <utils/ostream.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/memalign.h"
+#include "filament/utils/ostream.h"
 
 #include <zstd.h>
 

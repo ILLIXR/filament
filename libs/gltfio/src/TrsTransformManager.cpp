@@ -16,10 +16,10 @@
 
 #include "FTrsTransformManager.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include "downcast.h"
-#include "gltfio/TrsTransformManager.h"
+#include "filament/gltfio/TrsTransformManager.h"
 
 using namespace utils;
 

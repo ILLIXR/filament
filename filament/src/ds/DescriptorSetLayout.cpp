@@ -16,11 +16,11 @@
 
 #include "DescriptorSetLayout.h"
 
-#include "HwDescriptorSetLayoutFactory.h"
+#include "../HwDescriptorSetLayoutFactory.h"
 
-#include "details/Engine.h"
+#include "../details/Engine.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
 #include <algorithm>
 #include <utility>

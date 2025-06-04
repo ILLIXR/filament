@@ -17,11 +17,11 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKAN_UTILS_CONVERSION_H
 #define TNT_FILAMENT_BACKEND_VULKAN_UTILS_CONVERSION_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <private/backend/BackendUtils.h>  // for getFormatSize()
+#include "private/backend/BackendUtils.h"  // for getFormatSize()
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 // Methods for converting Filament types to Vulkan types
 

@@ -17,27 +17,27 @@
 #ifndef TNT_FILAMENT_FG_FRAMEGRAPH_H
 #define TNT_FILAMENT_FG_FRAMEGRAPH_H
 
-#include "Allocators.h"
+#include "../Allocators.h"
 
-#include "fg/Blackboard.h"
-#include "fg/FrameGraphId.h"
-#include "fg/FrameGraphPass.h"
-#include "fg/FrameGraphRenderPass.h"
-#include "fg/FrameGraphTexture.h"
+#include "Blackboard.h"
+#include "FrameGraphId.h"
+#include "FrameGraphPass.h"
+#include "FrameGraphRenderPass.h"
+#include "FrameGraphTexture.h"
 
-#include "fg/details/DependencyGraph.h"
-#include "fg/details/Resource.h"
-#include "fg/details/Utilities.h"
+#include "details/DependencyGraph.h"
+#include "details/Resource.h"
+#include "details/Utilities.h"
 
-#include "backend/DriverApiForward.h"
+#include "filament/backend/DriverApiForward.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
 #include <functional>
 
 #if FILAMENT_ENABLE_FGVIEWER
-#include <fgviewer/FrameGraphInfo.h>
+#include "filament/fgviewer/FrameGraphInfo.h"
 #else
 namespace filament::fgviewer {
     class FrameGraphInfo{};

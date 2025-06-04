@@ -14,39 +14,39 @@
  * limitations under the License.
  */
 
-#include "details/View.h"
+#include "View.h"
 
-#include "Culler.h"
-#include "FrameHistory.h"
-#include "Froxelizer.h"
-#include "RenderPrimitive.h"
-#include "ResourceAllocator.h"
-#include "ShadowMapManager.h"
+#include "../Culler.h"
+#include "../FrameHistory.h"
+#include "../Froxelizer.h"
+#include "../RenderPrimitive.h"
+#include "../ResourceAllocator.h"
+#include "../ShadowMapManager.h"
 
-#include "details/Engine.h"
-#include "details/IndirectLight.h"
-#include "details/RenderTarget.h"
-#include "details/Renderer.h"
-#include "details/Scene.h"
-#include "details/Skybox.h"
+#include "Engine.h"
+#include "IndirectLight.h"
+#include "RenderTarget.h"
+#include "Renderer.h"
+#include "Scene.h"
+#include "Skybox.h"
 
-#include <filament/Exposure.h>
-#include <filament/DebugRegistry.h>
-#include <filament/TextureSampler.h>
-#include <filament/View.h>
+#include "filament/Exposure.h"
+#include "filament/DebugRegistry.h"
+#include "filament/TextureSampler.h"
+#include "filament/View.h"
 
-#include <private/filament/UibStructs.h>
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/UibStructs.h"
+#include "filament/filabridge/EngineEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Profiler.h>
-#include <utils/Slice.h>
-#include <utils/Systrace.h>
-#include <utils/Zip2Iterator.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Profiler.h"
+#include "filament/utils/Slice.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/Zip2Iterator.h"
 
-#include <math/scalar.h>
-#include <math/fast.h>
+#include "filament/math/scalar.h"
+#include "filament/math/fast.h"
 
 #include <array>
 #include <memory>

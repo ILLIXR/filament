@@ -2,8 +2,8 @@
 
 #include "Settings_generated.h"
 
-#include <filament/Options.h>
-#include <utils/Log.h>
+#include "filament/Options.h"
+#include "filament/utils/Log.h"
 
 #include <ostream>
 #include <cstring>

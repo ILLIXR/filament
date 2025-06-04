@@ -16,7 +16,7 @@
 
 #include "CompilerThreadPool.h"
 
-#include <utils/Systrace.h>
+#include "filament/utils/Systrace.h"
 
 #include <memory>
 

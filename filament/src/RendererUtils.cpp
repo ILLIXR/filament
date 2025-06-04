@@ -26,18 +26,18 @@
 #include "fg/FrameGraphResources.h"
 #include "fg/FrameGraphTexture.h"
 
-#include <filament/Options.h>
-#include <filament/RenderableManager.h>
-#include <filament/Viewport.h>
+#include "filament/Options.h"
+#include "filament/RenderableManager.h"
+#include "filament/Viewport.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include <utils/BitmaskEnum.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Panic.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Panic.h"
 
 #include <algorithm>
 #include <optional>

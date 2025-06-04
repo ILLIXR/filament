@@ -19,10 +19,10 @@
 #ifndef TNT_FILAMENT_SCENE_H
 #define TNT_FILAMENT_SCENE_H
 
-#include <filament/FilamentAPI.h>
+#include "FilamentAPI.h"
 
-#include <utils/compiler.h>
-#include <utils/Invocable.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Invocable.h"
 
 #include <stddef.h>
 
@@ -53,8 +53,8 @@ class Skybox;
  * Engine.destroy(const Scene*).
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * #include <filament/Scene.h>
- * #include <filament/Engine.h>
+ * #include "Scene.h"
+ * #include "Engine.h"
  * using namespace filament;
  *
  * Engine* engine = Engine::create();

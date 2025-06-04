@@ -19,7 +19,7 @@
 
 #include "private/backend/DriverApi.h"
 
-#include <math/vec2.h>
+#include "filament/math/vec2.h"
 
 namespace test {
 

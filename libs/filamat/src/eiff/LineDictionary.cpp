@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "LineDictionary.h"
+#include "filament/filamat/eiff/LineDictionary.h"
 
 namespace filamat {
 

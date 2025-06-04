@@ -22,12 +22,12 @@
 
 #include "vulkan/memory/ResourcePointer.h"
 
-#include <utils/bitset.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Mutex.h>
-#include <utils/Slice.h>
+#include "filament/utils/bitset.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/Slice.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 VK_DEFINE_HANDLE(VmaAllocator)
 VK_DEFINE_HANDLE(VmaPool)

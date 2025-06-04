@@ -23,13 +23,13 @@
 #include "fg/FrameGraphId.h"
 #include "fg/FrameGraphTexture.h"
 
-#include <filament/Viewport.h>
+#include "filament/Viewport.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include <math/vec2.h>
-#include <math/vec4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec4.h"
 
 #include <stdint.h>
 

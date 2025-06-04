@@ -17,7 +17,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/FixedCircularBuffer.h>
+#include "filament/utils/FixedCircularBuffer.h"
 
 using namespace utils;
 

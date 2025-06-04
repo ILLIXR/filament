@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKANCONSTANTS_H
 #define TNT_FILAMENT_BACKEND_VULKANCONSTANTS_H
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <stdint.h>
 
@@ -151,8 +151,8 @@ static_assert(FVK_ENABLED(FVK_DEBUG_VALIDATION));
 
 #elif FVK_ENABLED(FVK_DEBUG_SYSTRACE)
 
-    #include <utils/Systrace.h>
-    
+    #include "filament/utils/Systrace.h"
+
     #define FVK_SYSTRACE_CONTEXT()      SYSTRACE_CONTEXT()
     #define FVK_SYSTRACE_START(marker)  SYSTRACE_NAME_BEGIN(marker)
     #define FVK_SYSTRACE_END()          SYSTRACE_NAME_END()

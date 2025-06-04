@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "MaterialBinaryChunk.h"
+#include "filament/filamat/eiff/MaterialBinaryChunk.h"
 
 namespace filamat {
 

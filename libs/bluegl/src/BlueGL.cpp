@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <bluegl/BlueGL.h>
+#include "filament/bluegl/BlueGL.h"
 
 #include <iostream>
 #include <mutex>

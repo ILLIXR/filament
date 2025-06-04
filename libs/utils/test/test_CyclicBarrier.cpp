@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/CyclicBarrier.h>
+#include "filament/utils/CyclicBarrier.h"
 #include <atomic>
 #include <thread>
 

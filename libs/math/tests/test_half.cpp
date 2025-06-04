@@ -18,8 +18,8 @@
 
 #include <gtest/gtest.h>
 
-#include <math/half.h>
-#include <math/vec4.h>
+#include "filament/math/half.h"
+#include "filament/math/vec4.h"
 
 using namespace filament::math;
 

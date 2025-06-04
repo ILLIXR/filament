@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/CyclicBarrier.h>
+#include "filament/utils/CyclicBarrier.h"
 #include <algorithm>
 
 namespace utils {

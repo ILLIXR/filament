@@ -16,9 +16,9 @@
 
 #include "Culler.h"
 
-#include <filament/Box.h>
+#include "filament/Box.h"
 
-#include <math/fast.h>
+#include "filament/math/fast.h"
 
 using namespace filament::math;
 

@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/bitset.h>
+#include "filament/utils/bitset.h"
 
 using namespace utils;
 

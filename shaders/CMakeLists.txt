@@ -110,11 +110,16 @@ endif()
 # Include and target definitions
 # ==================================================================================================
 add_library(${TARGET} STATIC ${RESGEN_SOURCE})
-target_include_directories(${TARGET} PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Filament/Shaders)
 
 # ==================================================================================================
 # Installation
 # ==================================================================================================
 
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+)

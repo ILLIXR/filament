@@ -18,8 +18,8 @@
 
 #include <gtest/gtest.h>
 
-#include <math/vec4.h>
-#include <math/scalar.h>
+#include "filament/math/vec4.h"
+#include "filament/math/scalar.h"
 
 using namespace filament::math;
 

@@ -13,9 +13,9 @@ set(RESOURCE_BINS)
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-        ${PUBLIC_HDR_DIR}/${TARGET}/ImGuiExtensions.h
-        ${PUBLIC_HDR_DIR}/${TARGET}/ImGuiHelper.h
-        ${PUBLIC_HDR_DIR}/${TARGET}/ImGuiMath.h)
+        ${PUBLIC_HDR_DIR}/filament/${TARGET}/ImGuiExtensions.h
+        ${PUBLIC_HDR_DIR}/filament/${TARGET}/ImGuiHelper.h
+        ${PUBLIC_HDR_DIR}/filament/${TARGET}/ImGuiMath.h)
 
 set(SRCS
         src/ImGuiHelper.cpp
@@ -91,12 +91,23 @@ include_directories(${PUBLIC_HDR_DIR})
 include_directories(${GENERATION_ROOT})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS} ${RESGEN_SOURCE})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 
 target_link_libraries(${TARGET} PUBLIC ${imgui_LIBRARIES} filament)
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR} ${imgui_INCLUDE_DIRS})
+target_include_directories(${TARGET} PUBLIC ${imgui_INCLUDE_DIRS})
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
 # ==================================================================================================
 # Compiler flags
 # ==================================================================================================

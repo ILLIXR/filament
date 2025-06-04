@@ -19,12 +19,12 @@
 #ifndef TNT_FILAMENT_BOX_H
 #define TNT_FILAMENT_BOX_H
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <float.h>
 

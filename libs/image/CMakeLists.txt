@@ -8,11 +8,11 @@ set(PUBLIC_HDR_DIR include)
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-        include/image/ColorTransform.h
-        include/image/ImageOps.h
-        include/image/ImageSampler.h
-        include/image/Ktx1Bundle.h
-        include/image/LinearImage.h
+        include/filament/image/ColorTransform.h
+        include/filament/image/ImageOps.h
+        include/filament/image/ImageSampler.h
+        include/filament/image/Ktx1Bundle.h
+        include/filament/image/LinearImage.h
 )
 
 set(SRCS
@@ -28,10 +28,14 @@ set(SRCS
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} STATIC ${PUBLIC_HDRS} ${SRCS})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
 
 target_link_libraries(${TARGET} PUBLIC math utils)
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 
 # ==================================================================================================
@@ -47,8 +51,11 @@ endif()
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/image DESTINATION include)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
 
 # ==================================================================================================
 # Tests

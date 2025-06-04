@@ -28,30 +28,30 @@
 #include "details/InstanceBuffer.h"
 #include "details/Material.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/UibStructs.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/UibStructs.h"
 
-#include <filament/Box.h>
-#include <filament/FilamentAPI.h>
-#include <filament/MaterialEnums.h>
-#include <filament/RenderableManager.h>
+#include "filament/Box.h"
+#include "filament/FilamentAPI.h"
+#include "filament/filabridge/MaterialEnums.h"
+#include "filament/RenderableManager.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/EntityManager.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Slice.h"
 
-#include <math/mat4.h>
-#include <math/scalar.h>
-#include <math/vec2.h>
-#include <math/vec4.h>
+#include "filament/math/mat4.h"
+#include "filament/math/scalar.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec4.h"
 
 #include <algorithm>
 #include <memory>
@@ -700,7 +700,7 @@ void FRenderableManager::create(
                     primitives[i].setMorphingBufferOffset(morphing.offset);
                 }
             }
-            
+
             // When targetCount equal 0, boneCount>0 in this case, do an initialization for the
             // morphWeights uniform array to avoid crash on adreno gpu.
             if (UTILS_UNLIKELY(targetCount == 0 &&

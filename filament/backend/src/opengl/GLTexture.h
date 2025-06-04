@@ -21,9 +21,9 @@
 
 #include "gl_headers.h"
 
-#include <backend/Handle.h>
-#include <backend/DriverEnums.h>
-#include <backend/platforms/OpenGLPlatform.h>
+#include "filament/backend/Handle.h"
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/platforms/OpenGLPlatform.h"
 
 #include <array>
 

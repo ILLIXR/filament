@@ -16,8 +16,8 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/StructureOfArrays.h>
-#include <math/vec4.h>
+#include "filament/utils/StructureOfArrays.h"
+#include "filament/math/vec4.h"
 
 using namespace filament::math;
 using namespace utils;
@@ -182,4 +182,3 @@ TEST(StructureOfArraysTest, MoveOnly) {
     EXPECT_EQ(*soa.elementAt<1>(0).get(), 1);
     EXPECT_EQ(*soa.elementAt<1>(1).get(), 2);
 }
-

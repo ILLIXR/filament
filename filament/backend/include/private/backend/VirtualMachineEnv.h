@@ -17,8 +17,8 @@
 #ifndef TNT_FILAMENT_DRIVER_ANDROID_VIRTUAL_MACHINE_ENV_H
 #define TNT_FILAMENT_DRIVER_ANDROID_VIRTUAL_MACHINE_ENV_H
 
-#include <utils/compiler.h>
-#include <utils/Mutex.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/Mutex.h"
 
 #include <jni.h>
 

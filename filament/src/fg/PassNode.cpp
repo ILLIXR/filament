@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include "fg/details/PassNode.h"
+#include "details/PassNode.h"
 
-#include "fg/FrameGraph.h"
-#include "fg/details/ResourceNode.h"
+#include "FrameGraph.h"
+#include "details/ResourceNode.h"
 
 #include "ResourceAllocator.h"
 
-#include <details/Texture.h>
+#include "details/Texture.h"
 
 #include <string>
 
@@ -69,7 +69,7 @@ void RenderPassNode::execute(FrameGraphResources const& resources, DriverApi& dr
     }
 
     mPassBase->execute(resources, driver);
-    
+
     // destroy the render targets
     for (auto& rt : mRenderTargetData) {
         rt.destroy(resourceAllocator);

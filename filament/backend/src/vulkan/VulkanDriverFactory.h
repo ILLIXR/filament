@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKANDRIVERFACTORY_H
 #define TNT_FILAMENT_BACKEND_VULKANDRIVERFACTORY_H
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
 #include <stdint.h>
 

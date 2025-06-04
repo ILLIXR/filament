@@ -16,7 +16,7 @@
 
 #include "GlslMinify.h"
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <getopt/getopt.h>
 

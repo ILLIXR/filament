@@ -16,14 +16,14 @@
 
 #include <getopt/getopt.h>
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
-#include <filaflat/ChunkContainer.h>
+#include "filament/filaflat/ChunkContainer.h"
 
-#include <matdbg/DebugServer.h>
-#include <matdbg/ShaderExtractor.h>
-#include <matdbg/ShaderInfo.h>
-#include <matdbg/TextWriter.h>
+#include "filament/matdbg/DebugServer.h"
+#include "filament/matdbg/ShaderExtractor.h"
+#include "filament/matdbg/ShaderInfo.h"
+#include "filament/matdbg/TextWriter.h"
 
 #include <spirv_glsl.hpp>
 #include <spirv-tools/libspirv.h>

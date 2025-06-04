@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <backend/AcquiredImage.h>
-#include <backend/Platform.h>
-#include <backend/platforms/PlatformEGL.h>
-#include <backend/platforms/PlatformEGLAndroid.h>
+#include "filament/backend/AcquiredImage.h"
+#include "filament/backend/Platform.h"
+#include "filament/backend/platforms/PlatformEGL.h"
+#include "filament/backend/platforms/PlatformEGLAndroid.h"
 
 #include <private/backend/BackendUtilsAndroid.h>
 #include <private/backend/VirtualMachineEnv.h>
@@ -29,14 +29,14 @@
 #include <android/native_window.h>
 #include <android/hardware_buffer.h>
 
-#include <utils/android/PerformanceHintManager.h>
+#include "filament/utils/android/PerformanceHintManager.h"
 
-#include <utils/compiler.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/Log.h>
-#include <utils/compiler.h>
-#include <utils/ostream.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/ostream.h"
 
 #include <EGL/egl.h>
 #include <EGL/eglext.h>

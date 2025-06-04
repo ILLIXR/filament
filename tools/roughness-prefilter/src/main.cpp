@@ -20,18 +20,18 @@
 #include <iostream>
 #include <thread>
 
-#include <math/vec3.h>
+#include "filament/math/vec3.h"
 
-#include <image/ColorTransform.h>
-#include <image/ImageOps.h>
-#include <image/ImageSampler.h>
-#include <image/Ktx1Bundle.h>
+#include "filament/image/ColorTransform.h"
+#include "filament/image/ImageOps.h"
+#include "filament/image/ImageSampler.h"
+#include "filament/image/Ktx1Bundle.h"
 
-#include <imageio/ImageDecoder.h>
-#include <imageio/ImageEncoder.h>
+#include "filament/imageio/ImageDecoder.h"
+#include "filament/imageio/ImageEncoder.h"
 
-#include <utils/JobSystem.h>
-#include <utils/Path.h>
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Path.h"
 
 #include <getopt/getopt.h>
 

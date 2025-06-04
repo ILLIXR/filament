@@ -2,7 +2,7 @@
 # CMake
 # ==================================================================================================
 cmake_minimum_required(VERSION 3.19)
-
+set(FILAMENT_VERSION "1.60.0")
 # ==================================================================================================
 # Toolchain configuration
 # ==================================================================================================
@@ -14,7 +14,7 @@ endif()
 # ==================================================================================================
 # Project declaration
 # ==================================================================================================
-project(TNT)
+project(filament)
 
 # ==================================================================================================
 # Options
@@ -771,28 +771,6 @@ endfunction()
 # Sub-projects
 # ==================================================================================================
 
-macro(add_pkg)
-    set(_options CONFIG)
-    set(_single_args NAME PTH)
-    cmake_parse_arguments(ADD_PKG "${_options}" "${_single_args}" "" "${ARGN}")
-    if(NOT ADD_PKG_NAME)
-        message(FATAL_ERROR "PKG_NAME must be specified")
-    endif()
-    if(NOT ADD_PKG_PTH)
-        set(ADD_PKG_PTH "${ADD_PKG_NAME}")
-    endif()
-    if(ADD_PKG_CONFIG)
-        find_package(${ADD_PKG_NAME} QUIET CONFIG)
-    else()
-        find_package(${ADD_PKG_NAME} QUIET)
-    endif()
-    if(NOT ${ADD_PKG_NAME}_FOUND)
-        pkg_check_modules(${ADD_PKG_PTH} ${ADD_PKG_NAME})
-        if(NOT ${ADD_PKG_PTH}_FOUND)
-            include(${EXTERNAL}/${ADD_PKG_PTH}/tnt/CMakeLists.txt)
-        endif()
-    endif()
-endmacro()
 # Common to all platforms
 find_package(GTest QUIET CONFIG)
 if(NOT GTest_FOUND)
@@ -800,7 +778,6 @@ if(NOT GTest_FOUND)
 else()
     message(STATUS "GTest found: ${GTest_VERSION}")
 endif()
-include(${EXTERNAL}/abseil/tnt/CMakeLists.txt)
 
 add_subdirectory(${EXTERNAL}/basisu/tnt)
 
@@ -813,7 +790,7 @@ else()
     message(STATUS "imgui found: ${imgui_VERSION}")
 endif()
 
-include(${EXTERNAL}/robin-map/tnt/CMakeLists.txt)
+find_package(tsl-robin-map REQUIRED CONFIG)
 
 add_subdirectory(${EXTERNAL}/smol-v/tnt)
 
@@ -840,6 +817,13 @@ add_subdirectory(${EXTERNAL}/getopt)
 
 add_subdirectory(${EXTERNAL}/perfetto/tnt)
 
+find_package(zstd QUIET CONFIG)
+if(NOT zstd_FOUND)
+    pkg_check_modules(zstd REQUIRED libzstd)
+else()
+    message(STATUS "zstd found: ${zstd_VERSION}")
+endif()
+
 if(IS_HOST_PLATFORM)
     find_package(assimp REQUIRED CONFIG)
     pkg_check_modules(libpng REQUIRED libpng)
@@ -857,9 +841,10 @@ if(IS_HOST_PLATFORM)
     else()
         message(STATUS "libz found: ${ZLIB_VERSION}")
     endif()
-    find_package(tinyexr QUIET CONFIG)
+    find_package(tinyexr REQUIRED CONFIG)
 endif()
 
+add_subdirectory(${LIBRARIES}/math)
 add_subdirectory(${LIBRARIES}/camutils)
 add_subdirectory(${LIBRARIES}/filabridge)
 add_subdirectory(${LIBRARIES}/filaflat)
@@ -870,7 +855,6 @@ add_subdirectory(${LIBRARIES}/ibl)
 add_subdirectory(${LIBRARIES}/iblprefilter)
 add_subdirectory(${LIBRARIES}/image)
 add_subdirectory(${LIBRARIES}/ktxreader)
-add_subdirectory(${LIBRARIES}/math)
 add_subdirectory(${LIBRARIES}/mathio)
 add_subdirectory(${LIBRARIES}/uberz)
 add_subdirectory(${LIBRARIES}/utils)
@@ -982,7 +966,137 @@ endif()
 if (NOT CMAKE_CROSSCOMPILING)
     export(TARGETS matc cmgen filamesh mipgen resgen uberz glslminifier FILE ${IMPORT_EXECUTABLES})
 endif()
+include(GNUInstallDirs)
 
+include(CMakePackageConfigHelpers)
+set(PATH_EXPORT_TARGETS "\$\{PACKAGE_PREFIX_DIR}/lib/cmake/${PROJECT_NAME}/filament-targets.cmake")
+set(PACKAGE_CHECKS "if(NOT civetweb_FOUND)
+    find_package(civetweb REQUIRED CONFIG)
+endif()
+if(NOT imgui_FOUND)
+    find_package(imgui QUIET)
+    if(NOT imgui_FOUND)
+        pkg_check_modules(imgui REQUIRED imgui)
+    endif()
+endif()
+if(NOT tsl-robin-map_FOUND)
+    find_package(tsl-robin-map REQUIRED CONFIG)
+endif()
+if(NOT meshoptimizer_FOUND)
+    find_package(meshoptimizer REQUIRED CONFIG)
+endif()
+if(NOT stb_FOUND)
+    pkg_check_modules(stb REQUIRED stb)
+endif()
+if(NOT draco_FOUND)
+    find_package(draco REQUIRED CONFIG)
+endif()
+if(NOT zstd_FOUND)
+    find_package(zstd REQUIRED CONFIG)
+    if(NOT zstd_FOUND)
+        pkg_check_modules(zstd REQUIRED libzstd)
+    endif()
+endif()")
+
+if(IS_HOST_PLATFORM)
+    set(PACKAGE_CHECKS "${PACKAGE_CHECKS}
+if(NOT libpng_FOUND)
+    pkg_check_modules(libpng REQUIRED libpng)
+endif()
+if(NOT ZLIB_FOUND)
+    find_package(ZLIB QUIET)
+    if(NOT ZLIB_FOUND)
+        pkg_check_modules(libz REQUIRED libz)
+    endif()
+endif()
+if(NOT tinyexr_FOUND)
+    find_package(tinyexr REQUIRED CONFIG)
+endif()")
+endif()
+
+if (FILAMENT_BUILD_FILAMAT OR IS_HOST_PLATFORM)
+    set(PACKAGE_CHECKS "${PACKAGE_CHECKS}
+if(NOT SPIRV-Tools_FOUND)
+    find_package(SPIRV-Tools QUIET CONFIG)
+    find_package(SPIRV-Tools-opt QUIET CONFIG)
+    if(NOT SPIRV-Tools_FOUND)
+        pkg_check_modules(spirv-tools REQUIRED SPIRV-Tools)
+    endif()
+endif()
+if(NOT glslang_FOUND)
+    find_package(glslang QUIET CONFIG)
+    if(NOT glslang_FOUND)
+        pkg_check_modules(glslang REQUIRED glslang)
+    endif()
+endif()
+if(NOT spirv_cross_core_FOUND)
+    find_package(spirv_cross_core CONFIG)
+endif()
+if(NOT spirv_cross_glsl_FOUND)
+    find_package(spirv_cross_glsl CONFIG)
+endif()
+if(NOT spirv_cross_msl_FOUND)
+    find_package(spirv_cross_msl CONFIG)
+endif()
+if(NOT spirv_cross_cpp_FOUND)
+    find_package(spirv_cross_cpp QUIET CONFIG)
+    if(NOT spirv_cross_cpp_FOUND)
+        pkg_check_modules(spirv_cross_cpp REQUIRED spirv-cross-c-shared)
+    endif()
+endif()")
+endif()
+
+if(FILAMENT_SUPPORTS_VULKAN)
+    set(PACKAGE_CHECKS "${PACKAGE_CHECKS}
+if(NOT glslang_FOUND)
+    find_package(glslang QUIET CONFIG)
+    if(NOT glslang_FOUND)
+        pkg_check_modules(glslang REQUIRED glslang)
+    endif()
+endif()
+if(NOT SPIRV-Headers_FOUND)
+    find_package(SPIRV-Headers QUIET CONFIG)
+    if(NOT SPIRV-Headers_FOUND)
+        pkg_check_modules(SPIRV-Headers REQUIRED SPIRV-Headers)
+    endif()
+endif()")
+endif()
+
+
+file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/filament-config.cmake.in" [=[
+# Dependencies
+@PACKAGE_CHECKS@
+
+@PACKAGE_INIT@
+include("@PATH_EXPORT_TARGETS@")
+    ]=])
+
+configure_package_config_file(
+        "${CMAKE_CURRENT_BINARY_DIR}/filament-config.cmake.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/filament-config.cmake"
+        PATH_VARS
+        PATH_EXPORT_TARGETS
+        INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+)
+
+write_basic_package_version_file("${CMAKE_CURRENT_BINARY_DIR}/filament-config-version.cmake"
+                                 VERSION ${FILAMENT_VERSION}
+                                 COMPATIBILITY SameMajorVersion
+)
+
+install(
+        EXPORT      filament-targets
+        NAMESPACE   "filament::"
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+)
+
+install(
+        FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/filament-config.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/filament-config-version.cmake"
+        DESTINATION
+        "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+)
 #get_cmake_property(_variableNames VARIABLES)
 #foreach (_variableName ${_variableNames})
 #    message(STATUS "${_variableName}=${${_variableName}}")

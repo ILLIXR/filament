@@ -16,9 +16,9 @@
 
 #include "WebGPUHandles.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/BitmaskEnum.h>
+#include "filament/utils/BitmaskEnum.h"
 
 #include <webgpu/webgpu_cpp.h>
 

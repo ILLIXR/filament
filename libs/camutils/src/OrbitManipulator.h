@@ -17,9 +17,9 @@
 #ifndef CAMUTILS_ORBIT_MANIPULATOR_H
 #define CAMUTILS_ORBIT_MANIPULATOR_H
 
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Manipulator.h"
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
 #define MAX_PHI (F_PI / 2.0 - 0.001)
 

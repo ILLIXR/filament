@@ -26,11 +26,11 @@
 #include "SDL.h"
 #include "SDL_vulkan.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
 using namespace filament::math;
 using namespace bluevk;

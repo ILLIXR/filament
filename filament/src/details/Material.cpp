@@ -14,48 +14,48 @@
  * limitations under the License.
  */
 
-#include "details/Material.h"
-#include "details/Engine.h"
+#include "Material.h"
+#include "Engine.h"
 
-#include "Froxelizer.h"
-#include "MaterialParser.h"
+#include "../Froxelizer.h"
+#include "../MaterialParser.h"
 
-#include "ds/ColorPassDescriptorSet.h"
+#include "../ds/ColorPassDescriptorSet.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <private/filament/EngineEnums.h>
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/SamplerInterfaceBlock.h>
-#include <private/filament/BufferInterfaceBlock.h>
-#include <private/filament/PushConstantInfo.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/EngineEnums.h"
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
+#include "filament/filabridge/BufferInterfaceBlock.h"
+#include "filament/filabridge/PushConstantInfo.h"
+#include "filament/filabridge/Variant.h"
 
-#include <filament/Material.h>
-#include <filament/MaterialEnums.h>
+#include "filament/Material.h"
+#include "filament/filabridge/MaterialEnums.h"
 
 #if FILAMENT_ENABLE_MATDBG
-#include <matdbg/DebugServer.h>
+#include "filament/matdbg/DebugServer.h"
 #endif
 
-#include <filaflat/ChunkContainer.h>
-#include <filaflat/MaterialChunk.h>
+#include "filament/filaflat/ChunkContainer.h"
+#include "filament/filaflat/MaterialChunk.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/CallbackHandler.h>
-#include <backend/Program.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/Program.h"
 
-#include <utils/BitmaskEnum.h>
-#include <utils/CString.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Hash.h>
-#include <utils/Invocable.h>
-#include <utils/Log.h>
-#include <utils/Panic.h>
-#include <utils/bitset.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/ostream.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/CString.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Hash.h"
+#include "filament/utils/Invocable.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/bitset.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/ostream.h"
 
 #include <algorithm>
 #include <array>

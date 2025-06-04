@@ -19,13 +19,13 @@
 #include "GLUtils.h"
 #include "OpenGLTimerQuery.h"
 
-#include <backend/platforms/OpenGLPlatform.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/platforms/OpenGLPlatform.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
 
 #include <functional>
 #include <string_view>

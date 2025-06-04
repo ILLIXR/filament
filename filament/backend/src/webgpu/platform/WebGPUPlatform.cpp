@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/WebGPUPlatform.h>
+#include "filament/backend/platforms/WebGPUPlatform.h"
 
 #include "webgpu/WebGPUConstants.h"
 #include "webgpu/WebGPUDriver.h"
 
-#include <backend/Platform.h>
-#include <utils/Panic.h>
-#include <utils/ostream.h>
+#include "filament/backend/Platform.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/ostream.h"
 
 #include <dawn/webgpu_cpp_print.h>
 #include <webgpu/webgpu_cpp.h>

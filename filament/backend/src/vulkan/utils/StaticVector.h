@@ -20,7 +20,7 @@
 // An Array that will be statically fixed in capacity, but the "size" (as in user added elements) is
 // variable. Note that this class is movable.
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <array>
 

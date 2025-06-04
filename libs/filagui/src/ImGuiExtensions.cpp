@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <filagui/ImGuiExtensions.h>
+#include "filament/filagui/ImGuiExtensions.h"
 
 #include <imgui.h>
 #include <imgui_internal.h>
 
-#include <math/scalar.h>
-#include <math/vec3.h>
-#include <math/quat.h>
+#include "filament/math/scalar.h"
+#include "filament/math/vec3.h"
+#include "filament/math/quat.h"
 
 #include <algorithm>
 #include <limits>

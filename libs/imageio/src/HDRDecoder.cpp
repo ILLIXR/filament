@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <imageio/HDRDecoder.h>
+#include "filament/imageio/HDRDecoder.h"
 
-#include <image/ImageOps.h>
+#include "filament/image/ImageOps.h"
 
-#include <math/vec3.h>
+#include "filament/math/vec3.h"
 
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 
 #include <cstring>
 #include <limits>
@@ -30,7 +30,7 @@
 // for ntohs
 #if defined(WIN32)
 #    include <Winsock2.h>
-#    include <utils/unwindows.h>
+#    include "filament/utils/unwindows.h"
 #else
 #    include <arpa/inet.h>
 #endif

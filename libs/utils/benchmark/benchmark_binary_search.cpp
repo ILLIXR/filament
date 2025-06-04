@@ -16,7 +16,7 @@
 
 #include "PerformanceCounters.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #include <benchmark/benchmark.h>
 

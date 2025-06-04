@@ -8,12 +8,12 @@ set(PUBLIC_HDR_DIR include)
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-    ${PUBLIC_HDR_DIR}/ibl/Cubemap.h
-    ${PUBLIC_HDR_DIR}/ibl/CubemapIBL.h
-    ${PUBLIC_HDR_DIR}/ibl/CubemapSH.h
-    ${PUBLIC_HDR_DIR}/ibl/CubemapUtils.h
-    ${PUBLIC_HDR_DIR}/ibl/Image.h
-    ${PUBLIC_HDR_DIR}/ibl/utilities.h
+    ${PUBLIC_HDR_DIR}/filament/ibl/Cubemap.h
+    ${PUBLIC_HDR_DIR}/filament/ibl/CubemapIBL.h
+    ${PUBLIC_HDR_DIR}/filament/ibl/CubemapSH.h
+    ${PUBLIC_HDR_DIR}/filament/ibl/CubemapUtils.h
+    ${PUBLIC_HDR_DIR}/filament/ibl/Image.h
+    ${PUBLIC_HDR_DIR}/filament/ibl/utilities.h
 )
 
 set(PRIVATE_HDRS
@@ -34,13 +34,23 @@ set(SRCS
 include_directories(${PUBLIC_HDR_DIR})
 
 add_library(${TARGET} ${PUBLIC_HDRS} ${PRIVATE_HDRS} ${SRCS})
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
 target_link_libraries(${TARGET} math utils)
 
 add_library(${TARGET}-lite ${PUBLIC_HDRS} ${PRIVATE_HDRS} ${SRCS})
+set_target_properties(${TARGET}-lite PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+
 target_compile_definitions(${TARGET}-lite PUBLIC -DFILAMENT_IBL_LITE=1)
-target_include_directories(${TARGET}-lite PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET}-lite PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/${TARGET}-lite>
+)
 set_target_properties(${TARGET}-lite PROPERTIES FOLDER Libs)
 target_link_libraries(${TARGET}-lite math utils)
 
@@ -59,6 +69,13 @@ endif()
 # ==================================================================================================
 # Installation
 # ==================================================================================================
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
-install(TARGETS ${TARGET}-lite ARCHIVE DESTINATION lib/${DIST_DIR})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/ibl DESTINATION include)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/ibl
+)
+install(TARGETS ${TARGET}-lite
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/ibl-lite
+)

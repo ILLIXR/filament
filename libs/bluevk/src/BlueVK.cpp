@@ -20,7 +20,7 @@
  **********************************************************************************************/
 
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 
 namespace bluevk {
 
@@ -1725,7 +1725,7 @@ PFN_vkAcquireNextImage2KHR vkAcquireNextImage2KHR;
 } // namespace bluevk
 
 #if !defined(NDEBUG)
-#include <utils/Log.h>
+#include "filament/utils/Log.h"
 utils::io::ostream& operator<<(utils::io::ostream& out, const VkImageLayout& value) {
     switch (value) {
         case VK_IMAGE_LAYOUT_UNDEFINED: out << "VK_IMAGE_LAYOUT_UNDEFINED"; break;
@@ -3060,4 +3060,3 @@ utils::io::ostream& operator<<(utils::io::ostream& out, const VkAccelerationStru
     return out;
 }
 #endif
-

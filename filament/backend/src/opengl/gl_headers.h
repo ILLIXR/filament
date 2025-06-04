@@ -71,8 +71,8 @@
     // For example:
     //   #define glFunction bluegl_glFunction
     // This header must come before <bluegl/BlueGL.h>.
-    #include <bluegl/BlueGLDefines.h>
-    #include <bluegl/BlueGL.h>
+    #include "filament/bluegl/BlueGLDefines.h"
+    #include "filament/bluegl/BlueGL.h"
 
 #endif
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include <utils/compiler.h>
-#include <utils/android/PerformanceHintManager.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/android/PerformanceHintManager.h"
 
 #include <android/performance_hint.h>
 #include <android/api-level.h>
@@ -24,7 +24,7 @@
 #include <stdint.h>
 
 #define UTILS_PRIVATE_IMPLEMENTATION_NON_COPYABLE
-#include <utils/PrivateImplementation-impl.h>
+#include "filament/utils/PrivateImplementation-impl.h"
 
 namespace utils {
 
@@ -118,4 +118,3 @@ int PerformanceHintManager::Session::reportActualWorkDuration(
 }
 
 } // namespace utils
-

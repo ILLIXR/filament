@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "DictionaryMetalLibraryChunk.h"
+#include "filament/filamat/eiff/DictionaryMetalLibraryChunk.h"
 
 namespace filamat {
 

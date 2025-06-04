@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_POSTPROCESSMANAGER_H
 #define TNT_FILAMENT_POSTPROCESSMANAGER_H
 
-#include "backend/DriverApiForward.h"
+#include "filament/backend/DriverApiForward.h"
 
 #include "FrameHistory.h"
 
@@ -25,25 +25,25 @@
 #include "ds/SsrPassDescriptorSet.h"
 #include "ds/TypedUniformBuffer.h"
 
-#include <private/filament/Variant.h>
+#include "filament/filabridge/Variant.h"
 
-#include <fg/FrameGraphId.h>
-#include <fg/FrameGraphResources.h>
-#include <fg/FrameGraphTexture.h>
+#include "fg/FrameGraphId.h"
+#include "fg/FrameGraphResources.h"
+#include "fg/FrameGraphTexture.h"
 
-#include <filament/Options.h>
-#include <filament/Viewport.h>
+#include "filament/Options.h"
+#include "filament/Viewport.h"
 
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/EngineEnums.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
-#include <backend/PipelineState.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PipelineState.h"
 
-#include <math/vec2.h>
-#include <math/vec4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec4.h"
 
-#include <utils/Slice.h>
+#include "filament/utils/Slice.h"
 
 #include <tsl/robin_map.h>
 

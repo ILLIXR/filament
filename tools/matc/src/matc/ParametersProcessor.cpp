@@ -16,14 +16,14 @@
 
 #include "ParametersProcessor.h"
 
-#include <filamat/Enums.h>
+#include "filament/filamat/Enums.h"
 
-#include <private/filament/BufferInterfaceBlock.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/BufferInterfaceBlock.h"
+#include "filament/filabridge/Variant.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <math/vec3.h>
+#include "filament/math/vec3.h"
 
 #include <algorithm>
 #include <iostream>
@@ -154,7 +154,7 @@ static bool processParameter(MaterialBuilder& builder, const JsonishObject& json
         std::cerr << "parameters: name value must be STRING." << std::endl;
         return false;
     }
-    
+
     const JsonishValue* transformNameValue = jsonObject.getValue("transformName");
     if (transformNameValue && transformNameValue->getType() != JsonishValue::STRING) {
         std::cerr << "parameters: transformName value must be STRING." << std::endl;

@@ -17,11 +17,11 @@
 #ifndef TNT_FILAMENT_FG_FRAMEGRAPHPASS_H
 #define TNT_FILAMENT_FG_FRAMEGRAPHPASS_H
 
-#include "backend/DriverApiForward.h"
+#include "filament/backend/DriverApiForward.h"
 
-#include "fg/FrameGraphResources.h"
+#include "FrameGraphResources.h"
 
-#include <utils/Allocator.h>
+#include "filament/utils/Allocator.h"
 
 namespace filament {
 

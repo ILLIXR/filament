@@ -17,16 +17,16 @@
 #ifndef TNT_FILAMENT_DETAILS_MORPHTARGETBUFFER_H
 #define TNT_FILAMENT_DETAILS_MORPHTARGETBUFFER_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <filament/MorphTargetBuffer.h>
+#include "filament/MorphTargetBuffer.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
 
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <stddef.h>
 #include <stdint.h>

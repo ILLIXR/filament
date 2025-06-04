@@ -17,17 +17,17 @@
 #ifndef TNT_FILAMENT_DETAILS_SWAPCHAIN_H
 #define TNT_FILAMENT_DETAILS_SWAPCHAIN_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
 #include "private/backend/DriverApi.h"
 
-#include <filament/SwapChain.h>
+#include "filament/SwapChain.h"
 
-#include <backend/CallbackHandler.h>
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
+#include "filament/backend/CallbackHandler.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
 
-#include <utils/Invocable.h>
+#include "filament/utils/Invocable.h"
 
 #include <stdint.h>
 

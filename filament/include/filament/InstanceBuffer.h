@@ -17,13 +17,13 @@
 #ifndef TNT_FILAMENT_INSTANCEBUFFER_H
 #define TNT_FILAMENT_INSTANCEBUFFER_H
 
-#include <filament/FilamentAPI.h>
-#include <filament/Engine.h>
+#include "FilamentAPI.h"
+#include "Engine.h"
 
-#include <utils/compiler.h>
-#include <utils/StaticString.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/StaticString.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 #include <stddef.h>
 

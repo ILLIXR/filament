@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include "fg/FrameGraphTexture.h"
+#include "FrameGraphTexture.h"
 
-#include "ResourceAllocator.h"
+#include "../ResourceAllocator.h"
 
 #include <algorithm>
 

@@ -17,14 +17,14 @@
 #ifndef TNT_FILAMENT_DETAILS_COLORGRADING_H
 #define TNT_FILAMENT_DETAILS_COLORGRADING_H
 
-#include "downcast.h"
+#include "../downcast.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Handle.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Handle.h"
 
-#include <filament/ColorGrading.h>
+#include "filament/ColorGrading.h"
 
-#include <math/mathfwd.h>
+#include "filament/math/mathfwd.h"
 
 namespace filament {
 

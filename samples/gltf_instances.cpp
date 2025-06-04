@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-#include <filamentapp/Config.h>
-#include <filamentapp/FilamentApp.h>
-#include <filamentapp/IBL.h>
+#include "filament/filamentapp/Config.h"
+#include "filament/filamentapp/FilamentApp.h"
+#include "filament/filamentapp/IBL.h"
 
-#include <filament/Engine.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/TransformManager.h>
-#include <filament/View.h>
+#include "filament/Engine.h"
+#include "filament/Scene.h"
+#include "filament/Skybox.h"
+#include "filament/TransformManager.h"
+#include "filament/View.h"
 
-#include <gltfio/AssetLoader.h>
-#include <gltfio/FilamentAsset.h>
-#include <gltfio/ResourceLoader.h>
-#include <gltfio/TextureProvider.h>
+#include "filament/gltfio/AssetLoader.h"
+#include "filament/gltfio/FilamentAsset.h"
+#include "filament/gltfio/ResourceLoader.h"
+#include "filament/gltfio/TextureProvider.h"
 
-#include <viewer/ViewerGui.h>
+#include "filament/viewer/ViewerGui.h"
 
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Manipulator.h"
 
 #include <getopt/getopt.h>
 
-#include <utils/NameComponentManager.h>
+#include "filament/utils/NameComponentManager.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
 
-#include <math/mat4.h>
+#include "filament/math/mat4.h"
 
 #include "generated/resources/gltf_demo.h"
 #include "materials/uberarchive.h"

@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-#include <filaflat/ChunkContainer.h>
+#include "filament/filaflat/ChunkContainer.h"
 
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <matdbg/JsonWriter.h>
-#include <matdbg/ShaderInfo.h>
+#include "filament/matdbg/JsonWriter.h"
+#include "filament/matdbg/ShaderInfo.h"
 
 #include "CommonWriter.h"
 
-#include <private/filament/Variant.h>
+#include "filament/filabridge/Variant.h"
 
 #include <iomanip>
 #include <sstream>

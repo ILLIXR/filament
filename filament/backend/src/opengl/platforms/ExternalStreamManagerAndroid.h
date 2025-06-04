@@ -19,9 +19,9 @@
 
 #include "private/backend/VirtualMachineEnv.h"
 
-#include <backend/Platform.h>
+#include "filament/backend/Platform.h"
 
-#include <utils/compiler.h>
+#include "filament/utils/compiler.h"
 
 #if __has_include(<android/surface_texture.h>)
 #   include <android/surface_texture.h>
@@ -33,7 +33,7 @@ typedef struct ASurfaceTexture ASurfaceTexture;
 #include <jni.h>
 
 #include <stdint.h>
-#include <math/mat3.h>
+#include "filament/math/mat3.h"
 
 namespace filament::backend {
 

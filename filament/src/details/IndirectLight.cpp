@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include "details/IndirectLight.h"
+#include "IndirectLight.h"
 
-#include "details/Engine.h"
-#include "details/Texture.h"
+#include "Engine.h"
+#include "Texture.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <backend/DriverEnums.h>
-#include <filament/IndirectLight.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/IndirectLight.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
-#include <math/scalar.h>
+#include "filament/math/scalar.h"
 
 #define IBL_INTEGRATION_PREFILTERED_CUBEMAP         0
 #define IBL_INTEGRATION_IMPORTANCE_SAMPLING         1

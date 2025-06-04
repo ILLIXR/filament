@@ -17,11 +17,11 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKANSAMPLERCACHE_H
 #define TNT_FILAMENT_BACKEND_VULKANSAMPLERCACHE_H
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
-#include <bluevk/BlueVK.h>
+#include "filament/bluevk/BlueVK.h"
 #include <tsl/robin_map.h>
 
 namespace filament::backend {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "BlobDictionary.h"
+#include "filament/filamat/eiff/BlobDictionary.h"
 
 #include <assert.h>
 

@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-#include "details/ColorGrading.h"
+#include "ColorGrading.h"
 
-#include "details/Engine.h"
-#include "details/Texture.h"
+#include "Engine.h"
+#include "Texture.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include "ColorSpaceUtils.h"
+#include "../ColorSpaceUtils.h"
 
-#include <filament/ColorSpace.h>
+#include "filament/ColorSpace.h"
 
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
-#include <utils/JobSystem.h>
-#include <utils/Mutex.h>
-#include <utils/Systrace.h>
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/Systrace.h"
 
 #include <cmath>
 #include <cstdlib>

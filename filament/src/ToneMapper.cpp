@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#include <filament/ToneMapper.h>
+#include "filament/ToneMapper.h"
 
 #include "ColorSpaceUtils.h"
 
-#include <math/vec3.h>
-#include <math/scalar.h>
+#include "filament/math/vec3.h"
+#include "filament/math/scalar.h"
 
 namespace filament {
 

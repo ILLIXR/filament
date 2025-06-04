@@ -10,16 +10,16 @@ set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 # Sources and headers
 # ==================================================================================================
 set(PUBLIC_HDRS
-        include/gltfio/Animator.h
-        include/gltfio/AssetLoader.h
-        include/gltfio/FilamentAsset.h
-        include/gltfio/FilamentInstance.h
-        include/gltfio/MaterialProvider.h
-        include/gltfio/NodeManager.h
-        include/gltfio/TrsTransformManager.h
-        include/gltfio/ResourceLoader.h
-        include/gltfio/TextureProvider.h
-        include/gltfio/math.h
+        include/filament/gltfio/Animator.h
+        include/filament/gltfio/AssetLoader.h
+        include/filament/gltfio/FilamentAsset.h
+        include/filament/gltfio/FilamentInstance.h
+        include/filament/gltfio/MaterialProvider.h
+        include/filament/gltfio/NodeManager.h
+        include/filament/gltfio/TrsTransformManager.h
+        include/filament/gltfio/ResourceLoader.h
+        include/filament/gltfio/TextureProvider.h
+        include/filament/gltfio/math.h
 )
 
 set(SRCS
@@ -174,7 +174,12 @@ set(DUMMY_SRC "${RESOURCE_DIR}/dummy.c")
 add_custom_command(OUTPUT ${DUMMY_SRC} COMMAND echo "//" > ${DUMMY_SRC})
 
 add_library(uberarchive ${DUMMY_SRC} ${RESGEN_SOURCE})
-target_include_directories(uberarchive PUBLIC ${RESOURCE_DIR})
+set_target_properties(uberarchive PROPERTIES PUBLIC_HEADER "${RESOURCE_DIR}/materials/uberarchive.h")
+
+target_include_directories(uberarchive PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/filament/gltfio>
+)
 set_target_properties(uberarchive PROPERTIES FOLDER Libs)
 
 # ==================================================================================================
@@ -182,11 +187,15 @@ set_target_properties(uberarchive PROPERTIES FOLDER Libs)
 # ==================================================================================================
 
 include_directories(${PUBLIC_HDR_DIR} ${RESOURCE_DIR})
-link_libraries(math utils filament cgltf stb ktxreader geometry tsl uberzlib)
 
 add_library(gltfio_core STATIC ${PUBLIC_HDRS} ${SRCS})
-
-target_include_directories(gltfio_core PUBLIC ${PUBLIC_HDR_DIR} ${stb_INCLUDE_DIRS})
+target_link_libraries(gltfio_core PUBLIC math utils filament cgltf ${stb_LIBRARIES} ktxreader geometry uberzlib)
+target_link_libraries(gltfio_core PRIVATE tsl::robin_map)
+target_include_directories(gltfio_core PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/gltfio-core>
+)
+target_include_directories(gltfio_core PUBLIC ${stb_INCLUDE_DIRS})
 set_target_properties(gltfio_core PROPERTIES FOLDER Libs)
 
 target_compile_definitions(gltfio_core PUBLIC -DGLTFIO_DRACO_SUPPORTED=1)
@@ -212,14 +221,26 @@ if (NOT WEBGL AND NOT ANDROID AND NOT IOS)
     # Link the core library with additional dependencies to create the "full" library
     # ==================================================================================================
     add_library(${TARGET} STATIC ${PUBLIC_HDRS} src/JitShaderProvider.cpp)
+    set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDRS}")
+    target_include_directories(${TARGET} PUBLIC ${stb_INCLUDE_DIRS})
+
     target_link_libraries(${TARGET} PUBLIC filamat gltfio_core)
-    target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+    target_link_libraries(${TARGET} PUBLIC math utils filament cgltf ${stb_LIBRARIES} ktxreader geometry uberzlib)
+    target_link_libraries(${TARGET} PRIVATE tsl::robin_map)
+    target_include_directories(${TARGET} PUBLIC
+                               $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                               $<INSTALL_INTERFACE:include/filament/${TARGET}>
+    )
     set_target_properties(${TARGET} PROPERTIES FOLDER Libs)
     if (NOT MSVC)
         target_compile_options(${TARGET} PRIVATE -Wno-deprecated-register)
     endif()
 
-    install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
+    install(TARGETS ${TARGET}
+            EXPORT filament-targets
+            ARCHIVE DESTINATION lib/${DIST_DIR}
+            PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+    )
 
 endif()
 
@@ -264,6 +285,14 @@ endif()
 # Installation
 # ==================================================================================================
 
-install(TARGETS gltfio_core uberarchive ARCHIVE DESTINATION lib/${DIST_DIR})
-install(DIRECTORY ${PUBLIC_HDR_DIR}/gltfio DESTINATION include)
-install(FILES ${RESOURCE_DIR}/materials/uberarchive.h DESTINATION include/gltfio/materials)
+install(TARGETS gltfio_core
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+)
+install(TARGETS uberarchive
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/filament/${TARGET}
+)
+#install(DIRECTORY ${PUBLIC_HDR_DIR}/gltfio DESTINATION include)
+#install(FILES ${RESOURCE_DIR}/materials/uberarchive.h DESTINATION include/gltfio/materials)

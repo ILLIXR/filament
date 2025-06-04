@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/CountDownLatch.h>
+#include "filament/utils/CountDownLatch.h"
 #include <atomic>
 #include <thread>
 

@@ -14,49 +14,49 @@
  * limitations under the License.
  */
 
-#include "details/Renderer.h"
+#include "Renderer.h"
 
-#include "Allocators.h"
+#include "../Allocators.h"
 #include "DebugRegistry.h"
-#include "FrameHistory.h"
-#include "PostProcessManager.h"
-#include "RendererUtils.h"
-#include "RenderPass.h"
-#include "ResourceAllocator.h"
+#include "../FrameHistory.h"
+#include "../PostProcessManager.h"
+#include "../RendererUtils.h"
+#include "../RenderPass.h"
+#include "../ResourceAllocator.h"
 
-#include "details/Engine.h"
-#include "details/Fence.h"
-#include "details/Scene.h"
-#include "details/SwapChain.h"
-#include "details/Texture.h"
-#include "details/View.h"
+#include "Engine.h"
+#include "Fence.h"
+#include "Scene.h"
+#include "SwapChain.h"
+#include "Texture.h"
+#include "View.h"
 
-#include <filament/Camera.h>
-#include <filament/Fence.h>
-#include <filament/Options.h>
-#include <filament/Renderer.h>
+#include "filament/Camera.h"
+#include "filament/Fence.h"
+#include "filament/Options.h"
+#include "filament/Renderer.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/DriverApiForward.h>
-#include <backend/Handle.h>
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/Handle.h"
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include "fg/FrameGraph.h"
-#include "fg/FrameGraphId.h"
-#include "fg/FrameGraphResources.h"
-#include "fg/FrameGraphTexture.h"
+#include "../fg/FrameGraph.h"
+#include "../fg/FrameGraphId.h"
+#include "../fg/FrameGraphResources.h"
+#include "../fg/FrameGraphTexture.h"
 
-#include <math/vec2.h>
-#include <math/vec3.h>
-#include <math/mat4.h>
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
+#include "filament/math/mat4.h"
 
-#include <utils/compiler.h>
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
-#include <utils/ostream.h>
-#include <utils/Panic.h>
-#include <utils/Systrace.h>
-#include <utils/debug.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/ostream.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/Systrace.h"
+#include "filament/utils/debug.h"
 
 #include <chrono>
 #include <limits>
@@ -1007,7 +1007,7 @@ void FRenderer::renderJob(RootArenaScope& rootArenaScope, FView& view) {
             };
             auto& pickingRenderPass = fg.addPass<PickingRenderPassData>("Picking Render Pass",
                 [&](FrameGraph::Builder& builder, auto& data) {
-                    bool const isFL0 = mEngine.getDriverApi().getFeatureLevel() == 
+                    bool const isFL0 = mEngine.getDriverApi().getFeatureLevel() ==
                         FeatureLevel::FEATURE_LEVEL_0;
 
                     // TODO: Specify the precision for picking pass

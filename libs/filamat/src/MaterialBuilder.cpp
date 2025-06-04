@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include "filamat/MaterialBuilder.h"
+#include "filament/filamat/MaterialBuilder.h"
 
-#include <filamat/Enums.h>
-#include <filamat/IncludeCallback.h>
-#include <filamat/Package.h>
+#include "filament/filamat/Enums.h"
+#include "filament/filamat/IncludeCallback.h"
+#include "filament/filamat/Package.h"
 
 #include "Includes.h"
 #include "MaterialVariants.h"
 #include "PushConstantDefinitions.h"
 #include "GLSLPostProcessor.h"
 
-#include "sca/GLSLTools.h"
+#include "filament/filamat/sca/GLSLTools.h"
 
-#include "shaders/MaterialInfo.h"
-#include "shaders/ShaderGenerator.h"
-#include "shaders/UibGenerator.h"
+#include "filament/filamat/shaders/MaterialInfo.h"
+#include "filament/filamat/shaders/ShaderGenerator.h"
+#include "filament/filamat/shaders/UibGenerator.h"
 
-#include "eiff/BlobDictionary.h"
-#include "eiff/ChunkContainer.h"
-#include "eiff/DictionarySpirvChunk.h"
-#include "eiff/DictionaryTextChunk.h"
-#include "eiff/LineDictionary.h"
-#include "eiff/MaterialBinaryChunk.h"
-#include "eiff/MaterialInterfaceBlockChunk.h"
-#include "eiff/MaterialTextChunk.h"
-#include "eiff/ShaderEntry.h"
+#include "filament/filamat/eiff/BlobDictionary.h"
+#include "filament/filamat/eiff/ChunkContainer.h"
+#include "filament/filamat/eiff/DictionarySpirvChunk.h"
+#include "filament/filamat/eiff/DictionaryTextChunk.h"
+#include "filament/filamat/eiff/LineDictionary.h"
+#include "filament/filamat/eiff/MaterialBinaryChunk.h"
+#include "filament/filamat/eiff/MaterialInterfaceBlockChunk.h"
+#include "filament/filamat/eiff/MaterialTextChunk.h"
+#include "filament/filamat/eiff/ShaderEntry.h"
 
-#include <private/filament/BufferInterfaceBlock.h>
-#include <private/filament/ConstantInfo.h>
-#include <private/filament/DescriptorSets.h>
-#include <private/filament/SamplerInterfaceBlock.h>
-#include <private/filament/UibStructs.h>
-#include <private/filament/Variant.h>
+#include "filament/filabridge/BufferInterfaceBlock.h"
+#include "filament/filabridge/ConstantInfo.h"
+#include "filament/filabridge/DescriptorSets.h"
+#include "filament/filabridge/SamplerInterfaceBlock.h"
+#include "filament/filabridge/UibStructs.h"
+#include "filament/filabridge/Variant.h"
 
-#include <filament/MaterialChunkType.h>
-#include <filament/MaterialEnums.h>
+#include "filament/filabridge/MaterialChunkType.h"
+#include "filament/filabridge/MaterialEnums.h"
 
-#include <backend/DriverEnums.h>
-#include <backend/Program.h>
+#include "filament/backend/DriverEnums.h"
+#include "filament/backend/Program.h"
 
-#include <utils/BitmaskEnum.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/Hash.h>
-#include <utils/JobSystem.h>
-#include <utils/Log.h>
-#include <utils/Mutex.h>
-#include <utils/Panic.h>
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/ostream.h>
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/Hash.h"
+#include "filament/utils/JobSystem.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Mutex.h"
+#include "filament/utils/Panic.h"
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/ostream.h"
 
-#include <math/vec3.h>
+#include "filament/math/vec3.h"
 
 #include <algorithm>
 #include <atomic>

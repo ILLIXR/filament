@@ -11,7 +11,7 @@ set(SRCS
 )
 
 add_library(${TARGET} STATIC ${SRCS})
-
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${PUBLIC_HDR_DIR}/smolv.h")
 target_compile_options(${TARGET} PRIVATE
         $<$<PLATFORM_ID:Linux>:-fPIC>
 )
@@ -20,7 +20,14 @@ if (NOT MSVC)
     target_compile_options(${TARGET} PRIVATE -Wno-tautological-unsigned-enum-zero-compare)
 endif()
 
-target_include_directories(${TARGET} PUBLIC ${PUBLIC_HDR_DIR})
+target_include_directories(${TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PUBLIC_HDR_DIR}>
+                           $<INSTALL_INTERFACE:include/${TARGET}>
+)
 set_target_properties(${TARGET} PROPERTIES FOLDER ThirdParty)
-
-install(TARGETS ${TARGET} ARCHIVE DESTINATION lib/${DIST_DIR})
+set(SMOLV_BUILD_INCLUDE_PATH ${PUBLIC_HDR_DIR} PARENT_SCOPE)
+install(TARGETS ${TARGET}
+        EXPORT filament-targets
+        ARCHIVE DESTINATION lib/${DIST_DIR}
+        PUBLIC_HEADER DESTINATION include/${TARGET}
+)

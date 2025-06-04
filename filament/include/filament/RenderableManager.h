@@ -17,20 +17,20 @@
 #ifndef TNT_FILAMENT_RENDERABLEMANAGER_H
 #define TNT_FILAMENT_RENDERABLEMANAGER_H
 
-#include <filament/Box.h>
-#include <filament/FilamentAPI.h>
-#include <filament/MaterialEnums.h>
-#include <filament/MorphTargetBuffer.h>
+#include "Box.h"
+#include "FilamentAPI.h"
+#include "filament/filabridge/MaterialEnums.h"
+#include "MorphTargetBuffer.h"
 
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/EntityInstance.h>
-#include <utils/FixedCapacityVector.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/EntityInstance.h"
+#include "filament/utils/FixedCapacityVector.h"
 
-#include <math/mathfwd.h>
-#include <math/vec3.h>
-#include <math/vec4.h>
+#include "filament/math/mathfwd.h"
+#include "filament/math/vec3.h"
+#include "filament/math/vec4.h"
 
 #include <type_traits>
 

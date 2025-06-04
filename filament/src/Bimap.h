@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BIMAP_H
 #define TNT_FILAMENT_BIMAP_H
 
-#include <utils/debug.h>
+#include "filament/utils/debug.h"
 
 #include <tsl/robin_map.h>
 

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 #include <sstream>
 #include <ostream>
 #include <iterator>
 
 #if defined(WIN32)
-#   include <utils/compiler.h>
-#   include <utils/win32/stdtypes.h>
+#   include "filament/utils/compiler.h"
+#   include "filament/utils/win32/stdtypes.h"
 #   define SEPARATOR '\\'
 #   define SEPARATOR_STR  "\\"
 #else

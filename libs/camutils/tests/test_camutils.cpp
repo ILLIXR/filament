@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include <camutils/Bookmark.h>
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Bookmark.h"
+#include "filament/camutils/Manipulator.h"
 
 #include <gtest/gtest.h>
 

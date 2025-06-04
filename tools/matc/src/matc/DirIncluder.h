@@ -17,9 +17,9 @@
 #ifndef TNT_DIRINCLUDER_H_
 #define TNT_DIRINCLUDER_H_
 
-#include <filamat/IncludeCallback.h>
+#include "filament/filamat/IncludeCallback.h"
 
-#include <utils/Path.h>
+#include "filament/utils/Path.h"
 
 namespace matc {
 

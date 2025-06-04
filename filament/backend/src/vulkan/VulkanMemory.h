@@ -17,7 +17,7 @@
 #ifndef TNT_FILAMENT_BACKEND_VULKANMEMORY_H
 #define TNT_FILAMENT_BACKEND_VULKANMEMORY_H
 
-#include <bluevk/BlueVK.h> // must be included before vk_mem_alloc
+#include "filament/bluevk/BlueVK.h" // must be included before vk_mem_alloc
 
 #ifndef VMA_STATIC_VULKAN_FUNCTIONS
 #define VMA_STATIC_VULKAN_FUNCTIONS 0

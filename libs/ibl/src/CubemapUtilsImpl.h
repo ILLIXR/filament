@@ -17,10 +17,10 @@
 #ifndef IBL_CUBEMAPUTILSIMPL_H
 #define IBL_CUBEMAPUTILSIMPL_H
 
-#include <ibl/CubemapUtils.h>
+#include "filament/ibl/CubemapUtils.h"
 
-#include <utils/compiler.h>
-#include <utils/JobSystem.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/JobSystem.h"
 
 namespace filament {
 namespace ibl {

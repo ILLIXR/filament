@@ -18,7 +18,7 @@
 
 #include "VulkanHandles.h"
 
-#include <utils/Hash.h>
+#include "filament/utils/Hash.h"
 
 namespace filament::backend {
 

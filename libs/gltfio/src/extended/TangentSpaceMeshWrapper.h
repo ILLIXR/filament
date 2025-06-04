@@ -17,9 +17,9 @@
 #ifndef GLTFIO_TANGENT_SPACE_MESH_WRAPPER_H
 #define GLTFIO_TANGENT_SPACE_MESH_WRAPPER_H
 
-#include <geometry/TangentSpaceMesh.h>
+#include "filament/geometry/TangentSpaceMesh.h"
 
-#include <math/vec4.h>
+#include "filament/math/vec4.h"
 
 namespace filament::gltfio {
 

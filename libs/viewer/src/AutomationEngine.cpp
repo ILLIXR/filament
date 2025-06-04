@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include <viewer/AutomationEngine.h>
+#include "filament/viewer/AutomationEngine.h"
 
 #include "TIFFExport.h"
 
-#include <filament/Camera.h>
-#include <filament/Engine.h>
-#include <filament/Renderer.h>
-#include <filament/Viewport.h>
+#include "filament/Camera.h"
+#include "filament/Engine.h"
+#include "filament/Renderer.h"
+#include "filament/Viewport.h"
 
-#include <backend/PixelBufferDescriptor.h>
+#include "filament/backend/PixelBufferDescriptor.h"
 
-#include <utils/Log.h>
-#include <utils/Path.h>
+#include "filament/utils/Log.h"
+#include "filament/utils/Path.h"
 
 #include <iomanip>
 #include <fstream>

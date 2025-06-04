@@ -16,7 +16,7 @@
 
 #include <gtest/gtest.h>
 
-#include <utils/CString.h>
+#include "filament/utils/CString.h"
 
 using namespace utils;
 

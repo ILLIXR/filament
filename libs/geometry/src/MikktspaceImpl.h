@@ -19,9 +19,9 @@
 
 #include "TangentSpaceMeshInternal.h"
 
-#include <math/quat.h>
-#include <math/vec2.h>
-#include <math/vec3.h>
+#include "filament/math/quat.h"
+#include "filament/math/vec2.h"
+#include "filament/math/vec3.h"
 
 #include <vector>
 

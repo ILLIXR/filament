@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <utils/linux/Mutex.h>
+#include "filament/utils/linux/Mutex.h"
 
 #include "futex.h"
 
@@ -31,4 +31,3 @@ void Mutex::wake() noexcept {
 }
 
 } // namespace utils
-

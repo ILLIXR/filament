@@ -20,8 +20,8 @@
 
 #include "backend/DriverEnums.h"
 
-#include <utils/Panic.h>
-#include <utils/ostream.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/ostream.h"
 
 #include <dawn/webgpu_cpp_print.h>
 #include <webgpu/webgpu_cpp.h>

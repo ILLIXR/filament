@@ -17,12 +17,12 @@
 #ifndef CAMUTILS_FREEFLIGHT_MANIPULATOR_H
 #define CAMUTILS_FREEFLIGHT_MANIPULATOR_H
 
-#include <camutils/Manipulator.h>
+#include "filament/camutils/Manipulator.h"
 
-#include <math/scalar.h>
-#include <math/mat3.h>
-#include <math/mat4.h>
-#include <math/quat.h>
+#include "filament/math/scalar.h"
+#include "filament/math/mat3.h"
+#include "filament/math/mat4.h"
+#include "filament/math/quat.h"
 
 #include <algorithm>
 #include <cmath>

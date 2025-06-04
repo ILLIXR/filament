@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <backend/platforms/WebGPUPlatform.h>
+#include "filament/backend/platforms/WebGPUPlatform.h"
 
-#include <utils/Panic.h>
+#include "filament/utils/Panic.h"
 
 #include <webgpu/webgpu_cpp.h>
 

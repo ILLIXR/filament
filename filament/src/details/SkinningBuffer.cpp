@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include "details/SkinningBuffer.h"
+#include "SkinningBuffer.h"
 
-#include "components/RenderableManager.h"
+#include "../components/RenderableManager.h"
 
-#include "details/Engine.h"
+#include "Engine.h"
 
-#include "FilamentAPI-impl.h"
+#include "../FilamentAPI-impl.h"
 
-#include <math/half.h>
-#include <math/mat4.h>
+#include "filament/math/half.h"
+#include "filament/math/mat4.h"
 
-#include <utils/CString.h>
-#include <utils/StaticString.h>
+#include "filament/utils/CString.h"
+#include "filament/utils/StaticString.h"
 
 #include <string.h>
 #include <stddef.h>
@@ -264,4 +264,3 @@ void FSkinningBuffer::setIndicesAndWeightsData(FEngine& engine,
 }
 
 } // namespace filament
-

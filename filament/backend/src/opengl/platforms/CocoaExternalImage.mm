@@ -19,8 +19,8 @@
 #include "CocoaExternalImage.h"
 #include "../GLUtils.h"
 
-#include <utils/Panic.h>
-#include <utils/Log.h>
+#include "filament/utils/Panic.h"
+#include "filament/utils/Log.h"
 
 namespace filament::backend {
 

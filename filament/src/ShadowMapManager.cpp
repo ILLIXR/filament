@@ -19,12 +19,12 @@
 #include "RenderPass.h"
 #include "ShadowMap.h"
 
-#include <filament/Frustum.h>
-#include <filament/LightManager.h>
-#include <filament/Options.h>
+#include "filament/Frustum.h"
+#include "filament/LightManager.h"
+#include "filament/Options.h"
 
 #include <iterator>
-#include <private/filament/EngineEnums.h>
+#include "filament/filabridge/EngineEnums.h"
 
 #include "components/RenderableManager.h"
 
@@ -38,20 +38,20 @@
 #include "fg/FrameGraphRenderPass.h"
 #include "fg/FrameGraphTexture.h"
 
-#include <backend/DriverApiForward.h>
-#include <backend/DriverEnums.h>
+#include "filament/backend/DriverApiForward.h"
+#include "filament/backend/DriverEnums.h"
 
-#include <utils/compiler.h>
-#include <utils/debug.h>
-#include <utils/FixedCapacityVector.h>
-#include <utils/BitmaskEnum.h>
-#include <utils/Range.h>
-#include <utils/Slice.h>
+#include "filament/utils/compiler.h"
+#include "filament/utils/debug.h"
+#include "filament/utils/FixedCapacityVector.h"
+#include "filament/utils/BitmaskEnum.h"
+#include "filament/utils/Range.h"
+#include "filament/utils/Slice.h"
 
-#include <math/half.h>
-#include <math/mat4.h>
-#include <math/vec4.h>
-#include <math/scalar.h>
+#include "filament/math/half.h"
+#include "filament/math/mat4.h"
+#include "filament/math/vec4.h"
+#include "filament/math/scalar.h"
 
 #include <algorithm>
 #include <array>

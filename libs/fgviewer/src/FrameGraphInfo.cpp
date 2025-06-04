@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <fgviewer/FrameGraphInfo.h>
+#include "filament/fgviewer/FrameGraphInfo.h"
 
-#include <utils/CString.h>
+#include "filament/utils/CString.h"
 
 #include <unordered_map>
 #include <vector>

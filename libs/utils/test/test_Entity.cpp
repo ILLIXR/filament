@@ -19,7 +19,7 @@
 #include <memory>
 
 #include "../src/EntityManagerImpl.h"
-#include <utils/NameComponentManager.h>
+#include "filament/utils/NameComponentManager.h"
 
 using namespace utils;
 

@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <filameshio/MeshReader.h>
-#include <filameshio/filamesh.h>
+#include "filament/filameshio/MeshReader.h"
+#include "filament/filameshio/filamesh.h"
 
-#include <filament/Box.h>
-#include <filament/Engine.h>
-#include <filament/Fence.h>
-#include <filament/IndexBuffer.h>
-#include <filament/Material.h>
-#include <filament/MaterialInstance.h>
-#include <filament/RenderableManager.h>
-#include <filament/VertexBuffer.h>
+#include "filament/Box.h"
+#include "filament/Engine.h"
+#include "filament/Fence.h"
+#include "filament/IndexBuffer.h"
+#include "filament/Material.h"
+#include "filament/MaterialInstance.h"
+#include "filament/RenderableManager.h"
+#include "filament/VertexBuffer.h"
 
 #include <meshoptimizer.h>
 
-#include <utils/EntityManager.h>
-#include <utils/Log.h>
-#include <utils/Path.h>
+#include "filament/utils/EntityManager.h"
+#include "filament/utils/Log.h"
+#include "filament/utils/Path.h"
 
 #include <string>
 #include <vector>
@@ -78,7 +78,7 @@ MeshReader::MaterialRegistry::~MaterialRegistry() {
 }
 
 // Default move construction
-MeshReader::MaterialRegistry::MaterialRegistry(MaterialRegistry&& rhs) 
+MeshReader::MaterialRegistry::MaterialRegistry(MaterialRegistry&& rhs)
     : mImpl(nullptr) {
     std::swap(mImpl, rhs.mImpl);
 }
